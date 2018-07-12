@@ -45,6 +45,7 @@
         [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:YTVersion];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
+    YTLog(@"");
     [self setRongYun];
     [self.window makeKeyAndVisible];
     [self setLaunchImage];
