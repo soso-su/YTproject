@@ -63,6 +63,12 @@
 		F888D3EE20F729A600128715 /* SendfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F888D3EC20F729A600128715 /* SendfileCell.xib */; };
 		F888D3F220F83A0100128715 /* YTFileDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F888D3F020F83A0100128715 /* YTFileDetailsViewController.m */; };
 		F888D3F320F83A0100128715 /* YTFileDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F888D3F120F83A0100128715 /* YTFileDetailsViewController.xib */; };
+		F888D40420F8A1BF00128715 /* YTLocalListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F888D40220F8A1BF00128715 /* YTLocalListViewController.m */; };
+		F888D40520F8A1BF00128715 /* YTLocalListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F888D40320F8A1BF00128715 /* YTLocalListViewController.xib */; };
+		F888D40920F8A2EC00128715 /* LocalListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F888D40720F8A2EC00128715 /* LocalListCell.m */; };
+		F888D40A20F8A2EC00128715 /* LocalListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F888D40820F8A2EC00128715 /* LocalListCell.xib */; };
+		F888D40E20F8AED500128715 /* YTActiveDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F888D40C20F8AED500128715 /* YTActiveDetailsViewController.m */; };
+		F888D40F20F8AED500128715 /* YTActiveDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F888D40D20F8AED500128715 /* YTActiveDetailsViewController.xib */; };
 		F888F50320EA27B800E19554 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F888F50220EA27B800E19554 /* AppDelegate.m */; };
 		F888F50B20EA27B800E19554 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F888F50A20EA27B800E19554 /* Assets.xcassets */; };
 		F888F50E20EA27B800E19554 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F888F50C20EA27B800E19554 /* LaunchScreen.storyboard */; };
@@ -208,6 +214,15 @@
 		F888D3EF20F83A0100128715 /* YTFileDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTFileDetailsViewController.h; sourceTree = "<group>"; };
 		F888D3F020F83A0100128715 /* YTFileDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTFileDetailsViewController.m; sourceTree = "<group>"; };
 		F888D3F120F83A0100128715 /* YTFileDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTFileDetailsViewController.xib; sourceTree = "<group>"; };
+		F888D40120F8A1BF00128715 /* YTLocalListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTLocalListViewController.h; sourceTree = "<group>"; };
+		F888D40220F8A1BF00128715 /* YTLocalListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTLocalListViewController.m; sourceTree = "<group>"; };
+		F888D40320F8A1BF00128715 /* YTLocalListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTLocalListViewController.xib; sourceTree = "<group>"; };
+		F888D40620F8A2EC00128715 /* LocalListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalListCell.h; sourceTree = "<group>"; };
+		F888D40720F8A2EC00128715 /* LocalListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalListCell.m; sourceTree = "<group>"; };
+		F888D40820F8A2EC00128715 /* LocalListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocalListCell.xib; sourceTree = "<group>"; };
+		F888D40B20F8AED500128715 /* YTActiveDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTActiveDetailsViewController.h; sourceTree = "<group>"; };
+		F888D40C20F8AED500128715 /* YTActiveDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTActiveDetailsViewController.m; sourceTree = "<group>"; };
+		F888D40D20F8AED500128715 /* YTActiveDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTActiveDetailsViewController.xib; sourceTree = "<group>"; };
 		F888F4FE20EA27B800E19554 /* YTproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YTproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F888F50120EA27B800E19554 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F888F50220EA27B800E19554 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -592,6 +607,12 @@
 				F888F54C20EA754300E19554 /* YTLocalViewController.h */,
 				F888F54D20EA754300E19554 /* YTLocalViewController.m */,
 				F888F54E20EA754300E19554 /* YTLocalViewController.xib */,
+				F888D40120F8A1BF00128715 /* YTLocalListViewController.h */,
+				F888D40220F8A1BF00128715 /* YTLocalListViewController.m */,
+				F888D40320F8A1BF00128715 /* YTLocalListViewController.xib */,
+				F888D40B20F8AED500128715 /* YTActiveDetailsViewController.h */,
+				F888D40C20F8AED500128715 /* YTActiveDetailsViewController.m */,
+				F888D40D20F8AED500128715 /* YTActiveDetailsViewController.xib */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -712,6 +733,9 @@
 		F894250F20EB689C008156CC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F888D40620F8A2EC00128715 /* LocalListCell.h */,
+				F888D40720F8A2EC00128715 /* LocalListCell.m */,
+				F888D40820F8A2EC00128715 /* LocalListCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -883,6 +907,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F888D40F20F8AED500128715 /* YTActiveDetailsViewController.xib in Resources */,
 				F888F50E20EA27B800E19554 /* LaunchScreen.storyboard in Resources */,
 				F894252E20ECCD7F008156CC /* YTForgetPswdViewController.xib in Resources */,
 				F894250A20EB6849008156CC /* YTLoginViewController.xib in Resources */,
@@ -897,6 +922,7 @@
 				F894253B20EDCBA2008156CC /* WorkTableViewCell.xib in Resources */,
 				F8135AB920F34649000F2372 /* YTWorkDetailViewController.xib in Resources */,
 				F888D3CB20F6132C00128715 /* SelectTypeCell.xib in Resources */,
+				F888D40A20F8A2EC00128715 /* LocalListCell.xib in Resources */,
 				F84B44A120EF5DCA004791E8 /* YTWorkSearchViewController.xib in Resources */,
 				F894253620EDC655008156CC /* WorkHeadCollectionViewCell.xib in Resources */,
 				F888F55020EA754300E19554 /* YTLocalViewController.xib in Resources */,
@@ -906,6 +932,7 @@
 				F888D3EE20F729A600128715 /* SendfileCell.xib in Resources */,
 				F888F55520EA757B00E19554 /* YTServerViewController.xib in Resources */,
 				F84B449120EF1A29004791E8 /* WorkAddressCollectionViewCell.xib in Resources */,
+				F888D40520F8A1BF00128715 /* YTLocalListViewController.xib in Resources */,
 				F894254620EF061B008156CC /* YTAddressViewController.xib in Resources */,
 				F888F55F20EA75DD00E19554 /* YTMineViewController.xib in Resources */,
 				F89424FB20EB2C73008156CC /* YTRotateViewController.xib in Resources */,
@@ -1009,11 +1036,14 @@
 				F888D3E820F728AE00128715 /* YTPostFileViewController.m in Sources */,
 				F894251B20EB6D1B008156CC /* UIView+Frame.m in Sources */,
 				F894250920EB6849008156CC /* YTLoginViewController.m in Sources */,
+				F888D40920F8A2EC00128715 /* LocalListCell.m in Sources */,
 				F8135AB420F3388A000F2372 /* SelectTypeView.m in Sources */,
 				F8135AAE20F2F97D000F2372 /* SelectEducationView.m in Sources */,
 				F888D38320F4A9AE00128715 /* YTCompanyMessageController.m in Sources */,
+				F888D40E20F8AED500128715 /* YTActiveDetailsViewController.m in Sources */,
 				F888F53620EA2BDF00E19554 /* YTBaseViewController.m in Sources */,
 				F894253520EDC655008156CC /* WorkHeadCollectionViewCell.m in Sources */,
+				F888D40420F8A1BF00128715 /* YTLocalListViewController.m in Sources */,
 				F84B44A020EF5DCA004791E8 /* YTWorkSearchViewController.m in Sources */,
 				F888F54F20EA754300E19554 /* YTLocalViewController.m in Sources */,
 				F888F53B20EA2C9E00E19554 /* YTNavigationViewController.m in Sources */,
