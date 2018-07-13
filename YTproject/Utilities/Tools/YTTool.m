@@ -23,5 +23,14 @@
                                  context:nil].size;
 }
 
++ (void)setLabelAttributeLineHeight:(CGFloat)height label:(UILabel *)label{
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:label.text];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:height];
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [label.text length])];
+    label.attributedText = attributedString;
+    label.lineBreakMode = NSLineBreakByCharWrapping;
+}
+
 
 @end

@@ -13,5 +13,7 @@
 
 + (UIWindow*)getWindow;
 + (CGSize)textStr:(NSString *)textStr boundingRectWithSize:(CGSize)size font:(UIFont *)font;
+//设置行距
++ (void)setLabelAttributeLineHeight:(CGFloat)height label:(UILabel *)label;
 
 @end

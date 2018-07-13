@@ -7,6 +7,7 @@
 //
 
 #import "YTPostFileViewController.h"
+#import "YTFileDetailsViewController.h"
 #import "SendfileCell.h"
 #define cellID  @"fileCell"
 
@@ -42,7 +43,8 @@
 }
 
 - (void)selectFile{
-    
+    YTFileDetailsViewController *fileDetails = [[YTFileDetailsViewController alloc]init];
+    [self.navigationController pushViewController:fileDetails animated:YES];
 }
 
 @end
