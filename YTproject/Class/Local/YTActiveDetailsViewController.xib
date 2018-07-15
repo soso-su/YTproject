@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YTActiveDetailsViewController">
             <connections>
+                <outlet property="imgScrollView" destination="nbG-sy-20S" id="ere-JM-lpb"/>
+                <outlet property="vedioView" destination="ROV-Oc-hmY" id="Jc3-wy-4HW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -71,6 +73,9 @@
                                     <state key="selected" image="localIconLikePre">
                                         <color key="titleColor" red="1" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="likenum:" destination="-1" eventType="touchUpInside" id="vz5-eY-hS2"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活动视频" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOn-jy-nt1">
                                     <rect key="frame" x="15" y="239.5" width="65.5" height="19.5"/>
@@ -111,7 +116,13 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejf-hq-emw">
                                             <rect key="frame" x="12" y="12" width="320" height="158"/>
-                                            <string key="text">行程特色金子山爱情天梯、玻璃天桥、南粤小华山，一次性满足三个愿望，你敢挑战吗？广东最高的玻璃天梯、总长100多米，还有悬空建在最高峰玻璃廊桥、玻璃观景台，顶上就是蓝天白云，四周是莽莽群山，还有机会看到云海景观！◆【YOUTH户外】专为年青人打造的旅行，就玩不同！（仅限18岁至49岁的游客报名，不接受18岁以下、49岁以上的游客报名。）</string>
+                                            <string key="text">行程特色
+金子山爱情天梯、玻璃天桥、南粤小华山，一次性满足三个愿望，你敢挑战吗？
+
+广东最高的玻璃天梯、总长100多米，还有悬空建在最高峰玻璃廊桥、玻璃观景台，顶上就是蓝天白云，四周是莽莽群山，还有机会看到云海景观！
+
+◆【YOUTH户外】专为年青人打造的旅行，就玩不同！
+（仅限18岁至49岁的游客报名，不接受18岁以下、49岁以上的游客报名。）</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -169,9 +180,93 @@
                 </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gN6-eL-z6p">
                     <rect key="frame" x="0.0" y="715" width="375" height="50"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mzd-DF-tep">
+                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghd-5q-job">
+                                    <rect key="frame" x="0.0" y="0.0" width="87.5" height="50"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                    <state key="normal" title="  分享" image="activityIconShare">
+                                        <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="share:" destination="-1" eventType="touchUpInside" id="iBS-hk-0yO"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isf-MU-KJP">
+                                    <rect key="frame" x="87.5" y="0.0" width="100" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="oZo-wU-gx6"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                    <state key="normal" title="  联系客服报名" image="activityIconContact">
+                                        <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="relation:" destination="-1" eventType="touchUpInside" id="Du3-6C-yHo"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Isf-MU-KJP" firstAttribute="leading" secondItem="ghd-5q-job" secondAttribute="trailing" id="0lw-LP-AXi"/>
+                                <constraint firstItem="ghd-5q-job" firstAttribute="leading" secondItem="mzd-DF-tep" secondAttribute="leading" id="Lm0-FY-dip"/>
+                                <constraint firstAttribute="trailing" secondItem="Isf-MU-KJP" secondAttribute="trailing" id="Us8-TS-9Tt"/>
+                                <constraint firstItem="Isf-MU-KJP" firstAttribute="centerY" secondItem="ghd-5q-job" secondAttribute="centerY" id="Ygd-k1-46b"/>
+                                <constraint firstItem="Isf-MU-KJP" firstAttribute="top" secondItem="mzd-DF-tep" secondAttribute="top" id="gP5-WO-tiD"/>
+                                <constraint firstAttribute="bottom" secondItem="Isf-MU-KJP" secondAttribute="bottom" id="kiT-HF-Lzy"/>
+                                <constraint firstItem="Isf-MU-KJP" firstAttribute="height" secondItem="ghd-5q-job" secondAttribute="height" id="pYF-yG-Rhc"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9Q-Sz-bS2">
+                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="no5-2q-WTO">
+                                    <rect key="frame" x="94" y="0.0" width="93.5" height="50"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                    <state key="normal" title=" 收藏（10）" image="activityIconCollect">
+                                        <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="collect:" destination="-1" eventType="touchUpInside" id="dyi-7k-Lio"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6p-aw-dXH">
+                                    <rect key="frame" x="0.0" y="0.0" width="94" height="50"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                    <state key="normal" title=" 评论（10）" image="activityIconComment">
+                                        <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="review:" destination="-1" eventType="touchUpInside" id="RZU-wG-szy"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="no5-2q-WTO" firstAttribute="width" secondItem="y6p-aw-dXH" secondAttribute="width" id="UUi-IY-jBN"/>
+                                <constraint firstItem="y6p-aw-dXH" firstAttribute="leading" secondItem="t9Q-Sz-bS2" secondAttribute="leading" id="aF7-q0-IjC"/>
+                                <constraint firstAttribute="bottom" secondItem="y6p-aw-dXH" secondAttribute="bottom" id="d7e-8n-4Kn"/>
+                                <constraint firstAttribute="bottom" secondItem="no5-2q-WTO" secondAttribute="bottom" id="ehd-0j-caC"/>
+                                <constraint firstAttribute="trailing" secondItem="no5-2q-WTO" secondAttribute="trailing" id="jC0-tp-g2Z"/>
+                                <constraint firstItem="no5-2q-WTO" firstAttribute="leading" secondItem="y6p-aw-dXH" secondAttribute="trailing" id="mma-Mg-4PA"/>
+                                <constraint firstItem="y6p-aw-dXH" firstAttribute="top" secondItem="t9Q-Sz-bS2" secondAttribute="top" id="oCR-bf-LsI"/>
+                                <constraint firstItem="no5-2q-WTO" firstAttribute="top" secondItem="t9Q-Sz-bS2" secondAttribute="top" id="pXp-EQ-fBV"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="t9Q-Sz-bS2" firstAttribute="width" secondItem="mzd-DF-tep" secondAttribute="width" id="36b-su-iX2"/>
+                        <constraint firstItem="t9Q-Sz-bS2" firstAttribute="leading" secondItem="mzd-DF-tep" secondAttribute="trailing" id="6F8-kq-afH"/>
+                        <constraint firstItem="mzd-DF-tep" firstAttribute="leading" secondItem="gN6-eL-z6p" secondAttribute="leading" id="DdB-nN-bew"/>
+                        <constraint firstAttribute="bottom" secondItem="mzd-DF-tep" secondAttribute="bottom" id="FQP-dp-sMo"/>
+                        <constraint firstAttribute="trailing" secondItem="t9Q-Sz-bS2" secondAttribute="trailing" id="Y6R-lG-tYJ"/>
                         <constraint firstAttribute="height" constant="50" id="Yto-F0-mx6"/>
+                        <constraint firstAttribute="bottom" secondItem="t9Q-Sz-bS2" secondAttribute="bottom" id="eXY-8F-iek"/>
+                        <constraint firstItem="t9Q-Sz-bS2" firstAttribute="top" secondItem="gN6-eL-z6p" secondAttribute="top" id="i4S-4S-nOt"/>
+                        <constraint firstItem="mzd-DF-tep" firstAttribute="top" secondItem="gN6-eL-z6p" secondAttribute="top" id="mGx-YR-JpD"/>
                     </constraints>
                 </view>
             </subviews>
@@ -191,6 +286,10 @@
         </view>
     </objects>
     <resources>
+        <image name="activityIconCollect" width="13" height="13"/>
+        <image name="activityIconComment" width="13" height="13"/>
+        <image name="activityIconContact" width="13" height="13"/>
+        <image name="activityIconShare" width="12" height="13"/>
         <image name="localIconCollect" width="11" height="11"/>
         <image name="localIconCollectPre" width="11" height="11"/>
         <image name="localIconLike" width="11" height="11"/>

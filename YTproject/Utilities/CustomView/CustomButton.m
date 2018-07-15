@@ -40,6 +40,14 @@
         
         self.imageView.centerY = self.height/2;
         
+    } else if (self.type == 2){
+        [self.titleLabel sizeToFit];
+        self.titleLabel.frame = CGRectMake(margin*2, 0, self.titleLabel.width, self.titleLabel.height);
+        self.titleLabel.centerY = self.height/2;
+        
+        [self.imageView sizeToFit];
+        self.imageView.frame = CGRectMake(CGRectGetMaxX(self.titleLabel.frame)+margin, 0, self.imageView.width, self.imageView.height);
+        self.imageView.centerY = self.height/2;
     }else {
         
         self.imageView.frame = CGRectMake(margin, margin, self.width - margin * 2, self.height/2 - margin * 2);

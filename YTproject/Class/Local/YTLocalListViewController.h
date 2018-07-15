@@ -9,5 +9,7 @@
 #import "YTBaseViewController.h"
 
 @interface YTLocalListViewController : YTBaseViewController
+@property (nonatomic, assign)NSInteger type;
+
 
 @end

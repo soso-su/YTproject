@@ -129,6 +129,8 @@
 /// 添加分页控件方法
 -(void)addPageControlToSuperView:(UIView *)superView {
     self.pageCtl.centerX = superView.width/2;
+    self.pageCtl.pageIndicatorTintColor = self.pageColor;
+    self.pageCtl.currentPageIndicatorTintColor = self.pageCurrentColor;
     [superView addSubview:self.pageCtl];
 }
 
@@ -148,8 +150,7 @@
         else{
             _pageCtl.center = CGPointMake(self.frame.origin.x + self.frame.size.width/2, self.frame.origin.y + self.frame.size.height-FIT_Y(25));
         }
-        _pageCtl.pageIndicatorTintColor = [UIColor grayColor];
-        _pageCtl.currentPageIndicatorTintColor = [UIColor redColor];
+        
         _pageCtl.hidesForSinglePage = YES;
         _pageCtl.numberOfPages = _imgCount;
         _pageCtl.currentPage = 0;

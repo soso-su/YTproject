@@ -35,6 +35,9 @@ typedef enum {
 @property (nonatomic, assign)CGRect btnFrame;
 
 @property (nonatomic, assign)NSTimeInterval interval;
+@property (nonatomic ,strong) UIColor *pageCurrentColor;
+@property (nonatomic ,strong) UIColor *pageColor;
+@property (nonatomic ,assign)CGFloat pageX;
 
 @property (nonatomic, assign)id <TYRotateImageViewDelegate>rotateDelegate;
 
