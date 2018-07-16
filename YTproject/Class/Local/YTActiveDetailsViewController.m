@@ -9,18 +9,20 @@
 #import "YTActiveDetailsViewController.h"
 #import "TYRotateImageView.h"
 #import "ReviewViewController.h"
+#import "ShareView.h"
 
-@interface YTActiveDetailsViewController ()<TYRotateImageViewDelegate>
+@interface YTActiveDetailsViewController ()<TYRotateImageViewDelegate,ShareViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *imgScrollView;
 @property (weak, nonatomic) TYRotateImageView *banner;
 @property (weak, nonatomic) IBOutlet UIView *vedioView;
+@property (strong, nonatomic)ShareView *shareView;
 @end
 
 @implementation YTActiveDetailsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"活动详情";
+    [[YTTool getWindow] addSubview:self.shareView];
     [self setRotateView];
 }
 
@@ -36,6 +38,7 @@
 
 
 - (IBAction)share:(UIButton *)sender {
+    self.shareView.hidden = NO;
 }
 - (IBAction)relation:(UIButton *)sender {
     
@@ -47,6 +50,21 @@
 - (IBAction)collect:(UIButton *)sender {
 }
 - (IBAction)likenum:(UIButton *)sender {
+}
+
+- (void)clickCloseBtn{
+    self.shareView.hidden = YES;
+}
+
+- (ShareView *)shareView{
+    if (!_shareView) {
+        _shareView = [[ShareView alloc]init];
+        _shareView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height);
+        _shareView.backgroundColor = [UIColor colorWithWhite:50.0/255.0 alpha:0.5];
+        _shareView.hidden = YES;
+        _shareView.delegate = self;
+    }
+    return _shareView;
 }
 
 @end

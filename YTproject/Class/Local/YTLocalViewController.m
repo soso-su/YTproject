@@ -79,10 +79,13 @@
     [self.view addSubview:self.pageTitleView];
     
     YTLocalListViewController *actVc = [[YTLocalListViewController alloc]init];
+    actVc.type = 0;
     
     YTLocalListViewController *cateVc = [[YTLocalListViewController alloc]init];
+    cateVc.type = 1;
     
     YTLocalListViewController *travelVc = [[YTLocalListViewController alloc]init];
+    travelVc.type = 2;
     
     CGFloat contentViewHeight = self.view.height - titleViewH;
     self.pageContentView = [[SGPageContentScrollView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.pageTitleView.frame), kScreen_Width, contentViewHeight) parentVC:self childVCs:@[actVc,cateVc,travelVc]];

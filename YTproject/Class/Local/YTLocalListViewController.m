@@ -8,6 +8,7 @@
 
 #import "YTLocalListViewController.h"
 #import "YTActiveDetailsViewController.h"
+#import "YTCateDetailsViewController.h"
 #import "LocalListCell.h"
 #import "CustomButton.h"
 #define cellID @"ListCell"
@@ -65,8 +66,21 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    YTActiveDetailsViewController *active = [[YTActiveDetailsViewController alloc]init];
-    [self.navigationController pushViewController:active animated:YES];
+    UIViewController *control = [[UIViewController alloc]init];
+    if (self.type == 0) {
+        YTActiveDetailsViewController *active = [[YTActiveDetailsViewController alloc]init];
+        active.title = @"活动详情";
+        control = active;
+    }else if (self.type == 1){
+        YTCateDetailsViewController *cate = [[YTCateDetailsViewController alloc]init];
+        control = cate;
+    }else{
+        YTActiveDetailsViewController *travel = [[YTActiveDetailsViewController alloc]init];
+        travel.title = @"旅游详情";
+        control = travel;
+    }
+    
+    [self.navigationController pushViewController:control animated:YES];
 }
 
 @end
