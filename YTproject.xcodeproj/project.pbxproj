@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A728268520FD882400244CAA /* YNPageConfigration.m in Sources */ = {isa = PBXBuildFile; fileRef = A728267F20FD882300244CAA /* YNPageConfigration.m */; };
+		A728268620FD882400244CAA /* YNPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A728268020FD882300244CAA /* YNPageViewController.m */; };
+		A728268E20FD882F00244CAA /* UIViewController+YNPageExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = A728268A20FD882E00244CAA /* UIViewController+YNPageExtend.m */; };
+		A728268F20FD882F00244CAA /* UIScrollView+YNPageExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = A728268B20FD882E00244CAA /* UIScrollView+YNPageExtend.m */; };
+		A728269020FD882F00244CAA /* UIView+YNPageExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = A728268D20FD882F00244CAA /* UIView+YNPageExtend.m */; };
+		A728269D20FD885C00244CAA /* YNPageCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A728269420FD885B00244CAA /* YNPageCollectionView.m */; };
+		A728269E20FD885C00244CAA /* YNPageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A728269520FD885B00244CAA /* YNPageScrollView.m */; };
+		A728269F20FD885C00244CAA /* YNPageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A728269620FD885B00244CAA /* YNPageTableView.m */; };
+		A72826A020FD885C00244CAA /* YNPageHeaderScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A728269720FD885B00244CAA /* YNPageHeaderScrollView.m */; };
+		A72826A120FD885C00244CAA /* YNPageScrollMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A728269C20FD885C00244CAA /* YNPageScrollMenuView.m */; };
 		F31292DA9D012030AC2E4722 /* libPods-YTproject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E96967340DCB4BC028D0A448 /* libPods-YTproject.a */; };
 		F807691D20FB2E03001E2FA6 /* ReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F807691B20FB2E03001E2FA6 /* ReviewViewController.m */; };
 		F807691E20FB2E03001E2FA6 /* ReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F807691C20FB2E03001E2FA6 /* ReviewViewController.xib */; };
@@ -156,6 +166,26 @@
 /* Begin PBXFileReference section */
 		1445AF1B5CE84DB33EBF76DA /* Pods-YTproject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTproject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YTproject/Pods-YTproject.debug.xcconfig"; sourceTree = "<group>"; };
 		9EDC8FD8CE7215293B7C3B40 /* Pods-YTproject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTproject.release.xcconfig"; path = "Pods/Target Support Files/Pods-YTproject/Pods-YTproject.release.xcconfig"; sourceTree = "<group>"; };
+		A728267F20FD882300244CAA /* YNPageConfigration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNPageConfigration.m; sourceTree = "<group>"; };
+		A728268020FD882300244CAA /* YNPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNPageViewController.m; sourceTree = "<group>"; };
+		A728268120FD882300244CAA /* YNPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNPageViewController.h; sourceTree = "<group>"; };
+		A728268220FD882300244CAA /* YNPageConfigration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNPageConfigration.h; sourceTree = "<group>"; };
+		A728268820FD882E00244CAA /* UIView+YNPageExtend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+YNPageExtend.h"; sourceTree = "<group>"; };
+		A728268920FD882E00244CAA /* UIViewController+YNPageExtend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+YNPageExtend.h"; sourceTree = "<group>"; };
+		A728268A20FD882E00244CAA /* UIViewController+YNPageExtend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+YNPageExtend.m"; sourceTree = "<group>"; };
+		A728268B20FD882E00244CAA /* UIScrollView+YNPageExtend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+YNPageExtend.m"; sourceTree = "<group>"; };
+		A728268C20FD882E00244CAA /* UIScrollView+YNPageExtend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+YNPageExtend.h"; sourceTree = "<group>"; };
+		A728268D20FD882F00244CAA /* UIView+YNPageExtend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+YNPageExtend.m"; sourceTree = "<group>"; };
+		A728269320FD885A00244CAA /* YNPageCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNPageCollectionView.h; sourceTree = "<group>"; };
+		A728269420FD885B00244CAA /* YNPageCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNPageCollectionView.m; sourceTree = "<group>"; };
+		A728269520FD885B00244CAA /* YNPageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNPageScrollView.m; sourceTree = "<group>"; };
+		A728269620FD885B00244CAA /* YNPageTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNPageTableView.m; sourceTree = "<group>"; };
+		A728269720FD885B00244CAA /* YNPageHeaderScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNPageHeaderScrollView.m; sourceTree = "<group>"; };
+		A728269820FD885B00244CAA /* YNPageHeaderScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNPageHeaderScrollView.h; sourceTree = "<group>"; };
+		A728269920FD885B00244CAA /* YNPageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNPageScrollView.h; sourceTree = "<group>"; };
+		A728269A20FD885C00244CAA /* YNPageTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNPageTableView.h; sourceTree = "<group>"; };
+		A728269B20FD885C00244CAA /* YNPageScrollMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNPageScrollMenuView.h; sourceTree = "<group>"; };
+		A728269C20FD885C00244CAA /* YNPageScrollMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNPageScrollMenuView.m; sourceTree = "<group>"; };
 		E96967340DCB4BC028D0A448 /* libPods-YTproject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YTproject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F807691A20FB2E03001E2FA6 /* ReviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReviewViewController.h; sourceTree = "<group>"; };
 		F807691B20FB2E03001E2FA6 /* ReviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReviewViewController.m; sourceTree = "<group>"; };
@@ -444,6 +474,50 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A728267D20FD87FF00244CAA /* YNPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A728269220FD884D00244CAA /* View */,
+				A728269120FD883C00244CAA /* Category */,
+				A728268220FD882300244CAA /* YNPageConfigration.h */,
+				A728267F20FD882300244CAA /* YNPageConfigration.m */,
+				A728268120FD882300244CAA /* YNPageViewController.h */,
+				A728268020FD882300244CAA /* YNPageViewController.m */,
+			);
+			path = YNPageViewController;
+			sourceTree = "<group>";
+		};
+		A728269120FD883C00244CAA /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				A728268C20FD882E00244CAA /* UIScrollView+YNPageExtend.h */,
+				A728268B20FD882E00244CAA /* UIScrollView+YNPageExtend.m */,
+				A728268820FD882E00244CAA /* UIView+YNPageExtend.h */,
+				A728268D20FD882F00244CAA /* UIView+YNPageExtend.m */,
+				A728268920FD882E00244CAA /* UIViewController+YNPageExtend.h */,
+				A728268A20FD882E00244CAA /* UIViewController+YNPageExtend.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		A728269220FD884D00244CAA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A728269320FD885A00244CAA /* YNPageCollectionView.h */,
+				A728269420FD885B00244CAA /* YNPageCollectionView.m */,
+				A728269820FD885B00244CAA /* YNPageHeaderScrollView.h */,
+				A728269720FD885B00244CAA /* YNPageHeaderScrollView.m */,
+				A728269B20FD885C00244CAA /* YNPageScrollMenuView.h */,
+				A728269C20FD885C00244CAA /* YNPageScrollMenuView.m */,
+				A728269920FD885B00244CAA /* YNPageScrollView.h */,
+				A728269520FD885B00244CAA /* YNPageScrollView.m */,
+				A728269A20FD885C00244CAA /* YNPageTableView.h */,
+				A728269620FD885B00244CAA /* YNPageTableView.m */,
+			);
+			name = View;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		F888D38520F4E26100128715 /* Http */ = {
 			isa = PBXGroup;
 			children = (
@@ -549,6 +623,7 @@
 		F888F53D20EA2D1700E19554 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				A728267D20FD87FF00244CAA /* YNPageViewController */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -1102,6 +1177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A72826A120FD885C00244CAA /* YNPageScrollMenuView.m in Sources */,
 				F8DE217820FC4EEE00AC55D8 /* YTMediumViewController.m in Sources */,
 				F888D3CA20F6132C00128715 /* SelectTypeCell.m in Sources */,
 				F8135AB120F3145A000F2372 /* CustomButton.m in Sources */,
@@ -1114,11 +1190,14 @@
 				F807692B20FB3E0F001E2FA6 /* ReviewModel.m in Sources */,
 				F888D3F220F83A0100128715 /* YTFileDetailsViewController.m in Sources */,
 				F894252220EC5E05008156CC /* YTRegisterViewController.m in Sources */,
+				A728268620FD882400244CAA /* YNPageViewController.m in Sources */,
 				F888D38820F4E2C000128715 /* YTHttpTool.m in Sources */,
 				F888D3CF20F6571800128715 /* YTEducationViewController.m in Sources */,
+				A72826A020FD885C00244CAA /* YNPageHeaderScrollView.m in Sources */,
 				F888F50320EA27B800E19554 /* AppDelegate.m in Sources */,
 				F84B449420EF43E4004791E8 /* WorkAddressHeadView.m in Sources */,
 				F888D3D420F6EB4C00128715 /* YTEducaCollectViewController.m in Sources */,
+				A728269020FD882F00244CAA /* UIView+YNPageExtend.m in Sources */,
 				F894252920EC697C008156CC /* YTSelectViewController.m in Sources */,
 				F894251E20EB8490008156CC /* UIView+Appearance.m in Sources */,
 				F89424FA20EB2C73008156CC /* YTRotateViewController.m in Sources */,
@@ -1126,11 +1205,14 @@
 				F888D3E820F728AE00128715 /* YTPostFileViewController.m in Sources */,
 				F894251B20EB6D1B008156CC /* UIView+Frame.m in Sources */,
 				F894250920EB6849008156CC /* YTLoginViewController.m in Sources */,
+				A728268F20FD882F00244CAA /* UIScrollView+YNPageExtend.m in Sources */,
 				F888D40920F8A2EC00128715 /* LocalListCell.m in Sources */,
 				F8135AB420F3388A000F2372 /* SelectTypeView.m in Sources */,
 				F8DE218120FCA74C00AC55D8 /* StoreCell.m in Sources */,
+				A728268E20FD882F00244CAA /* UIViewController+YNPageExtend.m in Sources */,
 				F8135AAE20F2F97D000F2372 /* SelectEducationView.m in Sources */,
 				F888D38320F4A9AE00128715 /* YTCompanyMessageController.m in Sources */,
+				A728269E20FD885C00244CAA /* YNPageScrollView.m in Sources */,
 				F888D40E20F8AED500128715 /* YTActiveDetailsViewController.m in Sources */,
 				F888F53620EA2BDF00E19554 /* YTBaseViewController.m in Sources */,
 				F894253520EDC655008156CC /* WorkHeadCollectionViewCell.m in Sources */,
@@ -1141,10 +1223,12 @@
 				F888D38E20F5ABB800128715 /* YTRongYunRequest.m in Sources */,
 				F8DE216E20FC402C00AC55D8 /* ServerCollectionViewCell.m in Sources */,
 				F888F55920EA75C300E19554 /* YTStoreViewController.m in Sources */,
+				A728269F20FD885C00244CAA /* YNPageTableView.m in Sources */,
 				F84B449C20EF56DD004791E8 /* YTTouchView.m in Sources */,
 				F888F55E20EA75DD00E19554 /* YTMineViewController.m in Sources */,
 				F807691D20FB2E03001E2FA6 /* ReviewViewController.m in Sources */,
 				F894254520EF061B008156CC /* YTAddressViewController.m in Sources */,
+				A728268520FD882400244CAA /* YNPageConfigration.m in Sources */,
 				F8DE217320FC497F00AC55D8 /* YTTenementViewController.m in Sources */,
 				F89424FF20EB5770008156CC /* YTTool.m in Sources */,
 				F888F54A20EA750300E19554 /* YTWorkViewController.m in Sources */,
@@ -1159,6 +1243,7 @@
 				F894254120EE27CF008156CC /* UIImage+Color.m in Sources */,
 				F8135AB820F34649000F2372 /* YTWorkDetailViewController.m in Sources */,
 				F8DE218B20FD8A3500AC55D8 /* YTRecommendViewController.m in Sources */,
+				A728269D20FD885C00244CAA /* YNPageCollectionView.m in Sources */,
 				F888D3C520F5E78E00128715 /* YTChatViewController.m in Sources */,
 				F894253E20EE269E008156CC /* YTSearchBar.m in Sources */,
 				F894252D20ECCD7F008156CC /* YTForgetPswdViewController.m in Sources */,
