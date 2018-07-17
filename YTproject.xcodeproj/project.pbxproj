@@ -127,6 +127,8 @@
 		F8DE217920FC4EEE00AC55D8 /* YTMediumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8DE217720FC4EEE00AC55D8 /* YTMediumViewController.xib */; };
 		F8DE218120FCA74C00AC55D8 /* StoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DE217F20FCA74C00AC55D8 /* StoreCell.m */; };
 		F8DE218220FCA74C00AC55D8 /* StoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8DE218020FCA74C00AC55D8 /* StoreCell.xib */; };
+		F8DE218B20FD8A3500AC55D8 /* YTRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DE218920FD8A3500AC55D8 /* YTRecommendViewController.m */; };
+		F8DE218C20FD8A3500AC55D8 /* YTRecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8DE218A20FD8A3500AC55D8 /* YTRecommendViewController.xib */; };
 		F8DFE4CD20F373FC00F76DFB /* YTCompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DFE4CB20F373FC00F76DFB /* YTCompanyViewController.m */; };
 		F8DFE4CE20F373FC00F76DFB /* YTCompanyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8DFE4CC20F373FC00F76DFB /* YTCompanyViewController.xib */; };
 		F8DFE4D120F39B7600F76DFB /* ShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DFE4D020F39B7600F76DFB /* ShareView.m */; };
@@ -339,6 +341,9 @@
 		F8DE217E20FCA74C00AC55D8 /* StoreCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoreCell.h; sourceTree = "<group>"; };
 		F8DE217F20FCA74C00AC55D8 /* StoreCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoreCell.m; sourceTree = "<group>"; };
 		F8DE218020FCA74C00AC55D8 /* StoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreCell.xib; sourceTree = "<group>"; };
+		F8DE218820FD8A3500AC55D8 /* YTRecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTRecommendViewController.h; sourceTree = "<group>"; };
+		F8DE218920FD8A3500AC55D8 /* YTRecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTRecommendViewController.m; sourceTree = "<group>"; };
+		F8DE218A20FD8A3500AC55D8 /* YTRecommendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTRecommendViewController.xib; sourceTree = "<group>"; };
 		F8DFE4CA20F373FC00F76DFB /* YTCompanyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTCompanyViewController.h; sourceTree = "<group>"; };
 		F8DFE4CB20F373FC00F76DFB /* YTCompanyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTCompanyViewController.m; sourceTree = "<group>"; };
 		F8DFE4CC20F373FC00F76DFB /* YTCompanyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTCompanyViewController.xib; sourceTree = "<group>"; };
@@ -692,6 +697,9 @@
 				F888F55620EA75C300E19554 /* YTStoreViewController.h */,
 				F888F55720EA75C300E19554 /* YTStoreViewController.m */,
 				F888F55820EA75C300E19554 /* YTStoreViewController.xib */,
+				F8DE218820FD8A3500AC55D8 /* YTRecommendViewController.h */,
+				F8DE218920FD8A3500AC55D8 /* YTRecommendViewController.m */,
+				F8DE218A20FD8A3500AC55D8 /* YTRecommendViewController.xib */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -995,6 +1003,7 @@
 				F888D3F320F83A0100128715 /* YTFileDetailsViewController.xib in Resources */,
 				F8DE217920FC4EEE00AC55D8 /* YTMediumViewController.xib in Resources */,
 				F894253B20EDCBA2008156CC /* WorkTableViewCell.xib in Resources */,
+				F8DE218C20FD8A3500AC55D8 /* YTRecommendViewController.xib in Resources */,
 				F8135AB920F34649000F2372 /* YTWorkDetailViewController.xib in Resources */,
 				F888D3CB20F6132C00128715 /* SelectTypeCell.xib in Resources */,
 				F888D40A20F8A2EC00128715 /* LocalListCell.xib in Resources */,
@@ -1149,6 +1158,7 @@
 				F888F54420EA2E6C00E19554 /* YTTabBarViewController.m in Sources */,
 				F894254120EE27CF008156CC /* UIImage+Color.m in Sources */,
 				F8135AB820F34649000F2372 /* YTWorkDetailViewController.m in Sources */,
+				F8DE218B20FD8A3500AC55D8 /* YTRecommendViewController.m in Sources */,
 				F888D3C520F5E78E00128715 /* YTChatViewController.m in Sources */,
 				F894253E20EE269E008156CC /* YTSearchBar.m in Sources */,
 				F894252D20ECCD7F008156CC /* YTForgetPswdViewController.m in Sources */,
