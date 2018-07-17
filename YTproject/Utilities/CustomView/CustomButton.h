@@ -8,9 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger,CustomButtonType){
+    ImageUpLabelDown = 1,                
+    ImageLeftLabelRight,
+};
+
+
 @interface CustomButton : UIButton
 
-@property (nonatomic,assign)NSInteger type;
+@property (nonatomic,assign)IBInspectable NSInteger customButtonType_IBInspector; //xib中设置的type
+@property (nonatomic,assign) CustomButtonType customButtonType;
+@property (nonatomic,assign)IBInspectable CGFloat margin;//label和image之间的距离
 
 @property (nonatomic,assign)CGFloat fontSize;
 

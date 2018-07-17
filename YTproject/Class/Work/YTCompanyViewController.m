@@ -85,7 +85,7 @@
     self.companyCount = companyCount;
     
     CustomButton *companyAddress = [CustomButton buttonWithType:UIButtonTypeCustom];
-    companyAddress.type = 1;
+    companyAddress.customButtonType = 1;
     [companyAddress setTitle:@"广州" forState:UIControlStateNormal];
     [companyAddress setImage:[UIImage imageNamed:@"gsxqIconLocation"] forState:UIControlStateNormal];
     [companyAddress setTitleColor:RGB(153, 153, 153) forState:UIControlStateNormal];
