@@ -7,6 +7,7 @@
 //
 
 #import "YTMineViewController.h"
+#import "YTPeronalInformationViewController.h"
 
 @interface YTMineViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -22,8 +23,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setupNav];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     
+    //设置透明导航栏
+    self.title = @"个人资料";
+    self.navigationItem.title = nil;
+    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init] forBarMetrics:UIBarMetricsDefault];
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:DefaultColor] forBarMetrics:UIBarMetricsDefault];
+    
+}
+
+#pragma mark =======================ActionEvent=========================
+- (IBAction)peronalInformation:(UIButton *)sender {
+    YTPeronalInformationViewController *personalVc = [[YTPeronalInformationViewController alloc]init];
+    [self.navigationController pushViewController:personalVc animated:YES];
 }
 
 #pragma mark =======================UITableViewDataSource=========================
@@ -37,21 +59,19 @@
     cell.textLabel.text = self.itemTitleArr[indexPath.row];
     cell.imageView.image = self.itemImageArr[indexPath.row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.accessoryView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"porfileIconMore"]];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
 #pragma mark =======================UITableViewDelegate=========================
-
-#pragma mark =======================Setup=========================
-- (void)setupNav{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    //设置透明导航栏
-    self.navigationItem.title = nil;
-    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc]init]];
 }
+#pragma mark =======================Setup=========================
 
+
+#pragma mark =======================Lazy=========================
 -(NSArray *)itemTitleArr
 {
     if (!_itemTitleArr) {
