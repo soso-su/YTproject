@@ -18,4 +18,6 @@ target 'YTproject' do
     pod 'YYModel'
     pod 'RongCloudIM/IMLib'
     pod 'RongCloudIM/IMKit'
+    
+    pod 'FLEX'     #界面调试工具
 end

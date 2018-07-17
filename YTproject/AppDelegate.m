@@ -13,6 +13,7 @@
 #import "YTLoginViewController.h"
 #import "YTNavigationViewController.h"
 #import "YTRongYunRequest.h"
+#import <FLEXManager.h>
 
 @interface AppDelegate ()<DWLaunchScreenDelegate>
 
@@ -22,6 +23,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [self setupDebugTool];
+    
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
@@ -51,6 +55,11 @@
     return YES;
 }
 
+- (void)setupDebugTool{
+#if DEBUG
+    [[FLEXManager sharedManager]showExplorer];
+#endif
+}
 
 - (void)setRongYun{
     [[RCIM sharedRCIM] initWithAppKey:YTRongYun_AppKey];
