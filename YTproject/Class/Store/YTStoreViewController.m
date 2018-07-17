@@ -9,13 +9,10 @@
 #import "YTStoreViewController.h"
 #import "YTChatViewController.h"
 #import "YTSearchBar.h"
-#import "WJItemsControlView.h"
 
-@interface YTStoreViewController ()<UISearchBarDelegate,UIScrollViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface YTStoreViewController ()<UISearchBarDelegate>
 @property (weak, nonatomic) YTSearchBar *searchBar;
 @property (weak, nonatomic) UIButton *messageBtn;
-@property (strong, nonatomic)WJItemsControlView *itemControlView;
-@property (nonatomic ,weak) UIScrollView *scroll;
 
 @end
 
@@ -24,7 +21,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNav];
-    [self setScrollView];
 }
 
 - (void)setNav{
@@ -49,72 +45,6 @@
     [messageBtn addTarget:self action:@selector(chat) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)setScrollView{
-    CGFloat itemH = 44;
-    NSArray *array = @[@"推荐",@"分类1",@"分类1",@"分类1",@"分类1",@"分类1",@"分类1",@"分类1"];
-    UIScrollView *scroll = [[UIScrollView alloc]initWithFrame:CGRectMake(0, itemH, kScreen_Width, kScreen_Height - itemH - self.stateBarAndNavBarHeight)];
-    scroll.delegate = self;
-    scroll.backgroundColor = [UIColor purpleColor];
-    scroll.pagingEnabled = YES;
-    scroll.contentSize = CGSizeMake(kScreen_Width*array.count, 100);
-    for (int i=0; i<array.count; i++) {
-        UICollectionView *collectionView = [self setCollectionView];
-        collectionView.tag = i;
-        [scroll addSubview:collectionView];
-    }
-    [self.view addSubview:scroll];
-    self.scroll = scroll;
-    
-    WJItemsConfig *config = [[WJItemsConfig alloc]init];
-    config.itemWidth = kScreen_Width/4.0;
-    
-    _itemControlView = [[WJItemsControlView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, itemH)];
-    _itemControlView.tapAnimation = YES;
-    _itemControlView.config = config;
-    _itemControlView.titleArray = array;
-    __weak typeof (scroll)weakScrollView = scroll;
-    [_itemControlView setTapItemWithIndex:^(NSInteger index,BOOL animation){
-        
-        
-        [weakScrollView scrollRectToVisible:CGRectMake(index*weakScrollView.frame.size.width, 0.0, weakScrollView.frame.size.width,weakScrollView.frame.size.height) animated:animation];
-        
-    }];
-    [self.view addSubview:_itemControlView];
-}
-
-- (UICollectionView *)setCollectionView{
-    UICollectionViewFlowLayout *flayout = [[UICollectionViewFlowLayout alloc]init];
-    flayout.itemSize = CGSizeMake((kScreen_Width - 40)/2, 218);
-    flayout.minimumInteritemSpacing = 8;
-    flayout.minimumLineSpacing = 8;
-    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, kScreen_Height - 45 - self.stateBarAndNavBarHeight) collectionViewLayout:flayout];
-    collectionView.delegate = self;
-    collectionView.dataSource = self;
-    return collectionView;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 5;
-}
-
-//- (__kindof UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-//    
-//}
-
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    float offset = scrollView.contentOffset.x;
-    offset = offset/CGRectGetWidth(scrollView.frame);
-    [_itemControlView moveToIndex:offset];
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-    float offset = scrollView.contentOffset.x;
-    offset = offset/CGRectGetWidth(scrollView.frame);
-    [_itemControlView endMoveToIndex:offset];
-}
 
 
 
