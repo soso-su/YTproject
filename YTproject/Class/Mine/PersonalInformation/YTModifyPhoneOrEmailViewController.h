@@ -14,7 +14,7 @@ typedef NS_ENUM(NSInteger,ModifyType){
     BindPhone,           //绑定手机
 };
 
-@interface ModifyPhoneOrEmailViewController : YTBaseViewController
+@interface YTModifyPhoneOrEmailViewController : YTBaseViewController
 
 -(instancetype)initWithType:(ModifyType)type;
 

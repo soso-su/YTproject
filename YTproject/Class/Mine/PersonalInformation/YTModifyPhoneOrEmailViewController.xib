@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ModifyPhoneOrEmailViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YTModifyPhoneOrEmailViewController">
             <connections>
                 <outlet property="accountTextField" destination="z30-tQ-17r" id="uch-cf-Jzk"/>
                 <outlet property="vertificationButton" destination="d6G-Q5-sdY" id="Oru-vM-OOj"/>

@@ -7,6 +7,8 @@
 //
 
 #import "YTPeronalInformationViewController.h"
+#import "YTModifyUsernameViewController.h"
+#import "YTModifyPhoneOrEmailViewController.h"
 
 @interface YTPeronalInformationViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -23,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = "个人资料";
+    self.title = @"个人资料";
     
     self.itemDetailTitlesArr = [NSMutableArray arrayWithArray:@[@"13712312312",@"ABC@gmail.com",@"男",@"1994-02-20"]];
     [self.bottomTableView reloadData];
@@ -61,7 +63,25 @@
 }
 
 #pragma mark =======================UITableViewDelegate=========================
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSInteger index = indexPath.row;
+    
+    if (tableView == self.topTableView) {
+        YTModifyUsernameViewController *vc = [[YTModifyUsernameViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else{
+        if (index == 0) { //修改手机号
+            YTModifyPhoneOrEmailViewController *vc = [[YTModifyPhoneOrEmailViewController alloc]initWithType:ModifyPhone];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        
+        if (index == 1) {
+            YTModifyPhoneOrEmailViewController *vc = [[YTModifyPhoneOrEmailViewController alloc]initWithType:ModifyEmail];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        
+    }
+}
 #pragma mark =======================Lazy=========================
 -(NSArray *)itemTitlesArr
 {
