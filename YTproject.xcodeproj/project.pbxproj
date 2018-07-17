@@ -125,7 +125,6 @@
 		F8DE217420FC497F00AC55D8 /* YTTenementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8DE217220FC497F00AC55D8 /* YTTenementViewController.xib */; };
 		F8DE217820FC4EEE00AC55D8 /* YTMediumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DE217620FC4EEE00AC55D8 /* YTMediumViewController.m */; };
 		F8DE217920FC4EEE00AC55D8 /* YTMediumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8DE217720FC4EEE00AC55D8 /* YTMediumViewController.xib */; };
-		F8DE217D20FC972B00AC55D8 /* WJItemsControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DE217B20FC972A00AC55D8 /* WJItemsControlView.m */; };
 		F8DE218120FCA74C00AC55D8 /* StoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DE217F20FCA74C00AC55D8 /* StoreCell.m */; };
 		F8DE218220FCA74C00AC55D8 /* StoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8DE218020FCA74C00AC55D8 /* StoreCell.xib */; };
 		F8DFE4CD20F373FC00F76DFB /* YTCompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DFE4CB20F373FC00F76DFB /* YTCompanyViewController.m */; };
@@ -337,8 +336,6 @@
 		F8DE217520FC4EEE00AC55D8 /* YTMediumViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTMediumViewController.h; sourceTree = "<group>"; };
 		F8DE217620FC4EEE00AC55D8 /* YTMediumViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTMediumViewController.m; sourceTree = "<group>"; };
 		F8DE217720FC4EEE00AC55D8 /* YTMediumViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTMediumViewController.xib; sourceTree = "<group>"; };
-		F8DE217B20FC972A00AC55D8 /* WJItemsControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJItemsControlView.m; sourceTree = "<group>"; };
-		F8DE217C20FC972A00AC55D8 /* WJItemsControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJItemsControlView.h; sourceTree = "<group>"; };
 		F8DE217E20FCA74C00AC55D8 /* StoreCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoreCell.h; sourceTree = "<group>"; };
 		F8DE217F20FCA74C00AC55D8 /* StoreCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoreCell.m; sourceTree = "<group>"; };
 		F8DE218020FCA74C00AC55D8 /* StoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreCell.xib; sourceTree = "<group>"; };
@@ -547,7 +544,6 @@
 		F888F53D20EA2D1700E19554 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				F8DE217A20FC972A00AC55D8 /* WJSegment */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -875,15 +871,6 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		F8DE217A20FC972A00AC55D8 /* WJSegment */ = {
-			isa = PBXGroup;
-			children = (
-				F8DE217C20FC972A00AC55D8 /* WJItemsControlView.h */,
-				F8DE217B20FC972A00AC55D8 /* WJItemsControlView.m */,
-			);
-			path = WJSegment;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1130,7 +1117,6 @@
 				F888D3E820F728AE00128715 /* YTPostFileViewController.m in Sources */,
 				F894251B20EB6D1B008156CC /* UIView+Frame.m in Sources */,
 				F894250920EB6849008156CC /* YTLoginViewController.m in Sources */,
-				F8DE217D20FC972B00AC55D8 /* WJItemsControlView.m in Sources */,
 				F888D40920F8A2EC00128715 /* LocalListCell.m in Sources */,
 				F8135AB420F3388A000F2372 /* SelectTypeView.m in Sources */,
 				F8DE218120FCA74C00AC55D8 /* StoreCell.m in Sources */,
