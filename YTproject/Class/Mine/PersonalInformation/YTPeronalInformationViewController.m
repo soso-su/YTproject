@@ -10,7 +10,7 @@
 #import "YTModifyUsernameViewController.h"
 #import "YTModifyPhoneOrEmailViewController.h"
 #import "SelectSexView.h"
-
+#import "YTDatePickerView.h"
 
 @interface YTPeronalInformationViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -97,6 +97,21 @@
                 }
                 
                 [self.bottomTableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:2 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            }];
+        }
+        
+        if (index == 3) {//修改出生年月
+            
+            NSString *dateStr = self.itemDetailTitlesArr[3];
+            NSDateFormatter *fmt = [[NSDateFormatter alloc]init];
+            [fmt setDateFormat:@"yyyy-MM-dd"];
+            NSDate *defaultDate = [fmt dateFromString:dateStr];
+            [YTDatePickerView showWithDefaultSelectDate:defaultDate SelectBlock:^(NSDate* date) {
+                
+                NSString *newDateStr = [fmt stringFromDate:date];
+                self.itemDetailTitlesArr[3] = newDateStr;
+                
+                [self.bottomTableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:3 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
             }];
         }
     }

@@ -32,12 +32,22 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zYO-hc-nZS">
+                                    <rect key="frame" x="0.0" y="47" width="343" height="1"/>
+                                    <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="HYe-NY-eYV"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="5ry-z6-03Q"/>
                                 <constraint firstItem="6QZ-I5-ZIZ" firstAttribute="centerY" secondItem="8Fp-IQ-8wD" secondAttribute="centerY" id="Tdw-02-bPt"/>
                                 <constraint firstItem="6QZ-I5-ZIZ" firstAttribute="centerX" secondItem="8Fp-IQ-8wD" secondAttribute="centerX" id="dmg-Sj-guN"/>
+                                <constraint firstItem="zYO-hc-nZS" firstAttribute="leading" secondItem="8Fp-IQ-8wD" secondAttribute="leading" id="lme-vy-3Za"/>
+                                <constraint firstAttribute="bottom" secondItem="zYO-hc-nZS" secondAttribute="bottom" id="tmQ-3n-G6X"/>
+                                <constraint firstAttribute="trailing" secondItem="zYO-hc-nZS" secondAttribute="trailing" id="uvE-cD-bdR"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VdI-2m-du1">
@@ -92,6 +102,13 @@
                                         </button>
                                     </subviews>
                                 </stackView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f4X-Ko-eHK">
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="1"/>
+                                    <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="mch-ke-qgB"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -99,7 +116,10 @@
                                 <constraint firstAttribute="height" constant="48" id="DAj-6A-1rb"/>
                                 <constraint firstItem="Fem-Jf-X6y" firstAttribute="leading" secondItem="VdI-2m-du1" secondAttribute="leading" constant="57" id="PvU-xY-2df"/>
                                 <constraint firstAttribute="trailing" secondItem="Fem-Jf-X6y" secondAttribute="trailing" constant="57" id="Qq3-c5-UF2"/>
+                                <constraint firstItem="f4X-Ko-eHK" firstAttribute="leading" secondItem="VdI-2m-du1" secondAttribute="leading" id="Ueu-om-fb2"/>
                                 <constraint firstItem="Fem-Jf-X6y" firstAttribute="centerX" secondItem="VdI-2m-du1" secondAttribute="centerX" id="WWt-7N-HfV"/>
+                                <constraint firstAttribute="trailing" secondItem="f4X-Ko-eHK" secondAttribute="trailing" id="deN-2v-ahH"/>
+                                <constraint firstItem="f4X-Ko-eHK" firstAttribute="top" secondItem="VdI-2m-du1" secondAttribute="top" id="lm4-Za-zgC"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CSQ-KK-w13">
