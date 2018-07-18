@@ -38,6 +38,9 @@
                                 <constraint firstAttribute="height" constant="62" id="JSM-DQ-2FM"/>
                             </constraints>
                             <state key="normal" image="porfileIconHead"/>
+                            <connections>
+                                <action selector="checkUserIcon:" destination="-1" eventType="touchUpInside" id="BbA-Sy-gZt"/>
+                            </connections>
                         </button>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="20" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lHv-Vu-hSP">
                             <rect key="frame" x="0.0" y="100" width="345" height="20"/>

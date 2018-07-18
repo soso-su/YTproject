@@ -1238,8 +1238,12 @@
 				F888F50E20EA27B800E19554 /* LaunchScreen.storyboard in Resources */,
 				A728270520FDF31300244CAA /* SelectSexView.xib in Resources */,
 				F894252E20ECCD7F008156CC /* YTForgetPswdViewController.xib in Resources */,
+<<<<<<< HEAD
+				F8DE21A020FDE4A300AC55D8 /* NewProductCell.xib in Resources */,
+=======
 				A728270A20FEE2F400244CAA /* YTDatePickerView.xib in Resources */,
 				A728272120FF282B00244CAA /* YTResumeHeaderTableViewCell.xib in Resources */,
+>>>>>>> e3fa0fe0f23fab05ca8c54bbe1ad9a50a839e157
 				F894250A20EB6849008156CC /* YTLoginViewController.xib in Resources */,
 				F888D3D520F6EB4C00128715 /* YTEducaCollectViewController.xib in Resources */,
 				F888D3C620F5E78E00128715 /* YTChatViewController.xib in Resources */,
@@ -1256,7 +1260,11 @@
 				F8DE219620FDD0C900AC55D8 /* YTMoreViewController.xib in Resources */,
 				F8F1460120F2609800E55BE7 /* YTWorkSearchTableViewController.xib in Resources */,
 				F888D3DA20F6F12B00128715 /* YTEdViewCell.xib in Resources */,
+<<<<<<< HEAD
+				F8DE219120FDC7FC00AC55D8 /* YTGeneralViewController.xib in Resources */,
+=======
 				A728272720FF2BC600244CAA /* YTMedalCollectionViewCell.xib in Resources */,
+>>>>>>> e3fa0fe0f23fab05ca8c54bbe1ad9a50a839e157
 				F888D3F320F83A0100128715 /* YTFileDetailsViewController.xib in Resources */,
 				F8DE217920FC4EEE00AC55D8 /* YTMediumViewController.xib in Resources */,
 				F894253B20EDCBA2008156CC /* WorkTableViewCell.xib in Resources */,
@@ -1408,8 +1416,12 @@
 				F8135AAE20F2F97D000F2372 /* SelectEducationView.m in Sources */,
 				F888D38320F4A9AE00128715 /* YTCompanyMessageController.m in Sources */,
 				A728269E20FD885C00244CAA /* YNPageScrollView.m in Sources */,
+<<<<<<< HEAD
+				F8DE21AD20FF1A6B00AC55D8 /* BuyView.m in Sources */,
+=======
 				A72826AE20FDDD6200244CAA /* YTModifyUsernameViewController.m in Sources */,
 				A728271320FF16D200244CAA /* YTCheckIconViewController.m in Sources */,
+>>>>>>> e3fa0fe0f23fab05ca8c54bbe1ad9a50a839e157
 				F888D40E20F8AED500128715 /* YTActiveDetailsViewController.m in Sources */,
 				F888F53620EA2BDF00E19554 /* YTBaseViewController.m in Sources */,
 				F894253520EDC655008156CC /* WorkHeadCollectionViewCell.m in Sources */,
@@ -1444,7 +1456,11 @@
 				F888F54420EA2E6C00E19554 /* YTTabBarViewController.m in Sources */,
 				F894254120EE27CF008156CC /* UIImage+Color.m in Sources */,
 				F8135AB820F34649000F2372 /* YTWorkDetailViewController.m in Sources */,
+<<<<<<< HEAD
+				F8DE218B20FD8A3500AC55D8 /* YTRecommendViewController.m in Sources */,
+=======
 				A728272B20FF30ED00244CAA /* YTResumeVideoTableViewCell.m in Sources */,
+>>>>>>> e3fa0fe0f23fab05ca8c54bbe1ad9a50a839e157
 				A728269D20FD885C00244CAA /* YNPageCollectionView.m in Sources */,
 				F888D3C520F5E78E00128715 /* YTChatViewController.m in Sources */,
 				F894253E20EE269E008156CC /* YTSearchBar.m in Sources */,
