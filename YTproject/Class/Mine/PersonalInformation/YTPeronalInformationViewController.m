@@ -9,6 +9,8 @@
 #import "YTPeronalInformationViewController.h"
 #import "YTModifyUsernameViewController.h"
 #import "YTModifyPhoneOrEmailViewController.h"
+#import "SelectSexView.h"
+
 
 @interface YTPeronalInformationViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -27,12 +29,9 @@
     
     self.title = @"个人资料";
     
-    self.itemDetailTitlesArr = [NSMutableArray arrayWithArray:@[@"13712312312",@"ABC@gmail.com",@"男",@"1994-02-20"]];
+    [self.itemDetailTitlesArr addObjectsFromArray:@[@"13712312312",@"ABC@gmail.com",@"男",@"1994-02-20"]];
     [self.bottomTableView reloadData];
 }
-
-
-
 
 #pragma mark =======================UITableViewDataSource=========================
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -75,11 +74,31 @@
             [self.navigationController pushViewController:vc animated:YES];
         }
         
-        if (index == 1) {
+        if (index == 1) { //修改邮箱
             YTModifyPhoneOrEmailViewController *vc = [[YTModifyPhoneOrEmailViewController alloc]initWithType:ModifyEmail];
             [self.navigationController pushViewController:vc animated:YES];
         }
         
+        if (index == 2){ //修改性别
+            NSString *sex = self.itemDetailTitlesArr[2];
+            SexType type;
+            
+            if ([sex isEqualToString:@"男"]) {
+                type = Boy;
+            }else{
+                type = Girl;
+            }
+            
+            [SelectSexView showWithDefaultSelectIndex:type SelectBlock:^(SexType sexType) {
+                if (sexType == Boy) {
+                    self.itemDetailTitlesArr[2] = @"男";
+                }else{
+                    self.itemDetailTitlesArr[2] = @"女";
+                }
+                
+                [self.bottomTableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:2 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+            }];
+        }
     }
 }
 #pragma mark =======================Lazy=========================
