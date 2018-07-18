@@ -33,7 +33,7 @@
     
     UIView *headView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, 30)];
     CustomButton *newBtn = [CustomButton buttonWithType:UIButtonTypeCustom];
-    newBtn.type = 2;
+    newBtn.customButtonType = 2;
     [newBtn setTitle:@"最新" forState:UIControlStateNormal];
     [newBtn setImage:[UIImage imageNamed:@"localIconArrows"] forState:UIControlStateNormal];
     [newBtn sizeToFit];
@@ -42,7 +42,7 @@
     newBtn.centerY = headView.height/2;
     
     CustomButton *hotBtn = [CustomButton buttonWithType:UIButtonTypeCustom];
-    hotBtn.type = 2;
+    hotBtn.customButtonType = 2;
     [hotBtn setTitle:@"热度" forState:UIControlStateNormal];
     [hotBtn setImage:[UIImage imageNamed:@"localIconArrowsPre"] forState:UIControlStateNormal];
     [hotBtn setTitleColor:DefaultColor forState:UIControlStateNormal];

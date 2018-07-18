@@ -9,6 +9,7 @@
 #import "TYConstants.h"
 #import "YTTool.h"
 #import "UIView+Frame.h"
+#import "UIImage+Color.h"
 #import "Config.h"
 #import "YTHttpTool.h"
 

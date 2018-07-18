@@ -56,8 +56,11 @@
 }
 
 - (void)setupDebugTool{
+    
 #if DEBUG
+//    [[[NSBundle alloc]initWithPath:@"/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle"]load];
     [[FLEXManager sharedManager]showExplorer];
+    
 #endif
 }
 
