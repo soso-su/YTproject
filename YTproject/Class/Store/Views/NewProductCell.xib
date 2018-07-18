@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="NewProductCell">
+            <rect key="frame" x="0.0" y="0.0" width="168" height="248"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="168" height="248"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shopPic1" translatesAutoresizingMaskIntoConstraints="NO" id="sJB-6O-rXb">
+                        <rect key="frame" x="12" y="12" width="144" height="144"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="多肉植物026凌波仙子" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKF-2X-JlV">
+                        <rect key="frame" x="12" y="169" width="144" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥26.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJM-Ig-UH2">
+                        <rect key="frame" x="12" y="219" width="43.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="1" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="包邮" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhP-Ec-5b9">
+                        <rect key="frame" x="12" y="193" width="22.5" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1964人付款" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EN3-W6-wzz">
+                        <rect key="frame" x="95.5" y="220" width="61" height="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="EN3-W6-wzz" firstAttribute="centerY" secondItem="AJM-Ig-UH2" secondAttribute="centerY" id="12n-dl-zxN"/>
+                <constraint firstItem="HhP-Ec-5b9" firstAttribute="top" secondItem="SKF-2X-JlV" secondAttribute="bottom" constant="8" id="8ii-QX-Cpu"/>
+                <constraint firstItem="sJB-6O-rXb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="Gul-fh-WkA"/>
+                <constraint firstItem="SKF-2X-JlV" firstAttribute="top" secondItem="sJB-6O-rXb" secondAttribute="bottom" constant="13" id="HAY-JU-qa3"/>
+                <constraint firstAttribute="bottom" secondItem="AJM-Ig-UH2" secondAttribute="bottom" constant="13" id="Iqc-eb-pdt"/>
+                <constraint firstItem="AJM-Ig-UH2" firstAttribute="top" secondItem="HhP-Ec-5b9" secondAttribute="bottom" constant="12" id="bd2-4J-a8E"/>
+                <constraint firstItem="SKF-2X-JlV" firstAttribute="trailing" secondItem="sJB-6O-rXb" secondAttribute="trailing" id="gIX-WR-peV"/>
+                <constraint firstAttribute="trailing" secondItem="sJB-6O-rXb" secondAttribute="trailing" constant="12" id="glH-PE-Pq8"/>
+                <constraint firstItem="EN3-W6-wzz" firstAttribute="trailing" secondItem="sJB-6O-rXb" secondAttribute="trailing" id="lY5-Or-ukH"/>
+                <constraint firstItem="SKF-2X-JlV" firstAttribute="leading" secondItem="sJB-6O-rXb" secondAttribute="leading" id="qvb-ou-j28"/>
+                <constraint firstItem="sJB-6O-rXb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="tMb-DW-LUC"/>
+                <constraint firstItem="AJM-Ig-UH2" firstAttribute="leading" secondItem="SKF-2X-JlV" secondAttribute="leading" id="wJZ-LK-tUJ"/>
+                <constraint firstItem="HhP-Ec-5b9" firstAttribute="leading" secondItem="SKF-2X-JlV" secondAttribute="leading" id="xip-rz-DKG"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <size key="customSize" width="180" height="248"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="hr_CornerRadius">
+                    <real key="value" value="6"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="99" y="85"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="shopPic1" width="143" height="144"/>
+    </resources>
+</document>

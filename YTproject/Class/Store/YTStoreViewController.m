@@ -9,6 +9,8 @@
 #import "YTStoreViewController.h"
 #import "YTChatViewController.h"
 #import "YTSearchBar.h"
+#import "YTRecommendViewController.h"
+#import "YTGeneralViewController.h"
 
 @interface YTStoreViewController ()<UISearchBarDelegate>
 @property (weak, nonatomic) YTSearchBar *searchBar;
@@ -48,14 +50,15 @@
 
 
 
-
 - (void)chat{
-    YTChatViewController *chat = [[YTChatViewController alloc] initWithConversationType:ConversationType_PRIVATE
-                                                                               targetId:@"yt1"];
-    chat.title = @"英途客服";
-    chat.conversationType = ConversationType_PRIVATE;
-    chat.targetId = @"yt1";
-    [self.navigationController pushViewController:chat animated:YES];
+    YTRecommendViewController *recommend = [[YTRecommendViewController alloc]init];
+    [self.navigationController pushViewController:recommend animated:YES];
+//    YTChatViewController *chat = [[YTChatViewController alloc] initWithConversationType:ConversationType_PRIVATE
+//                                                                               targetId:@"yt1"];
+//    chat.title = @"英途客服";
+//    chat.conversationType = ConversationType_PRIVATE;
+//    chat.targetId = @"yt1";
+//    [self.navigationController pushViewController:chat animated:YES];
 }
 
 
