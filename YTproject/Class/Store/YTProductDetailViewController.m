@@ -8,12 +8,15 @@
 
 #import "YTProductDetailViewController.h"
 #import "ShareView.h"
+#import "BuyView.h"
 
-@interface YTProductDetailViewController ()<ShareViewDelegate>
+@interface YTProductDetailViewController ()<ShareViewDelegate,BuyViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *imgBgView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imgConstranint;
 @property (weak, nonatomic) IBOutlet UILabel *productLabel;
 @property (strong, nonatomic)ShareView *shareView;
+@property (strong, nonatomic)BuyView *buyView;
+
 
 @end
 
@@ -39,6 +42,7 @@
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"productNavCart"] style:UIBarButtonItemStylePlain target:self action:@selector(shoppingCar)];
     self.navigationItem.rightBarButtonItem = rightItem;
     [[YTTool getWindow] addSubview:self.shareView];
+    [[YTTool getWindow] addSubview:self.buyView];
 }
 
 - (void)shoppingCar{
@@ -51,10 +55,19 @@
 - (IBAction)add:(UIButton *)sender {
 }
 - (IBAction)buy:(UIButton *)sender {
+    self.buyView.hidden = NO;
 }
 
 - (void)clickCloseBtn{
     self.shareView.hidden = YES;
+}
+
+- (void)deleteBuyView{
+    self.buyView.hidden = YES;
+}
+
+- (void)comfirmBuy{
+    self.buyView.hidden = YES;
 }
 
 - (ShareView *)shareView{
@@ -66,6 +79,16 @@
         _shareView.delegate = self;
     }
     return _shareView;
+}
+
+- (BuyView *)buyView{
+    if (!_buyView) {
+        _buyView = [[BuyView alloc]init];
+        _buyView.delegate = self;
+        _buyView.backgroundColor = [UIColor colorWithWhite:50.0/255.0 alpha:0.5];
+        _buyView.hidden = YES;
+    }
+    return _buyView;
 }
 
 
