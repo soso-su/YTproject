@@ -15,7 +15,7 @@ typedef NS_ENUM(NSInteger,SexType){
 
 typedef void(^SelectedBlock)(SexType);
 
-@interface SelectSexView : UIView
+@interface YTSelectSexView : UIView
 
 @property (nonatomic,assign)SexType sexType;
 

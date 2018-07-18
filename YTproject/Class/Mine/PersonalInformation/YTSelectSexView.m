@@ -6,9 +6,9 @@
 //  Copyright © 2018年 suhuahao. All rights reserved.
 //
 
-#import "SelectSexView.h"
+#import "YTSelectSexView.h"
 
-@interface SelectSexView()
+@interface YTSelectSexView()
 
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
 @property (weak, nonatomic) IBOutlet UIButton *boyButton;
@@ -18,10 +18,10 @@
 
 @end
 
-@implementation SelectSexView
+@implementation YTSelectSexView
 
 +(void)showWithDefaultSelectIndex:(SexType)sexType SelectBlock:(SelectedBlock)block{
-    SelectSexView *selectSexView = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass([SelectSexView class]) owner:self options:nil].lastObject;
+    YTSelectSexView *selectSexView = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass([YTSelectSexView class]) owner:self options:nil].lastObject;
     selectSexView.selectedBlock = block;
     selectSexView.sexType = sexType;
     selectSexView.frame = [UIScreen mainScreen].bounds;
