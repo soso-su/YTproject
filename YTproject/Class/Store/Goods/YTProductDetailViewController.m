@@ -7,6 +7,7 @@
 //
 
 #import "YTProductDetailViewController.h"
+#import "YTCartViewController.h"
 #import "ShareView.h"
 #import "BuyView.h"
 
@@ -40,13 +41,15 @@
     self.imgConstranint.constant = 60+imgArray.count*imgH;
     
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"productNavCart"] style:UIBarButtonItemStylePlain target:self action:@selector(shoppingCar)];
+    
     self.navigationItem.rightBarButtonItem = rightItem;
     [[YTTool getWindow] addSubview:self.shareView];
     [[YTTool getWindow] addSubview:self.buyView];
 }
 
 - (void)shoppingCar{
-    
+    YTCartViewController *cart = [[YTCartViewController alloc]init];
+    [self.navigationController pushViewController:cart animated:YES];
 }
 
 - (IBAction)share:(UIButton *)sender {
