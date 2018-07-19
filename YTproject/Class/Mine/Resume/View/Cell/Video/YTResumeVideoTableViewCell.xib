@@ -18,7 +18,21 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="370" height="187.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fh7-f6-pbO">
+                        <rect key="frame" x="15.5" y="10" width="339" height="167.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Fh7-f6-pbO" secondAttribute="trailing" constant="15.5" id="6Uf-Tq-pcB"/>
+                    <constraint firstItem="Fh7-f6-pbO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="CUd-2Z-ME3"/>
+                    <constraint firstItem="Fh7-f6-pbO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15.5" id="LS8-7t-9xH"/>
+                    <constraint firstAttribute="bottom" secondItem="Fh7-f6-pbO" secondAttribute="bottom" constant="10" id="VFQ-AC-lGz"/>
+                </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="number" keyPath="hr_CornerRadius">

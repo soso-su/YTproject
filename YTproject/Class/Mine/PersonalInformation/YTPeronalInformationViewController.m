@@ -13,6 +13,7 @@
 #import "YTDatePickerView.h"
 #import "YTCheckIconViewController.h"
 
+
 @interface YTPeronalInformationViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *topTableView;
@@ -41,6 +42,8 @@
     [self.navigationController pushViewController:vc animated:YES];
     
 }
+
+
 
 #pragma mark =======================UITableViewDataSource=========================
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

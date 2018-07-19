@@ -54,10 +54,12 @@
         self.imageView.y = 0;
         self.imageView.centerX = self.width/2;
         
-        //imageView最大宽度不超过button宽度
-        self.imageView.width = self.imageView.width > self.width ?self.width:self.imageView.width;
         //imageView最大高度不超过压缩后的高度
-        self.imageView.height = self.imageView.height > imageViewHeight?imageViewHeight:self.imageView.height;
+        self.imageView.height = imageViewHeight;
+        self.imageView.width = self.imageView.height >self.width ? self.width:self.imageView.width;
+        //imageView最大宽度不超过button宽度
+//        self.imageView.width = self.imageView.width > self.width ?self.width:self.imageView.width;
+        
         
         //调整文字
         self.titleLabel.x = 0;
