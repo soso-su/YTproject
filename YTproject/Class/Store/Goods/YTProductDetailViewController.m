@@ -56,8 +56,11 @@
     self.shareView.hidden = NO;
 }
 - (IBAction)add:(UIButton *)sender {
+    self.buyView.title = @"加入购物车";
+    self.buyView.hidden = NO;
 }
 - (IBAction)buy:(UIButton *)sender {
+    self.buyView.title = @"立即购买";
     self.buyView.hidden = NO;
 }
 
@@ -88,7 +91,7 @@
     if (!_buyView) {
         _buyView = [[BuyView alloc]init];
         _buyView.delegate = self;
-        _buyView.backgroundColor = [UIColor colorWithWhite:50.0/255.0 alpha:0.5];
+        _buyView.backgroundColor = [UIColor colorWithWhite:50.0/255.0 alpha:0.4];
         _buyView.hidden = YES;
     }
     return _buyView;

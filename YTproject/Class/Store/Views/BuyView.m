@@ -15,7 +15,7 @@
 
 @property(nonatomic, strong) UIView *bgView;
 @property(nonatomic, strong) UILabel *countLabel;
-
+@property (nonatomic, strong) UILabel *titleLabel;
 @property(nonatomic, strong) UICollectionView *collectionView;
 
 @end
@@ -61,6 +61,7 @@
     [titleLabel sizeToFit];
     titleLabel.frame = CGRectMake(margin, 0, titleLabel.width, titleLabel.height);
     [bgView addSubview:titleLabel];
+    self.titleLabel = titleLabel;
     titleLabel.centerX = bgView.width/2;
     titleLabel.centerY = deleteBtn.centerY;
     
@@ -194,6 +195,11 @@
     if (self.delegate) {
         [self.delegate deleteBuyView];
     }
+}
+
+- (void)setTitle:(NSString *)title{
+    self.titleLabel.text = title;
+    [self.titleLabel sizeToFit];
 }
 
 @end

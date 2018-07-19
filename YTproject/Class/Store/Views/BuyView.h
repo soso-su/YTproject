@@ -19,6 +19,8 @@
 
 @property (nonatomic, strong) NSArray *dataSorce;
 
+@property (nonatomic, strong) NSString *title;
+
 @property (nonatomic, assign)id <BuyViewDelegate>delegate;
 
 @end

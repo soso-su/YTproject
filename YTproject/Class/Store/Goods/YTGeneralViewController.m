@@ -7,6 +7,7 @@
 //
 
 #import "YTGeneralViewController.h"
+#import "YTProductDetailViewController.h"
 #import "StoreCell.h"
 #define cellID  @"storeCell"
 
@@ -42,6 +43,11 @@
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     return UIEdgeInsetsMake(15, 15, 15, 15);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    YTProductDetailViewController *product = [[YTProductDetailViewController alloc]init];
+    [self.navigationController pushViewController:product animated:YES];
 }
 
 
