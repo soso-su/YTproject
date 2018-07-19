@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="KGk-i7-Jjw" customClass="AddressCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="114.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XlM-zS-lCE">
+                        <rect key="frame" x="15" y="10" width="290" height="104.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收货人：陈小姐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vl0-9R-O7M">
+                                <rect key="frame" x="12" y="16" width="100" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13548002210" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWg-wh-wf6">
+                                <rect key="frame" x="193.5" y="16" width="90.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址：广东省广州市天河区林和西路233号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XW7-XZ-Oi5">
+                                <rect key="frame" x="12" y="47" width="193" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eU1-tw-NwU" userLabel="line">
+                                <rect key="frame" x="0.0" y="71" width="290" height="1"/>
+                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Rsw-MF-YWB"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyG-8r-rKW">
+                                <rect key="frame" x="12" y="82" width="65" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="  默认地址" image="adressRadio">
+                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="selected" image="adressRadioPre"/>
+                                <connections>
+                                    <action selector="selectDefault:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ZMy-n5-n3L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pD7-VA-fb4">
+                                <rect key="frame" x="254" y="76" width="30" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="删除">
+                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteAddress:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3Vn-aW-5vM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWJ-Wq-FLZ">
+                                <rect key="frame" x="209" y="76" width="30" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="编辑">
+                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="edit:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="zJb-gW-GUE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="qyG-8r-rKW" secondAttribute="bottom" constant="8.5" id="4NA-O8-hAO"/>
+                            <constraint firstAttribute="trailing" secondItem="gWg-wh-wf6" secondAttribute="trailing" constant="6" id="A2L-yl-YXd"/>
+                            <constraint firstItem="XW7-XZ-Oi5" firstAttribute="top" secondItem="vl0-9R-O7M" secondAttribute="bottom" constant="14" id="DSv-jv-9ch"/>
+                            <constraint firstItem="gWg-wh-wf6" firstAttribute="centerY" secondItem="vl0-9R-O7M" secondAttribute="centerY" id="EBO-Gc-006"/>
+                            <constraint firstItem="eU1-tw-NwU" firstAttribute="leading" secondItem="XlM-zS-lCE" secondAttribute="leading" id="Okx-0N-NOa"/>
+                            <constraint firstItem="pD7-VA-fb4" firstAttribute="leading" secondItem="cWJ-Wq-FLZ" secondAttribute="trailing" constant="15" id="PeZ-lT-nIM"/>
+                            <constraint firstItem="vl0-9R-O7M" firstAttribute="leading" secondItem="XlM-zS-lCE" secondAttribute="leading" constant="12" id="RQX-dy-h43"/>
+                            <constraint firstItem="XW7-XZ-Oi5" firstAttribute="leading" secondItem="vl0-9R-O7M" secondAttribute="leading" id="WUJ-Fi-7ur"/>
+                            <constraint firstItem="pD7-VA-fb4" firstAttribute="centerY" secondItem="qyG-8r-rKW" secondAttribute="centerY" id="YQI-N2-fv4"/>
+                            <constraint firstAttribute="trailing" secondItem="eU1-tw-NwU" secondAttribute="trailing" id="eXh-Ny-Idp"/>
+                            <constraint firstItem="vl0-9R-O7M" firstAttribute="top" secondItem="XlM-zS-lCE" secondAttribute="top" constant="16" id="gJP-lw-BXn"/>
+                            <constraint firstItem="qyG-8r-rKW" firstAttribute="top" secondItem="eU1-tw-NwU" secondAttribute="bottom" constant="10" id="gUr-U8-GqK"/>
+                            <constraint firstItem="cWJ-Wq-FLZ" firstAttribute="centerY" secondItem="pD7-VA-fb4" secondAttribute="centerY" id="kID-Af-9Df"/>
+                            <constraint firstItem="qyG-8r-rKW" firstAttribute="leading" secondItem="XW7-XZ-Oi5" secondAttribute="leading" id="nzJ-0M-XPB"/>
+                            <constraint firstItem="eU1-tw-NwU" firstAttribute="top" secondItem="XW7-XZ-Oi5" secondAttribute="bottom" constant="12" id="q50-Du-pjx"/>
+                            <constraint firstItem="pD7-VA-fb4" firstAttribute="trailing" secondItem="gWg-wh-wf6" secondAttribute="trailing" id="vJl-zr-5Ao"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="hr_CornerRadius">
+                                <real key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="XlM-zS-lCE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="K7z-pF-Xaj"/>
+                    <constraint firstAttribute="bottom" secondItem="XlM-zS-lCE" secondAttribute="bottom" id="cng-Wb-0h8"/>
+                    <constraint firstAttribute="trailing" secondItem="XlM-zS-lCE" secondAttribute="trailing" constant="15" id="pTI-8m-hxz"/>
+                    <constraint firstItem="XlM-zS-lCE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="qwA-tb-saN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <point key="canvasLocation" x="34" y="23"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="adressRadio" width="13" height="13"/>
+        <image name="adressRadioPre" width="12" height="12"/>
+    </resources>
+</document>

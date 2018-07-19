@@ -13,15 +13,62 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="StoreCell">
-            <rect key="frame" x="0.0" y="0.0" width="159" height="137"/>
+            <rect key="frame" x="0.0" y="0.0" width="175" height="232"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="159" height="137"/>
+                <rect key="frame" x="0.0" y="0.0" width="175" height="232"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jrE-1H-4V7">
+                        <rect key="frame" x="0.0" y="0.0" width="175" height="232"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shopPic1" translatesAutoresizingMaskIntoConstraints="NO" id="1JQ-wz-n4S">
+                                <rect key="frame" x="15" y="15" width="145.5" height="144"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="多肉植物026凌波仙子" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hO-8O-zgu">
+                                <rect key="frame" x="15" y="172" width="145.5" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥26.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3c-63-3Vx">
+                                <rect key="frame" x="15" y="201" width="43.5" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="1" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="m3c-63-3Vx" firstAttribute="top" secondItem="3hO-8O-zgu" secondAttribute="bottom" constant="13" id="7cO-J8-rgq"/>
+                            <constraint firstItem="3hO-8O-zgu" firstAttribute="trailing" secondItem="1JQ-wz-n4S" secondAttribute="trailing" id="YK5-L7-icA"/>
+                            <constraint firstAttribute="trailing" secondItem="1JQ-wz-n4S" secondAttribute="trailing" constant="15" id="baW-a5-WYl"/>
+                            <constraint firstItem="1JQ-wz-n4S" firstAttribute="top" secondItem="jrE-1H-4V7" secondAttribute="top" constant="15" id="c36-Ja-q4g"/>
+                            <constraint firstItem="m3c-63-3Vx" firstAttribute="leading" secondItem="3hO-8O-zgu" secondAttribute="leading" id="li4-Qx-8No"/>
+                            <constraint firstItem="1JQ-wz-n4S" firstAttribute="leading" secondItem="jrE-1H-4V7" secondAttribute="leading" constant="15" id="oWg-a5-kxV"/>
+                            <constraint firstItem="3hO-8O-zgu" firstAttribute="top" secondItem="1JQ-wz-n4S" secondAttribute="bottom" constant="13" id="sbR-MS-eLr"/>
+                            <constraint firstItem="3hO-8O-zgu" firstAttribute="leading" secondItem="1JQ-wz-n4S" secondAttribute="leading" id="zmw-Fe-2zZ"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="hr_CornerRadius">
+                                <real key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
             </view>
+            <constraints>
+                <constraint firstItem="jrE-1H-4V7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="CVx-6b-EIQ"/>
+                <constraint firstAttribute="trailing" secondItem="jrE-1H-4V7" secondAttribute="trailing" id="Wzl-z4-BHX"/>
+                <constraint firstItem="jrE-1H-4V7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ppF-O4-nld"/>
+                <constraint firstAttribute="bottom" secondItem="jrE-1H-4V7" secondAttribute="bottom" id="xLK-eQ-8Z8"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
-            <size key="customSize" width="159" height="137"/>
-            <point key="canvasLocation" x="88.5" y="97.5"/>
+            <size key="customSize" width="175" height="231"/>
+            <point key="canvasLocation" x="96.5" y="144.5"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="shopPic1" width="143" height="144"/>
+    </resources>
 </document>

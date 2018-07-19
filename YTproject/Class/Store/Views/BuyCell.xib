@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="BuyCell">
+            <rect key="frame" x="0.0" y="0.0" width="86" height="42"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="86" height="42"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3M-ZE-bZt">
+                        <rect key="frame" x="0.0" y="0.0" width="86" height="42"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="规格1" backgroundImage="productIcon3">
+                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <state key="selected" backgroundImage="productIcon3Pre">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nWN-aJ-m53">
+                        <rect key="frame" x="0.0" y="0.0" width="86" height="42"/>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="nWN-aJ-m53" secondAttribute="trailing" id="H8c-XX-Ikv"/>
+                <constraint firstAttribute="trailing" secondItem="c3M-ZE-bZt" secondAttribute="trailing" id="JcN-5M-wgU"/>
+                <constraint firstItem="c3M-ZE-bZt" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="LCc-6O-40E"/>
+                <constraint firstItem="nWN-aJ-m53" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="NFB-UT-29Y"/>
+                <constraint firstAttribute="bottom" secondItem="c3M-ZE-bZt" secondAttribute="bottom" id="dwD-IL-iyM"/>
+                <constraint firstItem="nWN-aJ-m53" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="kYm-wr-Hik"/>
+                <constraint firstItem="c3M-ZE-bZt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="nbY-7j-mK3"/>
+                <constraint firstAttribute="bottom" secondItem="nWN-aJ-m53" secondAttribute="bottom" id="r8t-0q-t5I"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <size key="customSize" width="86" height="42"/>
+            <connections>
+                <outlet property="titleBtn" destination="c3M-ZE-bZt" id="Hda-TV-pNx"/>
+            </connections>
+            <point key="canvasLocation" x="109" y="66"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="productIcon3" width="67" height="25"/>
+        <image name="productIcon3Pre" width="67" height="25"/>
+    </resources>
+</document>

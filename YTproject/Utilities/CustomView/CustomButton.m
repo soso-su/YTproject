@@ -41,9 +41,30 @@
 - (void)setupButton{
     
     if (self.customButtonType == ImageUpLabelDown) { //图片在上，文字在下
-       
-        self.titleEdgeInsets = UIEdgeInsetsMake(0, -self.imageView.width, -self.imageView.height, 0);
-        self.imageEdgeInsets = UIEdgeInsetsMake(-self.imageView.height - self.margin, 0, 0, -self.titleLabel.intrinsicContentSize.width);
+        //以button的高度为基准，在确保label文字能正确显示的前提下，对Imageview进行压缩
+        
+        CGFloat height = self.height;  //button高度
+        [self.titleLabel sizeToFit];
+        CGFloat labelHeight = self.titleLabel.height; //label高度，label需要完整显示
+        CGFloat imageViewHeight = height - labelHeight - self.margin;//imageView压缩后的高度
+        
+        //调整图片
+        [self.imageView sizeToFit];
+        self.imageView.x = 0;
+        self.imageView.y = 0;
+        self.imageView.centerX = self.width/2;
+        
+        //imageView最大高度不超过压缩后的高度
+        self.imageView.height = imageViewHeight;
+        self.imageView.width = self.imageView.height >self.width ? self.width:self.imageView.width;
+        //imageView最大宽度不超过button宽度
+//        self.imageView.width = self.imageView.width > self.width ?self.width:self.imageView.width;
+        
+        
+        //调整文字
+        self.titleLabel.x = 0;
+        self.titleLabel.y = self.imageView.height + self.margin;
+        self.titleLabel.centerX = self.width/2;
         
     } else if (self.customButtonType == ImageLeftLabelRight){
         [self.titleLabel sizeToFit];

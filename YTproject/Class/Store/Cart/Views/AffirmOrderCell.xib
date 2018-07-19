@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="97" id="KGk-i7-Jjw" customClass="AffirmOrderCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="98"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="97.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="productPic2" translatesAutoresizingMaskIntoConstraints="NO" id="IHR-IR-92S">
+                        <rect key="frame" x="12" y="12" width="67" height="73.5"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="多肉植物026凌波仙子" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Klh-Kl-15s">
+                        <rect key="frame" x="91" y="12" width="130.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1200积分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1E-on-9eK">
+                        <rect key="frame" x="91" y="71" width="52.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="1" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="×1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZz-wc-XKd">
+                        <rect key="frame" x="155.5" y="71" width="13.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="IHR-IR-92S" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="3IK-W6-Jpi"/>
+                    <constraint firstItem="Klh-Kl-15s" firstAttribute="leading" secondItem="IHR-IR-92S" secondAttribute="trailing" constant="12" id="5V1-UR-QIP"/>
+                    <constraint firstItem="IHR-IR-92S" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="Kxy-DP-SjH"/>
+                    <constraint firstAttribute="bottom" secondItem="IHR-IR-92S" secondAttribute="bottom" constant="12" id="NAX-GA-jay"/>
+                    <constraint firstItem="P1E-on-9eK" firstAttribute="bottom" secondItem="IHR-IR-92S" secondAttribute="bottom" id="VNE-gv-vu6"/>
+                    <constraint firstItem="cZz-wc-XKd" firstAttribute="leading" secondItem="P1E-on-9eK" secondAttribute="trailing" constant="12" id="Vxf-OK-9wu"/>
+                    <constraint firstItem="P1E-on-9eK" firstAttribute="leading" secondItem="Klh-Kl-15s" secondAttribute="leading" id="XGQ-oT-ZBh"/>
+                    <constraint firstItem="Klh-Kl-15s" firstAttribute="top" secondItem="IHR-IR-92S" secondAttribute="top" id="daP-Cs-cua"/>
+                    <constraint firstItem="cZz-wc-XKd" firstAttribute="centerY" secondItem="P1E-on-9eK" secondAttribute="centerY" id="i0s-Yj-l45"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <point key="canvasLocation" x="91" y="34.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="productPic2" width="67" height="67"/>
+    </resources>
+</document>

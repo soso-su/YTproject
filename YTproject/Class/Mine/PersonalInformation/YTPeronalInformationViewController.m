@@ -9,8 +9,10 @@
 #import "YTPeronalInformationViewController.h"
 #import "YTModifyUsernameViewController.h"
 #import "YTModifyPhoneOrEmailViewController.h"
-#import "SelectSexView.h"
+#import "YTSelectSexView.h"
 #import "YTDatePickerView.h"
+#import "YTCheckIconViewController.h"
+
 
 @interface YTPeronalInformationViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -32,6 +34,16 @@
     [self.itemDetailTitlesArr addObjectsFromArray:@[@"13712312312",@"ABC@gmail.com",@"男",@"1994-02-20"]];
     [self.bottomTableView reloadData];
 }
+
+#pragma mark =======================ActionEvent=========================
+- (IBAction)checkUserIcon:(UIButton *)sender {
+    
+    YTCheckIconViewController *vc = [[YTCheckIconViewController alloc]initWithIcon:sender.imageView.image];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
+
+
 
 #pragma mark =======================UITableViewDataSource=========================
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -89,7 +101,7 @@
                 type = Girl;
             }
             
-            [SelectSexView showWithDefaultSelectIndex:type SelectBlock:^(SexType sexType) {
+            [YTSelectSexView showWithDefaultSelectIndex:type SelectBlock:^(SexType sexType) {
                 if (sexType == Boy) {
                     self.itemDetailTitlesArr[2] = @"男";
                 }else{

@@ -8,6 +8,8 @@
 
 #import "YTMineViewController.h"
 #import "YTPeronalInformationViewController.h"
+#import "YTResumeViewController.h"
+#import "TestViewController.h"
 
 @interface YTMineViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -47,6 +49,15 @@
     YTPeronalInformationViewController *personalVc = [[YTPeronalInformationViewController alloc]init];
     [self.navigationController pushViewController:personalVc animated:YES];
 }
+
+- (IBAction)personalResume:(UIButton *)sender {
+    
+//    YTResumeViewController *vc = [[YTResumeViewController alloc]init];
+    TestViewController *vc = [[TestViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
+
 
 #pragma mark =======================UITableViewDataSource=========================
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

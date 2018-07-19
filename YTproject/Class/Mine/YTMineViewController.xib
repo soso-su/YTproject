@@ -69,7 +69,10 @@
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhk-pp-eCL" customClass="CustomButton">
-                            <rect key="frame" x="26.5" y="104.5" width="50" height="37"/>
+                            <rect key="frame" x="26.5" y="93" width="50" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="sp8-V9-5Hu"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="个人简历" image="porfileIconResume">
                                 <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -82,6 +85,9 @@
                                     <real key="value" value="0.0"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="personalResume:" destination="-1" eventType="touchUpInside" id="gXe-we-yHC"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAM-tW-Md4" customClass="CustomButton">
                             <rect key="frame" x="146.5" y="95" width="50" height="56"/>
@@ -102,7 +108,7 @@
                             </userDefinedRuntimeAttributes>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHW-iG-5fF" customClass="CustomButton">
-                            <rect key="frame" x="266.5" y="106" width="50" height="34"/>
+                            <rect key="frame" x="266.5" y="93" width="50" height="60"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="消息" image="porfileIconMessage">
                                 <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -124,6 +130,7 @@
                         <constraint firstItem="kHW-iG-5fF" firstAttribute="leading" secondItem="EAM-tW-Md4" secondAttribute="trailing" constant="70" id="4aC-mQ-WmX"/>
                         <constraint firstItem="EAM-tW-Md4" firstAttribute="centerX" secondItem="Ttu-Zo-kOa" secondAttribute="centerX" id="4lB-aP-Wp7"/>
                         <constraint firstItem="D3z-7J-vSs" firstAttribute="leading" secondItem="SHb-VL-I0m" secondAttribute="trailing" constant="13" id="5KM-St-Pke"/>
+                        <constraint firstItem="kHW-iG-5fF" firstAttribute="height" secondItem="bhk-pp-eCL" secondAttribute="height" id="E88-uR-yZx"/>
                         <constraint firstItem="tQF-uo-qce" firstAttribute="centerY" secondItem="D3z-7J-vSs" secondAttribute="centerY" id="IaS-k2-Emc"/>
                         <constraint firstAttribute="trailing" secondItem="C99-XS-YLc" secondAttribute="trailing" constant="12" id="K2l-dd-ZIc"/>
                         <constraint firstItem="EAM-tW-Md4" firstAttribute="top" secondItem="WCA-Cp-IIi" secondAttribute="bottom" constant="15" id="OHr-Ty-Pyk"/>
