@@ -40,21 +40,42 @@
                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="×1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAm-wd-agE">
+                        <rect key="frame" x="293.5" y="71" width="13.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="规格：A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGh-84-Ac4">
+                        <rect key="frame" x="188.5" y="71" width="45" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="IHR-IR-92S" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="3IK-W6-Jpi"/>
                     <constraint firstItem="Klh-Kl-15s" firstAttribute="leading" secondItem="IHR-IR-92S" secondAttribute="trailing" constant="12" id="5V1-UR-QIP"/>
+                    <constraint firstItem="SAm-wd-agE" firstAttribute="centerY" secondItem="cZz-wc-XKd" secondAttribute="centerY" id="9QF-fm-iUV"/>
                     <constraint firstItem="IHR-IR-92S" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="Kxy-DP-SjH"/>
                     <constraint firstAttribute="bottom" secondItem="IHR-IR-92S" secondAttribute="bottom" constant="12" id="NAX-GA-jay"/>
                     <constraint firstItem="P1E-on-9eK" firstAttribute="bottom" secondItem="IHR-IR-92S" secondAttribute="bottom" id="VNE-gv-vu6"/>
                     <constraint firstItem="cZz-wc-XKd" firstAttribute="leading" secondItem="P1E-on-9eK" secondAttribute="trailing" constant="12" id="Vxf-OK-9wu"/>
+                    <constraint firstItem="SAm-wd-agE" firstAttribute="leading" secondItem="nGh-84-Ac4" secondAttribute="trailing" constant="60" id="W3F-yc-KU3"/>
                     <constraint firstItem="P1E-on-9eK" firstAttribute="leading" secondItem="Klh-Kl-15s" secondAttribute="leading" id="XGQ-oT-ZBh"/>
                     <constraint firstItem="Klh-Kl-15s" firstAttribute="top" secondItem="IHR-IR-92S" secondAttribute="top" id="daP-Cs-cua"/>
                     <constraint firstItem="cZz-wc-XKd" firstAttribute="centerY" secondItem="P1E-on-9eK" secondAttribute="centerY" id="i0s-Yj-l45"/>
+                    <constraint firstAttribute="trailing" secondItem="SAm-wd-agE" secondAttribute="trailing" constant="13" id="lFw-cd-kOt"/>
+                    <constraint firstItem="nGh-84-Ac4" firstAttribute="centerY" secondItem="SAm-wd-agE" secondAttribute="centerY" id="lol-gj-GIa"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
-            <point key="canvasLocation" x="91" y="34.5"/>
+            <connections>
+                <outlet property="leftCountLabel" destination="cZz-wc-XKd" id="lZh-xH-pfP"/>
+                <outlet property="rightCountLabel" destination="SAm-wd-agE" id="3eF-SG-0o0"/>
+                <outlet property="spLabel" destination="nGh-84-Ac4" id="xxB-ph-i6g"/>
+            </connections>
+            <point key="canvasLocation" x="117" y="-3"/>
         </tableViewCell>
     </objects>
     <resources>

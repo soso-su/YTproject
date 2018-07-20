@@ -38,6 +38,15 @@
 		F811A9E720FF3CFA009EEA6D /* YTRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F811A9E520FF3CFA009EEA6D /* YTRecommendViewController.m */; };
 		F811A9EB20FF3F0D009EEA6D /* NewProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F811A9E820FF3F0D009EEA6D /* NewProductCell.m */; };
 		F811A9EC20FF3F0D009EEA6D /* NewProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F811A9EA20FF3F0D009EEA6D /* NewProductCell.xib */; };
+		F8126AC8210190FC007CC031 /* OrderTipcView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8126AC7210190FC007CC031 /* OrderTipcView.m */; };
+		F8126ACA2101910D007CC031 /* OrderTipcView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8126AC92101910D007CC031 /* OrderTipcView.xib */; };
+		F8126ACE2101B81C007CC031 /* OrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8126ACD2101B81C007CC031 /* OrderListModel.m */; };
+		F8126AD22101D32E007CC031 /* YTOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8126AD02101D32E007CC031 /* YTOrderDetailViewController.m */; };
+		F8126AD32101D32E007CC031 /* YTOrderDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8126AD12101D32E007CC031 /* YTOrderDetailViewController.xib */; };
+		F8126AD62101DAC7007CC031 /* OrderDetailHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8126AD52101DAC7007CC031 /* OrderDetailHeadView.m */; };
+		F8126AD82101DAD4007CC031 /* OrderDetailHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8126AD72101DAD4007CC031 /* OrderDetailHeadView.xib */; };
+		F8126ADB2101DF9C007CC031 /* OrderDetailFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8126ADA2101DF9C007CC031 /* OrderDetailFooterView.m */; };
+		F8126ADD2101DFAB007CC031 /* OrderDetailFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8126ADC2101DFAB007CC031 /* OrderDetailFooterView.xib */; };
 		F8135AAE20F2F97D000F2372 /* SelectEducationView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8135AAD20F2F97D000F2372 /* SelectEducationView.m */; };
 		F8135AB120F3145A000F2372 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F8135AB020F3145A000F2372 /* CustomButton.m */; };
 		F8135AB420F3388A000F2372 /* SelectTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8135AB320F3388A000F2372 /* SelectTypeView.m */; };
@@ -86,6 +95,12 @@
 		F84B449C20EF56DD004791E8 /* YTTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = F84B449B20EF56DD004791E8 /* YTTouchView.m */; };
 		F84B44A020EF5DCA004791E8 /* YTWorkSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F84B449E20EF5DCA004791E8 /* YTWorkSearchViewController.m */; };
 		F84B44A120EF5DCA004791E8 /* YTWorkSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F84B449F20EF5DCA004791E8 /* YTWorkSearchViewController.xib */; };
+		F876CCEF210174990015E0C7 /* YTOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F876CCED210174990015E0C7 /* YTOrderViewController.m */; };
+		F876CCF0210174990015E0C7 /* YTOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F876CCEE210174990015E0C7 /* YTOrderViewController.xib */; };
+		F876CCF4210175CD0015E0C7 /* YTOrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F876CCF2210175CD0015E0C7 /* YTOrderListViewController.m */; };
+		F876CCF5210175CD0015E0C7 /* YTOrderListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F876CCF3210175CD0015E0C7 /* YTOrderListViewController.xib */; };
+		F876CCFA2101785E0015E0C7 /* OrderListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F876CCF82101785E0015E0C7 /* OrderListCell.m */; };
+		F876CCFB2101785E0015E0C7 /* OrderListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F876CCF92101785E0015E0C7 /* OrderListCell.xib */; };
 		F888D38320F4A9AE00128715 /* YTCompanyMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F888D38120F4A9AE00128715 /* YTCompanyMessageController.m */; };
 		F888D38420F4A9AE00128715 /* YTCompanyMessageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F888D38220F4A9AE00128715 /* YTCompanyMessageController.xib */; };
 		F888D38820F4E2C000128715 /* YTHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F888D38720F4E2C000128715 /* YTHttpTool.m */; };
@@ -277,6 +292,20 @@
 		F811A9E820FF3F0D009EEA6D /* NewProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewProductCell.m; sourceTree = "<group>"; };
 		F811A9E920FF3F0D009EEA6D /* NewProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewProductCell.h; sourceTree = "<group>"; };
 		F811A9EA20FF3F0D009EEA6D /* NewProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewProductCell.xib; sourceTree = "<group>"; };
+		F8126AC6210190FC007CC031 /* OrderTipcView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderTipcView.h; sourceTree = "<group>"; };
+		F8126AC7210190FC007CC031 /* OrderTipcView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderTipcView.m; sourceTree = "<group>"; };
+		F8126AC92101910D007CC031 /* OrderTipcView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTipcView.xib; sourceTree = "<group>"; };
+		F8126ACC2101B81C007CC031 /* OrderListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderListModel.h; sourceTree = "<group>"; };
+		F8126ACD2101B81C007CC031 /* OrderListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderListModel.m; sourceTree = "<group>"; };
+		F8126ACF2101D32E007CC031 /* YTOrderDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTOrderDetailViewController.h; sourceTree = "<group>"; };
+		F8126AD02101D32E007CC031 /* YTOrderDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTOrderDetailViewController.m; sourceTree = "<group>"; };
+		F8126AD12101D32E007CC031 /* YTOrderDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTOrderDetailViewController.xib; sourceTree = "<group>"; };
+		F8126AD42101DAC7007CC031 /* OrderDetailHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailHeadView.h; sourceTree = "<group>"; };
+		F8126AD52101DAC7007CC031 /* OrderDetailHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailHeadView.m; sourceTree = "<group>"; };
+		F8126AD72101DAD4007CC031 /* OrderDetailHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailHeadView.xib; sourceTree = "<group>"; };
+		F8126AD92101DF9C007CC031 /* OrderDetailFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailFooterView.h; sourceTree = "<group>"; };
+		F8126ADA2101DF9C007CC031 /* OrderDetailFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailFooterView.m; sourceTree = "<group>"; };
+		F8126ADC2101DFAB007CC031 /* OrderDetailFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailFooterView.xib; sourceTree = "<group>"; };
 		F8135AAC20F2F97D000F2372 /* SelectEducationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectEducationView.h; sourceTree = "<group>"; };
 		F8135AAD20F2F97D000F2372 /* SelectEducationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectEducationView.m; sourceTree = "<group>"; };
 		F8135AAF20F3145A000F2372 /* CustomButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
@@ -352,6 +381,15 @@
 		F84B449D20EF5DCA004791E8 /* YTWorkSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTWorkSearchViewController.h; sourceTree = "<group>"; };
 		F84B449E20EF5DCA004791E8 /* YTWorkSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTWorkSearchViewController.m; sourceTree = "<group>"; };
 		F84B449F20EF5DCA004791E8 /* YTWorkSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTWorkSearchViewController.xib; sourceTree = "<group>"; };
+		F876CCEC210174990015E0C7 /* YTOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTOrderViewController.h; sourceTree = "<group>"; };
+		F876CCED210174990015E0C7 /* YTOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTOrderViewController.m; sourceTree = "<group>"; };
+		F876CCEE210174990015E0C7 /* YTOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTOrderViewController.xib; sourceTree = "<group>"; };
+		F876CCF1210175CD0015E0C7 /* YTOrderListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTOrderListViewController.h; sourceTree = "<group>"; };
+		F876CCF2210175CD0015E0C7 /* YTOrderListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTOrderListViewController.m; sourceTree = "<group>"; };
+		F876CCF3210175CD0015E0C7 /* YTOrderListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTOrderListViewController.xib; sourceTree = "<group>"; };
+		F876CCF72101785E0015E0C7 /* OrderListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderListCell.h; sourceTree = "<group>"; };
+		F876CCF82101785E0015E0C7 /* OrderListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderListCell.m; sourceTree = "<group>"; };
+		F876CCF92101785E0015E0C7 /* OrderListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderListCell.xib; sourceTree = "<group>"; };
 		F888D38020F4A9AE00128715 /* YTCompanyMessageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTCompanyMessageController.h; sourceTree = "<group>"; };
 		F888D38120F4A9AE00128715 /* YTCompanyMessageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTCompanyMessageController.m; sourceTree = "<group>"; };
 		F888D38220F4A9AE00128715 /* YTCompanyMessageController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTCompanyMessageController.xib; sourceTree = "<group>"; };
@@ -679,6 +717,15 @@
 			path = YTPageViewController;
 			sourceTree = "<group>";
 		};
+		F8126ACB2101B7EA007CC031 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F8126ACC2101B81C007CC031 /* OrderListModel.h */,
+				F8126ACD2101B81C007CC031 /* OrderListModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F817880821003ACB007006D8 /* Goods */ = {
 			isa = PBXGroup;
 			children = (
@@ -852,6 +899,43 @@
 			name = Models;
 			path = YTproject/Class/Mine/Models;
 			sourceTree = SOURCE_ROOT;
+		};
+		F876CCEB2101746A0015E0C7 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				F8126ACB2101B7EA007CC031 /* Models */,
+				F876CCF62101783A0015E0C7 /* Views */,
+				F876CCEC210174990015E0C7 /* YTOrderViewController.h */,
+				F876CCED210174990015E0C7 /* YTOrderViewController.m */,
+				F876CCEE210174990015E0C7 /* YTOrderViewController.xib */,
+				F876CCF1210175CD0015E0C7 /* YTOrderListViewController.h */,
+				F876CCF2210175CD0015E0C7 /* YTOrderListViewController.m */,
+				F876CCF3210175CD0015E0C7 /* YTOrderListViewController.xib */,
+				F8126ACF2101D32E007CC031 /* YTOrderDetailViewController.h */,
+				F8126AD02101D32E007CC031 /* YTOrderDetailViewController.m */,
+				F8126AD12101D32E007CC031 /* YTOrderDetailViewController.xib */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		F876CCF62101783A0015E0C7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F876CCF72101785E0015E0C7 /* OrderListCell.h */,
+				F876CCF82101785E0015E0C7 /* OrderListCell.m */,
+				F876CCF92101785E0015E0C7 /* OrderListCell.xib */,
+				F8126AC6210190FC007CC031 /* OrderTipcView.h */,
+				F8126AC7210190FC007CC031 /* OrderTipcView.m */,
+				F8126AC92101910D007CC031 /* OrderTipcView.xib */,
+				F8126AD42101DAC7007CC031 /* OrderDetailHeadView.h */,
+				F8126AD52101DAC7007CC031 /* OrderDetailHeadView.m */,
+				F8126AD72101DAD4007CC031 /* OrderDetailHeadView.xib */,
+				F8126AD92101DF9C007CC031 /* OrderDetailFooterView.h */,
+				F8126ADA2101DF9C007CC031 /* OrderDetailFooterView.m */,
+				F8126ADC2101DFAB007CC031 /* OrderDetailFooterView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
 		};
 		F888D38520F4E26100128715 /* Http */ = {
 			isa = PBXGroup;
@@ -1116,6 +1200,7 @@
 		F894250420EB67EE008156CC /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				F876CCEB2101746A0015E0C7 /* Order */,
 				F888F55B20EA75DD00E19554 /* YTMineViewController.h */,
 				F888F55C20EA75DD00E19554 /* YTMineViewController.m */,
 				F888F55D20EA75DD00E19554 /* YTMineViewController.xib */,
@@ -1442,10 +1527,12 @@
 				F888F50E20EA27B800E19554 /* LaunchScreen.storyboard in Resources */,
 				F8C3DDBE2100907700539E6E /* YTAffirmOrderViewController.xib in Resources */,
 				A728270520FDF31300244CAA /* SelectSexView.xib in Resources */,
+				F876CCFB2101785E0015E0C7 /* OrderListCell.xib in Resources */,
 				F846DA7C21006B9200A1E1CE /* YTResumeViewController.xib in Resources */,
 				F894252E20ECCD7F008156CC /* YTForgetPswdViewController.xib in Resources */,
 				A728270A20FEE2F400244CAA /* YTDatePickerView.xib in Resources */,
 				F846DA8721006B9200A1E1CE /* YTCertificateCollectionViewCell.xib in Resources */,
+				F876CCF0210174990015E0C7 /* YTOrderViewController.xib in Resources */,
 				F894250A20EB6849008156CC /* YTLoginViewController.xib in Resources */,
 				F846DA9221006B9200A1E1CE /* YTEditResumeViewController.xib in Resources */,
 				F888D3D520F6EB4C00128715 /* YTEducaCollectViewController.xib in Resources */,
@@ -1458,6 +1545,7 @@
 				F8DFE4CE20F373FC00F76DFB /* YTCompanyViewController.xib in Resources */,
 				F8DE217420FC497F00AC55D8 /* YTTenementViewController.xib in Resources */,
 				F888D38420F4A9AE00128715 /* YTCompanyMessageController.xib in Resources */,
+				F8126ACA2101910D007CC031 /* OrderTipcView.xib in Resources */,
 				F888D3E920F728AE00128715 /* YTPostFileViewController.xib in Resources */,
 				A728271420FF16D200244CAA /* YTCheckIconViewController.xib in Resources */,
 				F8DE216F20FC402C00AC55D8 /* ServerCollectionViewCell.xib in Resources */,
@@ -1475,6 +1563,8 @@
 				F894253B20EDCBA2008156CC /* WorkTableViewCell.xib in Resources */,
 				F817882121006645007006D8 /* YTGeneralViewController.xib in Resources */,
 				F8135AB920F34649000F2372 /* YTWorkDetailViewController.xib in Resources */,
+				F876CCF5210175CD0015E0C7 /* YTOrderListViewController.xib in Resources */,
+				F8126ADD2101DFAB007CC031 /* OrderDetailFooterView.xib in Resources */,
 				A72826AF20FDDD6200244CAA /* YTModifyUsernameViewController.xib in Resources */,
 				F888D3CB20F6132C00128715 /* SelectTypeCell.xib in Resources */,
 				F888D40A20F8A2EC00128715 /* LocalListCell.xib in Resources */,
@@ -1495,6 +1585,7 @@
 				F894254620EF061B008156CC /* YTAddressViewController.xib in Resources */,
 				F846DA8B21006B9200A1E1CE /* YTEducationExperienceTableViewCell.xib in Resources */,
 				F888F55F20EA75DD00E19554 /* YTMineViewController.xib in Resources */,
+				F8126AD82101DAD4007CC031 /* OrderDetailHeadView.xib in Resources */,
 				A72826A920FDD30300244CAA /* YTPeronalInformationViewController.xib in Resources */,
 				F846DA9021006B9200A1E1CE /* YTResumeHeaderView.xib in Resources */,
 				F8C3DDD32100996200539E6E /* AffirmOrderFooterView.xib in Resources */,
@@ -1505,6 +1596,7 @@
 				F84B449620EF4413004791E8 /* WorkAddressHeadView.xib in Resources */,
 				A72826B420FDE0F200244CAA /* YTModifyPhoneOrEmailViewController.xib in Resources */,
 				F888D3D020F6571800128715 /* YTEducationViewController.xib in Resources */,
+				F8126AD32101D32E007CC031 /* YTOrderDetailViewController.xib in Resources */,
 				F811A9EC20FF3F0D009EEA6D /* NewProductCell.xib in Resources */,
 				F888F55A20EA75C300E19554 /* YTStoreViewController.xib in Resources */,
 				F846DA8D21006B9200A1E1CE /* YTBaseInformationTableViewCell.xib in Resources */,
@@ -1589,6 +1681,7 @@
 				F811A9E720FF3CFA009EEA6D /* YTRecommendViewController.m in Sources */,
 				F8DE217820FC4EEE00AC55D8 /* YTMediumViewController.m in Sources */,
 				F888D3CA20F6132C00128715 /* SelectTypeCell.m in Sources */,
+				F8126AD22101D32E007CC031 /* YTOrderDetailViewController.m in Sources */,
 				F83BA1B521006D3700EF5518 /* YTResumeHeaderTableViewCell.m in Sources */,
 				F8DE21A420FDE5F000AC55D8 /* HotSellCell.m in Sources */,
 				F8C3DDC2210091D100539E6E /* AffirmOrderCell.m in Sources */,
@@ -1625,6 +1718,7 @@
 				F846DA7D21006B9200A1E1CE /* YTResumeViewController.m in Sources */,
 				F8C3DDCC210095F100539E6E /* AddressHeadView.m in Sources */,
 				F846DA7B21006B9200A1E1CE /* YTEditResumeViewController.m in Sources */,
+				F876CCEF210174990015E0C7 /* YTOrderViewController.m in Sources */,
 				A728270820FEE2E000244CAA /* YTDatePickerView.m in Sources */,
 				F846DA9121006B9200A1E1CE /* YTResumeHeaderView.m in Sources */,
 				F894250920EB6849008156CC /* YTLoginViewController.m in Sources */,
@@ -1633,12 +1727,14 @@
 				F8135AB420F3388A000F2372 /* SelectTypeView.m in Sources */,
 				F8135AAE20F2F97D000F2372 /* SelectEducationView.m in Sources */,
 				F888D38320F4A9AE00128715 /* YTCompanyMessageController.m in Sources */,
+				F8126ADB2101DF9C007CC031 /* OrderDetailFooterView.m in Sources */,
 				F811A9EB20FF3F0D009EEA6D /* NewProductCell.m in Sources */,
 				A72826AE20FDDD6200244CAA /* YTModifyUsernameViewController.m in Sources */,
 				A728271320FF16D200244CAA /* YTCheckIconViewController.m in Sources */,
 				F888D40E20F8AED500128715 /* YTActiveDetailsViewController.m in Sources */,
 				F888F53620EA2BDF00E19554 /* YTBaseViewController.m in Sources */,
 				F894253520EDC655008156CC /* WorkHeadCollectionViewCell.m in Sources */,
+				F876CCF4210175CD0015E0C7 /* YTOrderListViewController.m in Sources */,
 				F8DE219A20FDD91600AC55D8 /* MoreCell.m in Sources */,
 				F888D40420F8A1BF00128715 /* YTLocalListViewController.m in Sources */,
 				F84B44A020EF5DCA004791E8 /* YTWorkSearchViewController.m in Sources */,
@@ -1648,9 +1744,11 @@
 				F888D38E20F5ABB800128715 /* YTRongYunRequest.m in Sources */,
 				F8DE216E20FC402C00AC55D8 /* ServerCollectionViewCell.m in Sources */,
 				F888F55920EA75C300E19554 /* YTStoreViewController.m in Sources */,
+				F8126ACE2101B81C007CC031 /* OrderListModel.m in Sources */,
 				F84B449C20EF56DD004791E8 /* YTTouchView.m in Sources */,
 				F846DA8E21006B9200A1E1CE /* YTExpectaionWorkTableViewCell.m in Sources */,
 				A72BA4E421003979008D57E6 /* YTPageViewController.m in Sources */,
+				F8126AC8210190FC007CC031 /* OrderTipcView.m in Sources */,
 				A72BA4E8210041CD008D57E6 /* TestViewController.m in Sources */,
 				F888F55E20EA75DD00E19554 /* YTMineViewController.m in Sources */,
 				F807691D20FB2E03001E2FA6 /* ReviewViewController.m in Sources */,
@@ -1673,11 +1771,13 @@
 				F8DFE4CD20F373FC00F76DFB /* YTCompanyViewController.m in Sources */,
 				F888F55420EA757B00E19554 /* YTServerViewController.m in Sources */,
 				F807692620FB34A1001E2FA6 /* ReviewHeader.m in Sources */,
+				F876CCFA2101785E0015E0C7 /* OrderListCell.m in Sources */,
 				F888F54420EA2E6C00E19554 /* YTTabBarViewController.m in Sources */,
 				F894254120EE27CF008156CC /* UIImage+Color.m in Sources */,
 				F83BA1B721006D9800EF5518 /* YTMedalCollectionViewCell.m in Sources */,
 				F8135AB820F34649000F2372 /* YTWorkDetailViewController.m in Sources */,
 				F817882421006645007006D8 /* YTMoreViewController.m in Sources */,
+				F8126AD62101DAC7007CC031 /* OrderDetailHeadView.m in Sources */,
 				F8C3DDD12100995100539E6E /* AffirmOrderFooterView.m in Sources */,
 				F888D3C520F5E78E00128715 /* YTChatViewController.m in Sources */,
 				F894253E20EE269E008156CC /* YTSearchBar.m in Sources */,

@@ -10,6 +10,7 @@
 #import "YTPeronalInformationViewController.h"
 #import "YTResumeViewController.h"
 #import "TestViewController.h"
+#import "YTOrderViewController.h"
 
 @interface YTMineViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -77,7 +78,10 @@
 }
 #pragma mark =======================UITableViewDelegate=========================
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    if (indexPath.row == 0) {
+        YTOrderViewController *orderVc = [[YTOrderViewController alloc]init];
+        [self.navigationController pushViewController:orderVc animated:YES];
+    }
 }
 #pragma mark =======================Setup=========================
 

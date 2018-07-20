@@ -44,6 +44,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     AffirmOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    cell.isCart = YES;
     return cell;
 }
 
