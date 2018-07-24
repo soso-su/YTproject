@@ -11,6 +11,9 @@
 #import "YTResumeViewController.h"
 #import "TestViewController.h"
 #import "YTOrderViewController.h"
+#import "YTCollectViewController.h"
+#import "YTIntegralViewController.h"
+#import "YTSettingViewController.h"
 
 @interface YTMineViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -78,10 +81,38 @@
 }
 #pragma mark =======================UITableViewDelegate=========================
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
-        YTOrderViewController *orderVc = [[YTOrderViewController alloc]init];
-        [self.navigationController pushViewController:orderVc animated:YES];
+    switch (indexPath.row) {
+        case 0:
+        {
+            YTOrderViewController *orderVc = [[YTOrderViewController alloc]init];
+            [self.navigationController pushViewController:orderVc animated:YES];
+        }
+            break;
+            
+        case 1:
+        {
+            YTCollectViewController *collectVc = [[YTCollectViewController alloc]init];
+            [self.navigationController pushViewController:collectVc animated:YES];
+        }
+            break;
+        case 2:
+        {
+            YTIntegralViewController *integralVc = [[YTIntegralViewController alloc]init];
+            [self.navigationController pushViewController:integralVc animated:YES];
+        }
+            break;
+        case 3:{
+            
+            YTSettingViewController *settingVc = [[YTSettingViewController alloc]init];
+            [self.navigationController pushViewController:settingVc animated:YES];
+        }
+            break;
+            
+            
+        default:
+            break;
     }
+    
 }
 #pragma mark =======================Setup=========================
 
