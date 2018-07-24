@@ -10,10 +10,16 @@
 
 typedef NS_ENUM(NSInteger,OrderState){
     OrderState_NotPay = 0, //待付款
-    OrderState_NotSend = 1, //待发货
-    OrderState_NotTake = 2, //待收货
-    OrderState_NotEvaluate = 3, //待评价
-    OrderState_Selled = 4, //售后
+    OrderState_CancleOrder = 1, //取消订单
+    OrderState_PaySuccess = 2, //付款成功
+    OrderState_NotSend = 3, //待发货
+    OrderState_NotEvaluate = 4, //待评价
+    OrderState_Refund_Ing = 5, //退款中（售后）
+    OrderState_Refund_Fail = 6, //退款失败（售后）
+    OrderState_Refund_Success = 7, //退款成功（售后）
+    OrderState_NotTake = 8, //待收货
+    OrderState_DealFinsh = 9, //交易完成
+    OrderState_DealClose = 11, //交易关闭
 };
 
 @interface OrderListModel : NSObject

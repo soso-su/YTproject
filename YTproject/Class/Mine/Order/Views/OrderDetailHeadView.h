@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OrderListModel.h"
 
 @interface OrderDetailHeadView : UIView
+@property (nonatomic, strong)OrderListModel *model;
 + (instancetype)showDetailHeadView;
 @end

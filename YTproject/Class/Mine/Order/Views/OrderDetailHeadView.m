@@ -8,11 +8,21 @@
 
 #import "OrderDetailHeadView.h"
 
+@interface OrderDetailHeadView()
+@property (weak, nonatomic) IBOutlet UILabel *stateLabel;
+
+@end
+
 @implementation OrderDetailHeadView
 
 + (instancetype)showDetailHeadView{
     OrderDetailHeadView *headView = [[[NSBundle mainBundle]loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] firstObject];
     return headView;
+}
+
+- (void)setModel:(OrderListModel *)model{
+    _model = model;
+    self.stateLabel.text = model.stateStr;
 }
 
 @end

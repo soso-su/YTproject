@@ -7,7 +7,9 @@
 //
 
 #import "YTBaseViewController.h"
+#import "OrderListModel.h"
 
 @interface YTOrderDetailViewController : YTBaseViewController
+@property (nonatomic, strong)OrderListModel *model;
 
 @end

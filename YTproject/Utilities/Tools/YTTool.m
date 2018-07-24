@@ -32,5 +32,20 @@
     label.lineBreakMode = NSLineBreakByCharWrapping;
 }
 
++ (void)setLabelAttributeStr:(NSString *)str textColor:(UIColor *)textColor fontSize:(CGFloat)fontSize otherStr:(NSString *)otherStr otherTextColor:(UIColor *)otherColor otherSize:(CGFloat)otherSize label:(UILabel *)label{
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] init];
+    [attributedString appendAttributedString:[[NSAttributedString alloc] initWithString:str
+                                                                             attributes:@{NSForegroundColorAttributeName: textColor,
+                                                                                          NSFontAttributeName : [UIFont systemFontOfSize:fontSize]}]];
+    [attributedString appendAttributedString:[[NSAttributedString alloc] initWithString:otherStr
+                                                                             attributes:@{NSForegroundColorAttributeName: otherColor,
+                                                                                          NSFontAttributeName : [UIFont systemFontOfSize:otherSize]}]];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:5];
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [label.text length])];
+    
+    label.attributedText = attributedString;
+}
+
 
 @end

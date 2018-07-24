@@ -22,6 +22,7 @@
     
 }
 
+
 - (void)setIsCart:(BOOL)isCart{
     _isCart = isCart;
     if (isCart) {

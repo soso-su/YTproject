@@ -9,5 +9,5 @@
 #import "YTBaseViewController.h"
 
 @interface YTOrderListViewController : YTBaseViewController
-
+@property (nonatomic, assign)NSInteger type;
 @end

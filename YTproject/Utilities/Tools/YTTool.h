@@ -16,4 +16,8 @@
 //设置行距
 + (void)setLabelAttributeLineHeight:(CGFloat)height label:(UILabel *)label;
 
+//设置富文本
++ (void)setLabelAttributeStr:(NSString *)str textColor:(UIColor *)textColor fontSize:(CGFloat)fontSize  otherStr:(NSString *)otherStr otherTextColor:(UIColor*)otherColor otherSize:(CGFloat)otherSize label:(UILabel *)label;
+
+
 @end
