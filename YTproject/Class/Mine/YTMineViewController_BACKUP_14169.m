@@ -9,6 +9,7 @@
 #import "YTMineViewController.h"
 #import "YTPeronalInformationViewController.h"
 #import "YTResumeViewController.h"
+<<<<<<< HEAD
 #import "TestViewController.h"
 #import "YTOrderViewController.h"
 #import "YTCollectViewController.h"
@@ -16,6 +17,8 @@
 #import "YTSettingViewController.h"
 #import "YTAboutMineViewController.h"
 #import "YTOpinionViewController.h"
+=======
+>>>>>>> mine
 
 @interface YTMineViewController ()<UITableViewDataSource,UITableViewDelegate>
 
