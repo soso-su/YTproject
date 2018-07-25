@@ -14,6 +14,8 @@
 #import "YTCollectViewController.h"
 #import "YTIntegralViewController.h"
 #import "YTSettingViewController.h"
+#import "YTAboutMineViewController.h"
+#import "YTOpinionViewController.h"
 
 @interface YTMineViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -107,9 +109,17 @@
             [self.navigationController pushViewController:settingVc animated:YES];
         }
             break;
+        case 4:{
             
-            
+            YTAboutMineViewController *aboutVc = [[YTAboutMineViewController alloc]init];
+            [self.navigationController pushViewController:aboutVc animated:YES];
+        }
+            break;
         default:
+        {
+            YTOpinionViewController *opinionVc = [[YTOpinionViewController alloc]init];
+            [self.navigationController pushViewController:opinionVc animated:YES];
+        }
             break;
     }
     

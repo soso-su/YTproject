@@ -50,6 +50,7 @@
     }else if (self.type == 6){
         MoreCell *cell = [tableView dequeueReusableCellWithIdentifier:moreCellID];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.isCollect = YES;
         return cell;
     }else{
         CollectCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];

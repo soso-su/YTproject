@@ -15,6 +15,25 @@
     return window;
 }
 
++ (UIViewController *)getRootVc {
+    UIWindow *window = [self getWindow];
+    UIViewController *viewController = window.rootViewController;
+    if ([viewController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *nav = (UINavigationController *)viewController;
+        return nav.childViewControllers.firstObject;
+    }
+    
+    if ([viewController isKindOfClass:[UITabBarController class]]) {
+        UITabBarController *tabVc = (UITabBarController *)viewController;
+        UIViewController *selectVc = tabVc.selectedViewController;
+        if ([selectVc isKindOfClass:[UINavigationController class]]) {
+            UINavigationController *nav = (UINavigationController *)selectVc;
+            return nav.childViewControllers.firstObject;
+        }
+    }
+    return viewController;
+}
+
 + (CGSize)textStr:(NSString *)textStr boundingRectWithSize:(CGSize)size font:(UIFont *)font {
     NSDictionary *attributes = @{NSFontAttributeName : font};
     return [textStr boundingRectWithSize:size

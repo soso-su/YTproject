@@ -60,6 +60,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MoreCell * cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    cell.isCollect = NO;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
