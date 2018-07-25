@@ -32,8 +32,20 @@
     [self setupView];
     
     [self setupData];
+    
+    NSLog(@"viewDidLoad");
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    NSLog(@"viewWillAppear");
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    NSLog(@"viewDidAppear");
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    NSLog(@"viewDidDisappear");
+}
 -(void)editResume{
     YTEditResumeViewController *editVc = [[YTEditResumeViewController alloc]init];
     [self.navigationController pushViewController:editVc animated:YES];

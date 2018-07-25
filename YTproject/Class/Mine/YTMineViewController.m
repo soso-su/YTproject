@@ -9,7 +9,6 @@
 #import "YTMineViewController.h"
 #import "YTPeronalInformationViewController.h"
 #import "YTResumeViewController.h"
-#import "TestViewController.h"
 
 @interface YTMineViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -52,8 +51,7 @@
 
 - (IBAction)personalResume:(UIButton *)sender {
     
-//    YTResumeViewController *vc = [[YTResumeViewController alloc]init];
-    TestViewController *vc = [[TestViewController alloc]init];
+    YTResumeViewController *vc = [[YTResumeViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
     
 }
