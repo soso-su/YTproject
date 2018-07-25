@@ -46,17 +46,9 @@
     
     YTOrderListViewController *afterSaleVc = [[YTOrderListViewController alloc]init];
     afterSaleVc.type = 5;
-    afterSaleVc.title = @"售后后";
+    afterSaleVc.title = @"售后";
     
-    YTOrderListViewController *otherVc = [[YTOrderListViewController alloc]init];
-    otherVc.type = 6;
-    otherVc.title = @"售后后";
-    
-    YTOrderListViewController *otherVc1 = [[YTOrderListViewController alloc]init];
-    otherVc1.type = 7;
-    otherVc1.title = @"售后";
-    
-    YTPageViewController *pageView = [YTPageViewController pageWithViewControllers:@[allStateVc,obligationVc,sendGoodsVc,takeGoodsVc,evaluateVc,afterSaleVc,otherVc,otherVc1] configuration:[YTPageViewControllerConfiguration defaultConfiguration]];
+    YTPageViewController *pageView = [YTPageViewController pageWithViewControllers:@[allStateVc,obligationVc,sendGoodsVc,takeGoodsVc,evaluateVc,afterSaleVc] configuration:[YTPageViewControllerConfiguration defaultConfiguration]];
     pageView.view.frame = self.view.frame;
     [self addChildViewController:pageView];
     [self.view addSubview:pageView.view];
