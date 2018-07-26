@@ -62,12 +62,20 @@
                                     <color key="titleColor" red="1" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="被查看" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ZR-ht-bjb">
+                                <rect key="frame" x="240" y="55" width="37" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aPb-Ov-U3Z" firstAttribute="top" secondItem="pDi-9z-0qD" secondAttribute="bottom" constant="8" id="3tO-Ad-qbv"/>
                             <constraint firstItem="9aO-cj-ot1" firstAttribute="top" secondItem="rvY-Tz-kl2" secondAttribute="bottom" constant="3" id="5sV-mc-3WC"/>
                             <constraint firstItem="7Bg-eI-f2x" firstAttribute="trailing" secondItem="SrP-8T-V9b" secondAttribute="trailing" id="7Eu-xb-KqG"/>
+                            <constraint firstItem="2ZR-ht-bjb" firstAttribute="centerY" secondItem="dEX-kL-Gfa" secondAttribute="centerY" id="A8G-0p-LNM"/>
+                            <constraint firstItem="2ZR-ht-bjb" firstAttribute="trailing" secondItem="SrP-8T-V9b" secondAttribute="trailing" id="F0V-44-ARy"/>
                             <constraint firstItem="pDi-9z-0qD" firstAttribute="top" secondItem="rvY-Tz-kl2" secondAttribute="top" id="H9b-Mp-4dB"/>
                             <constraint firstItem="rvY-Tz-kl2" firstAttribute="top" secondItem="QR1-b5-H5m" secondAttribute="top" constant="12" id="HjB-g2-kBS"/>
                             <constraint firstItem="SrP-8T-V9b" firstAttribute="centerY" secondItem="pDi-9z-0qD" secondAttribute="centerY" id="RGB-Hw-q7d"/>
@@ -97,6 +105,15 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="collectBtn" destination="7Bg-eI-f2x" id="wxl-m9-UWY"/>
+                <outlet property="companyName" destination="9aO-cj-ot1" id="m0X-B6-1R1"/>
+                <outlet property="jobLabel" destination="pDi-9z-0qD" id="z2D-aN-sSp"/>
+                <outlet property="logoView" destination="rvY-Tz-kl2" id="GkE-EY-78k"/>
+                <outlet property="msgLabel" destination="aPb-Ov-U3Z" id="AG6-n9-pZA"/>
+                <outlet property="stateLabel" destination="2ZR-ht-bjb" id="vSL-dh-hyz"/>
+                <outlet property="treatmentLabel" destination="dEX-kL-Gfa" id="UUV-18-TLf"/>
+            </connections>
             <point key="canvasLocation" x="34" y="23"/>
         </tableViewCell>
     </objects>

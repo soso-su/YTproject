@@ -11,6 +11,7 @@
 #import "YTMessageViewController.h"
 #import "YTPwsdViewController.h"
 #import "YTLoginViewController.h"
+#import "YTCameraViewController.h"
 
 @interface YTSettingViewController ()<UITableViewDataSource,UITableViewDelegate,OrderTipcViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -63,6 +64,8 @@
         self.tipcView.showStr = @"确定注销？";
         self.tipcView.type = TextCenter;
         self.tipcView.hidden = NO;
+//        YTCameraViewController *cameraVc = [[YTCameraViewController alloc]init];
+//        [self.navigationController pushViewController:cameraVc animated:YES];
     }
 }
 

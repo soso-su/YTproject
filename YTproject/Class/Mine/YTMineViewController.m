@@ -16,6 +16,7 @@
 #import "YTSettingViewController.h"
 #import "YTAboutMineViewController.h"
 #import "YTOpinionViewController.h"
+#import "YTRecordViewController.h"
 
 @interface YTMineViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -61,6 +62,15 @@
     YTResumeViewController *vc = [[YTResumeViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
     
+}
+
+- (IBAction)record:(UIButton *)sender {
+    
+    YTRecordViewController *vc = [[YTRecordViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)message:(UIButton *)sender {
 }
 
 

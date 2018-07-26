@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RecordListModel.h"
 
 @interface WorkCell : UITableViewCell
+
+@property (nonatomic, assign) BOOL isCollect;
+
+@property (nonatomic, strong)RecordListModel *list;
 
 @end

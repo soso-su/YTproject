@@ -45,6 +45,7 @@
     
     if (self.type == 5) {
         WorkCell *cell = [tableView dequeueReusableCellWithIdentifier:workCellID];
+        cell.isCollect = YES;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }else if (self.type == 6){
