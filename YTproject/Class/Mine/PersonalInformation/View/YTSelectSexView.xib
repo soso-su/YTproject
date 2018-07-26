@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="SelectSexView">
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="YTSelectSexView">
             <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -201,6 +201,7 @@
             <connections>
                 <outlet property="backgroundView" destination="NKN-wy-8W4" id="KoK-JA-leS"/>
                 <outlet property="boyButton" destination="FP5-t1-qXn" id="s3X-5D-nvO"/>
+                <outlet property="contentView" destination="ZvM-CU-vXD" id="3yQ-si-r8h"/>
                 <outlet property="girlButton" destination="bu9-rQ-rRU" id="yL7-Pt-ffa"/>
             </connections>
             <point key="canvasLocation" x="38.5" y="154"/>

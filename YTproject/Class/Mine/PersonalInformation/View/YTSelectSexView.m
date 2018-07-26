@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
 @property (weak, nonatomic) IBOutlet UIButton *boyButton;
 @property (weak, nonatomic) IBOutlet UIButton *girlButton;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
 
 @property (nonatomic,strong)SelectedBlock selectedBlock;
 
@@ -26,11 +27,13 @@
     selectSexView.sexType = sexType;
     selectSexView.frame = [UIScreen mainScreen].bounds;
     selectSexView.alpha = 0;
+    selectSexView.contentView.y = [[UIScreen mainScreen]bounds].size.height;
     
     [[[UIApplication sharedApplication]keyWindow]addSubview:selectSexView];
     
     [UIView animateWithDuration:0.3 animations:^{
         selectSexView.alpha = 1;
+        selectSexView.contentView.y = [[UIScreen mainScreen]bounds].size.height - selectSexView.contentView.height;
     }];
 }
 
@@ -45,6 +48,7 @@
     
     [UIView animateWithDuration:0.3 animations:^{
         self.alpha = 0;
+        self.contentView.y = [[UIScreen mainScreen]bounds].size.height;
     } completion:^(BOOL finished) {
         [self removeFromSuperview];
     }];

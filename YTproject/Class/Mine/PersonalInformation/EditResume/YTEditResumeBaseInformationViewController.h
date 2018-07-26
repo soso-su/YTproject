@@ -8,6 +8,6 @@
 
 #import "YTBaseViewController.h"
 
-@interface YTEditResumeViewController : YTBaseViewController
+@interface YTEditResumeBaseInformationViewController : YTBaseViewController
 
 @end

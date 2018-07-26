@@ -21,7 +21,7 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q18-yi-yWO">
-                    <rect key="frame" x="15" y="439" width="345" height="224"/>
+                    <rect key="frame" x="15" y="435" width="345" height="224"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sBo-7v-Cd9">
                             <rect key="frame" x="0.0" y="0.0" width="345" height="48"/>
@@ -150,11 +150,12 @@
                 <constraint firstAttribute="bottom" secondItem="P5T-jX-jUM" secondAttribute="bottom" id="TEh-F1-o5Z"/>
                 <constraint firstItem="P5T-jX-jUM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="fhq-mq-Au1"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="q18-yi-yWO" secondAttribute="trailing" constant="15" id="oOw-ot-IOa"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="q18-yi-yWO" secondAttribute="bottom" constant="4" id="vkT-Hk-BDP"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="q18-yi-yWO" secondAttribute="bottom" constant="8" id="vkT-Hk-BDP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="backgroundView" destination="P5T-jX-jUM" id="xVR-xa-KqV"/>
+                <outlet property="contentView" destination="q18-yi-yWO" id="KfV-XW-BaO"/>
                 <outlet property="datePicker" destination="Foe-ba-SA9" id="FoD-NZ-4iP"/>
             </connections>
             <point key="canvasLocation" x="38.5" y="97.5"/>

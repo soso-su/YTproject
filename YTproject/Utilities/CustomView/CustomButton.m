@@ -41,30 +41,24 @@
 - (void)setupButton{
     
     if (self.customButtonType == ImageUpLabelDown) { //图片在上，文字在下
-        //以button的高度为基准，在确保label文字能正确显示的前提下，对Imageview进行压缩
-        
-        CGFloat height = self.height;  //button高度
+        //在确保label文字和指定的imageView能正确显示的前提下，对button的大小进行调整
         [self.titleLabel sizeToFit];
-        CGFloat labelHeight = self.titleLabel.height; //label高度，label需要完整显示
-        CGFloat imageViewHeight = height - labelHeight - self.margin;//imageView压缩后的高度
+        if (self.imageViewSize.width == 0 && self.imageViewSize.height == 0) {
+            [self.imageView sizeToFit];
+        }else{
+            self.imageView.size = self.imageViewSize;
+        }
         
-        //调整图片
-        [self.imageView sizeToFit];
-        self.imageView.x = 0;
-        self.imageView.y = 0;
-        self.imageView.centerX = self.width/2;
+        //调整button大小
+        self.height = MAX(self.height, self.titleLabel.height + self.margin + self.imageView.height);
+        self.width = self.imageView.width > self.titleLabel.width ? MAX(self.width, self.imageView.width):MAX(self.width, self.titleLabel.width);
         
-        //imageView最大高度不超过压缩后的高度
-        self.imageView.height = imageViewHeight;
-        self.imageView.width = self.imageView.height >self.width ? self.width:self.imageView.width;
-        //imageView最大宽度不超过button宽度
-//        self.imageView.width = self.imageView.width > self.width ?self.width:self.imageView.width;
-        
-        
-        //调整文字
-        self.titleLabel.x = 0;
-        self.titleLabel.y = self.imageView.height + self.margin;
+        //调整label
         self.titleLabel.centerX = self.width/2;
+        self.titleLabel.y = self.height - self.titleLabel.height;
+        //调整图片
+        self.imageView.centerX = self.width/2;
+        self.imageView.y = self.titleLabel.y - self.margin - self.imageView.height;
         
     } else if (self.customButtonType == ImageLeftLabelRight){
         
