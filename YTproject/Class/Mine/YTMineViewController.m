@@ -17,6 +17,7 @@
 #import "YTAboutMineViewController.h"
 #import "YTOpinionViewController.h"
 #import "YTRecordViewController.h"
+#import "YTNotificationViewController.h"
 
 @interface YTMineViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -71,6 +72,8 @@
 }
 
 - (IBAction)message:(UIButton *)sender {
+    YTNotificationViewController *vc = [[YTNotificationViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

@@ -164,6 +164,14 @@
 		F853131021088FFA00B881EA /* RecordFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F853130F21088FFA00B881EA /* RecordFooterView.m */; };
 		F85313122108901100B881EA /* RecordFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F85313112108901100B881EA /* RecordFooterView.xib */; };
 		F85313152108923400B881EA /* RecordMsgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F85313142108923400B881EA /* RecordMsgModel.m */; };
+		F853131F21096F1600B881EA /* YTNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F853131D21096F1600B881EA /* YTNotificationViewController.m */; };
+		F853132021096F1600B881EA /* YTNotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F853131E21096F1600B881EA /* YTNotificationViewController.xib */; };
+		F85313242109734900B881EA /* YTNotificationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F85313222109734900B881EA /* YTNotificationListViewController.m */; };
+		F85313252109734900B881EA /* YTNotificationListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F85313232109734900B881EA /* YTNotificationListViewController.xib */; };
+		F853132B2109754B00B881EA /* YTChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F85313292109754B00B881EA /* YTChatListViewController.m */; };
+		F853132C2109754B00B881EA /* YTChatListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F853132A2109754B00B881EA /* YTChatListViewController.xib */; };
+		F853133021097D4A00B881EA /* SysNotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F853132E21097D4A00B881EA /* SysNotificationCell.m */; };
+		F853133121097D4A00B881EA /* SysNotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F853132F21097D4A00B881EA /* SysNotificationCell.xib */; };
 		F876CCEF210174990015E0C7 /* YTOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F876CCED210174990015E0C7 /* YTOrderViewController.m */; };
 		F876CCF0210174990015E0C7 /* YTOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F876CCEE210174990015E0C7 /* YTOrderViewController.xib */; };
 		F876CCF4210175CD0015E0C7 /* YTOrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F876CCF2210175CD0015E0C7 /* YTOrderListViewController.m */; };
@@ -557,6 +565,18 @@
 		F85313112108901100B881EA /* RecordFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordFooterView.xib; sourceTree = "<group>"; };
 		F85313132108923400B881EA /* RecordMsgModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordMsgModel.h; sourceTree = "<group>"; };
 		F85313142108923400B881EA /* RecordMsgModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordMsgModel.m; sourceTree = "<group>"; };
+		F853131C21096F1600B881EA /* YTNotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTNotificationViewController.h; sourceTree = "<group>"; };
+		F853131D21096F1600B881EA /* YTNotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTNotificationViewController.m; sourceTree = "<group>"; };
+		F853131E21096F1600B881EA /* YTNotificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTNotificationViewController.xib; sourceTree = "<group>"; };
+		F85313212109734900B881EA /* YTNotificationListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTNotificationListViewController.h; sourceTree = "<group>"; };
+		F85313222109734900B881EA /* YTNotificationListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTNotificationListViewController.m; sourceTree = "<group>"; };
+		F85313232109734900B881EA /* YTNotificationListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTNotificationListViewController.xib; sourceTree = "<group>"; };
+		F85313282109754B00B881EA /* YTChatListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTChatListViewController.h; sourceTree = "<group>"; };
+		F85313292109754B00B881EA /* YTChatListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTChatListViewController.m; sourceTree = "<group>"; };
+		F853132A2109754B00B881EA /* YTChatListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTChatListViewController.xib; sourceTree = "<group>"; };
+		F853132D21097D4A00B881EA /* SysNotificationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SysNotificationCell.h; sourceTree = "<group>"; };
+		F853132E21097D4A00B881EA /* SysNotificationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SysNotificationCell.m; sourceTree = "<group>"; };
+		F853132F21097D4A00B881EA /* SysNotificationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SysNotificationCell.xib; sourceTree = "<group>"; };
 		F876CCEC210174990015E0C7 /* YTOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTOrderViewController.h; sourceTree = "<group>"; };
 		F876CCED210174990015E0C7 /* YTOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTOrderViewController.m; sourceTree = "<group>"; };
 		F876CCEE210174990015E0C7 /* YTOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTOrderViewController.xib; sourceTree = "<group>"; };
@@ -1222,6 +1242,41 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		F853131621096C0900B881EA /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				F8531327210973CC00B881EA /* Models */,
+				F8531326210973C200B881EA /* Views */,
+				F853131C21096F1600B881EA /* YTNotificationViewController.h */,
+				F853131D21096F1600B881EA /* YTNotificationViewController.m */,
+				F853131E21096F1600B881EA /* YTNotificationViewController.xib */,
+				F85313212109734900B881EA /* YTNotificationListViewController.h */,
+				F85313222109734900B881EA /* YTNotificationListViewController.m */,
+				F85313232109734900B881EA /* YTNotificationListViewController.xib */,
+				F85313282109754B00B881EA /* YTChatListViewController.h */,
+				F85313292109754B00B881EA /* YTChatListViewController.m */,
+				F853132A2109754B00B881EA /* YTChatListViewController.xib */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		F8531326210973C200B881EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F853132D21097D4A00B881EA /* SysNotificationCell.h */,
+				F853132E21097D4A00B881EA /* SysNotificationCell.m */,
+				F853132F21097D4A00B881EA /* SysNotificationCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F8531327210973CC00B881EA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F876CCEB2101746A0015E0C7 /* Order */ = {
 			isa = PBXGroup;
 			children = (
@@ -1566,6 +1621,7 @@
 		F894250420EB67EE008156CC /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				F853131621096C0900B881EA /* Message */,
 				F85312EF21086DA300B881EA /* Record */,
 				F85312E9210860D500B881EA /* Camera */,
 				F80F518A21073F66004FF163 /* Setting */,
@@ -1911,6 +1967,7 @@
 				F894250A20EB6849008156CC /* YTLoginViewController.xib in Resources */,
 				F84EC15A2105E24F00FE66D2 /* YTInputLogistcViewController.xib in Resources */,
 				F846DA9221006B9200A1E1CE /* YTEditResumeViewController.xib in Resources */,
+				F853132C2109754B00B881EA /* YTChatListViewController.xib in Resources */,
 				F853130D2108882D00B881EA /* RecordHeadView.xib in Resources */,
 				F888D3D520F6EB4C00128715 /* YTEducaCollectViewController.xib in Resources */,
 				F8C3DDDD2100A1C100539E6E /* AddressCell.xib in Resources */,
@@ -1956,7 +2013,9 @@
 				F84EC134210374ED00FE66D2 /* LogisticsCell.xib in Resources */,
 				F888D40A20F8A2EC00128715 /* LocalListCell.xib in Resources */,
 				F84B44A120EF5DCA004791E8 /* YTWorkSearchViewController.xib in Resources */,
+				F853133121097D4A00B881EA /* SysNotificationCell.xib in Resources */,
 				F84EC13C2103899200FE66D2 /* LogistcsHeadView.xib in Resources */,
+				F85313252109734900B881EA /* YTNotificationListViewController.xib in Resources */,
 				F894253620EDC655008156CC /* WorkHeadCollectionViewCell.xib in Resources */,
 				F846DA8321006B9200A1E1CE /* YTWorkExperienceTableViewCell.xib in Resources */,
 				F8C3DDC3210091D100539E6E /* AffirmOrderCell.xib in Resources */,
@@ -1980,6 +2039,7 @@
 				F846DA8B21006B9200A1E1CE /* YTEducationExperienceTableViewCell.xib in Resources */,
 				F85313122108901100B881EA /* RecordFooterView.xib in Resources */,
 				F888F55F20EA75DD00E19554 /* YTMineViewController.xib in Resources */,
+				F853132021096F1600B881EA /* YTNotificationViewController.xib in Resources */,
 				F8126AD82101DAD4007CC031 /* OrderDetailHeadView.xib in Resources */,
 				A72826A920FDD30300244CAA /* YTPeronalInformationViewController.xib in Resources */,
 				F85312EE2108615C00B881EA /* YTCameraViewController.xib in Resources */,
@@ -2101,6 +2161,7 @@
 				F894253120ECD862008156CC /* WorkHeadView.m in Sources */,
 				F846DA8221006B9200A1E1CE /* YTWorkExperienceTableViewCell.m in Sources */,
 				F84B449020EF1A29004791E8 /* WorkAddressCollectionViewCell.m in Sources */,
+				F853132B2109754B00B881EA /* YTChatListViewController.m in Sources */,
 				F807692B20FB3E0F001E2FA6 /* ReviewModel.m in Sources */,
 				F85312DD2108231100B881EA /* YTPwsdViewController.m in Sources */,
 				F888D3F220F83A0100128715 /* YTFileDetailsViewController.m in Sources */,
@@ -2113,6 +2174,7 @@
 				A728270320FDF30700244CAA /* YTSelectSexView.m in Sources */,
 				F888F50320EA27B800E19554 /* AppDelegate.m in Sources */,
 				F84B449420EF43E4004791E8 /* WorkAddressHeadView.m in Sources */,
+				F853131F21096F1600B881EA /* YTNotificationViewController.m in Sources */,
 				F888D3D420F6EB4C00128715 /* YTEducaCollectViewController.m in Sources */,
 				F80F516C21070DDC004FF163 /* CollectCell.m in Sources */,
 				F846DA8621006B9200A1E1CE /* YTCertificateTableViewCell.m in Sources */,
@@ -2155,6 +2217,7 @@
 				F811A9EB20FF3F0D009EEA6D /* NewProductCell.m in Sources */,
 				A72826AE20FDDD6200244CAA /* YTModifyUsernameViewController.m in Sources */,
 				A728271320FF16D200244CAA /* YTCheckIconViewController.m in Sources */,
+				F85313242109734900B881EA /* YTNotificationListViewController.m in Sources */,
 				F80F517121070F96004FF163 /* YTCollectAllViewController.m in Sources */,
 				F84EC133210374ED00FE66D2 /* LogisticsCell.m in Sources */,
 				F888D40E20F8AED500128715 /* YTActiveDetailsViewController.m in Sources */,
@@ -2211,6 +2274,7 @@
 				F876CCFA2101785E0015E0C7 /* OrderListCell.m in Sources */,
 				F888F54420EA2E6C00E19554 /* YTTabBarViewController.m in Sources */,
 				F894254120EE27CF008156CC /* UIImage+Color.m in Sources */,
+				F853133021097D4A00B881EA /* SysNotificationCell.m in Sources */,
 				F83BA1B721006D9800EF5518 /* YTMedalCollectionViewCell.m in Sources */,
 				F85312F82108704D00B881EA /* YTRecordListViewController.m in Sources */,
 				F8135AB820F34649000F2372 /* YTWorkDetailViewController.m in Sources */,
