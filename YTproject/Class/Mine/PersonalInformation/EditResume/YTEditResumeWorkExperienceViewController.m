@@ -28,6 +28,8 @@
     YTAddWorkExperienceViewController *vc = [[YTAddWorkExperienceViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
+- (IBAction)nextStep:(id)sender {
+}
 
 #pragma mark =======================UITableViewDataSource=========================
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
