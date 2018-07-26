@@ -9,6 +9,7 @@
 #import "YTLoginViewController.h"
 #import "YTSelectViewController.h"
 #import "YTTabBarViewController.h"
+#import "CPTabBarViewController.h"
 
 @interface YTLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userTextField;
@@ -24,8 +25,15 @@
 }
 
 - (IBAction)login:(UIButton *)sender {
-    YTTabBarViewController *tabVc = [[YTTabBarViewController alloc]init];
-    [YTTool getWindow].rootViewController = tabVc;
+    if ([self.userTextField.text isEqualToString:@"1"]) {
+        YTTabBarViewController *tabVc = [[YTTabBarViewController alloc]init];
+        [YTTool getWindow].rootViewController = tabVc;
+    }else if ([self.userTextField.text isEqualToString:@"2"]){
+        CPTabBarViewController *tabVc = [[CPTabBarViewController alloc]init];
+        [YTTool getWindow].rootViewController = tabVc;
+    }else{
+        [YTProgressHUD showErrorWithStr:@"请输入正确的账号密码"];
+    }
 }
 
 - (IBAction)newUser:(UIButton *)sender {
