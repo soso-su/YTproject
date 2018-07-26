@@ -7,7 +7,7 @@
 //
 
 #import "YTResumeViewController.h"
-#import "YTEditResumeViewController.h"
+#import "YTEditResumeBaseInformationViewController.h"
 #import "YTResumeHeaderView.h"
 #import "YTResumeHeaderTableViewCell.h"
 #import "YTResumeVideoTableViewCell.h"
@@ -47,7 +47,7 @@
     NSLog(@"viewDidDisappear");
 }
 -(void)editResume{
-    YTEditResumeViewController *editVc = [[YTEditResumeViewController alloc]init];
+    YTEditResumeBaseInformationViewController *editVc = [[YTEditResumeBaseInformationViewController alloc]init];
     [self.navigationController pushViewController:editVc animated:YES];
 }
 

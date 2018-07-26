@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
 
 @property (nonatomic,strong)DateSelectedBlock selectedBlock;
 @property (nonatomic,strong)NSDate *defaultDate;
@@ -28,11 +29,13 @@
     }
     view.frame = [UIScreen mainScreen].bounds;
     view.alpha = 0;
+    view.contentView.y = [[UIScreen mainScreen]bounds].size.height;
     
     [[[UIApplication sharedApplication]keyWindow]addSubview:view];
     
     [UIView animateWithDuration:0.3 animations:^{
         view.alpha = 1;
+        view.contentView.y = [[UIScreen mainScreen]bounds].size.height - view.contentView.height;
     }];
 }
 
@@ -47,6 +50,7 @@
     
     [UIView animateWithDuration:0.3 animations:^{
         self.alpha = 0;
+        self.contentView.y = [[UIScreen mainScreen]bounds].size.height;
     } completion:^(BOOL finished) {
         [self removeFromSuperview];
     }];

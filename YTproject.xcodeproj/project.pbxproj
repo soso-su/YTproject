@@ -23,10 +23,14 @@
 		A72BA4E521003979008D57E6 /* YTPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A72BA4E321003979008D57E6 /* YTPageViewController.xib */; };
 		A72BA4E8210041CD008D57E6 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72BA4E7210041CD008D57E6 /* TestViewController.m */; };
 		A72BA4EB2100460A008D57E6 /* YTPageViewControllerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = A72BA4EA2100460A008D57E6 /* YTPageViewControllerConfiguration.m */; };
-		A75FCDAE2109B465002B6924 /* YTEditResumeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A75FCDA42109B462002B6924 /* YTEditResumeViewController.m */; };
-		A75FCDB02109B466002B6924 /* YTEditResumeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A75FCDA62109B463002B6924 /* YTEditResumeViewController.xib */; };
+		A75FCDAE2109B465002B6924 /* YTEditResumeBaseInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A75FCDA42109B462002B6924 /* YTEditResumeBaseInformationViewController.m */; };
+		A75FCDB02109B466002B6924 /* YTEditResumeBaseInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A75FCDA62109B463002B6924 /* YTEditResumeBaseInformationViewController.xib */; };
 		A75FCDB32109B466002B6924 /* YTEditResumeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A75FCDA92109B464002B6924 /* YTEditResumeTableViewCell.xib */; };
 		A75FCDB42109B466002B6924 /* YTEditResumeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A75FCDAA2109B464002B6924 /* YTEditResumeTableViewCell.m */; };
+		A75FCDBA2109C404002B6924 /* YTEditResumeWorkExperienceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A75FCDB82109C404002B6924 /* YTEditResumeWorkExperienceViewController.m */; };
+		A75FCDBB2109C404002B6924 /* YTEditResumeWorkExperienceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A75FCDB92109C404002B6924 /* YTEditResumeWorkExperienceViewController.xib */; };
+		A75FCDBF2109D409002B6924 /* YTAddWorkExperienceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A75FCDBD2109D409002B6924 /* YTAddWorkExperienceViewController.m */; };
+		A75FCDC02109D409002B6924 /* YTAddWorkExperienceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A75FCDBE2109D409002B6924 /* YTAddWorkExperienceViewController.xib */; };
 		F31292DA9D012030AC2E4722 /* libPods-YTproject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E96967340DCB4BC028D0A448 /* libPods-YTproject.a */; };
 		F803505120FF429D008CD026 /* BuyView.m in Sources */ = {isa = PBXBuildFile; fileRef = F803505020FF429C008CD026 /* BuyView.m */; };
 		F807691D20FB2E03001E2FA6 /* ReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F807691B20FB2E03001E2FA6 /* ReviewViewController.m */; };
@@ -349,12 +353,18 @@
 		A72BA4E7210041CD008D57E6 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		A72BA4E92100460A008D57E6 /* YTPageViewControllerConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTPageViewControllerConfiguration.h; sourceTree = "<group>"; };
 		A72BA4EA2100460A008D57E6 /* YTPageViewControllerConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTPageViewControllerConfiguration.m; sourceTree = "<group>"; };
-		A75FCDA42109B462002B6924 /* YTEditResumeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTEditResumeViewController.m; sourceTree = "<group>"; };
-		A75FCDA62109B463002B6924 /* YTEditResumeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YTEditResumeViewController.xib; sourceTree = "<group>"; };
+		A75FCDA42109B462002B6924 /* YTEditResumeBaseInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTEditResumeBaseInformationViewController.m; sourceTree = "<group>"; };
+		A75FCDA62109B463002B6924 /* YTEditResumeBaseInformationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YTEditResumeBaseInformationViewController.xib; sourceTree = "<group>"; };
 		A75FCDA92109B464002B6924 /* YTEditResumeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YTEditResumeTableViewCell.xib; sourceTree = "<group>"; };
 		A75FCDAA2109B464002B6924 /* YTEditResumeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTEditResumeTableViewCell.m; sourceTree = "<group>"; };
 		A75FCDAB2109B464002B6924 /* YTEditResumeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTEditResumeTableViewCell.h; sourceTree = "<group>"; };
-		A75FCDAD2109B465002B6924 /* YTEditResumeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTEditResumeViewController.h; sourceTree = "<group>"; };
+		A75FCDAD2109B465002B6924 /* YTEditResumeBaseInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTEditResumeBaseInformationViewController.h; sourceTree = "<group>"; };
+		A75FCDB72109C404002B6924 /* YTEditResumeWorkExperienceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTEditResumeWorkExperienceViewController.h; sourceTree = "<group>"; };
+		A75FCDB82109C404002B6924 /* YTEditResumeWorkExperienceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTEditResumeWorkExperienceViewController.m; sourceTree = "<group>"; };
+		A75FCDB92109C404002B6924 /* YTEditResumeWorkExperienceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTEditResumeWorkExperienceViewController.xib; sourceTree = "<group>"; };
+		A75FCDBC2109D409002B6924 /* YTAddWorkExperienceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTAddWorkExperienceViewController.h; sourceTree = "<group>"; };
+		A75FCDBD2109D409002B6924 /* YTAddWorkExperienceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTAddWorkExperienceViewController.m; sourceTree = "<group>"; };
+		A75FCDBE2109D409002B6924 /* YTAddWorkExperienceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTAddWorkExperienceViewController.xib; sourceTree = "<group>"; };
 		E96967340DCB4BC028D0A448 /* libPods-YTproject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YTproject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F803504F20FF429C008CD026 /* BuyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyView.h; sourceTree = "<group>"; };
 		F803505020FF429C008CD026 /* BuyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyView.m; sourceTree = "<group>"; };
@@ -922,14 +932,28 @@
 		A75FCDA32109B420002B6924 /* EditResume */ = {
 			isa = PBXGroup;
 			children = (
+				A75FCDB62109C32E002B6924 /* View */,
+				A75FCDAD2109B465002B6924 /* YTEditResumeBaseInformationViewController.h */,
+				A75FCDA42109B462002B6924 /* YTEditResumeBaseInformationViewController.m */,
+				A75FCDA62109B463002B6924 /* YTEditResumeBaseInformationViewController.xib */,
+				A75FCDB72109C404002B6924 /* YTEditResumeWorkExperienceViewController.h */,
+				A75FCDB82109C404002B6924 /* YTEditResumeWorkExperienceViewController.m */,
+				A75FCDB92109C404002B6924 /* YTEditResumeWorkExperienceViewController.xib */,
+				A75FCDBC2109D409002B6924 /* YTAddWorkExperienceViewController.h */,
+				A75FCDBD2109D409002B6924 /* YTAddWorkExperienceViewController.m */,
+				A75FCDBE2109D409002B6924 /* YTAddWorkExperienceViewController.xib */,
+			);
+			path = EditResume;
+			sourceTree = "<group>";
+		};
+		A75FCDB62109C32E002B6924 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				A75FCDAB2109B464002B6924 /* YTEditResumeTableViewCell.h */,
 				A75FCDAA2109B464002B6924 /* YTEditResumeTableViewCell.m */,
 				A75FCDA92109B464002B6924 /* YTEditResumeTableViewCell.xib */,
-				A75FCDAD2109B465002B6924 /* YTEditResumeViewController.h */,
-				A75FCDA42109B462002B6924 /* YTEditResumeViewController.m */,
-				A75FCDA62109B463002B6924 /* YTEditResumeViewController.xib */,
 			);
-			path = EditResume;
+			path = View;
 			sourceTree = "<group>";
 		};
 		F80F51572106D7AD004FF163 /* Collect */ = {
@@ -2010,6 +2034,7 @@
 				F8F1460120F2609800E55BE7 /* YTWorkSearchTableViewController.xib in Resources */,
 				F817881321003C02007006D8 /* CartCell.xib in Resources */,
 				F846DA8421006B9200A1E1CE /* YTResumeVideoTableViewCell.xib in Resources */,
+				A75FCDC02109D409002B6924 /* YTAddWorkExperienceViewController.xib in Resources */,
 				F8C3DDCE210095FB00539E6E /* AddressHeadView.xib in Resources */,
 				F888D3DA20F6F12B00128715 /* YTEdViewCell.xib in Resources */,
 				F888D3F320F83A0100128715 /* YTFileDetailsViewController.xib in Resources */,
@@ -2026,7 +2051,7 @@
 				F8126ADD2101DFAB007CC031 /* OrderDetailFooterView.xib in Resources */,
 				A72826AF20FDDD6200244CAA /* YTModifyUsernameViewController.xib in Resources */,
 				F888D3CB20F6132C00128715 /* SelectTypeCell.xib in Resources */,
-				A75FCDB02109B466002B6924 /* YTEditResumeViewController.xib in Resources */,
+				A75FCDB02109B466002B6924 /* YTEditResumeBaseInformationViewController.xib in Resources */,
 				F84EC134210374ED00FE66D2 /* LogisticsCell.xib in Resources */,
 				F888D40A20F8A2EC00128715 /* LocalListCell.xib in Resources */,
 				F84B44A120EF5DCA004791E8 /* YTWorkSearchViewController.xib in Resources */,
@@ -2035,6 +2060,7 @@
 				F85313252109734900B881EA /* YTNotificationListViewController.xib in Resources */,
 				F894253620EDC655008156CC /* WorkHeadCollectionViewCell.xib in Resources */,
 				F846DA8321006B9200A1E1CE /* YTWorkExperienceTableViewCell.xib in Resources */,
+				A75FCDBB2109C404002B6924 /* YTEditResumeWorkExperienceViewController.xib in Resources */,
 				F8C3DDC3210091D100539E6E /* AffirmOrderCell.xib in Resources */,
 				F80F51842107375F004FF163 /* IntergralCell.xib in Resources */,
 				F888F55020EA754300E19554 /* YTLocalViewController.xib in Resources */,
@@ -2169,6 +2195,7 @@
 				F80F51832107375F004FF163 /* IntergralCell.m in Sources */,
 				F8C3DDC2210091D100539E6E /* AffirmOrderCell.m in Sources */,
 				A75FCDB42109B466002B6924 /* YTEditResumeTableViewCell.m in Sources */,
+				A75FCDBF2109D409002B6924 /* YTAddWorkExperienceViewController.m in Sources */,
 				F8135AB120F3145A000F2372 /* CustomButton.m in Sources */,
 				F807692F20FB5157001E2FA6 /* YTCateDetailsViewController.m in Sources */,
 				F888D3D920F6F12B00128715 /* YTEdViewCell.m in Sources */,
@@ -2218,10 +2245,11 @@
 				F8C3DDCC210095F100539E6E /* AddressHeadView.m in Sources */,
 				F80F5187210739CF004FF163 /* IntergralHeadView.m in Sources */,
 				F85312FE210879EA00B881EA /* RecordListModel.m in Sources */,
-				A75FCDAE2109B465002B6924 /* YTEditResumeViewController.m in Sources */,
+				A75FCDAE2109B465002B6924 /* YTEditResumeBaseInformationViewController.m in Sources */,
 				F876CCEF210174990015E0C7 /* YTOrderViewController.m in Sources */,
 				F85312CE2108145100B881EA /* ActivityView.m in Sources */,
 				A728270820FEE2E000244CAA /* YTDatePickerView.m in Sources */,
+				A75FCDBA2109C404002B6924 /* YTEditResumeWorkExperienceViewController.m in Sources */,
 				F846DA9121006B9200A1E1CE /* YTResumeHeaderView.m in Sources */,
 				F85312D4210817B800B881EA /* YTAlertView.m in Sources */,
 				F894250920EB6849008156CC /* YTLoginViewController.m in Sources */,

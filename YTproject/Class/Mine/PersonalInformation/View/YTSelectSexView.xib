@@ -201,6 +201,7 @@
             <connections>
                 <outlet property="backgroundView" destination="NKN-wy-8W4" id="KoK-JA-leS"/>
                 <outlet property="boyButton" destination="FP5-t1-qXn" id="s3X-5D-nvO"/>
+                <outlet property="contentView" destination="ZvM-CU-vXD" id="3yQ-si-r8h"/>
                 <outlet property="girlButton" destination="bu9-rQ-rRU" id="yL7-Pt-ffa"/>
             </connections>
             <point key="canvasLocation" x="38.5" y="154"/>

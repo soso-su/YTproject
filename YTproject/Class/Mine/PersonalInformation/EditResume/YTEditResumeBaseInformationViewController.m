@@ -6,20 +6,21 @@
 //  Copyright © 2018年 suhuahao. All rights reserved.
 //
 
-#import "YTEditResumeViewController.h"
+#import "YTEditResumeBaseInformationViewController.h"
 #import "YTEditResumeTableViewCell.h"
 #import "YTSelectSexView.h"
 #import "YTDatePickerView.h"
 #import "YTAlertView.h"
+#import "YTEditResumeWorkExperienceViewController.h"
 
-@interface YTEditResumeViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface YTEditResumeBaseInformationViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,copy)NSMutableArray *detailTitleArr;
 
 @end
 
-@implementation YTEditResumeViewController
+@implementation YTEditResumeBaseInformationViewController
 
 static NSString *const TableViewCellId = @"TableViewCellId";
 
@@ -37,6 +38,10 @@ static NSString *const TableViewCellId = @"TableViewCellId";
     
 }
 
+- (IBAction)nextStep:(UIButton *)sender {
+    YTEditResumeWorkExperienceViewController *vc = [[YTEditResumeWorkExperienceViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 #pragma mark =======================UITableViewDataSource=========================
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 10;
