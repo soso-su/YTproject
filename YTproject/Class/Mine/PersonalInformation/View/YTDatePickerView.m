@@ -23,7 +23,9 @@
 +(void)showWithDefaultSelectDate:(NSDate *)date SelectBlock:(DateSelectedBlock)block{
     YTDatePickerView *view = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass([YTDatePickerView class]) owner:self options:nil].lastObject;
     view.selectedBlock = block;
-    view.defaultDate = date;
+    if (date != nil) {
+        view.defaultDate = date;
+    }
     view.frame = [UIScreen mainScreen].bounds;
     view.alpha = 0;
     
