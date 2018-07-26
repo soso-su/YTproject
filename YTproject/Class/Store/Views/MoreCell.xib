@@ -53,9 +53,17 @@
                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZN-6J-FBT">
+                                <rect key="frame" x="222" y="65" width="55" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" title=" 取消收藏" image="localIconCollectPre">
+                                    <color key="titleColor" red="1" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="QZN-6J-FBT" secondAttribute="trailing" constant="13" id="5Z6-wS-QeX"/>
                             <constraint firstItem="gzy-Lv-rfu" firstAttribute="bottom" secondItem="JKs-Hw-OGZ" secondAttribute="bottom" id="9QS-Nd-sfX"/>
                             <constraint firstItem="gzy-Lv-rfu" firstAttribute="leading" secondItem="f64-YF-JaC" secondAttribute="leading" id="EHW-mT-jSq"/>
                             <constraint firstItem="f64-YF-JaC" firstAttribute="top" secondItem="JKs-Hw-OGZ" secondAttribute="top" id="G4m-zB-IrE"/>
@@ -64,6 +72,7 @@
                             <constraint firstItem="wmt-ee-t4x" firstAttribute="leading" secondItem="gzy-Lv-rfu" secondAttribute="trailing" constant="5" id="Liy-a0-TFB"/>
                             <constraint firstItem="JKs-Hw-OGZ" firstAttribute="leading" secondItem="26D-Vm-FED" secondAttribute="leading" constant="12" id="PsA-Np-90x"/>
                             <constraint firstItem="Gdy-K7-bwF" firstAttribute="centerY" secondItem="wmt-ee-t4x" secondAttribute="centerY" id="VLB-Vp-ezG"/>
+                            <constraint firstItem="QZN-6J-FBT" firstAttribute="centerY" secondItem="wmt-ee-t4x" secondAttribute="centerY" id="dDi-C0-nEq"/>
                             <constraint firstAttribute="bottom" secondItem="JKs-Hw-OGZ" secondAttribute="bottom" constant="12.5" id="jHj-R8-lyl"/>
                             <constraint firstItem="f64-YF-JaC" firstAttribute="leading" secondItem="JKs-Hw-OGZ" secondAttribute="trailing" constant="13" id="sRK-gH-oZB"/>
                             <constraint firstItem="wmt-ee-t4x" firstAttribute="centerY" secondItem="gzy-Lv-rfu" secondAttribute="centerY" id="vT3-rd-zpa"/>
@@ -80,10 +89,15 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="collectBtn" destination="QZN-6J-FBT" id="1qc-h2-QMM"/>
+                <outlet property="sellLabel" destination="Gdy-K7-bwF" id="lVo-Bd-yxW"/>
+            </connections>
             <point key="canvasLocation" x="34" y="8.5"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="localIconCollectPre" width="11" height="11"/>
         <image name="productPic2" width="67" height="67"/>
     </resources>
 </document>

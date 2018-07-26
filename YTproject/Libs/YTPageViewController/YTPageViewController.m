@@ -15,6 +15,7 @@
 @property (nonatomic,copy)NSMutableArray *menuButtons;
 @property (nonatomic,copy)NSArray *childViewControllers;
 @property (nonatomic,strong)UIButton *currentSelectedButton;
+@property (nonatomic,assign)BOOL isMenuScrollable;
 
 @property (nonatomic,strong)UIView *indicatorView;
 @property (weak, nonatomic) IBOutlet UIScrollView *menuScrollView;
@@ -25,6 +26,7 @@
 
 @implementation YTPageViewController
 
+#pragma mark =======================PublicMethod=========================
 +(instancetype)pageWithViewControllers:(NSArray *)viewControllers configuration:(YTPageViewControllerConfiguration *)configuration{
     YTPageViewController *vc = [[YTPageViewController alloc]init];
     vc.childViewControllers = viewControllers;
@@ -38,6 +40,19 @@
     return vc;
 }
 
+- (void)selectViewController:(NSInteger)index{
+    if (index >= self.menuButtons.count){
+#if DEBUG
+        [NSException raise:@"数组越界" format:@"选择的控制器超过了总控制器的数量"];
+#endif
+        return;
+    }
+    
+    [self buttonDidTap:self.menuButtons[index]];
+}
+
+
+#pragma mark =======================LifeCycle=========================
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -53,12 +68,6 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-//    [UIView animateWithDuration:0.3 animations:^{
-//        UIButton *firstButton = (UIButton *)self.menuButtons.firstObject;
-//        CGPoint center = self.indicatorView.center;
-//        center.x = firstButton.x + firstButton.width/2;
-//        self.indicatorView.center = center;
-//    }];
 }
 
 - (void)viewDidLayoutSubviews{
@@ -107,19 +116,23 @@
     self.currentSelectedButton = indexButton;
     indexButton.selected = YES;
     
-    //处理左边偏移量
-    CGFloat menuWidth = self.menuScrollView.frame.size.width;
-    CGFloat buttonCenterX = indexButton.center.x;
-    
-    CGFloat menuOffsetX = buttonCenterX - menuWidth/2;
-    if (menuOffsetX < 0) {
-        menuOffsetX = 0;
-    }
-    
-    //处理右边偏移量
-    CGFloat maxOffsetX = self.menuScrollView.contentSize.width - menuWidth;
-    if (menuOffsetX > maxOffsetX) {
-        menuOffsetX = maxOffsetX;
+    if (self.isMenuScrollable){
+        //处理左边偏移量
+        CGFloat menuWidth = self.menuScrollView.frame.size.width;
+        CGFloat buttonCenterX = indexButton.center.x;
+        
+        CGFloat menuOffsetX = buttonCenterX - menuWidth/2;
+        if (menuOffsetX < 0) {
+            menuOffsetX = 0;
+        }
+        
+        //处理右边偏移量
+        CGFloat maxOffsetX = self.menuScrollView.contentSize.width - menuWidth;
+        if (menuOffsetX > maxOffsetX) {
+            menuOffsetX = maxOffsetX;
+        }
+        
+        [self.menuScrollView setContentOffset:CGPointMake(menuOffsetX, 0) animated:YES];
     }
     
     //处理indicatorView
@@ -129,8 +142,10 @@
         self.indicatorView.center = center;
     }];
     
+    if ([self.delegate respondsToSelector:@selector(didScrollToViewController:index:)]) {
+        [self.delegate didScrollToViewController:vcWillShow index:index];
+    }
     
-    [self.menuScrollView setContentOffset:CGPointMake(menuOffsetX, 0) animated:YES];
     
     //判断即将展现的vc的view是否已经添加到了scrollView中
     if (vcWillShow.view.window != nil && vcWillShow.isViewLoaded) {
@@ -158,24 +173,58 @@
     CGFloat margin = self.configuration.menuMargin;
     CGFloat leftOffset = 19;
     CGFloat rightOffest = 19;
+    CGFloat buttonWidth = 0;
+    
+    for (UIButton *button in self.menuButtons) {
+        //取最大的button的宽度作为通用的宽度
+        buttonWidth = MAX(buttonWidth, button.width);
+    }
     
     //设置每个button的位置
     for (int i = 0; i < self.menuButtons.count; i++) {
         UIButton *button = self.menuButtons[i];
-        CGRect frame = button.frame;
-        frame.origin.x = leftOffset + margin * i + button.width * i;
-        button.frame = frame;
+        button.width = buttonWidth;
+        button.centerY = self.menuScrollView.size.height/2;
+        button.x = leftOffset + margin * i + buttonWidth * i;
         
-        CGPoint center = button.center;
-        center.y = self.menuScrollView.size.height/2;
-        button.center = center;
-        
+        //判断最后一个button有没有超过屏幕宽度，没有的话则顶部不可滚动
         if (button == (UIButton *)self.menuButtons.lastObject) {
             self.menuScrollView.contentSize = CGSizeMake(button.frame.origin.x + button.frame.size.width  + rightOffest, 0);
+            
+            if (self.menuScrollView.contentSize.width < self.view.width){
+                //button没有占满
+                [self setupButtonPositionForUnscrollabelMenu];
+                self.isMenuScrollable = NO;
+            }else{
+                self.isMenuScrollable = YES;
+            }
         }
     }
     
     self.contentScrollView.contentSize = CGSizeMake(self.childViewControllers.count * self.view.frame.size.width, 0);
+}
+
+//配置menu为不可滚动，此时configuration中的margin属性无效
+-(void)setupButtonPositionForUnscrollabelMenu{
+    
+    CGFloat buttonWidth = 0;
+    
+    for (UIButton *button in self.menuButtons) {
+        buttonWidth = MAX(buttonWidth, button.width);
+    }
+    
+    //计算每个button之间的间隔
+    CGFloat margin = (self.view.frame.size.width - buttonWidth * self.menuButtons.count)/(self.menuButtons.count + 1);
+    
+    for (int i = 0; i < self.menuButtons.count; i++) {
+        UIButton *button = self.menuButtons[i];
+        button.width = buttonWidth;
+        button.x = margin + margin * i + button.width * i;
+//        button.backgroundColor = UIColor.yellowColor;
+    }
+    
+    self.menuScrollView.width = self.view.frame.size.width;
+    
 }
 
 -(void)setupMenu{

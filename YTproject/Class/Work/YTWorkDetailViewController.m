@@ -17,6 +17,8 @@
 @interface YTWorkDetailViewController ()<ShareViewDelegate>
 @property (weak, nonatomic) IBOutlet YTTouchView *companyView;
 @property (strong, nonatomic)ShareView *shareView;
+@property (weak, nonatomic) IBOutlet CustomButton *shareBtn;
+@property (weak, nonatomic) IBOutlet CustomButton *interestsBtn;
 
 @end
 
@@ -26,6 +28,8 @@
     [super viewDidLoad];
     [self setNav];
     self.title = @"职业详情";
+    self.shareBtn.customButtonType = ImageUpLabelDown;
+    self.interestsBtn.customButtonType = ImageUpLabelDown;
     [[YTTool getWindow] addSubview:self.shareView];
 }
 

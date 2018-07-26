@@ -12,6 +12,7 @@
 #import "YTRecommendViewController.h"
 #import "YTGeneralViewController.h"
 #import "YTPageViewController.h"
+#import "YTMoreViewController.h"
 
 @interface YTStoreViewController ()<UISearchBarDelegate>
 @property (weak, nonatomic) YTSearchBar *searchBar;
@@ -93,6 +94,12 @@
     [self.navigationController pushViewController:chat animated:YES];
 }
 
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [searchBar resignFirstResponder];
+    YTMoreViewController *searchVc = [[YTMoreViewController alloc]init];
+    searchVc.isSearch = YES;
+    [self.navigationController pushViewController:searchVc animated:YES];
+}
 
 
 

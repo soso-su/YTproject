@@ -10,4 +10,6 @@
 
 @interface MoreCell : UITableViewCell
 
+@property (nonatomic, assign) BOOL isCollect;
+
 @end

@@ -10,4 +10,6 @@
 
 @interface AffirmOrderCell : UITableViewCell
 
+@property (nonatomic, assign)BOOL isCart;
+
 @end

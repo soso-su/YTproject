@@ -13,6 +13,7 @@
 #import "HotSellCell.h"
 #import "TYRotateImageView.h"
 #import "YTProductDetailViewController.h"
+#import "YTMoreViewController.h"
 
 #define StoreCellID @"Store"
 #define StoreHeadID @"StoreHead"
@@ -175,6 +176,24 @@ static CGFloat margin = 15;
     [self.navigationController pushViewController:product animated:YES];
 }
 
+- (void)recommendMore:(UIButton *)btn{
+    YTMoreViewController *more = [[YTMoreViewController alloc]init];
+    more.title = @"英途推荐";
+    [self.navigationController pushViewController:more animated:YES];
+}
+
+- (void)hotMore:(UIButton *)btn{
+    YTMoreViewController *more = [[YTMoreViewController alloc]init];
+    more.title = @"当季热卖";
+    [self.navigationController pushViewController:more animated:YES];
+}
+
+- (void)newMore:(UIButton *)btn{
+    YTMoreViewController *more = [[YTMoreViewController alloc]init];
+    more.title = @"新品上架";
+    [self.navigationController pushViewController:more animated:YES];
+}
+
 
 - (UIView *)storeHeadView{
     if (!_storeHeadView) {
@@ -211,6 +230,8 @@ static CGFloat margin = 15;
         moreBtn.titleLabel.font = [UIFont systemFontOfSize:16.0];
         [moreBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         moreBtn.frame = CGRectMake(margin, 0, kScreen_Width - margin*2, 42);
+        [moreBtn addTarget:self action:@selector(recommendMore:) forControlEvents:UIControlEventTouchUpInside];
+        
         [hotSellHeadView addSubview:moreBtn];
         
         UIImageView *titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"iconTitle2"]];
@@ -263,6 +284,7 @@ static CGFloat margin = 15;
         moreBtn.titleLabel.font = [UIFont systemFontOfSize:16.0];
         [moreBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         moreBtn.frame = CGRectMake(margin, 0, kScreen_Width - margin*2, 42);
+        [moreBtn addTarget:self action:@selector(hotMore:) forControlEvents:UIControlEventTouchUpInside];
         [neHeadView addSubview:moreBtn];
         
         UIImageView *titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"iconTitle1"]];
@@ -290,6 +312,7 @@ static CGFloat margin = 15;
         [moreBtn setTitle:@"更多" forState:UIControlStateNormal];
         moreBtn.titleLabel.font = [UIFont systemFontOfSize:16.0];
         [moreBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [moreBtn addTarget:self action:@selector(newMore:) forControlEvents:UIControlEventTouchUpInside];
         moreBtn.frame = CGRectMake(margin, 0, kScreen_Width - margin*2, 42);
         [neFooterView addSubview:moreBtn];
         _neFooterView = neFooterView;

@@ -8,11 +8,32 @@
 
 #import "AffirmOrderCell.h"
 
+@interface AffirmOrderCell()
+@property (weak, nonatomic) IBOutlet UILabel *leftCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *spLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rightCountLabel;
+
+@end
+
 @implementation AffirmOrderCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+}
+
+
+- (void)setIsCart:(BOOL)isCart{
+    _isCart = isCart;
+    if (isCart) {
+        self.spLabel.hidden = YES;
+        self.rightCountLabel.hidden = YES;
+        self.leftCountLabel.hidden = NO;
+    }else{
+        self.spLabel.hidden = NO;
+        self.rightCountLabel.hidden = NO;
+        self.leftCountLabel.hidden = YES;
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

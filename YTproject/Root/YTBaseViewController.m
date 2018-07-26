@@ -52,7 +52,7 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button sizeToFit];
     [button setImage:[UIImage imageNamed:@"navBack"] forState:UIControlStateNormal];
-    button.size = CGSizeMake(70, 30);
+    button.size = CGSizeMake(40, 30);
     button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *customItem = [[UIBarButtonItem alloc]initWithCustomView:button];

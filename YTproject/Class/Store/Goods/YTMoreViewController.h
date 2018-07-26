@@ -10,4 +10,6 @@
 
 @interface YTMoreViewController : YTBaseViewController
 
+@property (nonatomic, assign)BOOL isSearch;
+
 @end

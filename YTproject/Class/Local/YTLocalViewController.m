@@ -12,6 +12,7 @@
 #import "YTSearchBar.h"
 #import "YTAddressViewController.h"
 #import "YTChatViewController.h"
+#import "YTLocalSearchViewController.h"
 
 @interface YTLocalViewController ()<SGPageTitleViewDelegate,SGPageContentScrollViewDelegate,UISearchBarDelegate>
 @property (nonatomic ,strong) SGPageTitleView *pageTitleView;
@@ -99,6 +100,12 @@
 
 - (void)pageContentScrollView:(SGPageContentScrollView *)pageContentScrollView progress:(CGFloat)progress originalIndex:(NSInteger)originalIndex targetIndex:(NSInteger)targetIndex{
     [self.pageTitleView setPageTitleViewWithProgress:progress originalIndex:originalIndex targetIndex:targetIndex];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [searchBar resignFirstResponder];
+    YTLocalSearchViewController *searchVc = [[YTLocalSearchViewController alloc]init];
+    [self.navigationController pushViewController:searchVc animated:YES];
 }
 
 
