@@ -13,6 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YTWorkDetailViewController">
             <connections>
                 <outlet property="companyView" destination="MEw-l0-fUS" id="QLt-eU-iHq"/>
+                <outlet property="interestsBtn" destination="R6N-dd-CZX" id="aAL-Yb-csc"/>
+                <outlet property="shareBtn" destination="IvC-Rt-726" id="B5L-es-MoC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -459,7 +461,7 @@
                     </constraints>
                 </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uui-Jw-7zH">
-                    <rect key="frame" x="0.0" y="617" width="375" height="70"/>
+                    <rect key="frame" x="0.0" y="607" width="375" height="60"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IvC-Rt-726" customClass="CustomButton">
                             <rect key="frame" x="15" y="5" width="40" height="50"/>
@@ -556,7 +558,7 @@
                     <constraints>
                         <constraint firstItem="bOL-QM-2cQ" firstAttribute="leading" secondItem="R6N-dd-CZX" secondAttribute="trailing" constant="20" id="20W-de-lSG"/>
                         <constraint firstAttribute="trailing" secondItem="3r1-Tr-j7k" secondAttribute="trailing" constant="15" id="DhK-Ec-2K5"/>
-                        <constraint firstAttribute="height" constant="70" id="Djw-ay-Ar7"/>
+                        <constraint firstAttribute="height" constant="60" id="Djw-ay-Ar7"/>
                         <constraint firstItem="hAk-Sm-zHl" firstAttribute="centerY" secondItem="bOL-QM-2cQ" secondAttribute="centerY" id="E5T-FY-Sa7"/>
                         <constraint firstItem="bOL-QM-2cQ" firstAttribute="centerY" secondItem="3r1-Tr-j7k" secondAttribute="centerY" id="LUh-AU-QOf"/>
                         <constraint firstItem="3r1-Tr-j7k" firstAttribute="width" secondItem="bOL-QM-2cQ" secondAttribute="width" id="U8l-mS-ftn"/>
@@ -577,7 +579,7 @@
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Uui-Jw-7zH" secondAttribute="trailing" id="Nde-RR-2ms"/>
                 <constraint firstItem="Qpr-3S-Zgx" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="au2-Ft-Wwn"/>
                 <constraint firstItem="Qpr-3S-Zgx" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="d8b-51-36N"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="Uui-Jw-7zH" secondAttribute="bottom" constant="-20" id="n81-iu-rTR"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="Uui-Jw-7zH" secondAttribute="bottom" id="n81-iu-rTR"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Qpr-3S-Zgx" secondAttribute="trailing" id="nF0-VB-whr"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="Qpr-3S-Zgx" secondAttribute="bottom" id="xlN-kU-Dkp"/>
             </constraints>
