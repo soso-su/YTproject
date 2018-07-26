@@ -18,6 +18,8 @@
 #import "YTOpinionViewController.h"
 #import "YTRecordViewController.h"
 #import "YTNotificationViewController.h"
+#import "YTNameAttestationViewController.h"
+#import "YTAttestationViewController.h"
 
 @interface YTMineViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -75,7 +77,15 @@
     YTNotificationViewController *vc = [[YTNotificationViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
+- (IBAction)nameAttestation:(UIButton *)sender {
+    YTNameAttestationViewController *vc = [[YTNameAttestationViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
+- (IBAction)addAttestation:(UIButton *)sender {
+    YTAttestationViewController *vc = [[YTAttestationViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 #pragma mark =======================UITableViewDataSource=========================
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

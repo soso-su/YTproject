@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YTPassAttextationViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="payIconSucceed" translatesAutoresizingMaskIntoConstraints="NO" id="hYE-Oy-Zfk">
+                    <rect key="frame" x="109" y="71" width="157" height="156"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已经认证通过!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8D-Pc-zDS">
+                    <rect key="frame" x="129" y="257" width="116.5" height="21"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="真是姓名：李咏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUf-9b-D7X">
+                    <rect key="frame" x="18" y="330" width="100" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="护照号：442587***************5432" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6Z-OH-o8J">
+                    <rect key="frame" x="18" y="362" width="237" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="W6Z-OH-o8J" firstAttribute="top" secondItem="jUf-9b-D7X" secondAttribute="bottom" constant="15" id="1gm-xM-TvD"/>
+                <constraint firstItem="i8D-Pc-zDS" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4JZ-EY-kgq"/>
+                <constraint firstItem="hYE-Oy-Zfk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4pS-4d-R8O"/>
+                <constraint firstItem="hYE-Oy-Zfk" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="51" id="Hrh-Za-ca0"/>
+                <constraint firstItem="W6Z-OH-o8J" firstAttribute="leading" secondItem="jUf-9b-D7X" secondAttribute="leading" id="Wfa-Eb-M8n"/>
+                <constraint firstItem="i8D-Pc-zDS" firstAttribute="top" secondItem="hYE-Oy-Zfk" secondAttribute="bottom" constant="30" id="X4p-Xj-OVw"/>
+                <constraint firstItem="jUf-9b-D7X" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="18" id="eZl-Gx-d06"/>
+                <constraint firstItem="jUf-9b-D7X" firstAttribute="top" secondItem="i8D-Pc-zDS" secondAttribute="bottom" constant="52" id="zN1-CP-KI7"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="payIconSucceed" width="157" height="156"/>
+    </resources>
+</document>

@@ -1,22 +1,22 @@
 //
-//  YTNameAttestationViewController.m
+//  YTPassAttextationViewController.m
 //  YTproject
 //
 //  Created by suhuahao on 2018/7/26.
 //  Copyright © 2018年 suhuahao. All rights reserved.
 //
 
-#import "YTNameAttestationViewController.h"
+#import "YTPassAttextationViewController.h"
 
-@interface YTNameAttestationViewController ()
+@interface YTPassAttextationViewController ()
 
 @end
 
-@implementation YTNameAttestationViewController
+@implementation YTPassAttextationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.title = @"实名认证";
 }
 
 - (void)didReceiveMemoryWarning {
