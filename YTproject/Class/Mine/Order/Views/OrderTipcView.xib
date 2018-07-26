@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXY-5l-i2K">
-                    <rect key="frame" x="62" y="273.5" width="251" height="120.5"/>
+                    <rect key="frame" x="62" y="270" width="251" height="127.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="申请退款，订单金额将直接退回您的支付账户。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zQ-5Z-QRJ">
                             <rect key="frame" x="28" y="22" width="203" height="31.5"/>
@@ -26,7 +26,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rF2-Ve-oKD">
-                            <rect key="frame" x="28" y="81.5" width="57" height="29"/>
+                            <rect key="frame" x="28" y="88.5" width="57" height="29"/>
                             <state key="normal" title="确定" backgroundImage="ddxqBtn3">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -35,7 +35,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5r1-DZ-jQX">
-                            <rect key="frame" x="159" y="81.5" width="56" height="29"/>
+                            <rect key="frame" x="159" y="88.5" width="56" height="29"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <state key="normal" title="取消" backgroundImage="ddxqBtn4">
                                 <color key="titleColor" red="1" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -49,7 +49,7 @@
                     <constraints>
                         <constraint firstItem="5r1-DZ-jQX" firstAttribute="centerY" secondItem="rF2-Ve-oKD" secondAttribute="centerY" id="4T1-Fq-y4g"/>
                         <constraint firstAttribute="bottom" secondItem="rF2-Ve-oKD" secondAttribute="bottom" constant="10" id="AE1-Ga-OXB"/>
-                        <constraint firstItem="rF2-Ve-oKD" firstAttribute="top" secondItem="7zQ-5Z-QRJ" secondAttribute="bottom" constant="28" id="ESa-S3-nFS"/>
+                        <constraint firstItem="rF2-Ve-oKD" firstAttribute="top" secondItem="7zQ-5Z-QRJ" secondAttribute="bottom" constant="35" id="ESa-S3-nFS"/>
                         <constraint firstAttribute="trailing" secondItem="5r1-DZ-jQX" secondAttribute="trailing" constant="36" id="Ooc-Pc-Jwq"/>
                         <constraint firstItem="7zQ-5Z-QRJ" firstAttribute="leading" secondItem="UXY-5l-i2K" secondAttribute="leading" constant="28" id="PUv-NY-Dc7"/>
                         <constraint firstAttribute="trailing" secondItem="7zQ-5Z-QRJ" secondAttribute="trailing" constant="20" id="hht-YP-jzj"/>

@@ -144,7 +144,7 @@
     
     CustomButton *typeBtn = [CustomButton buttonWithType:UIButtonTypeCustom];
     typeBtn.fontSize = 13.0;
-    typeBtn.customButtonType = 1;
+    typeBtn.customButtonType = ImageLeftLabelRight;
     typeBtn.backgroundColor = RGB(238, 238, 238);
     typeBtn.layer.cornerRadius = 4.0;
     [typeBtn setTitle:@"全职" forState:UIControlStateNormal];

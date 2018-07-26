@@ -1,13 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CPWorkViewController">
             <connections>
+                <outlet property="deleteAllBtn" destination="AM7-KA-JCU" id="Sev-KE-D3P"/>
+                <outlet property="refreshBtn" destination="v2J-WR-DTn" id="a6p-tY-37Z"/>
+                <outlet property="tableView" destination="DhY-34-nrO" id="bSy-Id-rCf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,8 +22,52 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DhY-34-nrO">
+                    <rect key="frame" x="0.0" y="65" width="375" height="602"/>
+                    <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="PHA-H3-c3H"/>
+                        <outlet property="delegate" destination="-1" id="9Sm-pk-QZb"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2J-WR-DTn">
+                    <rect key="frame" x="18" y="32" width="76" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title=" 刷新全部" image="workIconRefresh">
+                        <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="refreshAll:" destination="-1" eventType="touchUpInside" id="Xwa-8K-Sem"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AM7-KA-JCU">
+                    <rect key="frame" x="135" y="32" width="76" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title=" 删除全部" image="workIconDelete">
+                        <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="deleteAll:" destination="-1" eventType="touchUpInside" id="8mj-40-Gmf"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="v2J-WR-DTn" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="18" id="Csz-NP-T1I"/>
+                <constraint firstItem="DhY-34-nrO" firstAttribute="top" secondItem="v2J-WR-DTn" secondAttribute="bottom" constant="16" id="McP-kc-VZQ"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="DhY-34-nrO" secondAttribute="trailing" id="Txv-xW-peD"/>
+                <constraint firstItem="AM7-KA-JCU" firstAttribute="leading" secondItem="v2J-WR-DTn" secondAttribute="trailing" constant="41" id="c3t-AO-deK"/>
+                <constraint firstItem="v2J-WR-DTn" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="12" id="hiE-My-TBD"/>
+                <constraint firstItem="DhY-34-nrO" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="pSn-bC-MEG"/>
+                <constraint firstItem="AM7-KA-JCU" firstAttribute="centerY" secondItem="v2J-WR-DTn" secondAttribute="centerY" id="yD4-o3-zaI"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="DhY-34-nrO" secondAttribute="bottom" id="z0v-6C-kDt"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
         </view>
     </objects>
+    <resources>
+        <image name="workIconDelete" width="15" height="15"/>
+        <image name="workIconRefresh" width="15" height="15"/>
+    </resources>
 </document>
