@@ -31,6 +31,10 @@
 - (IBAction)nextStep:(id)sender {
 }
 
+- (void)preview{
+    
+}
+
 #pragma mark =======================UITableViewDataSource=========================
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 0;
