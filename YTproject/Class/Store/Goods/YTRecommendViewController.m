@@ -7,7 +7,6 @@
 //
 
 #import "YTRecommendViewController.h"
-#import "YTTouchView.h"
 #import "StoreCell.h"
 #import "NewProductCell.h"
 #import "HotSellCell.h"

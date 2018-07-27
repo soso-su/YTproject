@@ -14,10 +14,14 @@
 
 - (void)clickShareBtn;
 
+- (void)clickApplicantBtn:(BOOL)education;
+
 @end
 
 @interface CPWorkCell : UITableViewCell
 
 @property (nonatomic, assign)id <CPWorkCellDelegate>delegate;
+
+@property (nonatomic, assign)BOOL education;
 
 @end

@@ -10,7 +10,6 @@
 #import "YTCompanyViewController.h"
 #import "YTPostFileViewController.h"
 #import "YTChatViewController.h"
-#import "YTTouchView.h"
 #import "CustomButton.h"
 #import "ShareView.h"
 

@@ -115,12 +115,6 @@
                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="查看应聘者(10人)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pP3-Ye-qXs">
-                                <rect key="frame" x="200" y="61" width="96" height="15"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(在线)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15t-nS-EHa">
                                 <rect key="frame" x="71.5" y="12.5" width="36.5" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -148,12 +142,23 @@
                                     <color key="titleColor" red="0.96470588235294119" green="0.20784313725490194" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1LJ-He-ATC">
+                                <rect key="frame" x="200" y="55" width="96" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="查看应聘者(10人)">
+                                    <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkApplicant:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hPa-vu-dyr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7LO-Iu-sTT" firstAttribute="leading" secondItem="Klw-rB-uTd" secondAttribute="leading" constant="13" id="33x-FE-iCj"/>
                             <constraint firstItem="Ue9-Hm-8Wt" firstAttribute="trailing" secondItem="l58-8w-fYD" secondAttribute="trailing" id="3Z4-mB-K5a"/>
                             <constraint firstItem="Ue9-Hm-8Wt" firstAttribute="centerY" secondItem="u7P-m9-BJ5" secondAttribute="centerY" id="3sV-x0-kc4"/>
+                            <constraint firstItem="Ryb-wd-cGH" firstAttribute="trailing" secondItem="1LJ-He-ATC" secondAttribute="trailing" id="5i5-A3-zM3"/>
                             <constraint firstAttribute="bottom" secondItem="dHK-S1-zdI" secondAttribute="bottom" constant="13.5" id="6d1-U6-XSm"/>
                             <constraint firstItem="dHK-S1-zdI" firstAttribute="leading" secondItem="R5q-OV-FBO" secondAttribute="leading" id="97C-bj-M0N"/>
                             <constraint firstItem="s4s-5I-EOk" firstAttribute="leading" secondItem="15t-nS-EHa" secondAttribute="trailing" constant="11" id="Cxu-Gh-EoI"/>
@@ -169,16 +174,15 @@
                             <constraint firstItem="c1n-qL-ZW4" firstAttribute="centerY" secondItem="ANC-cC-7y1" secondAttribute="centerY" id="Tq5-XV-2GF"/>
                             <constraint firstItem="ANC-cC-7y1" firstAttribute="leading" secondItem="u7P-m9-BJ5" secondAttribute="leading" id="W0L-xr-hZP"/>
                             <constraint firstItem="15t-nS-EHa" firstAttribute="centerY" secondItem="7LO-Iu-sTT" secondAttribute="centerY" id="YEc-gV-5Vz"/>
+                            <constraint firstItem="1LJ-He-ATC" firstAttribute="centerY" secondItem="Klw-rB-uTd" secondAttribute="centerY" id="Ygh-rb-Hab"/>
                             <constraint firstItem="s4s-5I-EOk" firstAttribute="centerY" secondItem="15t-nS-EHa" secondAttribute="centerY" id="c5z-pX-zea"/>
                             <constraint firstItem="u7P-m9-BJ5" firstAttribute="top" secondItem="7LO-Iu-sTT" secondAttribute="bottom" constant="8" id="ctP-ys-l8n"/>
                             <constraint firstItem="c1n-qL-ZW4" firstAttribute="leading" secondItem="ANC-cC-7y1" secondAttribute="trailing" constant="10" id="fMx-mz-IHZ"/>
                             <constraint firstItem="Qz6-xs-cZ4" firstAttribute="top" secondItem="C3a-G2-G4A" secondAttribute="bottom" constant="9" id="h0P-Ab-1qV"/>
-                            <constraint firstItem="pP3-Ye-qXs" firstAttribute="trailing" secondItem="Ue9-Hm-8Wt" secondAttribute="trailing" id="jb1-AV-yqT"/>
                             <constraint firstItem="7Du-a9-oI1" firstAttribute="centerY" secondItem="Ryb-wd-cGH" secondAttribute="centerY" id="mrB-xZ-3bl"/>
-                            <constraint firstItem="pP3-Ye-qXs" firstAttribute="centerY" secondItem="Klw-rB-uTd" secondAttribute="centerY" id="ozZ-99-SdD"/>
+                            <constraint firstItem="1LJ-He-ATC" firstAttribute="trailing" secondItem="Ue9-Hm-8Wt" secondAttribute="trailing" id="mt1-UX-QYW"/>
                             <constraint firstItem="C3a-G2-G4A" firstAttribute="top" secondItem="dHK-S1-zdI" secondAttribute="top" id="qBd-fr-Wiv"/>
                             <constraint firstItem="u7P-m9-BJ5" firstAttribute="leading" secondItem="7LO-Iu-sTT" secondAttribute="leading" id="qX1-Zl-uWw"/>
-                            <constraint firstItem="Ryb-wd-cGH" firstAttribute="trailing" secondItem="pP3-Ye-qXs" secondAttribute="trailing" id="rrc-3u-cnq"/>
                             <constraint firstItem="Ryb-wd-cGH" firstAttribute="centerY" secondItem="Qz6-xs-cZ4" secondAttribute="centerY" id="sBd-2h-0GW"/>
                             <constraint firstItem="Ryb-wd-cGH" firstAttribute="leading" secondItem="7Du-a9-oI1" secondAttribute="trailing" constant="12" id="wfw-Gg-okz"/>
                             <constraint firstItem="C3a-G2-G4A" firstAttribute="leading" secondItem="dHK-S1-zdI" secondAttribute="trailing" constant="13" id="yTv-X1-dmW"/>

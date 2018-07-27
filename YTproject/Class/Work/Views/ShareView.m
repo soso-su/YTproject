@@ -7,7 +7,6 @@
 //
 
 #import "ShareView.h"
-#import "YTTouchView.h"
 
 @interface ShareView()
 @property(nonatomic,weak)UIView *footView;

@@ -47,6 +47,8 @@
 		F80CB320210AD0970076963F /* YTAddStatusCertificateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F80CB31E210AD0970076963F /* YTAddStatusCertificateViewController.xib */; };
 		F80CB324210AD2E20076963F /* YTCommitVCRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F80CB322210AD2E20076963F /* YTCommitVCRViewController.m */; };
 		F80CB325210AD2E20076963F /* YTCommitVCRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F80CB323210AD2E20076963F /* YTCommitVCRViewController.xib */; };
+		F80CB329210AF19F0076963F /* CPEditWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F80CB327210AF19F0076963F /* CPEditWorkViewController.m */; };
+		F80CB32A210AF19F0076963F /* CPEditWorkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F80CB328210AF19F0076963F /* CPEditWorkViewController.xib */; };
 		F80F515B2106D7FA004FF163 /* YTCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F80F51592106D7FA004FF163 /* YTCollectViewController.m */; };
 		F80F515C2106D7FB004FF163 /* YTCollectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F80F515A2106D7FA004FF163 /* YTCollectViewController.xib */; };
 		F80F51602106E0E3004FF163 /* YTLocalSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F80F515E2106E0E3004FF163 /* YTLocalSearchViewController.m */; };
@@ -323,6 +325,15 @@
 		F8C3DDE72100AAB500539E6E /* YTCartAddAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8C3DDE52100AAB500539E6E /* YTCartAddAddressViewController.xib */; };
 		F8C3DDEB2100D36600539E6E /* YTPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C3DDE92100D36600539E6E /* YTPayViewController.m */; };
 		F8C3DDEC2100D36600539E6E /* YTPayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8C3DDEA2100D36600539E6E /* YTPayViewController.xib */; };
+		F8D8F504210B224100A52AAB /* CPApplicantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D8F503210B224100A52AAB /* CPApplicantViewController.m */; };
+		F8D8F508210B243000A52AAB /* CPApplicantListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D8F506210B243000A52AAB /* CPApplicantListViewController.m */; };
+		F8D8F509210B243000A52AAB /* CPApplicantListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D8F507210B243000A52AAB /* CPApplicantListViewController.xib */; };
+		F8D8F50D210B263400A52AAB /* CPNotEdutionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D8F50B210B263400A52AAB /* CPNotEdutionTableViewCell.m */; };
+		F8D8F50E210B263400A52AAB /* CPNotEdutionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D8F50C210B263400A52AAB /* CPNotEdutionTableViewCell.xib */; };
+		F8D8F512210B2CB800A52AAB /* CPEducationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D8F510210B2CB800A52AAB /* CPEducationCell.m */; };
+		F8D8F513210B2CB800A52AAB /* CPEducationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D8F511210B2CB800A52AAB /* CPEducationCell.xib */; };
+		F8D8F517210B86D400A52AAB /* CPApplicantDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D8F515210B86D400A52AAB /* CPApplicantDetailViewController.m */; };
+		F8D8F518210B86D400A52AAB /* CPApplicantDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D8F516210B86D400A52AAB /* CPApplicantDetailViewController.xib */; };
 		F8DE216E20FC402C00AC55D8 /* ServerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DE216C20FC402C00AC55D8 /* ServerCollectionViewCell.m */; };
 		F8DE216F20FC402C00AC55D8 /* ServerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8DE216D20FC402C00AC55D8 /* ServerCollectionViewCell.xib */; };
 		F8DE217320FC497F00AC55D8 /* YTTenementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DE217120FC497F00AC55D8 /* YTTenementViewController.m */; };
@@ -423,6 +434,9 @@
 		F80CB321210AD2E20076963F /* YTCommitVCRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTCommitVCRViewController.h; sourceTree = "<group>"; };
 		F80CB322210AD2E20076963F /* YTCommitVCRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTCommitVCRViewController.m; sourceTree = "<group>"; };
 		F80CB323210AD2E20076963F /* YTCommitVCRViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTCommitVCRViewController.xib; sourceTree = "<group>"; };
+		F80CB326210AF19F0076963F /* CPEditWorkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPEditWorkViewController.h; sourceTree = "<group>"; };
+		F80CB327210AF19F0076963F /* CPEditWorkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPEditWorkViewController.m; sourceTree = "<group>"; };
+		F80CB328210AF19F0076963F /* CPEditWorkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPEditWorkViewController.xib; sourceTree = "<group>"; };
 		F80F51582106D7FA004FF163 /* YTCollectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTCollectViewController.h; sourceTree = "<group>"; };
 		F80F51592106D7FA004FF163 /* YTCollectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTCollectViewController.m; sourceTree = "<group>"; };
 		F80F515A2106D7FA004FF163 /* YTCollectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTCollectViewController.xib; sourceTree = "<group>"; };
@@ -846,6 +860,20 @@
 		F8C3DDE82100D36600539E6E /* YTPayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTPayViewController.h; sourceTree = "<group>"; };
 		F8C3DDE92100D36600539E6E /* YTPayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTPayViewController.m; sourceTree = "<group>"; };
 		F8C3DDEA2100D36600539E6E /* YTPayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTPayViewController.xib; sourceTree = "<group>"; };
+		F8D8F502210B224100A52AAB /* CPApplicantViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPApplicantViewController.h; sourceTree = "<group>"; };
+		F8D8F503210B224100A52AAB /* CPApplicantViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPApplicantViewController.m; sourceTree = "<group>"; };
+		F8D8F505210B243000A52AAB /* CPApplicantListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPApplicantListViewController.h; sourceTree = "<group>"; };
+		F8D8F506210B243000A52AAB /* CPApplicantListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPApplicantListViewController.m; sourceTree = "<group>"; };
+		F8D8F507210B243000A52AAB /* CPApplicantListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPApplicantListViewController.xib; sourceTree = "<group>"; };
+		F8D8F50A210B263400A52AAB /* CPNotEdutionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPNotEdutionTableViewCell.h; sourceTree = "<group>"; };
+		F8D8F50B210B263400A52AAB /* CPNotEdutionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPNotEdutionTableViewCell.m; sourceTree = "<group>"; };
+		F8D8F50C210B263400A52AAB /* CPNotEdutionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPNotEdutionTableViewCell.xib; sourceTree = "<group>"; };
+		F8D8F50F210B2CB800A52AAB /* CPEducationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPEducationCell.h; sourceTree = "<group>"; };
+		F8D8F510210B2CB800A52AAB /* CPEducationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPEducationCell.m; sourceTree = "<group>"; };
+		F8D8F511210B2CB800A52AAB /* CPEducationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPEducationCell.xib; sourceTree = "<group>"; };
+		F8D8F514210B86D400A52AAB /* CPApplicantDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPApplicantDetailViewController.h; sourceTree = "<group>"; };
+		F8D8F515210B86D400A52AAB /* CPApplicantDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPApplicantDetailViewController.m; sourceTree = "<group>"; };
+		F8D8F516210B86D400A52AAB /* CPApplicantDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPApplicantDetailViewController.xib; sourceTree = "<group>"; };
 		F8DE216B20FC402C00AC55D8 /* ServerCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServerCollectionViewCell.h; sourceTree = "<group>"; };
 		F8DE216C20FC402C00AC55D8 /* ServerCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServerCollectionViewCell.m; sourceTree = "<group>"; };
 		F8DE216D20FC402C00AC55D8 /* ServerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServerCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -1420,6 +1448,17 @@
 				F85313542109CB7C00B881EA /* CPWorkDetailViewController.h */,
 				F85313552109CB7C00B881EA /* CPWorkDetailViewController.m */,
 				F85313562109CB7C00B881EA /* CPWorkDetailViewController.xib */,
+				F80CB326210AF19F0076963F /* CPEditWorkViewController.h */,
+				F80CB327210AF19F0076963F /* CPEditWorkViewController.m */,
+				F80CB328210AF19F0076963F /* CPEditWorkViewController.xib */,
+				F8D8F502210B224100A52AAB /* CPApplicantViewController.h */,
+				F8D8F503210B224100A52AAB /* CPApplicantViewController.m */,
+				F8D8F505210B243000A52AAB /* CPApplicantListViewController.h */,
+				F8D8F506210B243000A52AAB /* CPApplicantListViewController.m */,
+				F8D8F507210B243000A52AAB /* CPApplicantListViewController.xib */,
+				F8D8F514210B86D400A52AAB /* CPApplicantDetailViewController.h */,
+				F8D8F515210B86D400A52AAB /* CPApplicantDetailViewController.m */,
+				F8D8F516210B86D400A52AAB /* CPApplicantDetailViewController.xib */,
 			);
 			path = Work;
 			sourceTree = "<group>";
@@ -1454,6 +1493,12 @@
 				F853134F2109B98600B881EA /* CPWorkCell.h */,
 				F85313502109B98600B881EA /* CPWorkCell.m */,
 				F85313512109B98600B881EA /* CPWorkCell.xib */,
+				F8D8F50A210B263400A52AAB /* CPNotEdutionTableViewCell.h */,
+				F8D8F50B210B263400A52AAB /* CPNotEdutionTableViewCell.m */,
+				F8D8F50C210B263400A52AAB /* CPNotEdutionTableViewCell.xib */,
+				F8D8F50F210B2CB800A52AAB /* CPEducationCell.h */,
+				F8D8F510210B2CB800A52AAB /* CPEducationCell.m */,
+				F8D8F511210B2CB800A52AAB /* CPEducationCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2259,6 +2304,7 @@
 				F84EC15A2105E24F00FE66D2 /* YTInputLogistcViewController.xib in Resources */,
 				F853132C2109754B00B881EA /* YTChatListViewController.xib in Resources */,
 				F853130D2108882D00B881EA /* RecordHeadView.xib in Resources */,
+				F80CB32A210AF19F0076963F /* CPEditWorkViewController.xib in Resources */,
 				F888D3D520F6EB4C00128715 /* YTEducaCollectViewController.xib in Resources */,
 				F8C3DDDD2100A1C100539E6E /* AddressCell.xib in Resources */,
 				F888D3C620F5E78E00128715 /* YTChatViewController.xib in Resources */,
@@ -2267,11 +2313,13 @@
 				F817882521006645007006D8 /* YTMoreViewController.xib in Resources */,
 				F8DE219B20FDD91600AC55D8 /* MoreCell.xib in Resources */,
 				F8DFE4CE20F373FC00F76DFB /* YTCompanyViewController.xib in Resources */,
+				F8D8F518210B86D400A52AAB /* CPApplicantDetailViewController.xib in Resources */,
 				F85312F421086DE100B881EA /* YTRecordViewController.xib in Resources */,
 				F8DE217420FC497F00AC55D8 /* YTTenementViewController.xib in Resources */,
 				F888D38420F4A9AE00128715 /* YTCompanyMessageController.xib in Resources */,
 				F84EC12A2103639F00FE66D2 /* EvaluateCell.xib in Resources */,
 				F80CB320210AD0970076963F /* YTAddStatusCertificateViewController.xib in Resources */,
+				F8D8F509210B243000A52AAB /* CPApplicantListViewController.xib in Resources */,
 				F84EC1502105D1DE00FE66D2 /* ApplyforFooterView.xib in Resources */,
 				F80F51612106E0E3004FF163 /* YTLocalSearchViewController.xib in Resources */,
 				F8126ACA2101910D007CC031 /* OrderTipcView.xib in Resources */,
@@ -2316,6 +2364,7 @@
 				F828A6DE210A1F36006AC52C /* YTPassAttextationViewController.xib in Resources */,
 				F85313252109734900B881EA /* YTNotificationListViewController.xib in Resources */,
 				F894253620EDC655008156CC /* WorkHeadCollectionViewCell.xib in Resources */,
+				F8D8F513210B2CB800A52AAB /* CPEducationCell.xib in Resources */,
 				F846DA8321006B9200A1E1CE /* YTWorkExperienceTableViewCell.xib in Resources */,
 				F8C3DDC3210091D100539E6E /* AffirmOrderCell.xib in Resources */,
 				F80F51842107375F004FF163 /* IntergralCell.xib in Resources */,
@@ -2344,6 +2393,7 @@
 				F85313602109E0E700B881EA /* YTSelectSexView.xib in Resources */,
 				A72826A920FDD30300244CAA /* YTPeronalInformationViewController.xib in Resources */,
 				F85312EE2108615C00B881EA /* YTCameraViewController.xib in Resources */,
+				F8D8F50E210B263400A52AAB /* CPNotEdutionTableViewCell.xib in Resources */,
 				F846DA9021006B9200A1E1CE /* YTResumeHeaderView.xib in Resources */,
 				F85313582109CB7C00B881EA /* CPWorkDetailViewController.xib in Resources */,
 				F84EC1462105AEF800FE66D2 /* RefundCell.xib in Resources */,
@@ -2445,11 +2495,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F811A9E720FF3CFA009EEA6D /* YTRecommendViewController.m in Sources */,
+				F8D8F512210B2CB800A52AAB /* CPEducationCell.m in Sources */,
 				F85312D1210814B800B881EA /* YTProgressHUD.m in Sources */,
 				F8DE217820FC4EEE00AC55D8 /* YTMediumViewController.m in Sources */,
 				F888D3CA20F6132C00128715 /* SelectTypeCell.m in Sources */,
 				F84EC14A2105B7D200FE66D2 /* YTRefundDetailViewController.m in Sources */,
 				F80F517621072643004FF163 /* WorkCell.m in Sources */,
+				F8D8F517210B86D400A52AAB /* CPApplicantDetailViewController.m in Sources */,
 				F8126AD22101D32E007CC031 /* YTOrderDetailViewController.m in Sources */,
 				F83BA1B521006D3700EF5518 /* YTResumeHeaderTableViewCell.m in Sources */,
 				F8DE21A420FDE5F000AC55D8 /* HotSellCell.m in Sources */,
@@ -2460,9 +2512,12 @@
 				F85313522109B98600B881EA /* CPWorkCell.m in Sources */,
 				F807692F20FB5157001E2FA6 /* YTCateDetailsViewController.m in Sources */,
 				F888D3D920F6F12B00128715 /* YTEdViewCell.m in Sources */,
+				F8D8F508210B243000A52AAB /* CPApplicantListViewController.m in Sources */,
+				F8D8F504210B224100A52AAB /* CPApplicantViewController.m in Sources */,
 				F888F51120EA27B800E19554 /* main.m in Sources */,
 				F8F1460020F2609800E55BE7 /* YTWorkSearchTableViewController.m in Sources */,
 				F853134D2109A69700B881EA /* CPTabBarViewController.m in Sources */,
+				F8D8F50D210B263400A52AAB /* CPNotEdutionTableViewCell.m in Sources */,
 				F80F51602106E0E3004FF163 /* YTLocalSearchViewController.m in Sources */,
 				F84EC1542105D97700FE66D2 /* YTApplyforViewController.m in Sources */,
 				F894253120ECD862008156CC /* WorkHeadView.m in Sources */,
@@ -2486,6 +2541,7 @@
 				F84B449420EF43E4004791E8 /* WorkAddressHeadView.m in Sources */,
 				F853131F21096F1600B881EA /* YTNotificationViewController.m in Sources */,
 				F828A6DD210A1F36006AC52C /* YTPassAttextationViewController.m in Sources */,
+				F80CB329210AF19F0076963F /* CPEditWorkViewController.m in Sources */,
 				F888D3D420F6EB4C00128715 /* YTEducaCollectViewController.m in Sources */,
 				F80F516C21070DDC004FF163 /* CollectCell.m in Sources */,
 				F846DA8621006B9200A1E1CE /* YTCertificateTableViewCell.m in Sources */,
@@ -2774,7 +2830,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GLQDTER79Q;
+				DEVELOPMENT_TEAM = 9AE2ZZ47TB;
 				GCC_PREFIX_HEADER = "YTproject/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/YTproject/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -2782,7 +2838,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.susu.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaopao.yingtu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2794,7 +2850,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GLQDTER79Q;
+				DEVELOPMENT_TEAM = 9AE2ZZ47TB;
 				GCC_PREFIX_HEADER = "YTproject/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/YTproject/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -2802,7 +2858,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.susu.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaopao.yingtu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

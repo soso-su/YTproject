@@ -26,7 +26,7 @@
 - (void)setRotateView{
     
     NSArray *imgArr = @[@"viewpager",@"viewpager",@"viewpager"];
-    TYRotateImageView *imgScrView  = [[TYRotateImageView alloc]initWithFrame:CGRectNull style:ImageScrollType_Guide images:imgArr confirmBtnTitle:@"立即体验" confirmBtnTitleColor:[UIColor whiteColor] confirmBtnFrame:CGRectMake(kScreen_Width - 110, self.stateHeight + 30, 100, 40) autoScrollTimeInterval:0 delegate:self];
+    TYRotateImageView *imgScrView  = [[TYRotateImageView alloc]initWithFrame:CGRectNull style:ImageScrollType_Guide images:imgArr confirmBtnTitle:@"立即体验" confirmBtnTitleColor:[UIColor whiteColor] confirmBtnFrame:CGRectMake(kScreen_Width/2 - 60, kScreen_Height - 210, 100, 40) autoScrollTimeInterval:0 delegate:self];
     imgScrView.pageColor = [UIColor grayColor];
     imgScrView.pageCurrentColor = DefaultColor;
     [self.view addSubview:imgScrView];
@@ -51,10 +51,10 @@
 }
 
 
-//- (void)bannerImageDidHandleWithIndex:(NSInteger)index
-//{
-//    YTLog(@"===%ld",index);
-//}
+- (void)bannerImageDidHandleWithIndex:(NSInteger)index
+{
+    YTLog(@"===%ld",index);
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

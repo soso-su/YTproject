@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YTTouchView.h"
 
 @interface AddressHeadView : UIView
 @property (weak, nonatomic) IBOutlet YTTouchView *selectAddress;

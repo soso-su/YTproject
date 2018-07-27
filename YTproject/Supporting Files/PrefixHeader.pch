@@ -15,5 +15,6 @@
 #import "YTProgressHUD.h"
 #import "YTAlertView.h"
 #import <ReactiveObjC/ReactiveObjC.h>
+#import "YTTouchView.h"
 
 

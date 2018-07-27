@@ -13,10 +13,9 @@
 #import "YTLoginViewController.h"
 #import "YTCameraViewController.h"
 
-@interface YTSettingViewController ()<UITableViewDataSource,UITableViewDelegate,OrderTipcViewDelegate>
+@interface YTSettingViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *itemTitleArr;
-@property (nonatomic ,strong) OrderTipcView *tipcView;
 
 
 @end
@@ -27,7 +26,6 @@
     [super viewDidLoad];
     self.title = @"设置";
     self.tableView.scrollEnabled = NO;
-    [[YTTool getWindow] addSubview:self.tipcView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -61,11 +59,12 @@
         YTPwsdViewController *pswdVc = [[YTPwsdViewController alloc]init];
         [self.navigationController pushViewController:pswdVc animated:YES];
     }else if (indexPath.row == self.itemTitleArr.count - 1) {
-        self.tipcView.showStr = @"确定注销？";
-        self.tipcView.type = TextCenter;
-        self.tipcView.hidden = NO;
-//        YTCameraViewController *cameraVc = [[YTCameraViewController alloc]init];
-//        [self.navigationController pushViewController:cameraVc animated:YES];
+        [OrderTipcView showWithStr:@"确定注销？" type:TextCenter callBack:^{
+            
+            YTLoginViewController *loginVc = [[YTLoginViewController alloc]init];
+            [YTTool getWindow].rootViewController = loginVc;
+            
+        }];
     }
 }
 
@@ -77,28 +76,6 @@
     }
     return _itemTitleArr;
 }
-
-- (OrderTipcView *)tipcView{
-    if (!_tipcView) {
-        _tipcView = [OrderTipcView showTipcView];
-        _tipcView.delegate = self;
-        _tipcView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height);
-        _tipcView.backgroundColor = [UIColor colorWithWhite:50.0/255.0 alpha:0.4];
-        _tipcView.hidden = YES;
-    }
-    return _tipcView;
-}
-
-- (void)clickCancle {
-    self.tipcView.hidden = YES;
-}
-
-- (void)clickComfirm {
-    self.tipcView.hidden = YES;
-    YTLoginViewController *loginVc = [[YTLoginViewController alloc]init];
-    [YTTool getWindow].rootViewController = loginVc;
-}
-
 
 
 @end

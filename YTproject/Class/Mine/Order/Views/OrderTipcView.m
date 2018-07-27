@@ -11,6 +11,8 @@
 @interface OrderTipcView()
 @property (weak, nonatomic) IBOutlet UILabel *tipLabel;
 
+@property (nonatomic, copy)CallBall block;
+
 @end
 
 @implementation OrderTipcView
@@ -20,6 +22,15 @@
     return tipView;
 }
 
++ (void)showWithStr:(NSString *)str type:(TextType)type callBack:(CallBall)block{
+    OrderTipcView *tip = [OrderTipcView showTipcView];
+    tip.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height);
+    tip.backgroundColor = [UIColor colorWithWhite:50.0/255.0 alpha:0.4];
+    tip.showStr = str;
+    tip.type = type;
+    tip.block = block;
+    [[YTTool getWindow] addSubview:tip];
+}
 
 
 - (void)setShowStr:(NSString *)showStr{
@@ -36,14 +47,11 @@
 }
 
 - (IBAction)comfirm:(UIButton *)sender {
-    if (self.delegate) {
-        [self.delegate clickComfirm];
-    }
+    self.block();
+    [self removeFromSuperview];
 }
 - (IBAction)cancle:(UIButton *)sender {
-    if (self.delegate) {
-        [self.delegate clickCancle];
-    }
+    [self removeFromSuperview];
 }
 
 @end

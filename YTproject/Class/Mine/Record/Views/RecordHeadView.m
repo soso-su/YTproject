@@ -7,7 +7,6 @@
 //
 
 #import "RecordHeadView.h"
-#import "YTTouchView.h"
 
 @interface RecordHeadView()
 @property (weak, nonatomic) IBOutlet UILabel *stateLabel;

@@ -7,6 +7,7 @@
 //
 
 #import "CPWorkDetailViewController.h"
+#import "CPEditWorkViewController.h"
 
 @interface CPWorkDetailViewController ()
 
@@ -24,7 +25,8 @@
 
 
 - (void)edit{
-    
+    CPEditWorkViewController *editVc = [[CPEditWorkViewController alloc]init];
+    [self.navigationController pushViewController:editVc animated:YES];
 }
 
 @end

@@ -15,10 +15,8 @@
 
 #define cellID @"ORDERLIST"
 
-@interface YTOrderListViewController ()<UITableViewDelegate,UITableViewDataSource,OrderListCellDelegate,OrderTipcViewDelegate>
+@interface YTOrderListViewController ()<UITableViewDelegate,UITableViewDataSource,OrderListCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic,strong) OrderTipcView *tipcView;
-
 @property (nonatomic, strong) NSMutableArray <OrderListModel *>*dataSorce;
 
 @end
@@ -30,7 +28,6 @@
     [self setData];
     [self.tableView registerNib:[UINib nibWithNibName:@"OrderListCell" bundle:nil] forCellReuseIdentifier:cellID];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [[YTTool getWindow] addSubview:self.tipcView];
     
 }
 
@@ -332,9 +329,9 @@
 
 - (void)cancleOrder:(OrderListModel *)model{
     if (model.orderState == OrderState_NotPay) {
-        self.tipcView.showStr = @"提示：您即将取消该订单";
-        self.tipcView.type = TextCenter;
-        self.tipcView.hidden = NO;
+        [OrderTipcView showWithStr:@"提示：您即将取消该订单" type:TextCenter callBack:^{
+            
+        }];
     }else{
         YTLogisticsViewController *logistVc = [[YTLogisticsViewController alloc]init];
         [self.navigationController pushViewController:logistVc animated:YES];
@@ -345,33 +342,16 @@
 
 - (void)comfirmOrder:(OrderListModel *)model{
     if (model.orderState == OrderState_NotTake) {
-        self.tipcView.showStr = @"请确认已经收到宝贝，否则可能财物两空！";
-        self.tipcView.hidden = NO;
-        self.tipcView.type = TextLeft;
+        [OrderTipcView showWithStr:@"请确认已经收到宝贝，否则可能财物两空！" type:TextLeft callBack:^{
+            
+        }];
     }else if(model.orderState == OrderState_NotEvaluate){
         YTOrderEvaluateListController *evaluateVc = [[YTOrderEvaluateListController alloc]init];
         [self.navigationController pushViewController:evaluateVc animated:YES];
     }
 }
 
-- (void)clickComfirm{
-    
-}
 
-- (void)clickCancle{
-    self.tipcView.hidden = YES;
-}
-
-- (OrderTipcView *)tipcView{
-    if (!_tipcView) {
-        _tipcView = [OrderTipcView showTipcView];
-        _tipcView.delegate = self;
-        _tipcView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height);
-        _tipcView.backgroundColor = [UIColor colorWithWhite:50.0/255.0 alpha:0.4];
-        _tipcView.hidden = YES;
-    }
-    return _tipcView;
-}
 
 - (NSMutableArray <OrderListModel *>*)dataSorce{
     if (!_dataSorce) {

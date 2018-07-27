@@ -22,11 +22,19 @@
 
     // Configure the view for the selected state
 }
+
+-(void)setEducation:(BOOL)education{
+    _education = education;
+}
+
 - (IBAction)deleteWork:(UIButton *)sender {
     [self.delegate clickDeleteBtn];
 }
 - (IBAction)shareWork:(UIButton *)sender {
     [self.delegate clickShareBtn];
+}
+- (IBAction)checkApplicant:(UIButton *)sender {
+    [self.delegate clickApplicantBtn:self.education];
 }
 
 @end

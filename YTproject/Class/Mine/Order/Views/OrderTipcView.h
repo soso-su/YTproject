@@ -13,16 +13,12 @@ typedef NS_ENUM(NSInteger,TextType) {
     TextCenter,
 };
 
-@protocol OrderTipcViewDelegate <NSObject>
-- (void)clickComfirm;
-- (void)clickCancle;
-
-@end
+typedef void(^CallBall)(void);
 
 @interface OrderTipcView : UIView
 @property (nonatomic ,strong) NSString *showStr;
-@property (nonatomic, assign) id <OrderTipcViewDelegate>delegate;
 @property (nonatomic, assign) TextType type;
-+ (instancetype)showTipcView;
++ (void)showWithStr:(NSString *)str type:(TextType)type callBack:(CallBall)block;
+
 
 @end

@@ -10,13 +10,13 @@
 #import "CPWorkCell.h"
 #import "OrderTipcView.h"
 #import "CPWorkDetailViewController.h"
+#import "CPApplicantViewController.h"
 
 #define cellID @"cpWorkCell"
-@interface CPWorkViewController ()<UITableViewDelegate,UITableViewDataSource,CPWorkCellDelegate,OrderTipcViewDelegate>
+@interface CPWorkViewController ()<UITableViewDelegate,UITableViewDataSource,CPWorkCellDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *refreshBtn;
 @property (weak, nonatomic) IBOutlet UIButton *deleteAllBtn;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) OrderTipcView *tipView;
 
 
 @end
@@ -33,7 +33,6 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"CPWorkCell" bundle:nil] forCellReuseIdentifier:cellID];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [[YTTool getWindow] addSubview:self.tipView];
 }
 
 - (void)setNav{
@@ -72,6 +71,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CPWorkCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    if (indexPath.row == 0) {
+        cell.education = YES;
+    }else{
+        cell.education = NO;
+    }
     cell.delegate = self;
     return cell;
 }
@@ -82,42 +86,31 @@
 }
 
 - (void)clickDeleteBtn{
-    self.tipView.showStr = @"删除该职位？";
-    self.tipView.type = TextCenter;
-    self.tipView.hidden = NO;
+    [OrderTipcView showWithStr:@"删除该职位？" type:TextCenter callBack:^{
+        
+    }];
 }
+
+- (void)clickApplicantBtn:(BOOL)education{
+    CPApplicantViewController *vc = [[CPApplicantViewController alloc]init];
+    vc.isEducation = education;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 - (void)clickShareBtn{
     
 }
 
-- (void)clickComfirm{
-    self.tipView.hidden = YES;
-}
-
-- (void)clickCancle{
-    self.tipView.hidden = YES;
-}
 
 - (IBAction)refreshAll:(UIButton *)sender {
     
 }
 - (IBAction)deleteAll:(UIButton *)sender {
-    self.tipView.showStr = @"删除全部职位？";
-    self.tipView.type = TextCenter;
-    self.tipView.hidden = NO;
+    [OrderTipcView showWithStr:@"删除全部职位？" type:TextCenter callBack:^{
+        
+    }];
 }
 
-
-- (OrderTipcView *)tipView{
-    if (!_tipView) {
-        _tipView = [OrderTipcView showTipcView];
-        _tipView.delegate = self;
-        _tipView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height);
-        _tipView.backgroundColor = [UIColor colorWithWhite:50.0/255.0 alpha:0.4];
-        _tipView.hidden = YES;
-    }
-    return _tipView;
-}
 
 @end

@@ -15,11 +15,10 @@
 
 #define cellID @"OrderCell"
 
-@interface YTRefundDetailViewController ()<UITableViewDelegate,UITableViewDataSource,OrderDetailFooterViewDelegate,OrderTipcViewDelegate>
+@interface YTRefundDetailViewController ()<UITableViewDelegate,UITableViewDataSource,OrderDetailFooterViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong)OrderDetailHeadView *headView;
 @property (nonatomic, strong)OrderDetailFooterView *footerView;
-@property (nonatomic,strong) OrderTipcView *tipcView;
 @end
 
 @implementation YTRefundDetailViewController
@@ -39,7 +38,6 @@
     self.footerView.model = self.model;
     self.tableView.tableFooterView = self.footerView;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [[YTTool getWindow] addSubview:self.tipcView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -71,17 +69,6 @@
         _footerView.delegate = self;
     }
     return _footerView;
-}
-
-- (OrderTipcView *)tipcView{
-    if (!_tipcView) {
-        _tipcView = [OrderTipcView showTipcView];
-        _tipcView.delegate = self;
-        _tipcView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height);
-        _tipcView.backgroundColor = [UIColor colorWithWhite:50.0/255.0 alpha:0.4];
-        _tipcView.hidden = YES;
-    }
-    return _tipcView;
 }
 
 

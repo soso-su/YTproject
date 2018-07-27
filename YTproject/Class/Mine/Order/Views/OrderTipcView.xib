@@ -17,10 +17,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXY-5l-i2K">
-                    <rect key="frame" x="62" y="270" width="251" height="127.5"/>
+                    <rect key="frame" x="78" y="270" width="219" height="127.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="申请退款，订单金额将直接退回您的支付账户。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zQ-5Z-QRJ">
-                            <rect key="frame" x="28" y="22" width="203" height="31.5"/>
+                            <rect key="frame" x="28" y="22" width="171" height="31.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" red="1" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
@@ -35,7 +35,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5r1-DZ-jQX">
-                            <rect key="frame" x="159" y="88.5" width="56" height="29"/>
+                            <rect key="frame" x="127" y="88.5" width="56" height="29"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <state key="normal" title="取消" backgroundImage="ddxqBtn4">
                                 <color key="titleColor" red="1" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -67,8 +67,8 @@
             <constraints>
                 <constraint firstItem="UXY-5l-i2K" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="3X1-d5-Ee9"/>
                 <constraint firstItem="UXY-5l-i2K" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Ykw-YF-UYl"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="UXY-5l-i2K" secondAttribute="trailing" constant="62" id="aLh-Rm-eBA"/>
-                <constraint firstItem="UXY-5l-i2K" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="62" id="j4B-cL-0nn"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="UXY-5l-i2K" secondAttribute="trailing" constant="78" id="aLh-Rm-eBA"/>
+                <constraint firstItem="UXY-5l-i2K" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="78" id="j4B-cL-0nn"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>

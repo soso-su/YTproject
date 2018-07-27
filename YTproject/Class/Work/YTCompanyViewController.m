@@ -8,7 +8,6 @@
 
 #import "YTCompanyViewController.h"
 #import "CustomButton.h"
-#import "YTTouchView.h"
 #import <SGPagingView.h>
 #import "YTCompanyMessageController.h"
 #import "YTWorkSearchTableViewController.h"

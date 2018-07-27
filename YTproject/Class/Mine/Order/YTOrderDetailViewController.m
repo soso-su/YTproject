@@ -17,11 +17,10 @@
 
 #define cellID @"rmOrderCell"
 
-@interface YTOrderDetailViewController ()<UITableViewDelegate,UITableViewDataSource,OrderDetailFooterViewDelegate,OrderTipcViewDelegate>
+@interface YTOrderDetailViewController ()<UITableViewDelegate,UITableViewDataSource,OrderDetailFooterViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong)OrderDetailHeadView *headView;
 @property (nonatomic, strong)OrderDetailFooterView *footerView;
-@property (nonatomic,strong) OrderTipcView *tipcView;
 
 @end
 
@@ -41,7 +40,6 @@
     self.footerView.model = self.model;
     self.tableView.tableFooterView = self.footerView;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [[YTTool getWindow] addSubview:self.tipcView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -60,26 +58,25 @@
         YTLogisticsViewController *logist = [[YTLogisticsViewController alloc]init];
         [self.navigationController pushViewController:logist animated:YES];
     }else{
-        
-        self.tipcView.hidden = NO;
-        self.tipcView.type = TextCenter;
-        self.tipcView.showStr = @"提示：您将取消该订单";
+        [OrderTipcView showWithStr:@"提示：您将取消该订单" type:TextCenter callBack:^{
+            
+        }];
     }
     
 }
 
 - (void)payOrder:(OrderListModel *)model{
     if (model.orderState == OrderState_NotSend) {
-        self.tipcView.hidden = NO;
-        self.tipcView.type = TextLeft;
-        self.tipcView.showStr = @"申请退款，订单金额将直接退回您的支付账户。";
+        [OrderTipcView showWithStr:@"申请退款，订单金额将直接退回您的支付账户。" type:TextLeft callBack:^{
+            
+        }];
     }else if (model.orderState == OrderState_NotEvaluate){
         YTOrderEvaluateListController *evaluateVc = [[YTOrderEvaluateListController alloc]init];
         [self.navigationController pushViewController:evaluateVc animated:YES];
     }else if (model.orderState == OrderState_NotTake){
-        self.tipcView.hidden = NO;
-        self.tipcView.type = TextLeft;
-        self.tipcView.showStr = @"请确认已经收到宝贝，否则可能财物两空！";
+        [OrderTipcView showWithStr:@"请确认已经收到宝贝，否则可能财物两空！" type:TextLeft callBack:^{
+            
+        }];
     }
 }
 
@@ -88,13 +85,6 @@
     [self.navigationController pushViewController:fundVc animated:YES];
 }
 
-- (void)clickCancle{
-    self.tipcView.hidden = YES;
-}
-
-- (void)clickComfirm{
-    
-}
 
 - (OrderDetailHeadView *)headView{
     if (!_headView) {
@@ -111,15 +101,5 @@
     return _footerView;
 }
 
-- (OrderTipcView *)tipcView{
-    if (!_tipcView) {
-        _tipcView = [OrderTipcView showTipcView];
-        _tipcView.delegate = self;
-        _tipcView.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height);
-        _tipcView.backgroundColor = [UIColor colorWithWhite:50.0/255.0 alpha:0.4];
-        _tipcView.hidden = YES;
-    }
-    return _tipcView;
-}
 
 @end
