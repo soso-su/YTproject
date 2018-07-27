@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="234" id="KGk-i7-Jjw" customClass="YTEditWorkTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="234"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="233.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="659-W0-Rt8">
+                        <rect key="frame" x="15" y="8" width="290" height="225.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017.07-至今" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Fh-07-Ozb">
+                                <rect key="frame" x="14" y="12" width="79" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFp-sF-Psb">
+                                <rect key="frame" x="262" y="9" width="13" height="22"/>
+                                <state key="normal" image="resumeIconRedact"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tng-l9-NgR">
+                                <rect key="frame" x="15" y="40" width="260" height="171"/>
+                                <string key="text">1、负责移动端互联网项目的需求方案的提出及运营策略的可行性分析；2、负责移动端互联网项目的内容规划、原型设计；3、统计项目各项数据和用户反馈，分析用户需求，行为，搜集项目中产生的功能需求，综合各部门的意见和建议，统筹安排，讨论、修改，制订出可行性方案；4、和开发部、设计部、 实现进度和质量，协调相关部门进行网站的开发及日常的维护；5、配合市场部、客服部进行相关的商务合作，跟踪竞争对手；6、把握互联网市场趋势，制定产品竞争战略和计划。</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KFp-sF-Psb" firstAttribute="centerY" secondItem="1Fh-07-Ozb" secondAttribute="centerY" id="3Bm-f5-vo9"/>
+                            <constraint firstItem="Tng-l9-NgR" firstAttribute="leading" secondItem="659-W0-Rt8" secondAttribute="leading" constant="15" id="A9Z-Hs-vhw"/>
+                            <constraint firstItem="1Fh-07-Ozb" firstAttribute="leading" secondItem="659-W0-Rt8" secondAttribute="leading" constant="14" id="QI7-Mz-a8y"/>
+                            <constraint firstItem="1Fh-07-Ozb" firstAttribute="top" secondItem="659-W0-Rt8" secondAttribute="top" constant="12" id="Vji-e5-vOh"/>
+                            <constraint firstItem="Tng-l9-NgR" firstAttribute="top" secondItem="1Fh-07-Ozb" secondAttribute="bottom" constant="12" id="Vjl-hZ-D68"/>
+                            <constraint firstAttribute="bottom" secondItem="Tng-l9-NgR" secondAttribute="bottom" constant="14.5" id="lUo-HO-GRx"/>
+                            <constraint firstAttribute="trailing" secondItem="Tng-l9-NgR" secondAttribute="trailing" constant="15" id="vSI-NO-8jg"/>
+                            <constraint firstAttribute="trailing" secondItem="KFp-sF-Psb" secondAttribute="trailing" constant="15" id="yfd-yZ-bvz"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="hr_CornerRadius">
+                                <real key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="659-W0-Rt8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="B6x-6W-zho"/>
+                    <constraint firstItem="659-W0-Rt8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="DRZ-9E-0Ys"/>
+                    <constraint firstAttribute="trailing" secondItem="659-W0-Rt8" secondAttribute="trailing" constant="15" id="hFm-eb-e13"/>
+                    <constraint firstAttribute="bottom" secondItem="659-W0-Rt8" secondAttribute="bottom" id="vag-3n-v9R"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <point key="canvasLocation" x="34" y="58"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="resumeIconRedact" width="13" height="13"/>
+    </resources>
+</document>

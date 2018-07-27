@@ -28,23 +28,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = @"简历详情";
     [self setupView];
     
     [self setupData];
     
-    NSLog(@"viewDidLoad");
+//    NSLog(@"viewDidLoad");
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    NSLog(@"viewWillAppear");
+//    NSLog(@"viewWillAppear");
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    NSLog(@"viewDidAppear");
+//    NSLog(@"viewDidAppear");
 }
 - (void)viewWillDisappear:(BOOL)animated{
-    NSLog(@"viewDidDisappear");
+//    NSLog(@"viewDidDisappear");
 }
 -(void)editResume{
     YTEditResumeBaseInformationViewController *editVc = [[YTEditResumeBaseInformationViewController alloc]init];

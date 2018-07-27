@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YTAddStatusCertificateViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="教室资格证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5F-E8-ZOA">
+                    <rect key="frame" x="16" y="40" width="71.5" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20G-lM-MIW">
+                    <rect key="frame" x="16" y="69" width="83" height="83"/>
+                    <state key="normal" image="resumeIconAdd"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="其他证书" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wk3-tf-r2H">
+                    <rect key="frame" x="16" y="177" width="57.5" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tw-Tk-BjX">
+                    <rect key="frame" x="16" y="206" width="83" height="83"/>
+                    <state key="normal" image="resumeIconAdd"/>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="备注证书名称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yVl-S3-Xgv">
+                    <rect key="frame" x="16" y="299" width="343" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Ysq-kC-pW8"/>
+                    </constraints>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Hk-Y8-TcK">
+                    <rect key="frame" x="20" y="619" width="335" height="42"/>
+                    <color key="backgroundColor" red="1" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="Fg1-Ni-zMs"/>
+                    </constraints>
+                    <state key="normal" title="下一步">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="hr_CornerRadius">
+                            <real key="value" value="5.2000000000000002"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="next:" destination="-1" eventType="touchUpInside" id="RPt-RA-sfC"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="20G-lM-MIW" firstAttribute="leading" secondItem="X5F-E8-ZOA" secondAttribute="leading" id="1qL-eQ-8mZ"/>
+                <constraint firstItem="yVl-S3-Xgv" firstAttribute="leading" secondItem="4tw-Tk-BjX" secondAttribute="leading" id="BPO-M8-sxo"/>
+                <constraint firstItem="yVl-S3-Xgv" firstAttribute="top" secondItem="4tw-Tk-BjX" secondAttribute="bottom" constant="10" id="D4r-t4-lhE"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="2Hk-Y8-TcK" secondAttribute="trailing" constant="20" id="HRo-ri-uz9"/>
+                <constraint firstItem="X5F-E8-ZOA" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="V2f-dX-w4V"/>
+                <constraint firstItem="20G-lM-MIW" firstAttribute="top" secondItem="X5F-E8-ZOA" secondAttribute="bottom" constant="12" id="ZSc-TT-mrL"/>
+                <constraint firstItem="4tw-Tk-BjX" firstAttribute="leading" secondItem="wk3-tf-r2H" secondAttribute="leading" id="Zhz-Zo-9pl"/>
+                <constraint firstItem="2Hk-Y8-TcK" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="caJ-ea-VDV"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="2Hk-Y8-TcK" secondAttribute="bottom" constant="6" id="daZ-nC-8VL"/>
+                <constraint firstItem="wk3-tf-r2H" firstAttribute="leading" secondItem="20G-lM-MIW" secondAttribute="leading" id="eya-Tf-RBd"/>
+                <constraint firstItem="X5F-E8-ZOA" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="g5x-0p-oid"/>
+                <constraint firstItem="4tw-Tk-BjX" firstAttribute="top" secondItem="wk3-tf-r2H" secondAttribute="bottom" constant="12" id="giR-Nc-qrm"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="yVl-S3-Xgv" secondAttribute="trailing" constant="16" id="rcj-am-hKN"/>
+                <constraint firstItem="wk3-tf-r2H" firstAttribute="top" secondItem="20G-lM-MIW" secondAttribute="bottom" constant="25" id="ujI-mY-aZa"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="resumeIconAdd" width="83" height="83"/>
+    </resources>
+</document>

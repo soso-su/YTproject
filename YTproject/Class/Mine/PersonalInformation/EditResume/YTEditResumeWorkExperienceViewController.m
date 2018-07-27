@@ -8,8 +8,14 @@
 
 #import "YTEditResumeWorkExperienceViewController.h"
 #import "YTAddWorkExperienceViewController.h"
+#import "YTAddEducationViewController.h"
+#import "YTEditWorkTableViewCell.h"
+#import "YTEducationExperienceViewController.h"
+
+#define cellID @"EditWorkTableViewCell"
 
 @interface YTEditResumeWorkExperienceViewController ()<UITableViewDataSource,UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -29,6 +35,8 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 - (IBAction)nextStep:(id)sender {
+    YTEducationExperienceViewController *vc = [[YTEducationExperienceViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)preview{
@@ -37,11 +45,13 @@
 
 #pragma mark =======================UITableViewDataSource=========================
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 0;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [[UITableViewCell alloc]init];
+    YTEditWorkTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
@@ -57,8 +67,8 @@
     button.clipsToBounds = YES;
     button.titleLabel.font = [UIFont systemFontOfSize:15];
     [button setTitle:@"添加工作经历" forState:UIControlStateNormal];
-    [button setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
-    button.backgroundColor = RGB(255, 67, 67);
+    [button setTitleColor:DefaultColor forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:@"resumeBtn1"] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(addWorkExperience) forControlEvents:UIControlEventTouchUpInside];
     [backgroundView addSubview:button];
     
@@ -72,6 +82,8 @@
     rightItem.tintColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = rightItem;
     
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([YTEditWorkTableViewCell class]) bundle:nil] forCellReuseIdentifier:cellID];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 @end

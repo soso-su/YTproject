@@ -23,6 +23,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self setPageView];
 }
+- (IBAction)next:(UIButton *)sender {
+}
 
 - (void)setPageView{
     CGFloat titleViewH = 44;
