@@ -10,6 +10,7 @@
 #import "TYRotateImageView.h"
 #import "AppDelegate.h"
 #import "YTTabBarViewController.h"
+#import "YTLoginViewController.h"
 
 
 @interface YTRotateViewController ()<TYRotateImageViewDelegate>
@@ -45,7 +46,8 @@
 
 - (void)experienceDidHandle{
     //1)切换窗口的根视图控制器
-    YTTabBarViewController *vc = [[YTTabBarViewController alloc]init];
+    YTLoginViewController *vc = [[YTLoginViewController alloc]init];
+//    YTTabBarViewController *vc = [[YTTabBarViewController alloc]init];
     [YTTool getWindow].rootViewController = vc;
     [[YTTool getWindow] makeKeyAndVisible];
 }
