@@ -102,6 +102,16 @@
 		F81A61CE210C1F9C0026876E /* CPSearchListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81A61CC210C1F9C0026876E /* CPSearchListViewController.xib */; };
 		F81A61D2210C201E0026876E /* CPSearchListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A61D0210C201E0026876E /* CPSearchListTableViewCell.m */; };
 		F81A61D3210C201E0026876E /* CPSearchListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81A61D1210C201E0026876E /* CPSearchListTableViewCell.xib */; };
+		F81A61D7210C27B30026876E /* CPSysMessageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A61D5210C27B30026876E /* CPSysMessageDetailViewController.m */; };
+		F81A61D8210C27B30026876E /* CPSysMessageDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81A61D6210C27B30026876E /* CPSysMessageDetailViewController.xib */; };
+		F81A61DC210C332E0026876E /* CPMyCompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A61DA210C332E0026876E /* CPMyCompanyViewController.m */; };
+		F81A61DD210C332E0026876E /* CPMyCompanyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81A61DB210C332E0026876E /* CPMyCompanyViewController.xib */; };
+		F81A61E1210C36AA0026876E /* CPMyCompanyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A61DF210C36AA0026876E /* CPMyCompanyTableViewCell.m */; };
+		F81A61E2210C36AA0026876E /* CPMyCompanyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81A61E0210C36AA0026876E /* CPMyCompanyTableViewCell.xib */; };
+		F81A61E6210C41E70026876E /* CPModiflyCompanyTellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A61E4210C41E70026876E /* CPModiflyCompanyTellViewController.m */; };
+		F81A61E7210C41E70026876E /* CPModiflyCompanyTellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81A61E5210C41E70026876E /* CPModiflyCompanyTellViewController.xib */; };
+		F81A61EB210C4B310026876E /* CPEditCompanyMsgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A61E9210C4B310026876E /* CPEditCompanyMsgViewController.m */; };
+		F81A61EC210C4B310026876E /* CPEditCompanyMsgViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81A61EA210C4B310026876E /* CPEditCompanyMsgViewController.xib */; };
 		F828A6DD210A1F36006AC52C /* YTPassAttextationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F828A6DB210A1F36006AC52C /* YTPassAttextationViewController.m */; };
 		F828A6DE210A1F36006AC52C /* YTPassAttextationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F828A6DC210A1F36006AC52C /* YTPassAttextationViewController.xib */; };
 		F828A6E2210A224E006AC52C /* YTAttextationFailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F828A6E0210A224E006AC52C /* YTAttextationFailViewController.m */; };
@@ -527,6 +537,21 @@
 		F81A61CF210C201E0026876E /* CPSearchListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPSearchListTableViewCell.h; sourceTree = "<group>"; };
 		F81A61D0210C201E0026876E /* CPSearchListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPSearchListTableViewCell.m; sourceTree = "<group>"; };
 		F81A61D1210C201E0026876E /* CPSearchListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPSearchListTableViewCell.xib; sourceTree = "<group>"; };
+		F81A61D4210C27B30026876E /* CPSysMessageDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPSysMessageDetailViewController.h; sourceTree = "<group>"; };
+		F81A61D5210C27B30026876E /* CPSysMessageDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPSysMessageDetailViewController.m; sourceTree = "<group>"; };
+		F81A61D6210C27B30026876E /* CPSysMessageDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPSysMessageDetailViewController.xib; sourceTree = "<group>"; };
+		F81A61D9210C332E0026876E /* CPMyCompanyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPMyCompanyViewController.h; sourceTree = "<group>"; };
+		F81A61DA210C332E0026876E /* CPMyCompanyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPMyCompanyViewController.m; sourceTree = "<group>"; };
+		F81A61DB210C332E0026876E /* CPMyCompanyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPMyCompanyViewController.xib; sourceTree = "<group>"; };
+		F81A61DE210C36AA0026876E /* CPMyCompanyTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPMyCompanyTableViewCell.h; sourceTree = "<group>"; };
+		F81A61DF210C36AA0026876E /* CPMyCompanyTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPMyCompanyTableViewCell.m; sourceTree = "<group>"; };
+		F81A61E0210C36AA0026876E /* CPMyCompanyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPMyCompanyTableViewCell.xib; sourceTree = "<group>"; };
+		F81A61E3210C41E70026876E /* CPModiflyCompanyTellViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPModiflyCompanyTellViewController.h; sourceTree = "<group>"; };
+		F81A61E4210C41E70026876E /* CPModiflyCompanyTellViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPModiflyCompanyTellViewController.m; sourceTree = "<group>"; };
+		F81A61E5210C41E70026876E /* CPModiflyCompanyTellViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPModiflyCompanyTellViewController.xib; sourceTree = "<group>"; };
+		F81A61E8210C4B310026876E /* CPEditCompanyMsgViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPEditCompanyMsgViewController.h; sourceTree = "<group>"; };
+		F81A61E9210C4B310026876E /* CPEditCompanyMsgViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPEditCompanyMsgViewController.m; sourceTree = "<group>"; };
+		F81A61EA210C4B310026876E /* CPEditCompanyMsgViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPEditCompanyMsgViewController.xib; sourceTree = "<group>"; };
 		F828A6DA210A1F36006AC52C /* YTPassAttextationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTPassAttextationViewController.h; sourceTree = "<group>"; };
 		F828A6DB210A1F36006AC52C /* YTPassAttextationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTPassAttextationViewController.m; sourceTree = "<group>"; };
 		F828A6DC210A1F36006AC52C /* YTPassAttextationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTPassAttextationViewController.xib; sourceTree = "<group>"; };
@@ -1500,6 +1525,9 @@
 				F853133B2109A47C00B881EA /* CPInformationViewController.h */,
 				F853133C2109A47C00B881EA /* CPInformationViewController.m */,
 				F853133D2109A47C00B881EA /* CPInformationViewController.xib */,
+				F81A61D4210C27B30026876E /* CPSysMessageDetailViewController.h */,
+				F81A61D5210C27B30026876E /* CPSysMessageDetailViewController.m */,
+				F81A61D6210C27B30026876E /* CPSysMessageDetailViewController.xib */,
 			);
 			path = Information;
 			sourceTree = "<group>";
@@ -1512,6 +1540,15 @@
 				F85313402109A49000B881EA /* CPMineViewController.h */,
 				F85313412109A49000B881EA /* CPMineViewController.m */,
 				F85313422109A49000B881EA /* CPMineViewController.xib */,
+				F81A61D9210C332E0026876E /* CPMyCompanyViewController.h */,
+				F81A61DA210C332E0026876E /* CPMyCompanyViewController.m */,
+				F81A61DB210C332E0026876E /* CPMyCompanyViewController.xib */,
+				F81A61E3210C41E70026876E /* CPModiflyCompanyTellViewController.h */,
+				F81A61E4210C41E70026876E /* CPModiflyCompanyTellViewController.m */,
+				F81A61E5210C41E70026876E /* CPModiflyCompanyTellViewController.xib */,
+				F81A61E8210C4B310026876E /* CPEditCompanyMsgViewController.h */,
+				F81A61E9210C4B310026876E /* CPEditCompanyMsgViewController.m */,
+				F81A61EA210C4B310026876E /* CPEditCompanyMsgViewController.xib */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1559,6 +1596,9 @@
 		F85313492109A51600B881EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F81A61DE210C36AA0026876E /* CPMyCompanyTableViewCell.h */,
+				F81A61DF210C36AA0026876E /* CPMyCompanyTableViewCell.m */,
+				F81A61E0210C36AA0026876E /* CPMyCompanyTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2335,6 +2375,7 @@
 				F853135E2109D9AB00B881EA /* YTNameAttestationViewController.xib in Resources */,
 				F80CB325210AD2E20076963F /* YTCommitVCRViewController.xib in Resources */,
 				F84EC15A2105E24F00FE66D2 /* YTInputLogistcViewController.xib in Resources */,
+				F81A61EC210C4B310026876E /* CPEditCompanyMsgViewController.xib in Resources */,
 				F853132C2109754B00B881EA /* YTChatListViewController.xib in Resources */,
 				F853130D2108882D00B881EA /* RecordHeadView.xib in Resources */,
 				F80CB32A210AF19F0076963F /* CPEditWorkViewController.xib in Resources */,
@@ -2360,6 +2401,7 @@
 				F888D3E920F728AE00128715 /* YTPostFileViewController.xib in Resources */,
 				A728271420FF16D200244CAA /* YTCheckIconViewController.xib in Resources */,
 				F8DE216F20FC402C00AC55D8 /* ServerCollectionViewCell.xib in Resources */,
+				F81A61D8210C27B30026876E /* CPSysMessageDetailViewController.xib in Resources */,
 				F828A6EA210A2F07006AC52C /* YTAttestationViewController.xib in Resources */,
 				F85312F92108704D00B881EA /* YTRecordListViewController.xib in Resources */,
 				F807693020FB5157001E2FA6 /* YTCateDetailsViewController.xib in Resources */,
@@ -2424,9 +2466,11 @@
 				F846DA8B21006B9200A1E1CE /* YTEducationExperienceTableViewCell.xib in Resources */,
 				F85313122108901100B881EA /* RecordFooterView.xib in Resources */,
 				F888F55F20EA75DD00E19554 /* YTMineViewController.xib in Resources */,
+				F81A61E7210C41E70026876E /* CPModiflyCompanyTellViewController.xib in Resources */,
 				F853132021096F1600B881EA /* YTNotificationViewController.xib in Resources */,
 				F8126AD82101DAD4007CC031 /* OrderDetailHeadView.xib in Resources */,
 				F85313602109E0E700B881EA /* YTSelectSexView.xib in Resources */,
+				F81A61E2210C36AA0026876E /* CPMyCompanyTableViewCell.xib in Resources */,
 				A72826A920FDD30300244CAA /* YTPeronalInformationViewController.xib in Resources */,
 				F85312EE2108615C00B881EA /* YTCameraViewController.xib in Resources */,
 				F8D8F50E210B263400A52AAB /* CPNotEdutionTableViewCell.xib in Resources */,
@@ -2444,6 +2488,7 @@
 				F8C3DDE22100A73100539E6E /* YTCartAddressViewController.xib in Resources */,
 				F807691E20FB2E03001E2FA6 /* ReviewViewController.xib in Resources */,
 				F84B449620EF4413004791E8 /* WorkAddressHeadView.xib in Resources */,
+				F81A61DD210C332E0026876E /* CPMyCompanyViewController.xib in Resources */,
 				F84EC14B2105B7D200FE66D2 /* YTRefundDetailViewController.xib in Resources */,
 				A72826B420FDE0F200244CAA /* YTModifyPhoneOrEmailViewController.xib in Resources */,
 				F888D3D020F6571800128715 /* YTEducationViewController.xib in Resources */,
@@ -2559,6 +2604,7 @@
 				F894253120ECD862008156CC /* WorkHeadView.m in Sources */,
 				F846DA8221006B9200A1E1CE /* YTWorkExperienceTableViewCell.m in Sources */,
 				F84B449020EF1A29004791E8 /* WorkAddressCollectionViewCell.m in Sources */,
+				F81A61EB210C4B310026876E /* CPEditCompanyMsgViewController.m in Sources */,
 				F853132B2109754B00B881EA /* YTChatListViewController.m in Sources */,
 				F807692B20FB3E0F001E2FA6 /* ReviewModel.m in Sources */,
 				F85313762109E16E00B881EA /* YTAddWorkExperienceViewController.m in Sources */,
@@ -2605,12 +2651,14 @@
 				F846DA7D21006B9200A1E1CE /* YTResumeViewController.m in Sources */,
 				F8C3DDCC210095F100539E6E /* AddressHeadView.m in Sources */,
 				F80F5187210739CF004FF163 /* IntergralHeadView.m in Sources */,
+				F81A61E6210C41E70026876E /* CPModiflyCompanyTellViewController.m in Sources */,
 				F80CB315210AC2F30076963F /* YTExpectWorkViewController.m in Sources */,
 				F85312FE210879EA00B881EA /* RecordListModel.m in Sources */,
 				F85313432109A49000B881EA /* CPMineViewController.m in Sources */,
 				F876CCEF210174990015E0C7 /* YTOrderViewController.m in Sources */,
 				F853136F2109E16E00B881EA /* YTEditResumeBaseInformationViewController.m in Sources */,
 				F85312CE2108145100B881EA /* ActivityView.m in Sources */,
+				F81A61E1210C36AA0026876E /* CPMyCompanyTableViewCell.m in Sources */,
 				F81A61CD210C1F9C0026876E /* CPSearchListViewController.m in Sources */,
 				A728270820FEE2E000244CAA /* YTDatePickerView.m in Sources */,
 				F846DA9121006B9200A1E1CE /* YTResumeHeaderView.m in Sources */,
@@ -2626,6 +2674,7 @@
 				F811A9EB20FF3F0D009EEA6D /* NewProductCell.m in Sources */,
 				F80CB31A210ACE4B0076963F /* YTSelectWorkTypeViewController.m in Sources */,
 				A72826AE20FDDD6200244CAA /* YTModifyUsernameViewController.m in Sources */,
+				F81A61D7210C27B30026876E /* CPSysMessageDetailViewController.m in Sources */,
 				F828A6E9210A2F07006AC52C /* YTAttestationViewController.m in Sources */,
 				A728271320FF16D200244CAA /* YTCheckIconViewController.m in Sources */,
 				F85313242109734900B881EA /* YTNotificationListViewController.m in Sources */,
@@ -2650,6 +2699,7 @@
 				F8126ACE2101B81C007CC031 /* OrderListModel.m in Sources */,
 				F85312ED2108615C00B881EA /* YTCameraViewController.m in Sources */,
 				F80CB301210AB27D0076963F /* YTAddEducationViewController.m in Sources */,
+				F81A61DC210C332E0026876E /* CPMyCompanyViewController.m in Sources */,
 				F85313022108837600B881EA /* YTRecordDetailViewController.m in Sources */,
 				F84B449C20EF56DD004791E8 /* YTTouchView.m in Sources */,
 				F846DA8E21006B9200A1E1CE /* YTExpectaionWorkTableViewCell.m in Sources */,

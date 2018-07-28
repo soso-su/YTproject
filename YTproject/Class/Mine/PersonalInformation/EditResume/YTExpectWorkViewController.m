@@ -33,6 +33,7 @@
     self.weekBtn.selected = YES;
     self.selectWorkType.touchHandler = ^{
         YTSelectWorkTypeViewController *vc = [[YTSelectWorkTypeViewController alloc]init];
+        vc.title = @"期望行业";
         [self.navigationController pushViewController:vc animated:YES];
     };
     

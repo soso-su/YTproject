@@ -59,6 +59,7 @@
     
     self.workTypeView.touchHandler = ^{
         YTSelectWorkTypeViewController *workVc = [[YTSelectWorkTypeViewController alloc]init];
+        workVc.title = @"期望行业";
         [self.navigationController pushViewController:workVc animated:YES];
     };
     

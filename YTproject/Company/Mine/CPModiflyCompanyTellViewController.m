@@ -1,33 +1,28 @@
 //
-//  YTSelectWorkTypeViewController.m
+//  CPModiflyCompanyTellViewController.m
 //  YTproject
 //
-//  Created by suhuahao on 2018/7/27.
+//  Created by suhuahao on 2018/7/28.
 //  Copyright © 2018年 suhuahao. All rights reserved.
 //
 
-#import "YTSelectWorkTypeViewController.h"
-#import "SelectEducationView.h"
+#import "CPModiflyCompanyTellViewController.h"
 
-@interface YTSelectWorkTypeViewController ()
+@interface CPModiflyCompanyTellViewController ()
 
 @end
 
-@implementation YTSelectWorkTypeViewController
+@implementation CPModiflyCompanyTellViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
+    self.title = @"修改联系电话";
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(comfirm)];
     rightItem.tintColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = rightItem;
-    
-    SelectEducationView *edVc = [[SelectEducationView alloc]initWithFrame:self.view.bounds];
-    edVc.controller = self;
-    [self.view addSubview:edVc];
 }
 
-- (void)save{
+-(void)comfirm{
     [self.navigationController popViewControllerAnimated:YES];
 }
 

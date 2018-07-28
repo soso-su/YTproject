@@ -7,8 +7,15 @@
 //
 
 #import "CPMineViewController.h"
+#import "CPMyCompanyViewController.h"
+#import "CPMyCompanyTableViewCell.h"
 
-@interface CPMineViewController ()
+#define cellID @"companyTableViewCell"
+
+@interface CPMineViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic,copy)NSArray *itemTitleArr;
+@property (nonatomic,copy)NSArray *itemImageArr;
 
 @end
 
@@ -16,22 +23,84 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self.tableView registerNib:[UINib nibWithNibName:@"CPMyCompanyTableViewCell" bundle:nil] forCellReuseIdentifier:cellID];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+    self.navigationController.navigationBarHidden = YES;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    self.navigationController.navigationBarHidden = NO;
 }
-*/
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.itemTitleArr.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    CPMyCompanyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    cell.isHideImage = NO;
+    cell.logoImageView.image = self.itemImageArr[indexPath.row];
+    cell.leftLabel.text = self.itemTitleArr[indexPath.row];
+    cell.rightLabel.hidden = YES;
+    if (indexPath.row == self.itemImageArr.count - 1) {
+        cell.line.hidden = YES;
+    }else{
+        cell.line.hidden = NO;
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 53;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 0) {
+        CPMyCompanyViewController *vc = [[CPMyCompanyViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+
+
+- (IBAction)attestation:(UIButton *)sender {
+}
+
+
+- (IBAction)addAttestation:(UIButton *)sender {
+}
+
+-(NSArray *)itemTitleArr
+{
+    if (!_itemTitleArr) {
+        _itemTitleArr = @[@"我的公司",@"我的套餐",@"设置",@"关于我们"];
+    }
+    
+    return _itemTitleArr;
+}
+
+-(NSArray *)itemImageArr
+{
+    
+    if (!_itemImageArr) {
+        _itemImageArr = @[[UIImage imageNamed:@"wdIconCompany"],
+                          [UIImage imageNamed:@"wdIconMeal"],
+                          [UIImage imageNamed:@"wdIconSet"],
+                          [UIImage imageNamed:@"wdIconAbout"],
+                          ];
+    }
+    
+    return _itemImageArr;
+}
+
+
 
 @end

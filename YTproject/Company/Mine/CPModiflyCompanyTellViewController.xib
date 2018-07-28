@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CPModiflyCompanyTellViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bjjlIcon2" translatesAutoresizingMaskIntoConstraints="NO" id="1uk-if-ZIU">
+                    <rect key="frame" x="16" y="33" width="24" height="24"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhA-GM-gwX">
+                    <rect key="frame" x="53" y="30" width="306" height="30"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入联系电话" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XO9-0x-Cax">
+                            <rect key="frame" x="13" y="0.0" width="280" height="30"/>
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="XO9-0x-Cax" firstAttribute="top" secondItem="yhA-GM-gwX" secondAttribute="top" id="Hvk-YX-5nU"/>
+                        <constraint firstAttribute="bottom" secondItem="XO9-0x-Cax" secondAttribute="bottom" id="m1n-XZ-jkT"/>
+                        <constraint firstAttribute="trailing" secondItem="XO9-0x-Cax" secondAttribute="trailing" constant="13" id="wku-vK-9Xq"/>
+                        <constraint firstItem="XO9-0x-Cax" firstAttribute="leading" secondItem="yhA-GM-gwX" secondAttribute="leading" constant="13" id="wzm-34-66v"/>
+                        <constraint firstAttribute="height" constant="30" id="xRq-OM-OKQ"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="hr_BorderColor">
+                            <color key="value" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="hr_BorderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="yhA-GM-gwX" secondAttribute="trailing" constant="16" id="CVH-FG-eY0"/>
+                <constraint firstItem="yhA-GM-gwX" firstAttribute="leading" secondItem="1uk-if-ZIU" secondAttribute="trailing" constant="13" id="Efi-pj-Yfc"/>
+                <constraint firstItem="yhA-GM-gwX" firstAttribute="centerY" secondItem="1uk-if-ZIU" secondAttribute="centerY" id="MZ5-US-CoY"/>
+                <constraint firstItem="1uk-if-ZIU" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="13" id="dgj-J9-LGi"/>
+                <constraint firstItem="1uk-if-ZIU" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="nMk-ht-VN1"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bjjlIcon2" width="24" height="24"/>
+    </resources>
+</document>

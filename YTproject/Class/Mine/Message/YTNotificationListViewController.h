@@ -10,4 +10,7 @@
 
 @interface YTNotificationListViewController : YTBaseViewController
 
+
+@property (nonatomic ,assign) BOOL isCompany;
+
 @end

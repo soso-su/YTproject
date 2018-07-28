@@ -7,8 +7,12 @@
 //
 
 #import "CPInformationViewController.h"
+#import "YTPageViewController.h"
+#import "YTChatListViewController.h"
+#import "YTNotificationListViewController.h"
 
-@interface CPInformationViewController ()
+@interface CPInformationViewController ()<YTPageViewControllerDelegate>
+@property(nonatomic, strong)YTPageViewController *pageView;
 
 @end
 
@@ -16,22 +20,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self setUpUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setUpUI{
+    YTChatListViewController *chatVc = [[YTChatListViewController alloc]init];
+    chatVc.title = @"会话消息";
+    
+    YTNotificationListViewController *sysVc = [[YTNotificationListViewController alloc]init];
+    sysVc.isCompany = YES;
+    sysVc.title = @"系统消息";
+    YTPageViewController *pageView = [YTPageViewController pageWithViewControllers:@[chatVc,sysVc] configuration:[YTPageViewControllerConfiguration defaultConfiguration]];
+    pageView.delegate = self;
+    self.pageView = pageView;
+    pageView.view.frame = self.view.frame;
+    [self addChildViewController:pageView];
+    [self.view addSubview:pageView.view];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+    self.navigationController.navigationBarHidden = YES;
 }
-*/
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    self.navigationController.navigationBarHidden = NO;
+}
 
 @end

@@ -8,6 +8,7 @@
 
 #import "YTNotificationListViewController.h"
 #import "SysNotificationCell.h"
+#import "CPSysMessageDetailViewController.h"
 
 #define cellID @"sysNotification"
 
@@ -32,6 +33,13 @@
     SysNotificationCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (self.isCompany) {
+        CPSysMessageDetailViewController *vc = [[CPSysMessageDetailViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 @end
