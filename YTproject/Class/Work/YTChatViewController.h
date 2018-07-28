@@ -9,5 +9,6 @@
 #import <RongIMKit/RongIMKit.h>
 
 @interface YTChatViewController : RCConversationViewController
+@property (nonatomic, strong)UIImage *headImage;
 
 @end

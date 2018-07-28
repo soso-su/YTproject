@@ -38,7 +38,7 @@
     UILabel *titleLabel = [[UILabel alloc]init];
     titleLabel.textColor = [UIColor whiteColor];
     titleLabel.font = [UIFont systemFontOfSize:16.0];
-    titleLabel.text = @"英途客服-AMY";
+    titleLabel.text = self.title;
     [titleLabel sizeToFit];
     titleLabel.frame = CGRectMake(CGRectGetMaxX(userLogo.frame)+10, 0, titleLabel.width, titleLabel.height);
     titleLabel.centerY = userLogo.centerY;

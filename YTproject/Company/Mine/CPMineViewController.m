@@ -10,6 +10,10 @@
 #import "CPMyCompanyViewController.h"
 #import "CPMyCompanyTableViewCell.h"
 #import "CPMyComboViewController.h"
+#import "CPSettingViewController.h"
+#import "YTAboutMineViewController.h"
+#import "CPAttestationViewController.h"
+#import "CPYingTuAttestationViewController.h"
 
 #define cellID @"companyTableViewCell"
 
@@ -71,15 +75,25 @@
     }else if (indexPath.row == 1){
         CPMyComboViewController *vc = [[CPMyComboViewController alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.row == 2){
+        CPSettingViewController *vc = [[CPSettingViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else{
+        YTAboutMineViewController *aboutVc = [[YTAboutMineViewController alloc]init];
+        [self.navigationController pushViewController:aboutVc animated:YES];
     }
 }
 
 
 - (IBAction)attestation:(UIButton *)sender {
+    CPAttestationViewController *vc = [[CPAttestationViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
 - (IBAction)addAttestation:(UIButton *)sender {
+    CPYingTuAttestationViewController *vc = [[CPYingTuAttestationViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(NSArray *)itemTitleArr

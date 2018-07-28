@@ -124,6 +124,22 @@
 		F81A6209210C5C490026876E /* CPComfirmComboViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81A6207210C5C490026876E /* CPComfirmComboViewController.xib */; };
 		F81B3D62210C653B00247B7C /* CPBillMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81B3D60210C653B00247B7C /* CPBillMessageViewController.m */; };
 		F81B3D63210C653B00247B7C /* CPBillMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81B3D61210C653B00247B7C /* CPBillMessageViewController.xib */; };
+		F81B3D69210C6BDF00247B7C /* CPSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81B3D67210C6BDF00247B7C /* CPSettingViewController.m */; };
+		F81B3D6A210C6BDF00247B7C /* CPSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81B3D68210C6BDF00247B7C /* CPSettingViewController.xib */; };
+		F81B3D6F210C72FF00247B7C /* CPAttestationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81B3D6D210C72FF00247B7C /* CPAttestationViewController.m */; };
+		F81B3D70210C72FF00247B7C /* CPAttestationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81B3D6E210C72FF00247B7C /* CPAttestationViewController.xib */; };
+		F81B3D74210C793E00247B7C /* CPLegalPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81B3D72210C793E00247B7C /* CPLegalPersonViewController.m */; };
+		F81B3D75210C793E00247B7C /* CPLegalPersonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81B3D73210C793E00247B7C /* CPLegalPersonViewController.xib */; };
+		F81B3D79210C7C9200247B7C /* CPBusinessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81B3D77210C7C9200247B7C /* CPBusinessViewController.m */; };
+		F81B3D7A210C7C9200247B7C /* CPBusinessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81B3D78210C7C9200247B7C /* CPBusinessViewController.xib */; };
+		F81B3D7E210C7E4B00247B7C /* CPWaitAuditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81B3D7C210C7E4B00247B7C /* CPWaitAuditViewController.m */; };
+		F81B3D7F210C7E4B00247B7C /* CPWaitAuditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81B3D7D210C7E4B00247B7C /* CPWaitAuditViewController.xib */; };
+		F81B3D83210C80B400247B7C /* CPYingTuAttestationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81B3D81210C80B400247B7C /* CPYingTuAttestationViewController.m */; };
+		F81B3D84210C80B400247B7C /* CPYingTuAttestationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81B3D82210C80B400247B7C /* CPYingTuAttestationViewController.xib */; };
+		F81B3D88210C82B300247B7C /* CPChatMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81B3D86210C82B300247B7C /* CPChatMessageViewController.m */; };
+		F81B3D89210C82B300247B7C /* CPChatMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81B3D87210C82B300247B7C /* CPChatMessageViewController.xib */; };
+		F81B3D8D210C831200247B7C /* CPChatListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F81B3D8B210C831200247B7C /* CPChatListTableViewCell.m */; };
+		F81B3D8E210C831200247B7C /* CPChatListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81B3D8C210C831200247B7C /* CPChatListTableViewCell.xib */; };
 		F828A6DD210A1F36006AC52C /* YTPassAttextationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F828A6DB210A1F36006AC52C /* YTPassAttextationViewController.m */; };
 		F828A6DE210A1F36006AC52C /* YTPassAttextationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F828A6DC210A1F36006AC52C /* YTPassAttextationViewController.xib */; };
 		F828A6E2210A224E006AC52C /* YTAttextationFailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F828A6E0210A224E006AC52C /* YTAttextationFailViewController.m */; };
@@ -582,6 +598,30 @@
 		F81B3D5F210C653B00247B7C /* CPBillMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPBillMessageViewController.h; sourceTree = "<group>"; };
 		F81B3D60210C653B00247B7C /* CPBillMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPBillMessageViewController.m; sourceTree = "<group>"; };
 		F81B3D61210C653B00247B7C /* CPBillMessageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPBillMessageViewController.xib; sourceTree = "<group>"; };
+		F81B3D66210C6BDF00247B7C /* CPSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPSettingViewController.h; sourceTree = "<group>"; };
+		F81B3D67210C6BDF00247B7C /* CPSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPSettingViewController.m; sourceTree = "<group>"; };
+		F81B3D68210C6BDF00247B7C /* CPSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPSettingViewController.xib; sourceTree = "<group>"; };
+		F81B3D6C210C72FF00247B7C /* CPAttestationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPAttestationViewController.h; sourceTree = "<group>"; };
+		F81B3D6D210C72FF00247B7C /* CPAttestationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPAttestationViewController.m; sourceTree = "<group>"; };
+		F81B3D6E210C72FF00247B7C /* CPAttestationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPAttestationViewController.xib; sourceTree = "<group>"; };
+		F81B3D71210C793E00247B7C /* CPLegalPersonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPLegalPersonViewController.h; sourceTree = "<group>"; };
+		F81B3D72210C793E00247B7C /* CPLegalPersonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPLegalPersonViewController.m; sourceTree = "<group>"; };
+		F81B3D73210C793E00247B7C /* CPLegalPersonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPLegalPersonViewController.xib; sourceTree = "<group>"; };
+		F81B3D76210C7C9200247B7C /* CPBusinessViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPBusinessViewController.h; sourceTree = "<group>"; };
+		F81B3D77210C7C9200247B7C /* CPBusinessViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPBusinessViewController.m; sourceTree = "<group>"; };
+		F81B3D78210C7C9200247B7C /* CPBusinessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPBusinessViewController.xib; sourceTree = "<group>"; };
+		F81B3D7B210C7E4B00247B7C /* CPWaitAuditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPWaitAuditViewController.h; sourceTree = "<group>"; };
+		F81B3D7C210C7E4B00247B7C /* CPWaitAuditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPWaitAuditViewController.m; sourceTree = "<group>"; };
+		F81B3D7D210C7E4B00247B7C /* CPWaitAuditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPWaitAuditViewController.xib; sourceTree = "<group>"; };
+		F81B3D80210C80B400247B7C /* CPYingTuAttestationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPYingTuAttestationViewController.h; sourceTree = "<group>"; };
+		F81B3D81210C80B400247B7C /* CPYingTuAttestationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPYingTuAttestationViewController.m; sourceTree = "<group>"; };
+		F81B3D82210C80B400247B7C /* CPYingTuAttestationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPYingTuAttestationViewController.xib; sourceTree = "<group>"; };
+		F81B3D85210C82B300247B7C /* CPChatMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPChatMessageViewController.h; sourceTree = "<group>"; };
+		F81B3D86210C82B300247B7C /* CPChatMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPChatMessageViewController.m; sourceTree = "<group>"; };
+		F81B3D87210C82B300247B7C /* CPChatMessageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPChatMessageViewController.xib; sourceTree = "<group>"; };
+		F81B3D8A210C831200247B7C /* CPChatListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPChatListTableViewCell.h; sourceTree = "<group>"; };
+		F81B3D8B210C831200247B7C /* CPChatListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPChatListTableViewCell.m; sourceTree = "<group>"; };
+		F81B3D8C210C831200247B7C /* CPChatListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPChatListTableViewCell.xib; sourceTree = "<group>"; };
 		F828A6DA210A1F36006AC52C /* YTPassAttextationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTPassAttextationViewController.h; sourceTree = "<group>"; };
 		F828A6DB210A1F36006AC52C /* YTPassAttextationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTPassAttextationViewController.m; sourceTree = "<group>"; };
 		F828A6DC210A1F36006AC52C /* YTPassAttextationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTPassAttextationViewController.xib; sourceTree = "<group>"; };
@@ -1317,6 +1357,45 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		F81B3D64210C6B6500247B7C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F81B3D65210C6BB900247B7C /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				F81B3D66210C6BDF00247B7C /* CPSettingViewController.h */,
+				F81B3D67210C6BDF00247B7C /* CPSettingViewController.m */,
+				F81B3D68210C6BDF00247B7C /* CPSettingViewController.xib */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		F81B3D6B210C72CF00247B7C /* CPAttestation */ = {
+			isa = PBXGroup;
+			children = (
+				F81B3D6C210C72FF00247B7C /* CPAttestationViewController.h */,
+				F81B3D6D210C72FF00247B7C /* CPAttestationViewController.m */,
+				F81B3D6E210C72FF00247B7C /* CPAttestationViewController.xib */,
+				F81B3D71210C793E00247B7C /* CPLegalPersonViewController.h */,
+				F81B3D72210C793E00247B7C /* CPLegalPersonViewController.m */,
+				F81B3D73210C793E00247B7C /* CPLegalPersonViewController.xib */,
+				F81B3D76210C7C9200247B7C /* CPBusinessViewController.h */,
+				F81B3D77210C7C9200247B7C /* CPBusinessViewController.m */,
+				F81B3D78210C7C9200247B7C /* CPBusinessViewController.xib */,
+				F81B3D7B210C7E4B00247B7C /* CPWaitAuditViewController.h */,
+				F81B3D7C210C7E4B00247B7C /* CPWaitAuditViewController.m */,
+				F81B3D7D210C7E4B00247B7C /* CPWaitAuditViewController.xib */,
+				F81B3D80210C80B400247B7C /* CPYingTuAttestationViewController.h */,
+				F81B3D81210C80B400247B7C /* CPYingTuAttestationViewController.m */,
+				F81B3D82210C80B400247B7C /* CPYingTuAttestationViewController.xib */,
+			);
+			path = CPAttestation;
+			sourceTree = "<group>";
+		};
 		F828A6E4210A23BB006AC52C /* NameAttestation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1618,6 +1697,9 @@
 				F81A61D4210C27B30026876E /* CPSysMessageDetailViewController.h */,
 				F81A61D5210C27B30026876E /* CPSysMessageDetailViewController.m */,
 				F81A61D6210C27B30026876E /* CPSysMessageDetailViewController.xib */,
+				F81B3D85210C82B300247B7C /* CPChatMessageViewController.h */,
+				F81B3D86210C82B300247B7C /* CPChatMessageViewController.m */,
+				F81B3D87210C82B300247B7C /* CPChatMessageViewController.xib */,
 			);
 			path = Information;
 			sourceTree = "<group>";
@@ -1625,10 +1707,12 @@
 		F85313352109A30300B881EA /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				F81B3D6B210C72CF00247B7C /* CPAttestation */,
 				F81A61ED210C4FBD0026876E /* MyCompany */,
 				F81A61EF210C502D0026876E /* MyCombo */,
+				F81B3D65210C6BB900247B7C /* Setting */,
 				F853134A2109A51F00B881EA /* Models */,
-				F85313492109A51600B881EA /* Views */,
+				F81B3D64210C6B6500247B7C /* Views */,
 				F85313402109A49000B881EA /* CPMineViewController.h */,
 				F85313412109A49000B881EA /* CPMineViewController.m */,
 				F85313422109A49000B881EA /* CPMineViewController.xib */,
@@ -1665,6 +1749,9 @@
 		F85313472109A4FD00B881EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F81B3D8A210C831200247B7C /* CPChatListTableViewCell.h */,
+				F81B3D8B210C831200247B7C /* CPChatListTableViewCell.m */,
+				F81B3D8C210C831200247B7C /* CPChatListTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1674,13 +1761,6 @@
 			children = (
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		F85313492109A51600B881EA /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		F853134A2109A51F00B881EA /* Models */ = {
@@ -2434,6 +2514,8 @@
 				F8DE21A520FDE5F000AC55D8 /* HotSellCell.xib in Resources */,
 				F846DA8821006B9200A1E1CE /* YTCertificateTableViewCell.xib in Resources */,
 				F807692320FB2ED5001E2FA6 /* ReviewCell.xib in Resources */,
+				F81B3D8E210C831200247B7C /* CPChatListTableViewCell.xib in Resources */,
+				F81B3D6A210C6BDF00247B7C /* CPSettingViewController.xib in Resources */,
 				F80F518F21073F8D004FF163 /* YTSettingViewController.xib in Resources */,
 				F85313442109A49000B881EA /* CPMineViewController.xib in Resources */,
 				F846DA7E21006B9200A1E1CE /* YTMedalCollectionViewCell.xib in Resources */,
@@ -2443,6 +2525,7 @@
 				F85312E821084AC400B881EA /* YTOpinionViewController.xib in Resources */,
 				F846DA7C21006B9200A1E1CE /* YTResumeViewController.xib in Resources */,
 				F80CB302210AB27D0076963F /* YTAddEducationViewController.xib in Resources */,
+				F81B3D70210C72FF00247B7C /* CPAttestationViewController.xib in Resources */,
 				F894252E20ECCD7F008156CC /* YTForgetPswdViewController.xib in Resources */,
 				F85313712109E16E00B881EA /* YTEditResumeBaseInformationViewController.xib in Resources */,
 				A728270A20FEE2F400244CAA /* YTDatePickerView.xib in Resources */,
@@ -2452,9 +2535,11 @@
 				F80CB316210AC2F30076963F /* YTExpectWorkViewController.xib in Resources */,
 				F894250A20EB6849008156CC /* YTLoginViewController.xib in Resources */,
 				F81A61BF210C0FF10026876E /* CPInviteViewController.xib in Resources */,
+				F81B3D84210C80B400247B7C /* CPYingTuAttestationViewController.xib in Resources */,
 				F853135E2109D9AB00B881EA /* YTNameAttestationViewController.xib in Resources */,
 				F80CB325210AD2E20076963F /* YTCommitVCRViewController.xib in Resources */,
 				F81B3D63210C653B00247B7C /* CPBillMessageViewController.xib in Resources */,
+				F81B3D7A210C7C9200247B7C /* CPBusinessViewController.xib in Resources */,
 				F84EC15A2105E24F00FE66D2 /* YTInputLogistcViewController.xib in Resources */,
 				F81A61EC210C4B310026876E /* CPEditCompanyMsgViewController.xib in Resources */,
 				F853132C2109754B00B881EA /* YTChatListViewController.xib in Resources */,
@@ -2485,6 +2570,7 @@
 				F81A61D8210C27B30026876E /* CPSysMessageDetailViewController.xib in Resources */,
 				F828A6EA210A2F07006AC52C /* YTAttestationViewController.xib in Resources */,
 				F85312F92108704D00B881EA /* YTRecordListViewController.xib in Resources */,
+				F81B3D89210C82B300247B7C /* CPChatMessageViewController.xib in Resources */,
 				F807693020FB5157001E2FA6 /* YTCateDetailsViewController.xib in Resources */,
 				F85313532109B98600B881EA /* CPWorkCell.xib in Resources */,
 				F8C3DDEC2100D36600539E6E /* YTPayViewController.xib in Resources */,
@@ -2573,6 +2659,7 @@
 				F84EC1552105D97700FE66D2 /* YTApplyforViewController.xib in Resources */,
 				F8C3DDE22100A73100539E6E /* YTCartAddressViewController.xib in Resources */,
 				F807691E20FB2E03001E2FA6 /* ReviewViewController.xib in Resources */,
+				F81B3D7F210C7E4B00247B7C /* CPWaitAuditViewController.xib in Resources */,
 				F84B449620EF4413004791E8 /* WorkAddressHeadView.xib in Resources */,
 				F81A61DD210C332E0026876E /* CPMyCompanyViewController.xib in Resources */,
 				F84EC14B2105B7D200FE66D2 /* YTRefundDetailViewController.xib in Resources */,
@@ -2584,6 +2671,7 @@
 				F846DA8D21006B9200A1E1CE /* YTBaseInformationTableViewCell.xib in Resources */,
 				F80F515C2106D7FB004FF163 /* YTCollectViewController.xib in Resources */,
 				F817882A21006656007006D8 /* YTCartViewController.xib in Resources */,
+				F81B3D75210C793E00247B7C /* CPLegalPersonViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2661,8 +2749,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F81B3D7E210C7E4B00247B7C /* CPWaitAuditViewController.m in Sources */,
 				F811A9E720FF3CFA009EEA6D /* YTRecommendViewController.m in Sources */,
 				F8D8F512210B2CB800A52AAB /* CPEducationCell.m in Sources */,
+				F81B3D69210C6BDF00247B7C /* CPSettingViewController.m in Sources */,
 				F85312D1210814B800B881EA /* YTProgressHUD.m in Sources */,
 				F8DE217820FC4EEE00AC55D8 /* YTMediumViewController.m in Sources */,
 				F888D3CA20F6132C00128715 /* SelectTypeCell.m in Sources */,
@@ -2698,9 +2788,11 @@
 				F85313742109E16E00B881EA /* YTEditResumeTableViewCell.m in Sources */,
 				F85312DD2108231100B881EA /* YTPwsdViewController.m in Sources */,
 				F888D3F220F83A0100128715 /* YTFileDetailsViewController.m in Sources */,
+				F81B3D74210C793E00247B7C /* CPLegalPersonViewController.m in Sources */,
 				F894252220EC5E05008156CC /* YTRegisterViewController.m in Sources */,
 				F888D38820F4E2C000128715 /* YTHttpTool.m in Sources */,
 				F888D3CF20F6571800128715 /* YTEducationViewController.m in Sources */,
+				F81B3D79210C7C9200247B7C /* CPBusinessViewController.m in Sources */,
 				A72826A820FDD30300244CAA /* YTPeronalInformationViewController.m in Sources */,
 				F84EC14E2105D1CF00FE66D2 /* ApplyforFooterView.m in Sources */,
 				F8C3DDE12100A73100539E6E /* YTCartAddressViewController.m in Sources */,
@@ -2708,6 +2800,7 @@
 				A728270320FDF30700244CAA /* YTSelectSexView.m in Sources */,
 				F888F50320EA27B800E19554 /* AppDelegate.m in Sources */,
 				F84B449420EF43E4004791E8 /* WorkAddressHeadView.m in Sources */,
+				F81B3D88210C82B300247B7C /* CPChatMessageViewController.m in Sources */,
 				F853131F21096F1600B881EA /* YTNotificationViewController.m in Sources */,
 				F828A6DD210A1F36006AC52C /* YTPassAttextationViewController.m in Sources */,
 				F80CB329210AF19F0076963F /* CPEditWorkViewController.m in Sources */,
@@ -2724,6 +2817,7 @@
 				F894251E20EB8490008156CC /* UIView+Appearance.m in Sources */,
 				F89424FA20EB2C73008156CC /* YTRotateViewController.m in Sources */,
 				F85313072108850400B881EA /* RecordDetailCell.m in Sources */,
+				F81B3D8D210C831200247B7C /* CPChatListTableViewCell.m in Sources */,
 				F85312D821081F2E00B881EA /* YTMessageViewController.m in Sources */,
 				F81A61D2210C201E0026876E /* CPSearchListTableViewCell.m in Sources */,
 				F807692220FB2ED5001E2FA6 /* ReviewCell.m in Sources */,
@@ -2766,6 +2860,7 @@
 				F80CB31A210ACE4B0076963F /* YTSelectWorkTypeViewController.m in Sources */,
 				A72826AE20FDDD6200244CAA /* YTModifyUsernameViewController.m in Sources */,
 				F81A61D7210C27B30026876E /* CPSysMessageDetailViewController.m in Sources */,
+				F81B3D83210C80B400247B7C /* CPYingTuAttestationViewController.m in Sources */,
 				F828A6E9210A2F07006AC52C /* YTAttestationViewController.m in Sources */,
 				A728271320FF16D200244CAA /* YTCheckIconViewController.m in Sources */,
 				F85313242109734900B881EA /* YTNotificationListViewController.m in Sources */,
@@ -2800,6 +2895,7 @@
 				A72BA4E8210041CD008D57E6 /* TestViewController.m in Sources */,
 				F80CB324210AD2E20076963F /* YTCommitVCRViewController.m in Sources */,
 				F888F55E20EA75DD00E19554 /* YTMineViewController.m in Sources */,
+				F81B3D6F210C72FF00247B7C /* CPAttestationViewController.m in Sources */,
 				F84EC1402105ACAE00FE66D2 /* YTRefundListViewController.m in Sources */,
 				F853131021088FFA00B881EA /* RecordFooterView.m in Sources */,
 				F807691D20FB2E03001E2FA6 /* ReviewViewController.m in Sources */,

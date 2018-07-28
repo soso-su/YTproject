@@ -10,6 +10,7 @@
 #import "YTPageViewController.h"
 #import "YTChatListViewController.h"
 #import "YTNotificationListViewController.h"
+#import "CPChatMessageViewController.h"
 
 @interface CPInformationViewController ()<YTPageViewControllerDelegate>
 @property(nonatomic, strong)YTPageViewController *pageView;
@@ -24,7 +25,9 @@
 }
 
 - (void)setUpUI{
-    YTChatListViewController *chatVc = [[YTChatListViewController alloc]init];
+//    YTChatListViewController *chatVc = [[YTChatListViewController alloc]init];
+//    chatVc.title = @"会话消息";
+    CPChatMessageViewController *chatVc = [[CPChatMessageViewController alloc]init];
     chatVc.title = @"会话消息";
     
     YTNotificationListViewController *sysVc = [[YTNotificationListViewController alloc]init];

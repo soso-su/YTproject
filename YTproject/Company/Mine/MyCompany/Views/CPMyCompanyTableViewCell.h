@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *rightLabel;
 @property (weak, nonatomic) IBOutlet UIView *line;
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *angImageView;
 @property (assign, nonatomic) BOOL isHideImage;
+@property (assign, nonatomic) BOOL isHideAngImage;
 
 @end

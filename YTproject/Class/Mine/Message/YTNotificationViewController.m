@@ -10,6 +10,7 @@
 #import "YTPageViewController.h"
 #import "YTNotificationListViewController.h"
 #import "YTChatListViewController.h"
+#import "CPChatMessageViewController.h"
 
 
 @interface YTNotificationViewController ()<YTPageViewControllerDelegate>
@@ -22,7 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"消息中心";
-    YTChatListViewController *chatVc = [[YTChatListViewController alloc]init];
+//    YTChatListViewController *chatVc = [[YTChatListViewController alloc]init];
+//    chatVc.title = @"会话消息";
+    CPChatMessageViewController *chatVc = [[CPChatMessageViewController alloc]init];
     chatVc.title = @"会话消息";
     
     YTNotificationListViewController *sysVc = [[YTNotificationListViewController alloc]init];

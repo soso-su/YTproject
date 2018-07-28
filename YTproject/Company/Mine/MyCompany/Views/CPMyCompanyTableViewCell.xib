@@ -57,11 +57,14 @@
                     <constraint firstAttribute="trailing" secondItem="8sP-vT-TQY" secondAttribute="trailing" constant="12" id="ruK-Fc-0Dq"/>
                     <constraint firstItem="G6B-VC-Lt4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" priority="250" constant="12" id="tbI-hc-Oey"/>
                     <constraint firstItem="8sP-vT-TQY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="tco-gE-pNH"/>
+                    <constraint firstAttribute="trailing" secondItem="WCW-xD-HBo" secondAttribute="trailing" priority="250" constant="12" id="wbI-Oh-fh8"/>
                     <constraint firstItem="G6B-VC-Lt4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xh7-lk-7Qd"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="angImageView" destination="bth-yx-8rz" id="DtJ-xh-AC6"/>
+                <outlet property="hideAngConstraint" destination="wbI-Oh-fh8" id="WgY-HP-lnc"/>
                 <outlet property="hideImageConstraint" destination="tbI-hc-Oey" id="JUt-zd-2QX"/>
                 <outlet property="leftLabel" destination="G6B-VC-Lt4" id="KeZ-lv-0lb"/>
                 <outlet property="line" destination="8sP-vT-TQY" id="SHh-GO-Xfa"/>

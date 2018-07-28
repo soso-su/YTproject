@@ -10,6 +10,7 @@
 
 @interface CPMyCompanyTableViewCell()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *hideImageConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *hideAngConstraint;
 
 @end
 
@@ -28,6 +29,17 @@
     }else{
         self.logoImageView.hidden = NO;
         self.hideImageConstraint.priority = 250;
+    }
+}
+
+- (void)setIsHideAngImage:(BOOL)isHideAngImage{
+    _isHideAngImage = isHideAngImage;
+    if (isHideAngImage) {
+        self.angImageView.hidden = YES;
+        self.hideAngConstraint.priority = 1000;
+    }else{
+        self.angImageView.hidden = NO;
+        self.hideAngConstraint.priority = 250;
     }
 }
 
