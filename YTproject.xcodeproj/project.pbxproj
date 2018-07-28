@@ -112,6 +112,18 @@
 		F81A61E7210C41E70026876E /* CPModiflyCompanyTellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81A61E5210C41E70026876E /* CPModiflyCompanyTellViewController.xib */; };
 		F81A61EB210C4B310026876E /* CPEditCompanyMsgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A61E9210C4B310026876E /* CPEditCompanyMsgViewController.m */; };
 		F81A61EC210C4B310026876E /* CPEditCompanyMsgViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81A61EA210C4B310026876E /* CPEditCompanyMsgViewController.xib */; };
+		F81A61F3210C50990026876E /* CPMyComboViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A61F1210C50990026876E /* CPMyComboViewController.m */; };
+		F81A61F4210C50990026876E /* CPMyComboViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81A61F2210C50990026876E /* CPMyComboViewController.xib */; };
+		F81A61F9210C51540026876E /* MyComTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A61F7210C51540026876E /* MyComTableViewCell.m */; };
+		F81A61FA210C51540026876E /* MyComTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81A61F8210C51540026876E /* MyComTableViewCell.xib */; };
+		F81A61FE210C57AE0026876E /* CPOtherComboViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A61FC210C57AE0026876E /* CPOtherComboViewController.m */; };
+		F81A61FF210C57AE0026876E /* CPOtherComboViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81A61FD210C57AE0026876E /* CPOtherComboViewController.xib */; };
+		F81A6203210C582C0026876E /* OtherComboTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A6201210C582C0026876E /* OtherComboTableViewCell.m */; };
+		F81A6204210C582C0026876E /* OtherComboTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81A6202210C582C0026876E /* OtherComboTableViewCell.xib */; };
+		F81A6208210C5C490026876E /* CPComfirmComboViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A6206210C5C490026876E /* CPComfirmComboViewController.m */; };
+		F81A6209210C5C490026876E /* CPComfirmComboViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81A6207210C5C490026876E /* CPComfirmComboViewController.xib */; };
+		F81B3D62210C653B00247B7C /* CPBillMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81B3D60210C653B00247B7C /* CPBillMessageViewController.m */; };
+		F81B3D63210C653B00247B7C /* CPBillMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81B3D61210C653B00247B7C /* CPBillMessageViewController.xib */; };
 		F828A6DD210A1F36006AC52C /* YTPassAttextationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F828A6DB210A1F36006AC52C /* YTPassAttextationViewController.m */; };
 		F828A6DE210A1F36006AC52C /* YTPassAttextationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F828A6DC210A1F36006AC52C /* YTPassAttextationViewController.xib */; };
 		F828A6E2210A224E006AC52C /* YTAttextationFailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F828A6E0210A224E006AC52C /* YTAttextationFailViewController.m */; };
@@ -552,6 +564,24 @@
 		F81A61E8210C4B310026876E /* CPEditCompanyMsgViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPEditCompanyMsgViewController.h; sourceTree = "<group>"; };
 		F81A61E9210C4B310026876E /* CPEditCompanyMsgViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPEditCompanyMsgViewController.m; sourceTree = "<group>"; };
 		F81A61EA210C4B310026876E /* CPEditCompanyMsgViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPEditCompanyMsgViewController.xib; sourceTree = "<group>"; };
+		F81A61F0210C50990026876E /* CPMyComboViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPMyComboViewController.h; sourceTree = "<group>"; };
+		F81A61F1210C50990026876E /* CPMyComboViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPMyComboViewController.m; sourceTree = "<group>"; };
+		F81A61F2210C50990026876E /* CPMyComboViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPMyComboViewController.xib; sourceTree = "<group>"; };
+		F81A61F6210C51540026876E /* MyComTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyComTableViewCell.h; sourceTree = "<group>"; };
+		F81A61F7210C51540026876E /* MyComTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyComTableViewCell.m; sourceTree = "<group>"; };
+		F81A61F8210C51540026876E /* MyComTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyComTableViewCell.xib; sourceTree = "<group>"; };
+		F81A61FB210C57AE0026876E /* CPOtherComboViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPOtherComboViewController.h; sourceTree = "<group>"; };
+		F81A61FC210C57AE0026876E /* CPOtherComboViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPOtherComboViewController.m; sourceTree = "<group>"; };
+		F81A61FD210C57AE0026876E /* CPOtherComboViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPOtherComboViewController.xib; sourceTree = "<group>"; };
+		F81A6200210C582C0026876E /* OtherComboTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtherComboTableViewCell.h; sourceTree = "<group>"; };
+		F81A6201210C582C0026876E /* OtherComboTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OtherComboTableViewCell.m; sourceTree = "<group>"; };
+		F81A6202210C582C0026876E /* OtherComboTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherComboTableViewCell.xib; sourceTree = "<group>"; };
+		F81A6205210C5C490026876E /* CPComfirmComboViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPComfirmComboViewController.h; sourceTree = "<group>"; };
+		F81A6206210C5C490026876E /* CPComfirmComboViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPComfirmComboViewController.m; sourceTree = "<group>"; };
+		F81A6207210C5C490026876E /* CPComfirmComboViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPComfirmComboViewController.xib; sourceTree = "<group>"; };
+		F81B3D5F210C653B00247B7C /* CPBillMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPBillMessageViewController.h; sourceTree = "<group>"; };
+		F81B3D60210C653B00247B7C /* CPBillMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPBillMessageViewController.m; sourceTree = "<group>"; };
+		F81B3D61210C653B00247B7C /* CPBillMessageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPBillMessageViewController.xib; sourceTree = "<group>"; };
 		F828A6DA210A1F36006AC52C /* YTPassAttextationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTPassAttextationViewController.h; sourceTree = "<group>"; };
 		F828A6DB210A1F36006AC52C /* YTPassAttextationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTPassAttextationViewController.m; sourceTree = "<group>"; };
 		F828A6DC210A1F36006AC52C /* YTPassAttextationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTPassAttextationViewController.xib; sourceTree = "<group>"; };
@@ -1227,6 +1257,66 @@
 			path = Cart;
 			sourceTree = "<group>";
 		};
+		F81A61ED210C4FBD0026876E /* MyCompany */ = {
+			isa = PBXGroup;
+			children = (
+				F81A61EE210C4FDC0026876E /* Views */,
+				F81A61D9210C332E0026876E /* CPMyCompanyViewController.h */,
+				F81A61DA210C332E0026876E /* CPMyCompanyViewController.m */,
+				F81A61DB210C332E0026876E /* CPMyCompanyViewController.xib */,
+				F81A61E3210C41E70026876E /* CPModiflyCompanyTellViewController.h */,
+				F81A61E4210C41E70026876E /* CPModiflyCompanyTellViewController.m */,
+				F81A61E5210C41E70026876E /* CPModiflyCompanyTellViewController.xib */,
+				F81A61E8210C4B310026876E /* CPEditCompanyMsgViewController.h */,
+				F81A61E9210C4B310026876E /* CPEditCompanyMsgViewController.m */,
+				F81A61EA210C4B310026876E /* CPEditCompanyMsgViewController.xib */,
+			);
+			path = MyCompany;
+			sourceTree = "<group>";
+		};
+		F81A61EE210C4FDC0026876E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F81A61DE210C36AA0026876E /* CPMyCompanyTableViewCell.h */,
+				F81A61DF210C36AA0026876E /* CPMyCompanyTableViewCell.m */,
+				F81A61E0210C36AA0026876E /* CPMyCompanyTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F81A61EF210C502D0026876E /* MyCombo */ = {
+			isa = PBXGroup;
+			children = (
+				F81A61F5210C511E0026876E /* Views */,
+				F81A61F0210C50990026876E /* CPMyComboViewController.h */,
+				F81A61F1210C50990026876E /* CPMyComboViewController.m */,
+				F81A61F2210C50990026876E /* CPMyComboViewController.xib */,
+				F81A61FB210C57AE0026876E /* CPOtherComboViewController.h */,
+				F81A61FC210C57AE0026876E /* CPOtherComboViewController.m */,
+				F81A61FD210C57AE0026876E /* CPOtherComboViewController.xib */,
+				F81A6205210C5C490026876E /* CPComfirmComboViewController.h */,
+				F81A6206210C5C490026876E /* CPComfirmComboViewController.m */,
+				F81A6207210C5C490026876E /* CPComfirmComboViewController.xib */,
+				F81B3D5F210C653B00247B7C /* CPBillMessageViewController.h */,
+				F81B3D60210C653B00247B7C /* CPBillMessageViewController.m */,
+				F81B3D61210C653B00247B7C /* CPBillMessageViewController.xib */,
+			);
+			path = MyCombo;
+			sourceTree = "<group>";
+		};
+		F81A61F5210C511E0026876E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F81A61F6210C51540026876E /* MyComTableViewCell.h */,
+				F81A61F7210C51540026876E /* MyComTableViewCell.m */,
+				F81A61F8210C51540026876E /* MyComTableViewCell.xib */,
+				F81A6200210C582C0026876E /* OtherComboTableViewCell.h */,
+				F81A6201210C582C0026876E /* OtherComboTableViewCell.m */,
+				F81A6202210C582C0026876E /* OtherComboTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F828A6E4210A23BB006AC52C /* NameAttestation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1535,20 +1625,13 @@
 		F85313352109A30300B881EA /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				F81A61ED210C4FBD0026876E /* MyCompany */,
+				F81A61EF210C502D0026876E /* MyCombo */,
 				F853134A2109A51F00B881EA /* Models */,
 				F85313492109A51600B881EA /* Views */,
 				F85313402109A49000B881EA /* CPMineViewController.h */,
 				F85313412109A49000B881EA /* CPMineViewController.m */,
 				F85313422109A49000B881EA /* CPMineViewController.xib */,
-				F81A61D9210C332E0026876E /* CPMyCompanyViewController.h */,
-				F81A61DA210C332E0026876E /* CPMyCompanyViewController.m */,
-				F81A61DB210C332E0026876E /* CPMyCompanyViewController.xib */,
-				F81A61E3210C41E70026876E /* CPModiflyCompanyTellViewController.h */,
-				F81A61E4210C41E70026876E /* CPModiflyCompanyTellViewController.m */,
-				F81A61E5210C41E70026876E /* CPModiflyCompanyTellViewController.xib */,
-				F81A61E8210C4B310026876E /* CPEditCompanyMsgViewController.h */,
-				F81A61E9210C4B310026876E /* CPEditCompanyMsgViewController.m */,
-				F81A61EA210C4B310026876E /* CPEditCompanyMsgViewController.xib */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1596,9 +1679,6 @@
 		F85313492109A51600B881EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F81A61DE210C36AA0026876E /* CPMyCompanyTableViewCell.h */,
-				F81A61DF210C36AA0026876E /* CPMyCompanyTableViewCell.m */,
-				F81A61E0210C36AA0026876E /* CPMyCompanyTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2374,6 +2454,7 @@
 				F81A61BF210C0FF10026876E /* CPInviteViewController.xib in Resources */,
 				F853135E2109D9AB00B881EA /* YTNameAttestationViewController.xib in Resources */,
 				F80CB325210AD2E20076963F /* YTCommitVCRViewController.xib in Resources */,
+				F81B3D63210C653B00247B7C /* CPBillMessageViewController.xib in Resources */,
 				F84EC15A2105E24F00FE66D2 /* YTInputLogistcViewController.xib in Resources */,
 				F81A61EC210C4B310026876E /* CPEditCompanyMsgViewController.xib in Resources */,
 				F853132C2109754B00B881EA /* YTChatListViewController.xib in Resources */,
@@ -2435,11 +2516,13 @@
 				F888D3CB20F6132C00128715 /* SelectTypeCell.xib in Resources */,
 				F80CB31B210ACE4B0076963F /* YTSelectWorkTypeViewController.xib in Resources */,
 				F84EC134210374ED00FE66D2 /* LogisticsCell.xib in Resources */,
+				F81A6204210C582C0026876E /* OtherComboTableViewCell.xib in Resources */,
 				F888D40A20F8A2EC00128715 /* LocalListCell.xib in Resources */,
 				F84B44A120EF5DCA004791E8 /* YTWorkSearchViewController.xib in Resources */,
 				F853133121097D4A00B881EA /* SysNotificationCell.xib in Resources */,
 				F84EC13C2103899200FE66D2 /* LogistcsHeadView.xib in Resources */,
 				F828A6DE210A1F36006AC52C /* YTPassAttextationViewController.xib in Resources */,
+				F81A61F4210C50990026876E /* CPMyComboViewController.xib in Resources */,
 				F85313252109734900B881EA /* YTNotificationListViewController.xib in Resources */,
 				F894253620EDC655008156CC /* WorkHeadCollectionViewCell.xib in Resources */,
 				F8D8F513210B2CB800A52AAB /* CPEducationCell.xib in Resources */,
@@ -2451,6 +2534,8 @@
 				F888F50B20EA27B800E19554 /* Assets.xcassets in Resources */,
 				F894252320EC5E05008156CC /* YTRegisterViewController.xib in Resources */,
 				F888F54B20EA750300E19554 /* YTWorkViewController.xib in Resources */,
+				F81A61FF210C57AE0026876E /* CPOtherComboViewController.xib in Resources */,
+				F81A6209210C5C490026876E /* CPComfirmComboViewController.xib in Resources */,
 				F888D3EE20F729A600128715 /* SendfileCell.xib in Resources */,
 				F85312DE2108231100B881EA /* YTPwsdViewController.xib in Resources */,
 				F846DA8021006B9200A1E1CE /* YTResumeHeaderTableViewCell.xib in Resources */,
@@ -2472,6 +2557,7 @@
 				F85313602109E0E700B881EA /* YTSelectSexView.xib in Resources */,
 				F81A61E2210C36AA0026876E /* CPMyCompanyTableViewCell.xib in Resources */,
 				A72826A920FDD30300244CAA /* YTPeronalInformationViewController.xib in Resources */,
+				F81A61FA210C51540026876E /* MyComTableViewCell.xib in Resources */,
 				F85312EE2108615C00B881EA /* YTCameraViewController.xib in Resources */,
 				F8D8F50E210B263400A52AAB /* CPNotEdutionTableViewCell.xib in Resources */,
 				F846DA9021006B9200A1E1CE /* YTResumeHeaderView.xib in Resources */,
@@ -2587,6 +2673,7 @@
 				F83BA1B521006D3700EF5518 /* YTResumeHeaderTableViewCell.m in Sources */,
 				F8DE21A420FDE5F000AC55D8 /* HotSellCell.m in Sources */,
 				F85313392109A45A00B881EA /* CPWorkViewController.m in Sources */,
+				F81A61F3210C50990026876E /* CPMyComboViewController.m in Sources */,
 				F80F51832107375F004FF163 /* IntergralCell.m in Sources */,
 				F8C3DDC2210091D100539E6E /* AffirmOrderCell.m in Sources */,
 				F8135AB120F3145A000F2372 /* CustomButton.m in Sources */,
@@ -2625,10 +2712,12 @@
 				F828A6DD210A1F36006AC52C /* YTPassAttextationViewController.m in Sources */,
 				F80CB329210AF19F0076963F /* CPEditWorkViewController.m in Sources */,
 				F888D3D420F6EB4C00128715 /* YTEducaCollectViewController.m in Sources */,
+				F81A61FE210C57AE0026876E /* CPOtherComboViewController.m in Sources */,
 				F80F516C21070DDC004FF163 /* CollectCell.m in Sources */,
 				F846DA8621006B9200A1E1CE /* YTCertificateTableViewCell.m in Sources */,
 				F80CB310210AC0DF0076963F /* YTEducationExperienceViewController.m in Sources */,
 				F894252920EC697C008156CC /* YTSelectViewController.m in Sources */,
+				F81A6208210C5C490026876E /* CPComfirmComboViewController.m in Sources */,
 				F80F517C21073426004FF163 /* YTIntegralViewController.m in Sources */,
 				F817881221003C02007006D8 /* CartCell.m in Sources */,
 				F817882221006645007006D8 /* YTProductDetailViewController.m in Sources */,
@@ -2657,6 +2746,8 @@
 				F85313432109A49000B881EA /* CPMineViewController.m in Sources */,
 				F876CCEF210174990015E0C7 /* YTOrderViewController.m in Sources */,
 				F853136F2109E16E00B881EA /* YTEditResumeBaseInformationViewController.m in Sources */,
+				F81A61F9210C51540026876E /* MyComTableViewCell.m in Sources */,
+				F81B3D62210C653B00247B7C /* CPBillMessageViewController.m in Sources */,
 				F85312CE2108145100B881EA /* ActivityView.m in Sources */,
 				F81A61E1210C36AA0026876E /* CPMyCompanyTableViewCell.m in Sources */,
 				F81A61CD210C1F9C0026876E /* CPSearchListViewController.m in Sources */,
@@ -2725,6 +2816,7 @@
 				F80F515B2106D7FA004FF163 /* YTCollectViewController.m in Sources */,
 				F89424F620EB249D008156CC /* TYRotateImageView.m in Sources */,
 				F888D3ED20F729A600128715 /* SendfileCell.m in Sources */,
+				F81A6203210C582C0026876E /* OtherComboTableViewCell.m in Sources */,
 				F8C3DDDC2100A1C100539E6E /* AddressCell.m in Sources */,
 				F894253A20EDCBA2008156CC /* WorkTableViewCell.m in Sources */,
 				F84EC1592105E24F00FE66D2 /* YTInputLogistcViewController.m in Sources */,

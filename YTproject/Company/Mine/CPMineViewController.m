@@ -9,6 +9,7 @@
 #import "CPMineViewController.h"
 #import "CPMyCompanyViewController.h"
 #import "CPMyCompanyTableViewCell.h"
+#import "CPMyComboViewController.h"
 
 #define cellID @"companyTableViewCell"
 
@@ -66,6 +67,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
         CPMyCompanyViewController *vc = [[CPMyCompanyViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.row == 1){
+        CPMyComboViewController *vc = [[CPMyComboViewController alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
