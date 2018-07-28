@@ -7,6 +7,7 @@
 //
 
 #import "CPApplicantDetailViewController.h"
+#import "CPResumeViewController.h"
 
 @interface CPApplicantDetailViewController ()
 @property (weak, nonatomic) IBOutlet YTTouchView *checkResume;
@@ -18,7 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"应聘者个人主页";
-    // Do any additional setup after loading the view from its nib.
+    self.checkResume.touchHandler = ^{
+        CPResumeViewController *resum = [[CPResumeViewController alloc]init];
+        [self.navigationController pushViewController:resum animated:YES];
+    };
 }
 
 - (void)didReceiveMemoryWarning {

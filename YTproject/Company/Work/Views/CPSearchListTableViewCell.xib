@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="99" id="KGk-i7-Jjw" customClass="CPSearchListTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="351" height="99"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="351" height="98.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vDX-PU-6tt">
+                        <rect key="frame" x="15" y="8" width="321" height="91"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bjjlPic" translatesAutoresizingMaskIntoConstraints="NO" id="ypY-Ug-yTR">
+                                <rect key="frame" x="12" y="12" width="67" height="67"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="陈晓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFs-oK-5Vb">
+                                <rect key="frame" x="92" y="12" width="27" height="16"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="产品经理" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gex-5p-VpJ">
+                                <rect key="frame" x="151" y="12.5" width="53.5" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8k-16k" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ope-gN-v9Q">
+                                <rect key="frame" x="266" y="13" width="42" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.93333333333333335" green="0.0078431372549019607" blue="0.0078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPl-LF-dvm">
+                                <rect key="frame" x="280.5" y="37" width="27.5" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="广州 | 海珠区 | 3年 | 本科" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bF3-kl-vrm">
+                                <rect key="frame" x="92" y="40" width="116.5" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bF3-kl-vrm" firstAttribute="top" secondItem="mFs-oK-5Vb" secondAttribute="bottom" constant="12" id="0QB-pM-tov"/>
+                            <constraint firstItem="bF3-kl-vrm" firstAttribute="leading" secondItem="mFs-oK-5Vb" secondAttribute="leading" id="0m7-MU-E0J"/>
+                            <constraint firstAttribute="trailing" secondItem="ope-gN-v9Q" secondAttribute="trailing" constant="13" id="6Bw-Lr-LBh"/>
+                            <constraint firstAttribute="bottom" secondItem="ypY-Ug-yTR" secondAttribute="bottom" constant="12" id="Ha2-QC-QB4"/>
+                            <constraint firstItem="ypY-Ug-yTR" firstAttribute="top" secondItem="vDX-PU-6tt" secondAttribute="top" constant="12" id="LLQ-CD-5tX"/>
+                            <constraint firstItem="TPl-LF-dvm" firstAttribute="trailing" secondItem="ope-gN-v9Q" secondAttribute="trailing" id="M6R-vZ-R2P"/>
+                            <constraint firstItem="ypY-Ug-yTR" firstAttribute="leading" secondItem="vDX-PU-6tt" secondAttribute="leading" constant="12" id="Pjw-Cv-fOr"/>
+                            <constraint firstItem="TPl-LF-dvm" firstAttribute="top" secondItem="ope-gN-v9Q" secondAttribute="bottom" constant="8" id="T3P-fc-afY"/>
+                            <constraint firstItem="mFs-oK-5Vb" firstAttribute="leading" secondItem="ypY-Ug-yTR" secondAttribute="trailing" constant="13" id="URb-gC-fuy"/>
+                            <constraint firstItem="Gex-5p-VpJ" firstAttribute="leading" secondItem="mFs-oK-5Vb" secondAttribute="trailing" constant="32" id="aHE-3U-gPz"/>
+                            <constraint firstItem="mFs-oK-5Vb" firstAttribute="top" secondItem="ypY-Ug-yTR" secondAttribute="top" id="b5R-kl-w8k"/>
+                            <constraint firstItem="ope-gN-v9Q" firstAttribute="centerY" secondItem="Gex-5p-VpJ" secondAttribute="centerY" id="e4f-uT-7OS"/>
+                            <constraint firstItem="ypY-Ug-yTR" firstAttribute="centerY" secondItem="vDX-PU-6tt" secondAttribute="centerY" id="emg-0u-6se"/>
+                            <constraint firstItem="Gex-5p-VpJ" firstAttribute="centerY" secondItem="mFs-oK-5Vb" secondAttribute="centerY" id="lLk-fr-TqU"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="hr_CornerRadius">
+                                <real key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="vDX-PU-6tt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="64u-H4-1b5"/>
+                    <constraint firstItem="vDX-PU-6tt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Noe-YH-ef0"/>
+                    <constraint firstAttribute="trailing" secondItem="vDX-PU-6tt" secondAttribute="trailing" constant="15" id="bKL-3D-Aeu"/>
+                    <constraint firstAttribute="bottom" secondItem="vDX-PU-6tt" secondAttribute="bottom" id="niJ-Ee-py9"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <point key="canvasLocation" x="49.5" y="81.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bjjlPic" width="67" height="67"/>
+    </resources>
+</document>

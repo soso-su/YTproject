@@ -12,6 +12,7 @@
 #import "YTWorkSearchTableViewController.h"
 #import "CustomButton.h"
 #import "SelectTypeView.h"
+#import "CPSearchListViewController.h"
 
 @interface YTWorkSearchViewController ()<SGPageTitleViewDelegate,SGPageContentScrollViewDelegate>
 
@@ -48,15 +49,17 @@
 }
 
 - (void)setNav{
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button sizeToFit];
-    [button setImage:[UIImage imageNamed:@"navBack"] forState:UIControlStateNormal];
-    button.size = CGSizeMake(50, 30);
-    button.titleLabel.font = [UIFont systemFontOfSize:14.0];
-    button.imageEdgeInsets = UIEdgeInsetsMake(0, -15, 0, 0);
-    [button setTitle:@"广州" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:button];
+    if (!self.isCompany) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button sizeToFit];
+        [button setImage:[UIImage imageNamed:@"navBack"] forState:UIControlStateNormal];
+        button.size = CGSizeMake(50, 30);
+        button.titleLabel.font = [UIFont systemFontOfSize:14.0];
+        button.imageEdgeInsets = UIEdgeInsetsMake(0, -15, 0, 0);
+        [button setTitle:@"广州" forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:button];
+    }
     
     UIButton *cancleButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [cancleButton setTitle:@"取消" forState:UIControlStateNormal];
@@ -66,7 +69,7 @@
     [cancleButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:cancleButton];
     
-    UIView *tiView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width - button.width - cancleButton.width - 40, 30)];
+    UIView *tiView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width - 50 - cancleButton.width - 40, 30)];
     tiView.backgroundColor = [UIColor whiteColor];
     tiView.layer.cornerRadius = 4.0;
     self.navigationItem.titleView = tiView;
@@ -166,14 +169,21 @@
     self.pageTitleView = [SGPageTitleView pageTitleViewWithFrame:CGRectMake(0, CGRectGetMaxY(typeBtn.frame) + margin, kScreen_Width, titleViewH) delegate:self titleNames:self.titleArray configure:configure];
     self.pageTitleView.selectedIndex = 0;
     [otherView addSubview:self.pageTitleView];
-
-    YTWorkSearchTableViewController *vc = [[YTWorkSearchTableViewController alloc]init];
-    YTWorkSearchTableViewController *vc1 = [[YTWorkSearchTableViewController alloc]init];
-    YTWorkSearchTableViewController *vc2 = [[YTWorkSearchTableViewController alloc]init];
-    YTWorkSearchTableViewController *vc3 = [[YTWorkSearchTableViewController alloc]init];
-    YTWorkSearchTableViewController *vc4 = [[YTWorkSearchTableViewController alloc]init];
-
-    NSArray *controlArray = @[vc,vc1,vc2,vc3,vc4];
+    NSArray *controlArray = [NSArray array];
+    if (self.isCompany) {
+        CPSearchListViewController *vc = [[CPSearchListViewController alloc]init];
+        CPSearchListViewController *vc1 = [[CPSearchListViewController alloc]init];
+        CPSearchListViewController *vc2 = [[CPSearchListViewController alloc]init];
+        controlArray = @[vc,vc1,vc2];
+    }else{
+        YTWorkSearchTableViewController *vc = [[YTWorkSearchTableViewController alloc]init];
+        YTWorkSearchTableViewController *vc1 = [[YTWorkSearchTableViewController alloc]init];
+        YTWorkSearchTableViewController *vc2 = [[YTWorkSearchTableViewController alloc]init];
+        YTWorkSearchTableViewController *vc3 = [[YTWorkSearchTableViewController alloc]init];
+        YTWorkSearchTableViewController *vc4 = [[YTWorkSearchTableViewController alloc]init];
+        controlArray = @[vc,vc1,vc2,vc3,vc4];
+    }
+    
     CGFloat contentViewHeight = kScreen_Height - tyView.height - otherView.height - self.stateBarAndNavBarHeight - indicatorWidth;
     self.pageContentView = [[SGPageContentScrollView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(otherView.frame) + indicatorWidth, kScreen_Width, contentViewHeight) parentVC:self childVCs:controlArray];
     self.pageContentView.delegatePageContentScrollView = self;
@@ -235,7 +245,11 @@
 
 - (NSArray *)titleArray{
     if (!_titleArray) {
-        _titleArray = @[@"默认",@"热度",@"薪酬",@"距离",@"认证"];
+        if (self.isCompany) {
+            _titleArray = @[@"默认",@"薪酬",@"距离"];
+        }else{
+            _titleArray = @[@"默认",@"热度",@"薪酬",@"距离",@"认证"];
+        }
     }
     return _titleArray;
 }

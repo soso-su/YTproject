@@ -10,4 +10,6 @@
 
 @interface YTWorkSearchViewController : YTBaseViewController
 
+@property (nonatomic, assign) BOOL isCompany;
+
 @end

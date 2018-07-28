@@ -26,6 +26,7 @@
 
 - (void)edit{
     CPEditWorkViewController *editVc = [[CPEditWorkViewController alloc]init];
+    editVc.title = @"职业详情";
     [self.navigationController pushViewController:editVc animated:YES];
 }
 

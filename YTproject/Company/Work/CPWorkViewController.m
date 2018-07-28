@@ -11,6 +11,8 @@
 #import "OrderTipcView.h"
 #import "CPWorkDetailViewController.h"
 #import "CPApplicantViewController.h"
+#import "CPEditWorkViewController.h"
+#import "YTWorkSearchViewController.h"
 
 #define cellID @"cpWorkCell"
 @interface CPWorkViewController ()<UITableViewDelegate,UITableViewDataSource,CPWorkCellDelegate>
@@ -37,7 +39,7 @@
 
 - (void)setNav{
     self.navigationItem.title = @"";
-    
+    YTWeakSelf
     self.navigationItem.rightBarButtonItem = nil;
     UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [leftBtn setImage:[UIImage imageNamed:@"workIconCard"] forState:UIControlStateNormal];
@@ -49,13 +51,23 @@
     UIButton *rigBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [rigBtn setImage:[UIImage imageNamed:@"workIconPublish"] forState:UIControlStateNormal];
     [rigBtn setTitle:@"发布职位" forState:UIControlStateNormal];
+    
+    [[rigBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        CPEditWorkViewController *vc = [[CPEditWorkViewController alloc]init];
+        vc.title = @"发布职位";
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    }];
     rigBtn.titleLabel.font = [UIFont systemFontOfSize:12.0];
     
     UIButton *rigBtn1 = [UIButton buttonWithType:UIButtonTypeCustom];
     [rigBtn1 setImage:[UIImage imageNamed:@"workIconSearch"] forState:UIControlStateNormal];
     [rigBtn1 setTitle:@"搜索人才" forState:UIControlStateNormal];
     rigBtn1.titleLabel.font = [UIFont systemFontOfSize:12.0];
-    
+    [[rigBtn1 rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        YTWorkSearchViewController *vc = [[YTWorkSearchViewController alloc]init];
+        vc.isCompany = YES;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    }];
     UIBarButtonItem *rigBar = [[UIBarButtonItem alloc]initWithCustomView:rigBtn];
     UIBarButtonItem *rigBar1 = [[UIBarButtonItem alloc]initWithCustomView:rigBtn1];
     self.navigationItem.rightBarButtonItems = @[rigBar1,rigBar];

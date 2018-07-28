@@ -29,11 +29,17 @@
 
 
 - (void)setUpUI{
-    self.title = @"职业详情";
     
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
-    rightItem.tintColor = [UIColor whiteColor];
-    self.navigationItem.rightBarButtonItem = rightItem;
+    if ([self.title isEqualToString:@"职业详情"]) {
+        
+        UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
+        rightItem.tintColor = [UIColor whiteColor];
+        self.navigationItem.rightBarButtonItem = rightItem;
+    }else{
+        UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithTitle:@"发布" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
+        rightItem.tintColor = [UIColor whiteColor];
+        self.navigationItem.rightBarButtonItem = rightItem;
+    }
     
     self.timeTextField.enabled = NO;
     self.timeView.touchHandler = ^{
