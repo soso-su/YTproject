@@ -14,7 +14,6 @@ target 'YTproject' do
     pod 'FDFullscreenPopGesture'
     pod 'SGPagingView'
     pod 'SDCycleScrollView'
-    pod 'DWLaunchScreen'
     pod 'YYModel'
     pod 'RongCloudIM/IMLib'
     pod 'RongCloudIM/IMKit'

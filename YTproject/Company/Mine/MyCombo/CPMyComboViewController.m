@@ -35,7 +35,7 @@
     [btn setTitle:@"购买其他套餐" forState:UIControlStateNormal];
     [btn setTitleColor:DefaultColor forState:UIControlStateNormal];
     btn.titleLabel.font = [UIFont systemFontOfSize:12];
-    [btn setBackgroundImage:[UIImage imageNamed:@"mealBtn2"] forState:UIControlStateNormal];
+    [btn setBackgroundImage:[UIImage imageNamed:@"meal_btn_2"] forState:UIControlStateNormal];
     [btn sizeToFit];
     btn.frame = CGRectMake(footView.width - btn.width - 28, 15, btn.width, btn.height);
     [[btn rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WorkHotModel.h"
 
 @interface WorkHeadCollectionViewCell : UICollectionViewCell
+@property (nonatomic, strong) WorkHotModel *model;
 
 @end

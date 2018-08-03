@@ -14,7 +14,6 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - DWLaunchScreen (0.0.1)
   - FDFullscreenPopGesture (1.1)
   - FLEX (2.4.0)
   - IQKeyboardManager (6.0.4)
@@ -41,7 +40,6 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - DWLaunchScreen
   - FDFullscreenPopGesture
   - FLEX
   - IQKeyboardManager
@@ -63,7 +61,6 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
-    - DWLaunchScreen
     - FDFullscreenPopGesture
     - FLEX
     - IQKeyboardManager
@@ -83,7 +80,6 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  DWLaunchScreen: 4472c1ce650319b69d543e936ab55d9802b652e1
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   IQKeyboardManager: 29514134ef0334a6fa33cf4eee11c36c064baeaf
@@ -101,6 +97,6 @@ SPEC CHECKSUMS:
   WechatOpenSDK: 676feec516a11173eafd1fe64b10d27babf28701
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 69e65bb324a8c7d645543581a92077fa9f94dd60
+PODFILE CHECKSUM: 04e508055001f20d97517188825a71d63228060f
 
 COCOAPODS: 1.5.3

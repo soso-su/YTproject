@@ -8,14 +8,14 @@
 
 #import "AppDelegate.h"
 #import "YTTabBarViewController.h"
-#import <DWLaunchScreen.h>
 #import "YTRotateViewController.h"
 #import "YTLoginViewController.h"
 #import "YTNavigationViewController.h"
 #import "YTRongYunRequest.h"
 #import <FLEXManager.h>
+#import "YTLaunchView.h"
 
-@interface AppDelegate ()<DWLaunchScreenDelegate>
+@interface AppDelegate ()
 
 @end
 
@@ -25,9 +25,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [self setupDebugTool];
-    
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
     NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:YTVersion];
@@ -40,9 +38,7 @@
         YTNavigationViewController *naVc = [[YTNavigationViewController alloc]initWithRootViewController:loginVc];
         loginVc.title = @"登录";
         self.window.rootViewController = naVc;
-        
-//        YTTabBarViewController *tabVc = [[YTTabBarViewController alloc]init];
-//        self.window.rootViewController = tabVc;
+
     }else{
         YTRotateViewController *rotateVc = [[YTRotateViewController alloc]init];
         self.window.rootViewController = rotateVc;
@@ -50,9 +46,19 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
     [self setRongYun];
+    [self setTableViewConfig];
     [self.window makeKeyAndVisible];
-    [self setLaunchImage];
+    [self guide];
+    [YTLaunchView showLaunchViewWithDefaultImage:[UIImage imageNamed:@"default"] webImageUrl:@""];
     return YES;
+}
+
+- (void)setTableViewConfig{
+    if (@available(iOS 11.0,*)) {
+//        UITableView.appearance.estimatedRowHeight = 0;
+//        UITableView.appearance.estimatedSectionHeaderHeight = 0;
+//        UITableView.appearance.estimatedSectionFooterHeight = 0;
+    }
 }
 
 - (void)setupDebugTool{
@@ -79,6 +85,15 @@
     [self connectServer];
 }
 
+
+- (void)guide{
+    [YTHttpTool requestWithUrlStr:YTGuideUrl requestType:RequestType_post parameters:nil success:^(id responseObject) {
+        
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
 - (void)connectServer{
     NSDictionary *dic = @{@"userId":@"yt1",
                           @"name":@"英图",
@@ -99,48 +114,6 @@
     }];
 }
 
-
-- (void)setLaunchImage{
-    DWLaunchScreen *launch = [[DWLaunchScreen alloc] init];
-    launch.logoImage = [UIImage imageNamed:@"default"];
-    launch.delegate = self;
-    //设置显示时长
-    launch.accordingLength = 3.0;
-    
-    //设置消失耗时
-    launch.deleteLength = 3.0f;
-    
-    //消失方式
-    launch.disappearType = DWCrosscutting;
-    
-    //是否隐藏按钮
-    //    launch.skipHide = YES;
-    
-    //按钮显示文字
-//    launch.skipString = @"等待:";
-    
-    //字体颜色
-//    launch.skipTitleColor = [UIColor blackColor];
-    
-    //字体大小
-//    launch.skipFont = 18;
-    
-    //按钮背景颜色
-//    launch.skipBgColor = [UIColor orangeColor];
-    
-    //按钮显示位置
-//    launch.skipLocation = LeftTop;
-    
-    [launch dw_LaunchScreenContent:[NSURL URLWithString:@"www.baidu.com"] window:self.window withError:^(NSError *error) {
-
-        YTLog(@"error:%@", error);
-    }];
-    
-}
-
-- (void)dw_didSelectImageView {
-    YTLog(@"点击了图片");
-}
 
 - (void)getUserInfoWithUserId:(NSString *)userId completion:(void (^)(RCUserInfo *))completion {
     if ([userId isEqual:kGetUserId]) {

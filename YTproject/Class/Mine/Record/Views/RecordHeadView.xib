@@ -127,7 +127,7 @@
                 <outlet property="jobView" destination="3bw-TE-F46" id="TFB-5s-gSB"/>
                 <outlet property="stateLabel" destination="9NN-V0-jDy" id="8Nw-de-Q10"/>
             </connections>
-            <point key="canvasLocation" x="33.5" y="-206.5"/>
+            <point key="canvasLocation" x="-43" y="-258"/>
         </view>
     </objects>
     <resources>

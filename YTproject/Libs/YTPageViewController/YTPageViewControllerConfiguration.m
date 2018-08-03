@@ -14,6 +14,7 @@
     YTPageViewControllerConfiguration *configutaion = [[YTPageViewControllerConfiguration alloc]init];
     configutaion.menuHeight = 36.5;
     configutaion.menuMargin = 31;
+    configutaion.menuWidth = kScreen_Width;
     configutaion.menuTintDefaultColor = [UIColor blackColor];
     configutaion.menuTintSelectedColor = [UIColor redColor];
     configutaion.indicatorViewColor = [UIColor redColor];

@@ -20,6 +20,7 @@
 #import "YTNotificationViewController.h"
 #import "YTNameAttestationViewController.h"
 #import "YTAttestationViewController.h"
+#import "YTFileDetailsViewController.h"
 
 @interface YTMineViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -61,8 +62,9 @@
 }
 
 - (IBAction)personalResume:(UIButton *)sender {
-    
-    YTResumeViewController *vc = [[YTResumeViewController alloc]init];
+    YTFileDetailsViewController *vc = [[YTFileDetailsViewController alloc]init];
+    vc.isMine = YES;
+//    YTResumeViewController *vc = [[YTResumeViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
     
 }

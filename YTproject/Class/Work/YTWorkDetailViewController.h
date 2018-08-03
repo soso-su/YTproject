@@ -9,5 +9,6 @@
 #import "YTBaseViewController.h"
 
 @interface YTWorkDetailViewController : YTBaseViewController
+@property (nonatomic, assign)NSInteger positionId;
 
 @end

@@ -46,6 +46,7 @@
     
     
     self.searchView = [[YTSearchView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width - 120, 30)];
+    self.searchView.text = @"多肉";
     self.searchView.delegate = self;
     self.navigationItem.titleView = self.searchView;
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancelSearch:)];

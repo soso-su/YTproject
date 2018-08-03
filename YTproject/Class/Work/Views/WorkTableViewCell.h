@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PositionModel.h"
 
 @interface WorkTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIView *bgView;
+@property (strong, nonatomic)PositionModel *model;
 
 @end

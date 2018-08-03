@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CPApplicantDetailViewController">
             <connections>
+                <outlet property="attestationView" destination="W5Y-8P-URW" id="tnJ-I9-cq1"/>
                 <outlet property="checkResume" destination="A7g-SG-Fcq" id="gaJ-jH-i5A"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -59,7 +60,7 @@
                                                 <constraint firstAttribute="height" constant="1" id="Gsw-w8-QuA"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5Y-8P-URW">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5Y-8P-URW" customClass="YTTouchView">
                                             <rect key="frame" x="31" y="174.5" width="41" height="43"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ypzIconCart" translatesAutoresizingMaskIntoConstraints="NO" id="Y5t-8M-Git">

@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger,CustomButtonType){
-    ImageUpLabelDown = 1,                
-    ImageLeftLabelRight,
+    ImageUpLabelDown = 0,
+    ImageLeftLabelRight = 1,
+    LabelLeftImageRight,
 };
 
 

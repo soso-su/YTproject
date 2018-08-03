@@ -12,7 +12,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YTPayViewController">
             <connections>
+                <outlet property="bankCardBtn" destination="qPo-dR-WTL" id="Hrk-nk-6Bi"/>
+                <outlet property="bankCardView" destination="Ofi-ps-4Qw" id="0u8-Jk-Xvc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="wechatBtn" destination="YH1-D4-LiR" id="L62-ue-Ksb"/>
+                <outlet property="wechatView" destination="5FR-Jc-eQt" id="1ix-I2-gYG"/>
+                <outlet property="zfbBtn" destination="Ice-HW-G4z" id="Ipq-oc-t5l"/>
+                <outlet property="zfbView" destination="5E9-aG-lmn" id="A8j-gy-BUc"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -199,6 +205,9 @@
                     <state key="normal" title="提交" backgroundImage="payBtnSubmit">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <connections>
+                        <action selector="commit:" destination="-1" eventType="touchUpInside" id="dSB-C8-JQc"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -10,4 +10,6 @@
 
 @interface YTCompanyViewController : YTBaseViewController
 
+@property (nonatomic, assign)NSInteger companyId;
+
 @end

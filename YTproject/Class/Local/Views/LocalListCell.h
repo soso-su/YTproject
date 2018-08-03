@@ -13,5 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *msgLabel;
 @property (weak, nonatomic) IBOutlet UIButton *likeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *collectionBtn;
+@property (weak, nonatomic) IBOutlet UIView *titleView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end

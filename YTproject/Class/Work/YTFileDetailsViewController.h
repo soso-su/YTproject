@@ -10,4 +10,6 @@
 
 @interface YTFileDetailsViewController : YTBaseViewController
 
+@property (nonatomic, assign) BOOL isMine;
+
 @end

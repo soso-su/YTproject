@@ -25,17 +25,40 @@ static YTHttpTool *_httpTool;
     return _httpTool;
 }
 
-+ (void)requestWithUrlStr:(NSString *)URLString parameters:(id)parameters success:(void (^)(id))success failure:(void (^)(NSError *))failure{
++ (void)requestWithUrlStr:(NSString *)URLString requestType:(RequestType)type parameters:(id)parameters success:(void (^)(id))success failure:(void (^)(NSError *))failure{
     [YTHttpTool shareYTHttpTool].afnHttpManager.requestSerializer.timeoutInterval = [self getTimeOut];
-    [[YTHttpTool shareYTHttpTool].afnHttpManager POST:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if (success) {
-            success(responseObject);
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        if (failure) {
-            failure(error);
-        }
-    }];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:parameters];
+    if ([YTUserModel share].token.length > 0) {
+        [[YTHttpTool shareYTHttpTool].afnHttpManager.requestSerializer setValue:[YTUserModel share].token forHTTPHeaderField:@"token"];
+    }
+    YTLog(@"url = %@, dict === %@",dict,URLString);
+    if (type == RequestType_post) {
+        //post
+        [[YTHttpTool shareYTHttpTool].afnHttpManager POST:URLString parameters:dict progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            if (success) {
+                success(responseObject);
+            }
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            if (failure) {
+                failure(error);
+            }
+        }];
+    }else{
+        
+        //get
+        [[YTHttpTool shareYTHttpTool].afnHttpManager GET:URLString parameters:dict progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            if (success) {
+                YTLog(@"responseObject == %@",responseObject);
+                success(responseObject);
+            }
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            if (failure) {
+                YTLog(@"error == %@",error);
+                failure(error);
+            }
+        }];
+    }
+    
 }
 
 + (NSTimeInterval)getTimeOut {

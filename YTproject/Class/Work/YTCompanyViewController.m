@@ -11,6 +11,9 @@
 #import <SGPagingView.h>
 #import "YTCompanyMessageController.h"
 #import "YTWorkSearchTableViewController.h"
+#import "CompanyModel.h"
+#import "YTMapViewController.h"
+#import "YTApproveDetailViewController.h"
 
 @interface YTCompanyViewController ()<SGPageTitleViewDelegate,SGPageContentScrollViewDelegate>
 
@@ -26,7 +29,9 @@
 
 @property (nonatomic, weak)CustomButton *companyAddress;
 
-@property (nonatomic, weak)YTTouchView *attestationView;
+@property (nonatomic, weak)YTTouchView *attestationVie;
+
+@property (nonatomic ,strong) CompanyModel *companyModel;
 
 @property (nonatomic, strong) SGPageTitleView *pageTitleView;
 @property (nonatomic, strong) SGPageContentScrollView *pageContentView;
@@ -38,6 +43,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpUI];
+    [self companyDetailWithCompanyId:self.companyId];
 }
 
 - (void)setUpUI{
@@ -48,7 +54,7 @@
     CGFloat titleViewH = 44;
     CGFloat indicatorWidth = 10;
     self.title = @"公司详情";
-    
+    YTWeakSelf
 //    UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, self.view.height)];
 //    [self.view addSubview:scrollView];
 //    self.scrollView = scrollView;
@@ -92,6 +98,11 @@
     [companyAddress sizeToFit];
     companyAddress.frame = CGRectMake(CGRectGetMaxX(companyLogo.frame)+5, CGRectGetMaxY(companyCount.frame)+indicatorWidth, companyAddress.width+15, companyAddress.height);
     [headView addSubview:companyAddress];
+    
+    [[companyAddress rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        YTMapViewController *vc = [[YTMapViewController alloc]init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    }];
     self.companyAddress = companyAddress;
     
     YTTouchView *attestationView = [[YTTouchView alloc]initWithFrame:CGRectMake(left, CGRectGetMaxY(companyLogo.frame)+28, logoH, logoH)];
@@ -107,6 +118,12 @@
     attestationTitle.frame = CGRectMake(0, CGRectGetMaxY(attestationImage.frame)+indicatorWidth, attestationTitle.width, attestationTitle.height);
     attestationTitle.centerX = attestationImage.centerX;
     [attestationView addSubview:attestationTitle];
+    
+    attestationView.touchHandler = ^{
+        YTApproveDetailViewController *vc = [[YTApproveDetailViewController alloc]init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+    
     [headView addSubview:attestationView];
     
     
@@ -117,8 +134,8 @@
     
     SGPageTitleViewConfigure *configure = [SGPageTitleViewConfigure pageTitleViewConfigure];
     configure.titleColor = RGB(102, 102, 102);
-    configure.titleSelectedColor = DefaultColor;
-    configure.indicatorColor = DefaultColor;
+    configure.titleSelectedColor = RGB(255, 67, 67);
+    configure.indicatorColor = RGB(255, 67, 67);
     configure.indicatorHeight = 2.0;
     configure.showBottomSeparator = NO;
     configure.indicatorAdditionalWidth = indicatorWidth;
@@ -139,6 +156,13 @@
     
 }
 
+- (void)setUpUIwithData:(CompanyModel *)model{
+    [self.companyLogo sd_setImageWithURL:[NSURL URLWithString:model.avatar_url] placeholderImage:[UIImage imageNamed:@"gsxqPic1"]];
+    self.companyName.text = model.abbreviation;
+    self.companyCount.text = [NSString stringWithFormat:@"%zd人",model.number];
+}
+
+
 - (void)pageTitleView:(SGPageTitleView *)pageTitleView selectedIndex:(NSInteger)selectedIndex{
     [self.pageContentView setPageContentScrollViewCurrentIndex:selectedIndex];
 }
@@ -146,6 +170,32 @@
 - (void)pageContentScrollView:(SGPageContentScrollView *)pageContentScrollView progress:(CGFloat)progress originalIndex:(NSInteger)originalIndex targetIndex:(NSInteger)targetIndex{
     [self.pageTitleView setPageTitleViewWithProgress:progress originalIndex:originalIndex targetIndex:targetIndex];
 }
+
+
+#pragma mark ----------------Http--------------
+
+- (void)companyDetailWithCompanyId:(NSInteger)companyId{
+    NSDictionary *dic = @{
+                          @"id":@(companyId)
+                          };
+    YTWeakSelf
+    [YTProgressHUD showWithStatusStr:YTHttpState_RequestIng];
+    [YTHttpTool requestWithUrlStr:YTCompanyDetailUrl requestType:RequestType_post parameters:dic success:^(id responseObject) {
+        @try {
+            [YTProgressHUD dismissHUD];
+            weakSelf.companyModel = [CompanyModel yy_modelWithJSON:responseObject[@"company"]];
+            [weakSelf setUpUIwithData:weakSelf.companyModel];
+            YTLog(@"responseObject = %@",responseObject);
+        } @catch (NSException *exception) {
+            [YTProgressHUD dismissHUD];
+            YTLog(@"companyDetail exception = %@",exception.description);
+        }
+    } failure:^(NSError *error) {
+        [YTProgressHUD dismissHUD];
+        YTLog(@"companyDetail error = %@",error);
+    }];
+}
+
 
 
 @end

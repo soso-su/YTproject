@@ -10,9 +10,15 @@
 #define Config_h
 #endif
 
+
 //融云appkey和AppSecret
 #define YTRongYun_AppKey @"e5t4ouvpe62ea"
 #define YTRongYun_AppSecret @"x4INMclLHS0o"
+
+
+//通用
+#define YTCode  @"code"
+#define YTMsg   @"msg"
 
 //获取融云token
 #define YTGetRongYunTokenUrl  @"https://api.cn.ronghub.com/user/getToken.json"
@@ -23,3 +29,6 @@
 #define kGetUserId          [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"]
 #define kNickname           [[NSUserDefaults standardUserDefaults] objectForKey:@"user_name"]
 #define kHeaderUrl          [[NSUserDefaults standardUserDefaults] objectForKey:@"head_path"]
+
+
+

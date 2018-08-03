@@ -20,6 +20,8 @@
 
 @property (nonatomic, strong) NSMutableArray *dataSorce;
 
+@property (nonatomic, strong) RecordHeadView *headView;
+
 
 @end
 
@@ -35,7 +37,7 @@
     self.title = @"投递记录";
     [self.tableView registerNib:[UINib nibWithNibName:@"RecordDetailCell" bundle:nil] forCellReuseIdentifier:cellID];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    RecordHeadView *headView = [RecordHeadView showRecordHeadView];
+    RecordHeadView *headView = self.headView;
     headView.model = self.model;
     headView.callback = ^(RecordListModel *model) {
         YTWorkDetailViewController *detailVc = [[YTWorkDetailViewController alloc]init];
@@ -167,6 +169,16 @@
         _dataSorce = [NSMutableArray array];
     }
     return _dataSorce;
+}
+
+- (RecordHeadView *)headView{
+    if (!_headView) {
+        _headView = [RecordHeadView showRecordHeadView];
+        if (kScreen_Width < 414) {
+            _headView.frame = CGRectMake(0, 0, kScreen_Width, 180);
+        }
+    }
+    return _headView;
 }
 
 @end

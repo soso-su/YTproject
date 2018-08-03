@@ -13,8 +13,9 @@
 #import "CustomButton.h"
 #import "SelectTypeView.h"
 #import "CPSearchListViewController.h"
+#import "PositionModel.h"
 
-@interface YTWorkSearchViewController ()<SGPageTitleViewDelegate,SGPageContentScrollViewDelegate>
+@interface YTWorkSearchViewController ()<SGPageTitleViewDelegate,SGPageContentScrollViewDelegate,UITextFieldDelegate>
 
 @property (nonatomic, weak)UIButton *selectWorkBtn;
 
@@ -41,6 +42,7 @@
     [self setNotification];
     [self setNav];
     [self setUI];
+    [self trade];
 }
 
 - (void)setNotification{
@@ -84,6 +86,8 @@
     searchTF.font = [UIFont systemFontOfSize:13.0];
     searchTF.textColor = RGB(51, 51, 51);
     searchTF.text = @"产品经理";
+    searchTF.returnKeyType = UIReturnKeySearch;
+    searchTF.delegate = self;
     [tiView addSubview:searchTF];
     self.searchTF = searchTF;
 }
@@ -147,7 +151,7 @@
     
     CustomButton *typeBtn = [CustomButton buttonWithType:UIButtonTypeCustom];
     typeBtn.fontSize = 13.0;
-    typeBtn.customButtonType = ImageLeftLabelRight;
+    typeBtn.customButtonType = LabelLeftImageRight;
     typeBtn.backgroundColor = RGB(238, 238, 238);
     typeBtn.layer.cornerRadius = 4.0;
     [typeBtn setTitle:@"全职" forState:UIControlStateNormal];
@@ -201,6 +205,15 @@
     [self.pageTitleView setPageTitleViewWithProgress:progress originalIndex:originalIndex targetIndex:targetIndex];
 }
 
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [self findPositionWithKey:textField.text pageNumber:1];
+    return YES;
+}
+
 - (void)selectWork:(UIButton *)sender{
     sender.selected = !sender.selected;
     self.tyView.hidden = YES;
@@ -237,7 +250,7 @@
 
 - (SelectTypeView *)tyView{
     if (!_tyView) {
-        _tyView = [[SelectTypeView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.typeBtn.frame)+self.stateBarAndNavBarHeight - 20, kScreen_Width, kScreen_Height - CGRectGetMaxY(self.typeBtn.frame)*2)];
+        _tyView = [[SelectTypeView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.typeBtn.frame)+self.stateBarAndNavBarHeight, kScreen_Width, kScreen_Height - CGRectGetMaxY(self.typeBtn.frame)*2)];
         _tyView.hidden = YES;
     }
     return _tyView;
@@ -257,5 +270,37 @@
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:YTEDCATIONNOTIFICATIONNAME object:nil];
 }
+
+#pragma mark ------------------Http----------------
+
+- (void)findPositionWithKey:(NSString *)key pageNumber:(NSInteger)page{
+    NSDictionary *dict = @{
+                           @"key":key,
+                           @"pageNumber":@(page)
+                           };
+    [YTProgressHUD showWithStatusStr:YTHttpState_RequestIng];
+    [YTHttpTool requestWithUrlStr:YTFindPositionUrl requestType:RequestType_post parameters:dict success:^(id responseObject) {
+        @try {
+            [YTProgressHUD dismissHUD];
+            YTLog(@"responseObject = %@",responseObject);
+        } @catch (NSException *exception) {
+            [YTProgressHUD dismissHUD];
+            YTLog(@"findPosition exception = %@",exception.description);
+        }
+    } failure:^(NSError *error) {
+        [YTProgressHUD dismissHUD];
+        YTLog(@"findPosition error = %@",error);
+    }];
+}
+
+- (void)trade{
+    [YTHttpTool requestWithUrlStr:YTTradeUrl requestType:RequestType_post parameters:nil success:^(id responseObject) {
+        YTLog(@"responseObject = %@",responseObject);
+    } failure:^(NSError *error) {
+        
+        YTLog(@"findPosition error = %@",error);
+    }];
+}
+
 
 @end

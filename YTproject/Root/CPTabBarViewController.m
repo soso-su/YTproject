@@ -25,7 +25,7 @@
     
     NSMutableDictionary *selectAttrs = [NSMutableDictionary dictionary];
     selectAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:12];
-    selectAttrs[NSForegroundColorAttributeName] = RGB(255, 67, 67);
+    selectAttrs[NSForegroundColorAttributeName] = DefaultColor;
     
     UITabBarItem *item = [UITabBarItem appearance];
     [item setTitleTextAttributes:attrs forState:UIControlStateNormal];

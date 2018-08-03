@@ -15,8 +15,12 @@
 #import "YTWorkDetailViewController.h"
 #import "RongIMKit/RongIMKit.h"
 #import "YTChatViewController.h"
+#import "WorkHotModel.h"
+#import "CarouselModel.h"
+#import "PositionModel.h"
 
 #define cellID @"WorkCell"
+
 
 @interface YTWorkViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UISearchBarDelegate,WorkHeadViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -24,6 +28,10 @@
 @property (weak, nonatomic) UIButton *addressBtn;
 @property (weak, nonatomic) YTSearchBar *searchBar;
 @property (weak, nonatomic) UIButton *messageBtn;
+
+@property (nonatomic, strong) NSMutableArray <WorkHotModel *>*hotArray;
+@property (nonatomic, strong) NSMutableArray <CarouselModel *>*imgArray;
+@property (nonatomic, strong) NSMutableArray <PositionModel *>*items;
 
 @end
 
@@ -33,11 +41,24 @@
     [super viewDidLoad];
     [self setNavView];
     [self setUpUI];
+//    [self getList];
 }
 
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
-    self.headView.frame = CGRectMake(0, 0, kScreen_Width, 412);
+    for (int i = 0;i < 5;i++) {
+        WorkHotModel *model = [[WorkHotModel alloc]init];
+        [self.hotArray addObject:model];
+    }
+    if (self.hotArray.count > 5) {
+        self.headView.frame = CGRectMake(0, 0, kScreen_Width, 440);
+    }else{
+        self.headView.frame = CGRectMake(0, 0, kScreen_Width, 320);
+    }
+    self.headView.imgArray = self.imgArray;
+    self.headView.dataSorce = self.hotArray;
+    [self.tableView reloadData];
+    
 }
 
 - (void)setNavView{
@@ -78,28 +99,33 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     WorkHeadView *headView = [[WorkHeadView alloc]init];
+    self.headView = headView;
     self.tableView.tableHeaderView = headView;
     headView.delegate = self;
-    self.headView = headView;
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+//    return self.items.count;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     WorkTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+//    cell.model = self.items[indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     YTWorkDetailViewController *detailVc = [[YTWorkDetailViewController alloc]init];
+//    detailVc.positionId = self.items[indexPath.row].positionId;
     [self.navigationController pushViewController:detailVc animated:YES];
 }
 
-- (void)clickCollectViewCellWithIndex:(NSInteger)index{
+- (void)clickCollectViewCellWithIndex:(WorkHotModel *)model{
     YTWorkDetailViewController *detailVc = [[YTWorkDetailViewController alloc]init];
+    detailVc.positionId = model.postId;
     [self.navigationController pushViewController:detailVc animated:YES];
 }
 
@@ -121,6 +147,71 @@
     chat.conversationType = ConversationType_PRIVATE;
     chat.targetId = @"yt1";
     [self.navigationController pushViewController:chat animated:YES];
+}
+
+- (NSMutableArray <WorkHotModel *>*)hotArray{
+    if (!_hotArray) {
+        _hotArray = [NSMutableArray array];
+    }
+    return _hotArray;
+}
+
+- (NSMutableArray <CarouselModel *>*)imgArray{
+    if (!_imgArray) {
+        _imgArray = [NSMutableArray array];
+    }
+    return _imgArray;
+}
+
+- (NSMutableArray <PositionModel *>*)items{
+    if (!_items) {
+        _items = [NSMutableArray array];
+    }
+    return _items;
+}
+
+
+#pragma mark ------------------HttpRequest----------------
+//主页接口
+- (void)getList{
+    YTWeakSelf
+    [YTProgressHUD showWithStatusStr:YTHttpState_RequestIng];
+    [YTHttpTool requestWithUrlStr:YTIndexUrl requestType:RequestType_post parameters:nil success:^(id responseObject) {
+        @try {
+            [YTProgressHUD dismissHUD];
+            YTLog(@"responseObject = %@",responseObject);
+            NSArray *hotArr = responseObject[@"bidPositionList"];
+            for (NSDictionary *dic in hotArr) {
+                WorkHotModel *model = [WorkHotModel yy_modelWithJSON:dic];
+                model.postId = [dic[@"id"] integerValue];
+                [weakSelf.hotArray addObject:model];
+            }
+            
+            NSArray *imgArr = responseObject[@"shufList"];
+            for (NSDictionary *dic in imgArr) {
+                CarouselModel *model = [CarouselModel yy_modelWithJSON:dic];
+                [weakSelf.imgArray addObject:model];
+            }
+            NSArray *list = responseObject[@"positionList"];
+            NSMutableArray *dataArray = [NSMutableArray array];
+            for (NSDictionary *dic in list) {
+                PositionModel *model = [PositionModel yy_modelWithJSON:dic];
+                model.positionId = [dic[@"id"] integerValue];
+                [dataArray addObject:model];
+            }
+            weakSelf.items = dataArray;
+            weakSelf.headView.imgArray = weakSelf.imgArray;
+            weakSelf.headView.dataSorce = weakSelf.hotArray;
+            [weakSelf viewWillLayoutSubviews];
+            [weakSelf.tableView reloadData];
+        } @catch (NSException *exception) {
+            [YTProgressHUD dismissHUD];
+            YTLog(@"YTIndexUrl exception = %@",exception.description);
+        }
+    } failure:^(NSError *error) {
+        [YTProgressHUD dismissHUD];
+        YTLog(@"YTIndexUrl error = %@",error);
+    }];
 }
 
 

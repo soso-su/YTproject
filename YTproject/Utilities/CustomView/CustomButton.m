@@ -71,7 +71,17 @@
         self.titleLabel.centerY = self.height/2;
         
         
-    }else {
+    }else if (self.customButtonType == LabelLeftImageRight){
+        [self.titleLabel sizeToFit];
+        self.titleLabel.frame = CGRectMake(self.margin*2, 0, self.titleLabel.width, self.titleLabel.height);
+        self.titleLabel.centerY = self.height/2;
+        
+        [self.imageView sizeToFit];
+        self.imageView.frame = CGRectMake(self.width - self.imageView.width - self.margin*2, 0, self.imageView.width, self.imageView.height);
+        self.imageView.centerY = self.height/2;
+        
+        
+    } else{
         
         self.imageView.frame = CGRectMake(self.margin, self.margin, self.width - self.margin * 2, self.height/2 - self.margin * 2);
         self.titleLabel.frame = CGRectMake(0, CGRectGetMaxY(self.imageView.frame) + self.margin*2, self.width, self.height/2 - self.margin * 2);

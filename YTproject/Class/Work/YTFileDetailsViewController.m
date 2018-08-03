@@ -9,10 +9,12 @@
 #import "YTFileDetailsViewController.h"
 #import <AVKit/AVKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "YTEditResumeBaseInformationViewController.h"
 
 @interface YTFileDetailsViewController ()
 @property (weak, nonatomic) IBOutlet UIView *vedioView;
 @property (weak, nonatomic) IBOutlet UILabel *baseMessageLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *logoView;
 
 @end
 
@@ -48,14 +50,32 @@
     [editBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     editBtn.titleLabel.font = [UIFont systemFontOfSize:14.0];
     editBtn.frame = CGRectMake(0, 0, 35, 35);
+    YTWeakSelf
+    [[editBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        YTEditResumeBaseInformationViewController *editVc = [[YTEditResumeBaseInformationViewController alloc]init];
+        [weakSelf.navigationController pushViewController:editVc animated:YES];
+    }];
     
     UIBarButtonItem *sendItem = [[UIBarButtonItem alloc]initWithCustomView:sendBtn];
     UIBarButtonItem *editItem = [[UIBarButtonItem alloc]initWithCustomView:editBtn];
     
-    self.navigationItem.rightBarButtonItems = @[sendItem,editItem];
+    if (self.isMine) {
+        self.navigationItem.rightBarButtonItem = editItem;
+    }else{
+        self.navigationItem.rightBarButtonItems = @[sendItem,editItem];
+    }
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clickLogo:)];
+    self.logoView.userInteractionEnabled = YES;
+    [self.logoView addGestureRecognizer:tap];
     
     self.baseMessageLabel.text = @"最高学历：本科\n工作年限：3年\n出生年月：1992.05\n国籍：叙利亚\n性别：男\n语言：阿拉伯语";
     [YTTool setLabelAttributeLineHeight:12 label:self.baseMessageLabel];
+}
+
+- (void)clickLogo:(UITapGestureRecognizer *)tap{
+    YTAlertView *alertView = [YTAlertView alertViewWithTitle:nil message:nil style:UIAlertControllerStyleActionSheet cancelButtonTitle:nil otherButtonTitles:@"拍照",@"从相册选择",@"取消",nil];
+    [alertView show];
 }
 
 @end

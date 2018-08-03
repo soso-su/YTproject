@@ -9,6 +9,13 @@
 #import "YTPayViewController.h"
 
 @interface YTPayViewController ()
+@property (weak, nonatomic) IBOutlet YTTouchView *zfbView;
+@property (weak, nonatomic) IBOutlet UIButton *zfbBtn;
+@property (weak, nonatomic) IBOutlet YTTouchView *wechatView;
+@property (weak, nonatomic) IBOutlet UIButton *wechatBtn;
+
+@property (weak, nonatomic) IBOutlet YTTouchView *bankCardView;
+@property (weak, nonatomic) IBOutlet UIButton *bankCardBtn;
 
 @end
 
@@ -17,21 +24,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"支付";
+    [self setUpUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setUpUI{
+    self.zfbView.touchHandler = ^{
+        self.zfbBtn.selected = YES;
+        self.wechatBtn.selected = NO;
+        self.bankCardBtn.selected = NO;
+    };
+    
+    self.wechatView.touchHandler = ^{
+        self.zfbBtn.selected = NO;
+        self.wechatBtn.selected = YES;
+        self.bankCardBtn.selected = NO;
+    };
+    
+    self.bankCardView.touchHandler = ^{
+        self.zfbBtn.selected = NO;
+        self.wechatBtn.selected = NO;
+        self.bankCardBtn.selected = YES;
+    };
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)commit:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
-*/
 
 @end

@@ -59,6 +59,32 @@
                                     <color key="titleColor" red="1" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMw-Sp-byH">
+                                <rect key="frame" x="281" y="0.0" width="14" height="37"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="local_search_tag" translatesAutoresizingMaskIntoConstraints="NO" id="lHa-EL-nYi">
+                                        <rect key="frame" x="0.0" y="0.0" width="14" height="37"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活动" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zw-gW-EzM">
+                                        <rect key="frame" x="0.0" y="2" width="14" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="14" id="nll-z7-k4R"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="lHa-EL-nYi" secondAttribute="trailing" id="4T0-yA-zL4"/>
+                                    <constraint firstItem="lHa-EL-nYi" firstAttribute="leading" secondItem="HMw-Sp-byH" secondAttribute="leading" id="Ghl-dZ-Ssf"/>
+                                    <constraint firstAttribute="bottom" secondItem="lHa-EL-nYi" secondAttribute="bottom" id="TQh-VO-B5E"/>
+                                    <constraint firstItem="6Zw-gW-EzM" firstAttribute="leading" secondItem="HMw-Sp-byH" secondAttribute="leading" id="Yhv-5A-sda"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Zw-gW-EzM" secondAttribute="trailing" id="auo-1f-22F"/>
+                                    <constraint firstItem="6Zw-gW-EzM" firstAttribute="top" secondItem="HMw-Sp-byH" secondAttribute="top" constant="2" id="h1y-YJ-E2o"/>
+                                    <constraint firstItem="lHa-EL-nYi" firstAttribute="top" secondItem="HMw-Sp-byH" secondAttribute="top" id="tNr-Qj-pZl"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -69,10 +95,12 @@
                             <constraint firstItem="rNj-Xw-aVM" firstAttribute="top" secondItem="5Go-4h-yEu" secondAttribute="bottom" constant="14" id="Eln-jy-8nj"/>
                             <constraint firstAttribute="bottom" secondItem="rNj-Xw-aVM" secondAttribute="bottom" constant="14.5" id="NWP-Gh-eXc"/>
                             <constraint firstItem="rNj-Xw-aVM" firstAttribute="trailing" secondItem="2zV-uC-jFS" secondAttribute="trailing" id="Nbc-Ak-00f"/>
+                            <constraint firstItem="HMw-Sp-byH" firstAttribute="top" secondItem="TGF-0j-7Q9" secondAttribute="top" id="Ngf-T6-sxV"/>
                             <constraint firstItem="2zV-uC-jFS" firstAttribute="top" secondItem="TGF-0j-7Q9" secondAttribute="top" constant="12" id="Nly-ZT-uOq"/>
                             <constraint firstItem="juO-FF-7nC" firstAttribute="centerY" secondItem="o5l-ec-11d" secondAttribute="centerY" id="Sbh-hv-U4w"/>
                             <constraint firstItem="o5l-ec-11d" firstAttribute="leading" secondItem="juO-FF-7nC" secondAttribute="trailing" constant="13" id="Tg6-Z7-Y2F"/>
                             <constraint firstItem="rNj-Xw-aVM" firstAttribute="leading" secondItem="o5l-ec-11d" secondAttribute="trailing" constant="13" id="Veh-a3-DZk"/>
+                            <constraint firstAttribute="trailing" secondItem="HMw-Sp-byH" secondAttribute="trailing" constant="5" id="h6C-O0-Lox"/>
                             <constraint firstAttribute="trailing" secondItem="2zV-uC-jFS" secondAttribute="trailing" constant="12" id="hbT-q6-EsR"/>
                             <constraint firstItem="5Go-4h-yEu" firstAttribute="top" secondItem="2zV-uC-jFS" secondAttribute="bottom" constant="12" id="oF7-EB-gbt"/>
                         </constraints>
@@ -97,6 +125,8 @@
                 <outlet property="collectionBtn" destination="o5l-ec-11d" id="Gf4-5W-4Gh"/>
                 <outlet property="likeBtn" destination="juO-FF-7nC" id="UM7-c0-1kp"/>
                 <outlet property="msgLabel" destination="5Go-4h-yEu" id="pr1-eu-f5I"/>
+                <outlet property="titleLabel" destination="6Zw-gW-EzM" id="jrK-UG-JLB"/>
+                <outlet property="titleView" destination="HMw-Sp-byH" id="nDR-rj-WXe"/>
             </connections>
             <point key="canvasLocation" x="39" y="121"/>
         </tableViewCell>
@@ -107,5 +137,6 @@
         <image name="localIconLike" width="11" height="11"/>
         <image name="localIconLikePre" width="11" height="11"/>
         <image name="localPic" width="318" height="94"/>
+        <image name="local_search_tag" width="14" height="37"/>
     </resources>
 </document>

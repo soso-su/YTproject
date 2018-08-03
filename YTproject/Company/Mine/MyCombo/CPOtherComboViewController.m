@@ -14,6 +14,7 @@
 
 @interface CPOtherComboViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSIndexPath *selIndex;
 
 @end
 
@@ -52,13 +53,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     OtherComboTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-    if (indexPath.row == 0) {
+    if (_selIndex == indexPath) {
         cell.selectBtn.selected = YES;
     }else{
         cell.selectBtn.selected = NO;
     }
+
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    _selIndex = indexPath;
+    [tableView reloadData];
 }
 
 

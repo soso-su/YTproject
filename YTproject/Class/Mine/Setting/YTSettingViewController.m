@@ -12,6 +12,7 @@
 #import "YTPwsdViewController.h"
 #import "YTLoginViewController.h"
 #import "YTCameraViewController.h"
+#import "YTNavigationViewController.h"
 
 @interface YTSettingViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -62,7 +63,8 @@
         [OrderTipcView showWithStr:@"确定注销？" type:TextCenter callBack:^{
             
             YTLoginViewController *loginVc = [[YTLoginViewController alloc]init];
-            [YTTool getWindow].rootViewController = loginVc;
+            YTNavigationViewController *naVc = [[YTNavigationViewController alloc]initWithRootViewController:loginVc];
+            [YTTool getWindow].rootViewController = naVc;
             
         }];
     }

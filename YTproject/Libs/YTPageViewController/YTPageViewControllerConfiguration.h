@@ -11,6 +11,10 @@
 @interface YTPageViewControllerConfiguration : NSObject
 
 #pragma mark Menu
+
+/**菜单栏宽度*/
+@property (nonatomic,assign)CGFloat menuWidth;
+
 /**菜单栏高度*/
 @property (nonatomic,assign)CGFloat menuHeight;
 /**菜单栏每个item的间隔*/

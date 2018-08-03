@@ -111,6 +111,9 @@
 - (LogistcsHeadView *)headView{
     if (!_headView) {
         _headView = [LogistcsHeadView showHeadView];
+        if (kScreen_Width < 414) {
+            _headView.frame = CGRectMake(0, 0, kScreen_Width, 180);
+        }
     }
     return _headView;
 }

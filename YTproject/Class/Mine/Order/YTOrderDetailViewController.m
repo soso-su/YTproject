@@ -36,8 +36,8 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"AffirmOrderCell" bundle:nil] forCellReuseIdentifier:cellID];
     self.headView.model = self.model;
     self.tableView.tableHeaderView = self.headView;
-    self.footerView.showMsg = @"订单号：2346348415238798\n\n创建时间：2017-10-28   12:25\n\n支付时间：2017-10-28   12:25\n\n发货时间：2017-10-28   12:25";
     self.footerView.model = self.model;
+    self.footerView.showMsg = @"订单号：2346348415238798\n\n创建时间：2017-10-28   12:25\n\n支付时间：2017-10-28   12:25\n\n发货时间：2017-10-28   12:25";
     self.tableView.tableFooterView = self.footerView;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
@@ -89,6 +89,9 @@
 - (OrderDetailHeadView *)headView{
     if (!_headView) {
         _headView = [OrderDetailHeadView showDetailHeadView];
+        if (kScreen_Width < 414) {
+            _headView.frame = CGRectMake(0, 0, kScreen_Width, 150);
+        }
     }
     return _headView;
 }

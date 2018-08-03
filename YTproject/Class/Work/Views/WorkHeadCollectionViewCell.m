@@ -27,4 +27,12 @@
     // Initialization code
 }
 
+- (void)setModel:(WorkHotModel *)model{
+    _model = model;
+    self.technicalLabel.text = model.position_name;
+    self.salaryLabel.text = [NSString stringWithFormat:@"%zdk-%zdk/月薪",model.hight_money,model.low_money];
+    self.companyLabel.text = model.abbreviation;
+    [self.companyLogoImage sd_setImageWithURL:[NSURL URLWithString:model.avatar_url] placeholderImage:[UIImage imageNamed:@"homePicHead"]];
+}
+
 @end

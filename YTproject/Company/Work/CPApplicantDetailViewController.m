@@ -11,6 +11,7 @@
 
 @interface CPApplicantDetailViewController ()
 @property (weak, nonatomic) IBOutlet YTTouchView *checkResume;
+@property (weak, nonatomic) IBOutlet YTTouchView *attestationView;
 
 @end
 
@@ -20,6 +21,11 @@
     [super viewDidLoad];
     self.title = @"应聘者个人主页";
     self.checkResume.touchHandler = ^{
+        CPResumeViewController *resum = [[CPResumeViewController alloc]init];
+        [self.navigationController pushViewController:resum animated:YES];
+    };
+    
+    self.attestationView.touchHandler = ^{
         CPResumeViewController *resum = [[CPResumeViewController alloc]init];
         [self.navigationController pushViewController:resum animated:YES];
     };

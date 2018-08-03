@@ -69,8 +69,8 @@
     CGFloat indicatorWidth = 10;
     SGPageTitleViewConfigure *configure = [SGPageTitleViewConfigure pageTitleViewConfigure];
     configure.titleColor = RGB(102, 102, 102);
-    configure.titleSelectedColor = DefaultColor;
-    configure.indicatorColor = DefaultColor;
+    configure.titleSelectedColor = RGB(255, 67, 67);
+    configure.indicatorColor = RGB(255, 67, 67);
     configure.indicatorHeight = 2.0;
     configure.showBottomSeparator = NO;
     configure.indicatorAdditionalWidth = indicatorWidth;

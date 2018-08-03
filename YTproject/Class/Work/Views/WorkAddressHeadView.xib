@@ -17,13 +17,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBJ-1m-ZzG">
-                    <rect key="frame" x="15" y="7" width="345" height="30"/>
+                    <rect key="frame" x="15" y="7" width="265" height="30"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchIcon1" translatesAutoresizingMaskIntoConstraints="NO" id="HLa-7D-ji1">
                             <rect key="frame" x="8" y="9" width="12" height="12"/>
                         </imageView>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入城市名字" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jNU-Eg-6mL">
-                            <rect key="frame" x="23" y="0.0" width="322" height="30"/>
+                            <rect key="frame" x="23" y="0.0" width="242" height="30"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <textInputTraits key="textInputTraits"/>
@@ -58,11 +58,11 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glG-lT-QFK">
-                    <rect key="frame" x="346" y="55" width="14" height="22"/>
+                    <rect key="frame" x="349" y="55" width="14" height="22"/>
                     <state key="normal" image="cityRefresh"/>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDg-OP-chQ">
-                    <rect key="frame" x="15" y="89" width="345" height="1"/>
+                    <rect key="frame" x="15" y="89" width="348" height="1"/>
                     <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="EVf-aQ-aiV"/>
@@ -77,23 +77,34 @@
                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdH-8c-cRS">
+                    <rect key="frame" x="292" y="7" width="71" height="31"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="搜索" backgroundImage="ddxqBtn2">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Z1s-pJ-O43" firstAttribute="centerY" secondItem="LhF-1g-dyi" secondAttribute="centerY" id="0Kw-NV-77f"/>
+                <constraint firstItem="PdH-8c-cRS" firstAttribute="centerY" secondItem="jNU-Eg-6mL" secondAttribute="centerY" id="4ja-yz-oNF"/>
+                <constraint firstItem="glG-lT-QFK" firstAttribute="trailing" secondItem="PdH-8c-cRS" secondAttribute="trailing" id="BUz-xy-NxP"/>
                 <constraint firstItem="LhF-1g-dyi" firstAttribute="leading" secondItem="wDg-OP-chQ" secondAttribute="leading" id="FAl-7L-uD1"/>
-                <constraint firstItem="glG-lT-QFK" firstAttribute="trailing" secondItem="jNU-Eg-6mL" secondAttribute="trailing" id="FsV-Av-IS3"/>
                 <constraint firstItem="ZzN-Zm-zvJ" firstAttribute="leading" secondItem="mKw-zW-1RM" secondAttribute="trailing" constant="2" id="HMe-M1-yLg"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="PdH-8c-cRS" secondAttribute="trailing" constant="12" id="ITu-hl-nlR"/>
                 <constraint firstItem="Z1s-pJ-O43" firstAttribute="leading" secondItem="LhF-1g-dyi" secondAttribute="trailing" constant="3" id="KFJ-t8-ncE"/>
+                <constraint firstItem="wDg-OP-chQ" firstAttribute="top" secondItem="mKw-zW-1RM" secondAttribute="bottom" constant="15" id="O6T-Ya-sh7"/>
                 <constraint firstItem="wDg-OP-chQ" firstAttribute="trailing" secondItem="glG-lT-QFK" secondAttribute="trailing" id="VXd-Kb-ltu"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Z1s-pJ-O43" secondAttribute="bottom" constant="13.5" id="Yq2-gA-SfM"/>
                 <constraint firstItem="mKw-zW-1RM" firstAttribute="top" secondItem="hBJ-1m-ZzG" secondAttribute="bottom" constant="21" id="e3e-TV-aFK"/>
                 <constraint firstItem="wDg-OP-chQ" firstAttribute="top" secondItem="glG-lT-QFK" secondAttribute="bottom" constant="12" id="eYp-Dn-ljh"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="hBJ-1m-ZzG" secondAttribute="trailing" constant="15" id="g1t-Xw-p5C"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="hBJ-1m-ZzG" secondAttribute="trailing" constant="95" id="g1t-Xw-p5C"/>
                 <constraint firstItem="LhF-1g-dyi" firstAttribute="top" secondItem="wDg-OP-chQ" secondAttribute="bottom" constant="12" id="mda-jz-1gX"/>
                 <constraint firstItem="hBJ-1m-ZzG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="nng-gb-MWZ"/>
                 <constraint firstItem="hBJ-1m-ZzG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="7" id="oie-Je-Moi"/>
                 <constraint firstItem="ZzN-Zm-zvJ" firstAttribute="centerY" secondItem="mKw-zW-1RM" secondAttribute="centerY" id="qcA-qY-MVs"/>
+                <constraint firstItem="PdH-8c-cRS" firstAttribute="leading" secondItem="hBJ-1m-ZzG" secondAttribute="trailing" constant="12" id="tFV-PX-Avx"/>
                 <constraint firstItem="glG-lT-QFK" firstAttribute="centerY" secondItem="ZzN-Zm-zvJ" secondAttribute="centerY" id="v5U-dP-eeK"/>
                 <constraint firstItem="wDg-OP-chQ" firstAttribute="leading" secondItem="mKw-zW-1RM" secondAttribute="leading" id="xfE-Hy-O7K"/>
                 <constraint firstItem="mKw-zW-1RM" firstAttribute="leading" secondItem="hBJ-1m-ZzG" secondAttribute="leading" id="z0h-TT-z3E"/>
@@ -105,11 +116,12 @@
                 <outlet property="reloadCityBtn" destination="glG-lT-QFK" id="UD8-Ji-FKC"/>
                 <outlet property="searchTF" destination="jNU-Eg-6mL" id="sW8-VU-PnS"/>
             </connections>
-            <point key="canvasLocation" x="33.5" y="112.5"/>
+            <point key="canvasLocation" x="165" y="47"/>
         </view>
     </objects>
     <resources>
         <image name="cityRefresh" width="14" height="14"/>
+        <image name="ddxqBtn2" width="71" height="31"/>
         <image name="iconTitle1" width="4" height="15"/>
         <image name="searchIcon1" width="12" height="12"/>
     </resources>

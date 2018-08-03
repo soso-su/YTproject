@@ -214,7 +214,7 @@
     }
     
     //计算每个button之间的间隔
-    CGFloat margin = (self.view.frame.size.width - buttonWidth * self.menuButtons.count)/(self.menuButtons.count + 1);
+    CGFloat margin = (self.configuration.menuWidth - buttonWidth * self.menuButtons.count)/(self.menuButtons.count + 1);
     
     for (int i = 0; i < self.menuButtons.count; i++) {
         UIButton *button = self.menuButtons[i];
@@ -223,7 +223,7 @@
 //        button.backgroundColor = UIColor.yellowColor;
     }
     
-    self.menuScrollView.width = self.view.frame.size.width;
+    self.menuScrollView.width = self.configuration.menuWidth;
     
 }
 

@@ -30,10 +30,25 @@
 
 - (void)setNav{
     self.searchView = [[YTSearchView alloc]init];
-    self.searchView.frame = CGRectMake(0, 0, kScreen_Width - 80, 30);
+    self.searchView.frame = CGRectMake(20, 0, kScreen_Width - 100, 30);
     self.searchView.delegate = self;
+    self.searchView.text = @"白云山";
     self.navigationItem.titleView = self.searchView;
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button sizeToFit];
+    [button setImage:[UIImage imageNamed:@"navBack"] forState:UIControlStateNormal];
+    button.size = CGSizeMake(40, 30);
+    [button setTitle:@" 广州" forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont systemFontOfSize:13.0];
+    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *customItem = [[UIBarButtonItem alloc]initWithCustomView:button];
+    self.navigationItem.leftBarButtonItem = customItem;
+    
 }
+
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 5;
@@ -41,6 +56,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     LocalListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    cell.titleView.hidden = NO;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }

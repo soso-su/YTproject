@@ -19,6 +19,10 @@
 
 @property (nonatomic, weak)UICollectionView *collectionView;
 
+@property (nonatomic, weak)UIView *recommendView;
+
+@property (nonatomic, strong)UIView *carouselView;
+
 @end
 
 @implementation WorkHeadView
@@ -32,33 +36,88 @@
     return self;
 }
 
-- (void)setUpUI{
+- (void)setDataSorce:(NSArray<WorkHotModel *> *)dataSorce{
+    _dataSorce = dataSorce;
+    if (dataSorce.count>5) {
+        self.collectionView.size = CGSizeMake(kScreen_Width-30, 210);
+    }else{
+        self.collectionView.size = CGSizeMake(kScreen_Width-30, 100);
+    }
+    self.recommendView.frame = CGRectMake(0, CGRectGetMaxY(self.collectionView.frame), kScreen_Width, 48);
+    [self.collectionView reloadData];
+}
+
+- (void)setImgArray:(NSArray<CarouselModel *> *)imgArray{
+    _imgArray = imgArray;
     NSArray *imgArr = @[@"homeBanner",@"gsxqPic2",@"shopBanner"];
     TYRotateImageView *bannerView = [[TYRotateImageView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, 125) style:ImageScrollType_Banner images:imgArr confirmBtnTitle:nil confirmBtnTitleColor:nil confirmBtnFrame:CGRectNull autoScrollTimeInterval:3.0 delegate:self];
-    [self addSubview:bannerView];
+    [self.carouselView addSubview:bannerView];
     self.bannerView = bannerView;
     [bannerView addPageControlToSuperView:self];
+}
+
+
+- (void)setUpUI{
+    
+    UIView *carouselView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, 125)];
+    self.carouselView = carouselView;
+    [self addSubview:carouselView];
+    
+    UIView *hotView = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(carouselView.frame), kScreen_Width, 48)];
+    
+    UIImage *image = [UIImage imageNamed:@"iconTitle1"];
+    UIImageView *titleView = [[UIImageView alloc]initWithImage:image];
+    titleView.frame = CGRectMake(15.5, 0, image.size.width, image.size.height);
+    titleView.centerY = hotView.height/2;
+    [hotView addSubview:titleView];
+    
+    UILabel *titleLabel = [[UILabel alloc]init];
+    titleLabel.textColor = RGB(51, 51, 51);
+    titleLabel.font = [UIFont systemFontOfSize:15.0];
+    titleLabel.text = @"热门职位";
+    [titleLabel sizeToFit];
+    titleLabel.frame = CGRectMake(CGRectGetMaxX(titleView.frame)+8, 0, titleLabel.width, titleLabel.height);
+    titleLabel.centerY = titleView.centerY;
+    [hotView addSubview:titleLabel];
+    [self addSubview:hotView];
+    
     
     UICollectionViewFlowLayout *flayout = [[UICollectionViewFlowLayout alloc]init];
-    flayout.itemSize = CGSizeMake((kScreen_Width - 50)/3, 92);
-    flayout.minimumInteritemSpacing = 8;
-    flayout.minimumLineSpacing = 8;
-    
-    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(15, CGRectGetMaxY(bannerView.frame), kScreen_Width-30, 288) collectionViewLayout:flayout];
-    collectionView.backgroundColor = RGB(238, 238, 238);
+    flayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+
+    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(15, CGRectGetMaxY(hotView.frame), kScreen_Width-30, 200) collectionViewLayout:flayout];
+    collectionView.backgroundColor = RGB(240, 240, 240);
     collectionView.delegate = self;
     collectionView.dataSource = self;
-    collectionView.showsVerticalScrollIndicator = NO;
-    collectionView.scrollEnabled = NO;
+
     [collectionView registerNib:[UINib nibWithNibName:@"WorkHeadCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:cellId];
-    
+
     [collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headID];
-    
+
     [collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:footerID];
-    collectionView.autoresizingMask = NO;
-    
+    collectionView.alwaysBounceHorizontal = YES;
+
     [self addSubview:collectionView];
     self.collectionView = collectionView;
+    
+    UIView *recommendView = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(collectionView.frame), kScreen_Width, 48)];
+    self.recommendView = recommendView;
+    
+    UIImage *recommendImage = [UIImage imageNamed:@"iconTitle1"];
+    UIImageView *recommendTitleView = [[UIImageView alloc]initWithImage:image];
+    recommendTitleView.frame = CGRectMake(15.5, 0, recommendImage.size.width, recommendImage.size.height);
+    recommendTitleView.centerY = recommendView.height/2;
+    [recommendView addSubview:recommendTitleView];
+    
+    UILabel *recommendTitleLabel = [[UILabel alloc]init];
+    recommendTitleLabel.textColor = RGB(51, 51, 51);
+    recommendTitleLabel.font = [UIFont systemFontOfSize:15.0];
+    recommendTitleLabel.text = @"推荐职位";
+    [recommendTitleLabel sizeToFit];
+    recommendTitleLabel.frame = CGRectMake(CGRectGetMaxX(recommendTitleView.frame)+8, 0, recommendTitleLabel.width, recommendTitleLabel.height);
+    recommendTitleLabel.centerY = recommendTitleView.centerY;
+    [recommendView addSubview:recommendTitleLabel];
+    [self addSubview:recommendView];
     
 }
 
@@ -71,76 +130,30 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 6;
+    return self.dataSorce.count;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     WorkHeadCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
+//    cell.model = self.dataSorce[indexPath.row];
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if (self.delegate) {
-        [self.delegate clickCollectViewCellWithIndex:indexPath.row];
+        [self.delegate clickCollectViewCellWithIndex:self.dataSorce[indexPath.row]];
     }
 }
 
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
-    if(kind == UICollectionElementKindSectionHeader){
-        UICollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:headID forIndexPath:indexPath];
-        if (header.subviews.lastObject!=nil) {
-            [header.subviews.lastObject removeFromSuperview];
-        }
-        
-        UIImage *image = [UIImage imageNamed:@"iconTitle1"];
-        UIImageView *titleView = [[UIImageView alloc]initWithImage:image];
-        titleView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
-        [header addSubview:titleView];
-        titleView.centerY = header.height/2;
-        
-        UILabel *titleLabel = [[UILabel alloc]init];
-        titleLabel.textColor = RGB(51, 51, 51);
-        titleLabel.font = [UIFont systemFontOfSize:15.0];
-        titleLabel.text = @"热门职位";
-        [titleLabel sizeToFit];
-        titleLabel.frame = CGRectMake(10, 0, titleLabel.width, titleLabel.height);
-        titleLabel.centerY = titleView.centerY;
-        [header addSubview:titleLabel];
-        return header;
-    }else if (kind == UICollectionElementKindSectionFooter){
-        UICollectionReusableView *footer = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:footerID forIndexPath:indexPath];
-        if (footer.subviews.lastObject!=nil) {
-            [footer.subviews.lastObject removeFromSuperview];
-        }
-        UIImage *image = [UIImage imageNamed:@"iconTitle1"];
-        UIImageView *titleView = [[UIImageView alloc]initWithImage:image];
-        titleView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
-        [footer addSubview:titleView];
-        titleView.centerY = footer.height/2;
-        
-        UILabel *titleLabel = [[UILabel alloc]init];
-        titleLabel.textColor = RGB(51, 51, 51);
-        titleLabel.font = [UIFont systemFontOfSize:15.0];
-        titleLabel.text = @"推荐职位";
-        [titleLabel sizeToFit];
-        titleLabel.frame = CGRectMake(10, 0, titleLabel.width, titleLabel.height);
-        titleLabel.centerY = titleView.centerY;
-        [footer addSubview:titleLabel];
-        
-        return footer;
-    }else{
-        return nil;
-    }
-    return nil;
+-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+    return UIEdgeInsetsMake(8, 8, 8, 8);
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
-    return CGSizeMake(kScreen_Width - 30, 50);
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    CGFloat width = (kScreen_Width-54)/3;
+    return CGSizeMake(width, 90);
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
-    return CGSizeMake(kScreen_Width - 30, 50);
-}
 
 
 @end

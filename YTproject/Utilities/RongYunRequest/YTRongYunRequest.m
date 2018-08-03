@@ -12,7 +12,7 @@
 
 + (void)getTokenWithDict:(NSDictionary *)dict success:(void (^)(id))success failure:(void (^)(NSError *))failure{
     [YTHttpTool shareYTHttpTool].afnHttpManager.requestSerializer.timeoutInterval = 10;
-    NSString * timestamp = [[NSString alloc] initWithFormat:@"%ld",(NSInteger)[NSDate timeIntervalSinceReferenceDate]];
+    NSString * timestamp = [[NSString alloc] initWithFormat:@"%d",(NSInteger)[NSDate timeIntervalSinceReferenceDate]];
     NSString * nonce = [NSString stringWithFormat:@"%d",arc4random()];
     NSString * appkey = YTRongYun_AppKey;
     NSString * Signature = [NSString stringWithFormat:@"%@%@%@",appkey,nonce,timestamp];

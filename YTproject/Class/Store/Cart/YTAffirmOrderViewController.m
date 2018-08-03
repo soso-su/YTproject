@@ -44,8 +44,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     AffirmOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.isCart = YES;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
 }
 
 - (AddressHeadView *)addressView{

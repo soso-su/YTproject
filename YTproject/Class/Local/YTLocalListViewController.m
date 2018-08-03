@@ -33,23 +33,25 @@
     
     UIView *headView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, 30)];
     CustomButton *newBtn = [CustomButton buttonWithType:UIButtonTypeCustom];
-    newBtn.customButtonType = 2;
+    
     [newBtn setTitle:@"最新" forState:UIControlStateNormal];
     [newBtn setImage:[UIImage imageNamed:@"localIconArrows"] forState:UIControlStateNormal];
     [newBtn sizeToFit];
-    newBtn.frame = CGRectMake(headView.width - margin - newBtn.width, 0, newBtn.width, newBtn.height);
+    newBtn.frame = CGRectMake(headView.width - margin - newBtn.width, 0, newBtn.width+15, newBtn.height);
     [headView addSubview:newBtn];
     newBtn.centerY = headView.height/2;
+    newBtn.customButtonType = LabelLeftImageRight;
     
     CustomButton *hotBtn = [CustomButton buttonWithType:UIButtonTypeCustom];
-    hotBtn.customButtonType = 2;
+    
     [hotBtn setTitle:@"热度" forState:UIControlStateNormal];
     [hotBtn setImage:[UIImage imageNamed:@"localIconArrowsPre"] forState:UIControlStateNormal];
     [hotBtn setTitleColor:DefaultColor forState:UIControlStateNormal];
     [hotBtn sizeToFit];
-    hotBtn.frame = CGRectMake(headView.width - margin - hotBtn.width - newBtn.width - 10, 0, hotBtn.width, hotBtn.height);
+    hotBtn.frame = CGRectMake(headView.width - margin - hotBtn.width - newBtn.width - 10, 0, hotBtn.width+15, hotBtn.height);
     [headView addSubview:hotBtn];
     hotBtn.centerY = headView.height/2;
+    hotBtn.customButtonType = LabelLeftImageRight;
     
     self.tableView.tableHeaderView = headView;
     
@@ -61,6 +63,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     LocalListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    cell.titleView.hidden = YES;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }

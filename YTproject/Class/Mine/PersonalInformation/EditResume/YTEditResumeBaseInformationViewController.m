@@ -70,7 +70,7 @@ static NSString *const TableViewCellId = @"TableViewCellId";
         YTEditResumeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TableViewCellId forIndexPath:indexPath];
         cell.textField.text = self.detailTitleArr[indexPath.row];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        if ((indexPath.row == 2) || (indexPath.row == 4)||(indexPath.row == 5)) {
+        if ((indexPath.row == 2) || (indexPath.row == 4)||(indexPath.row == 5) || (indexPath.row == 7)) {
             [cell.textField setEnabled:NO];
         }
         

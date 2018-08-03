@@ -98,6 +98,7 @@
 - (WorkAddressHeadView *)headView{
     if (!_headView) {
         _headView = [WorkAddressHeadView headView];
+        _headView.frame = CGRectMake(0, 0, kScreen_Width, 122);
     }
     return _headView;
 }

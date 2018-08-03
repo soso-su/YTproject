@@ -6,6 +6,11 @@
 //  Copyright © 2018年 suhuahao. All rights reserved.
 //
 
+typedef NS_ENUM(NSInteger,RequestType){
+    RequestType_post = 0,
+    RequestType_get = 1
+};
+
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
 
@@ -17,6 +22,7 @@
 + (YTHttpTool *)shareYTHttpTool;
 
 + (void)requestWithUrlStr:(NSString *)URLString
+              requestType:(RequestType)type
                parameters:(id)parameters
                   success:(void (^)(id responseObject))success
                   failure:(void (^)(NSError *error))failure;

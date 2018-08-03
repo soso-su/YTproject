@@ -13,11 +13,13 @@
 #import "YTGeneralViewController.h"
 #import "YTPageViewController.h"
 #import "YTMoreViewController.h"
+#import "SelectItemView.h"
 
-@interface YTStoreViewController ()<UISearchBarDelegate>
+@interface YTStoreViewController ()<UISearchBarDelegate,SelectItemViewDelegate>
 @property (weak, nonatomic) YTSearchBar *searchBar;
 @property (weak, nonatomic) UIButton *messageBtn;
 @property (nonatomic ,strong) YTPageViewController *pageView;
+@property (nonatomic ,strong) SelectItemView *itemView;
 
 @end
 
@@ -30,7 +32,9 @@
 }
 
 - (void)setUpUI{
+    
     YTPageViewControllerConfiguration *config = [YTPageViewControllerConfiguration defaultConfiguration];
+    config.menuWidth = kScreen_Width - 50;
     YTRecommendViewController *recommendVc = [[YTRecommendViewController alloc]init];
     recommendVc.title = @"推荐";
     
@@ -46,16 +50,28 @@
     YTGeneralViewController *geneVc3 = [[YTGeneralViewController alloc]init];
     geneVc3.title = @"分类3";
     
-    YTGeneralViewController *geneVc4 = [[YTGeneralViewController alloc]init];
-    geneVc4.title = @"分类4";
+   
     
-    YTGeneralViewController *geneVc5 = [[YTGeneralViewController alloc]init];
-    geneVc5.title = @"分类5";
-    
-    YTPageViewController *pageView = [YTPageViewController pageWithViewControllers:@[recommendVc,geneVc,geneVc1,geneVc2,geneVc3,geneVc4,geneVc5] configuration:config];
+    YTPageViewController *pageView = [YTPageViewController pageWithViewControllers:@[recommendVc,geneVc,geneVc1,geneVc2,geneVc3] configuration:config];
     pageView.view.frame = self.view.frame;
     [self addChildViewController:pageView];
     [self.view addSubview:pageView.view];
+    
+    
+    [self.view addSubview:self.itemView];
+    YTWeakSelf
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(kScreen_Width - 50, 5, 30, 30);
+    [btn setImage:[UIImage imageNamed:@"ytrzIconMore"] forState:UIControlStateNormal];
+    [self.view addSubview:btn];
+    [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        btn.selected = !btn.selected;
+        if (btn.selected) {
+            weakSelf.itemView.hidden = NO;
+        }else{
+            weakSelf.itemView.hidden = YES;
+        }
+    }];
 }
 
 
@@ -101,6 +117,19 @@
     [self.navigationController pushViewController:searchVc animated:YES];
 }
 
+- (void)clickItemWithIndex:(NSInteger)index{
+    self.itemView.hidden = YES;
+}
 
+
+- (SelectItemView *)itemView{
+    if (!_itemView) {
+        _itemView = [[SelectItemView alloc]initWithFrame:CGRectMake(0, 36, kScreen_Width, kScreen_Height-36)];
+        _itemView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
+        _itemView.delegate = self;
+        _itemView.hidden = YES;
+    }
+    return _itemView;
+}
 
 @end
