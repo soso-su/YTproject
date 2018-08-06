@@ -26,14 +26,14 @@
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KIL-m4-djC">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="651"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="703"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginLogo" translatesAutoresizingMaskIntoConstraints="NO" id="YeA-wb-WC9">
-                            <rect key="frame" x="135.5" y="30" width="104" height="104"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_emptystate" translatesAutoresizingMaskIntoConstraints="NO" id="YeA-wb-WC9">
+                            <rect key="frame" x="109.5" y="30" width="156" height="156"/>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELU-da-4dP">
-                            <rect key="frame" x="50" y="164" width="275" height="40"/>
+                            <rect key="frame" x="50" y="216" width="275" height="40"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginIconPhone" translatesAutoresizingMaskIntoConstraints="NO" id="fi4-4k-V54">
                                     <rect key="frame" x="10" y="0.0" width="16" height="40"/>
@@ -79,7 +79,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vlx-yu-um6">
-                            <rect key="frame" x="50" y="219" width="275" height="40"/>
+                            <rect key="frame" x="50" y="271" width="275" height="40"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginIconPassword" translatesAutoresizingMaskIntoConstraints="NO" id="DrJ-PF-uwZ">
                                     <rect key="frame" x="10" y="0.0" width="20" height="40"/>
@@ -125,7 +125,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5a-rJ-o7p">
-                            <rect key="frame" x="50" y="289" width="275" height="40"/>
+                            <rect key="frame" x="50" y="341" width="275" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="z4s-hY-hZw"/>
                             </constraints>
@@ -138,7 +138,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haB-o8-wPU">
-                            <rect key="frame" x="50" y="341" width="67" height="28"/>
+                            <rect key="frame" x="50" y="393" width="67" height="28"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <state key="normal" title="新用户注册">
                                 <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -148,7 +148,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Bg-6c-vsE">
-                            <rect key="frame" x="271" y="341" width="54" height="28"/>
+                            <rect key="frame" x="271" y="393" width="54" height="28"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <state key="normal" title="忘记密码">
                                 <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -158,13 +158,13 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第三方登录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ps7-rO-jUl">
-                            <rect key="frame" x="154" y="439" width="67" height="16"/>
+                            <rect key="frame" x="154" y="491" width="67" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTP-09-fzm">
-                            <rect key="frame" x="62" y="491" width="41" height="36"/>
+                            <rect key="frame" x="62" y="543" width="41" height="36"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="41" id="wSN-3h-HZa"/>
                             </constraints>
@@ -174,7 +174,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sic-nK-vvL">
-                            <rect key="frame" x="132" y="491" width="41" height="36"/>
+                            <rect key="frame" x="132" y="543" width="41" height="36"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="41" id="Tmm-Dc-t11"/>
                             </constraints>
@@ -184,7 +184,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3BO-b5-ZMM">
-                            <rect key="frame" x="202" y="491" width="41" height="36"/>
+                            <rect key="frame" x="202" y="543" width="41" height="36"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="41" id="S31-Tf-JzF"/>
                             </constraints>
@@ -194,7 +194,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPe-jB-5t6">
-                            <rect key="frame" x="272" y="491" width="33" height="36"/>
+                            <rect key="frame" x="272" y="543" width="33" height="36"/>
                             <state key="normal" image="loginQq"/>
                             <connections>
                                 <action selector="qq:" destination="-1" eventType="touchUpInside" id="haw-1b-ora"/>
@@ -248,12 +248,12 @@
         </view>
     </objects>
     <resources>
-        <image name="loginBtn" width="270" height="36"/>
+        <image name="icon_emptystate" width="156" height="156"/>
+        <image name="loginBtn" width="270" height="35"/>
         <image name="loginFacebook" width="36" height="36"/>
         <image name="loginIconPassword" width="20" height="23"/>
         <image name="loginIconPhone" width="16" height="23"/>
         <image name="loginIns" width="36" height="36"/>
-        <image name="loginLogo" width="104" height="104"/>
         <image name="loginQq" width="33" height="36"/>
         <image name="loginWechat" width="42" height="36"/>
     </resources>

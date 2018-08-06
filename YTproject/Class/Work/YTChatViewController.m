@@ -20,7 +20,11 @@
     [self setUpNav];
     [self.chatSessionInputBarControl.pluginBoardView removeAllItems];
     [self.chatSessionInputBarControl.pluginBoardView insertItemWithImage:[UIImage imageNamed:@"chatIconMoreResume"] title:nil tag:10];
+    self.chatSessionInputBarControl.backgroundColor = RGB(238, 238, 238);
+    self.chatSessionInputBarControl.pluginBoardView.contentView.backgroundColor = RGB(238, 238, 238);
+    
 }
+
 
 - (void)setUpNav {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -47,6 +51,44 @@
     self.navigationItem.titleView = bgView;
 }
 
+- (void)willDisplayMessageCell:(RCMessageBaseCell *)cell atIndexPath:(NSIndexPath *)indexPath{
+    [super willDisplayMessageCell:cell atIndexPath:indexPath];
+     RCMessageModel *model = self.conversationDataRepository[indexPath.row];
+    if ([cell isMemberOfClass:[RCTextMessageCell class]] ) {
+        RCTextMessageCell *textCell = (RCTextMessageCell *)cell;
+        NSString *bubbleImageName = @"";
+        
+        if (model.messageDirection==MessageDirection_SEND) {
+            bubbleImageName = @"chat_icon_4";
+        }
+        UIImage *image = [UIImage imageNamed:bubbleImageName];
+        if ([image CIImage]==nil && [image CGImage]==NULL) {
+            if (model.messageDirection==MessageDirection_SEND) {
+                image = [UIImage imageNamed:@"chat_icon_4"];
+            } else {
+                image = [UIImage imageNamed:@"chatIcon1"];
+            }
+        }
+        
+        UIEdgeInsets edgeInsets;
+        if (model.messageDirection==MessageDirection_SEND) {
+            edgeInsets = UIEdgeInsetsMake(25.0, 10.0, 10.0, 15.0);
+        } else {
+            edgeInsets = UIEdgeInsetsMake(25.0, 15.0, 10.0, 10.0);
+        }
+        textCell.bubbleBackgroundView.image = [image resizableImageWithCapInsets:edgeInsets resizingMode:UIImageResizingModeStretch];
+        CGFloat x = model.messageDirection==MessageDirection_SEND ? 3.0:-3.0;
+        textCell.textLabel.frame = CGRectMake(CGRectGetMinX(textCell.textLabel.frame)+x, CGRectGetMinY(textCell.textLabel.frame), CGRectGetWidth(textCell.textLabel.frame), CGRectGetHeight(textCell.textLabel.frame));
+    }else if ([cell isMemberOfClass:[RCFileMessageCell class]]){
+        RCFileMessageCell *fileCell = (RCFileMessageCell *)cell;
+        if (model.messageDirection==MessageDirection_SEND) {
+            fileCell.typeIconView.image = [UIImage imageNamed:@"chatIconResume"];
+            fileCell.sizeLabel.text = @"";
+            fileCell.nameLabel.text = @"李至深的个人简历";
+        }
+    }
+}
+
 - (void)pluginBoardView:(RCPluginBoardView *)pluginBoardView clickedItemWithTag:(NSInteger)tag{
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *path = [paths objectAtIndex:0];
@@ -68,6 +110,28 @@
         
     }
 }
+
+- (RCMessageContent *)willSendMessage:(RCMessageContent *)messageContent{
+    if ([messageContent isKindOfClass:[RCFileMessage class]]) {
+        
+    }
+    return messageContent;
+}
+
+- (void)didTapMessageCell:(RCMessageModel *)model{
+    [super didTapMessageCell:model];
+    if ([model.content isKindOfClass:[RCFileMessage class]]) {
+        
+    }
+    
+//    if ([model.content isKindOfClass:[RCContactCardMessage class]]) {
+//        RCContactCardMessage *cardMSg = (RCContactCardMessage *)model.content;
+//        RCUserInfo *user =
+//        [[RCUserInfo alloc] initWithUserId:cardMSg.userId name:cardMSg.name portrait:cardMSg.portraitUri];
+//        [self gotoNextPage:user];
+//    }
+}
+
 
 - (void)back {
     [self.navigationController popViewControllerAnimated:YES];

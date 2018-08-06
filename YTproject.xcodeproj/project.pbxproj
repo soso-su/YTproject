@@ -3201,6 +3201,7 @@
 			baseConfigurationReference = 1445AF1B5CE84DB33EBF76DA /* Pods-YTproject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9AE2ZZ47TB;
 				GCC_PREFIX_HEADER = "YTproject/Supporting Files/PrefixHeader.pch";
@@ -3221,6 +3222,7 @@
 			baseConfigurationReference = 9EDC8FD8CE7215293B7C3B40 /* Pods-YTproject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9AE2ZZ47TB;
 				GCC_PREFIX_HEADER = "YTproject/Supporting Files/PrefixHeader.pch";

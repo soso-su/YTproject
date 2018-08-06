@@ -11,12 +11,14 @@
 #import "YTTabBarViewController.h"
 #import "CPTabBarViewController.h"
 #import "YTShowStateView.h"
+#import <RongIMKit/RongIMKit.h>
+#import "YTRongYunRequest.h"
 
 #define User @"User_name"
 #define Pswd @"User_pswd"
 
 
-@interface YTLoginViewController ()
+@interface YTLoginViewController ()<RCIMUserInfoDataSource, RCIMGroupInfoDataSource, RCIMConnectionStatusDelegate, RCIMReceiveMessageDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userTextField;
 @property (weak, nonatomic) IBOutlet UITextField *pswdTextField;
 
@@ -43,6 +45,7 @@
 
 
 - (IBAction)login:(UIButton *)sender {
+    [self setRongYun];
     if ([self.userTextField.text isEqualToString:@"1"]) {
         YTTabBarViewController *vc = [[YTTabBarViewController alloc]init];
         [YTTool getWindow].rootViewController = vc;
@@ -89,6 +92,72 @@
 
 - (IBAction)qq:(UIButton *)sender {
 }
+
+
+#pragma RongYun
+
+- (void)setRongYun{
+    [[RCIM sharedRCIM] initWithAppKey:YTRongYun_AppKey];
+    [[RCIM sharedRCIM] setUserInfoDataSource:self];
+    [[RCIM sharedRCIM] setGroupInfoDataSource:self];
+    [[RCIM sharedRCIM] setConnectionStatusDelegate:self];
+    [[RCIM sharedRCIM] setReceiveMessageDelegate:self];
+    //开启消息撤回功能
+    [[RCIM sharedRCIM] setEnableMessageRecall:YES];
+    [[RCIM sharedRCIM] setEnableMessageMentioned:YES];
+    [[RCIM sharedRCIM] setGlobalMessageAvatarStyle:RC_USER_AVATAR_CYCLE];
+    //开启已读回执功能
+    [RCIM sharedRCIM].enabledReadReceiptConversationTypeList = @[@(ConversationType_PRIVATE)];
+    [self connectServer];
+}
+
+- (void)connectServer{
+    NSDictionary *dic = @{@"userId":@"yt1",
+                          @"name":@"英图",
+                          @"portraitUri":@"https://www.woyaogexing.com/touxiang/weixin/2018/633800.html"};
+    [YTRongYunRequest getTokenWithDict:dic success:^(id responseObject) {
+        YTLog(@"obj = %@",responseObject);
+    } failure:^(NSError *error) {
+        YTLog(@"error = %@",error);
+    }];
+    
+    [[RCIM sharedRCIM] connectWithToken:@"2pFotVBMoNxhjsfsihZjllte8zY03WYu7i357HgVkBO7ke3WuhpqcrkkomgTf2Ek3D6dEUM4VRs=" success:^(NSString *userId) {
+        NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
+        
+    } error:^(RCConnectErrorCode status) {
+        NSLog(@"登陆的错误码为:%zd", status);
+    } tokenIncorrect:^{
+        NSLog(@"token错误");
+    }];
+}
+
+
+- (void)getUserInfoWithUserId:(NSString *)userId completion:(void (^)(RCUserInfo *))completion {
+    if ([userId isEqual:kGetUserId]) {
+        RCUserInfo *user = [[RCUserInfo alloc] init];
+        user.userId = kGetUserId;
+        user.name = kNickname;
+        user.portraitUri = kHeaderUrl;
+        return completion(user);
+    }
+}
+
+- (void)getGroupInfoWithGroupId:(NSString *)groupId completion:(void (^)(RCGroup *))completion {
+    YTLog(@"groupid = %@",groupId);
+}
+
+- (void)onRCIMConnectionStatusChanged:(RCConnectionStatus)status {
+    if (status==ConnectionStatus_KICKED_OFFLINE_BY_OTHER_CLIENT) {
+        [[YTTool getWindow] endEditing:YES];
+        [[RCIM sharedRCIM] disconnect:NO];
+        YTLog(@"账号被踢下线");
+    }
+}
+
+- (void)onRCIMReceiveMessage:(RCMessage *)message left:(int)left {
+    if (left>0) { return; }
+}
+
 
 
 #pragma mark ------------HttpRequest
