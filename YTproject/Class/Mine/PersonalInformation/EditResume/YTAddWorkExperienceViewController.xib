@@ -12,7 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YTAddWorkExperienceViewController">
             <connections>
+                <outlet property="deleteButton" destination="TcZ-QR-Shk" id="BHZ-wK-n2G"/>
                 <outlet property="tableView" destination="byL-bY-D0S" id="JQz-re-Mqb"/>
+                <outlet property="textView" destination="kCM-WH-mTd" id="SBb-b8-efG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -57,6 +59,9 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="YKz-q6-Kfb"/>
+                    </connections>
                 </textView>
                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TcZ-QR-Shk">
                     <rect key="frame" x="16" y="619" width="343" height="42"/>

@@ -14,6 +14,7 @@
 #import "CompanyModel.h"
 #import "YTMapViewController.h"
 #import "YTApproveDetailViewController.h"
+#import "PositionModel.h"
 
 @interface YTCompanyViewController ()<SGPageTitleViewDelegate,SGPageContentScrollViewDelegate>
 
@@ -33,8 +34,15 @@
 
 @property (nonatomic ,strong) CompanyModel *companyModel;
 
+@property (nonatomic, strong) NSMutableArray <PositionModel *>*positionList;
+
 @property (nonatomic, strong) SGPageTitleView *pageTitleView;
 @property (nonatomic, strong) SGPageContentScrollView *pageContentView;
+
+@property (nonatomic ,strong) YTCompanyMessageController *messageVc;
+@property (nonatomic ,strong) YTWorkSearchTableViewController *tableVc;
+
+
 
 @end
 
@@ -43,6 +51,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpUI];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self companyDetailWithCompanyId:self.companyId];
 }
 
@@ -144,10 +157,11 @@
     self.pageTitleView.selectedIndex = 0;
     [underView addSubview:self.pageTitleView];
     
-    YTCompanyMessageController *messageVc = [[YTCompanyMessageController alloc]init];
-    YTWorkSearchTableViewController *tableVc = [[YTWorkSearchTableViewController alloc]init];
-    tableVc.type = 100;
-    NSArray *vcs = @[messageVc,tableVc];
+    self.messageVc = [[YTCompanyMessageController alloc]init];
+    self.tableVc = [[YTWorkSearchTableViewController alloc]init];
+    self.tableVc.positionList = self.positionList;
+    self.tableVc.type = 100;
+    NSArray *vcs = @[self.messageVc,self.tableVc];
     
     CGFloat contentViewHeight = kScreen_Height - headH - indicatorWidth - titleViewH - self.stateBarAndNavBarHeight;
     self.pageContentView = [[SGPageContentScrollView alloc]initWithFrame:CGRectMake(0, titleViewH, kScreen_Width, contentViewHeight) parentVC:self childVCs:vcs];
@@ -158,17 +172,26 @@
 
 - (void)setUpUIwithData:(CompanyModel *)model{
     [self.companyLogo sd_setImageWithURL:[NSURL URLWithString:model.avatar_url] placeholderImage:[UIImage imageNamed:@"gsxqPic1"]];
-    self.companyName.text = model.abbreviation;
+    self.companyName.text = model.company_name;
     self.companyCount.text = [NSString stringWithFormat:@"%zd人",model.number];
 }
 
 
 - (void)pageTitleView:(SGPageTitleView *)pageTitleView selectedIndex:(NSInteger)selectedIndex{
+    self.tableVc.positionList = self.positionList;
     [self.pageContentView setPageContentScrollViewCurrentIndex:selectedIndex];
 }
 
 - (void)pageContentScrollView:(SGPageContentScrollView *)pageContentScrollView progress:(CGFloat)progress originalIndex:(NSInteger)originalIndex targetIndex:(NSInteger)targetIndex{
+    self.tableVc.positionList = self.positionList;
     [self.pageTitleView setPageTitleViewWithProgress:progress originalIndex:originalIndex targetIndex:targetIndex];
+}
+
+- (NSMutableArray <PositionModel *>*)positionList{
+    if (!_positionList) {
+        _positionList = [NSMutableArray array];
+    }
+    return _positionList;
 }
 
 
@@ -183,9 +206,19 @@
     [YTHttpTool requestWithUrlStr:YTCompanyDetailUrl requestType:RequestType_post parameters:dic success:^(id responseObject) {
         @try {
             [YTProgressHUD dismissHUD];
+            YTLog(@"responseObject = %@",responseObject);
             weakSelf.companyModel = [CompanyModel yy_modelWithJSON:responseObject[@"company"]];
             [weakSelf setUpUIwithData:weakSelf.companyModel];
-            YTLog(@"responseObject = %@",responseObject);
+            NSArray *positionArr = responseObject[@"positionList"];
+            NSMutableArray *positionList = [NSMutableArray array];
+            if (positionArr.count > 0) {
+                for (NSDictionary *dic in positionArr) {
+                    PositionModel *model = [PositionModel yy_modelWithJSON:dic];
+                    [positionList addObject:model];
+                }
+            }
+            weakSelf.positionList = positionList;
+            
         } @catch (NSException *exception) {
             [YTProgressHUD dismissHUD];
             YTLog(@"companyDetail exception = %@",exception.description);

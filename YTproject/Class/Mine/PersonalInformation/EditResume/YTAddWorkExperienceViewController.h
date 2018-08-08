@@ -7,7 +7,12 @@
 //
 
 #import "YTBaseViewController.h"
+#import "WorkExperienceModel.h"
 
 @interface YTAddWorkExperienceViewController : YTBaseViewController
+
+@property (nonatomic, assign) BOOL isAdd;
+
+@property (nonatomic, strong)WorkExperienceModel *model;
 
 @end

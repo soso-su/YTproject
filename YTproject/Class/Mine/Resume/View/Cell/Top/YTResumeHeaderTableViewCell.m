@@ -12,6 +12,10 @@
 @interface YTResumeHeaderTableViewCell ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UIImageView *avatarView;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *msgLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userStateLabel;
 
 @end
 
@@ -25,6 +29,13 @@ static NSString *const MedalCollectionViewCellId = @"medalCollectionViewCellId";
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([YTMedalCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:MedalCollectionViewCellId];
+}
+
+- (void)setModel:(ResumeModel *)model{
+    _model = model;
+    self.userNameLabel.text = model.resume.name;
+    [self.avatarView sd_setImageWithURL:[NSURL URLWithString:model.resume.avatar_url] placeholderImage:[UIImage imageNamed:@"commentPic"]];
+    self.msgLabel.text = model.resume.introduce;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

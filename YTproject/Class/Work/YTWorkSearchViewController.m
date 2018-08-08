@@ -33,6 +33,19 @@
 @property (nonatomic, strong) SGPageTitleView *pageTitleView;
 @property (nonatomic, strong) SGPageContentScrollView *pageContentView;
 
+
+@property (nonatomic ,strong) NSMutableArray <PositionModel *>*positionList;
+
+@property (nonatomic ,strong) YTWorkSearchTableViewController *vc;
+
+@property (nonatomic ,strong) YTWorkSearchTableViewController *vc1;
+
+@property (nonatomic ,strong) YTWorkSearchTableViewController *vc2;
+
+@property (nonatomic ,strong) YTWorkSearchTableViewController *vc3;
+
+@property (nonatomic ,strong) YTWorkSearchTableViewController *vc4;
+
 @end
 
 @implementation YTWorkSearchViewController
@@ -42,7 +55,12 @@
     [self setNotification];
     [self setNav];
     [self setUI];
-    [self trade];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self findPositionWithKey:self.searchText pageNumber:1];
 }
 
 - (void)setNotification{
@@ -85,7 +103,7 @@
     UITextField *searchTF = [[UITextField alloc]initWithFrame:CGRectMake(10, 0, tiView.width - searchBtn.width - 30, tiView.height)];
     searchTF.font = [UIFont systemFontOfSize:13.0];
     searchTF.textColor = RGB(51, 51, 51);
-    searchTF.text = @"产品经理";
+    searchTF.text = self.searchText;
     searchTF.returnKeyType = UIReturnKeySearch;
     searchTF.delegate = self;
     [tiView addSubview:searchTF];
@@ -180,12 +198,12 @@
         CPSearchListViewController *vc2 = [[CPSearchListViewController alloc]init];
         controlArray = @[vc,vc1,vc2];
     }else{
-        YTWorkSearchTableViewController *vc = [[YTWorkSearchTableViewController alloc]init];
-        YTWorkSearchTableViewController *vc1 = [[YTWorkSearchTableViewController alloc]init];
-        YTWorkSearchTableViewController *vc2 = [[YTWorkSearchTableViewController alloc]init];
-        YTWorkSearchTableViewController *vc3 = [[YTWorkSearchTableViewController alloc]init];
-        YTWorkSearchTableViewController *vc4 = [[YTWorkSearchTableViewController alloc]init];
-        controlArray = @[vc,vc1,vc2,vc3,vc4];
+        self.vc = [[YTWorkSearchTableViewController alloc]init];
+        self.vc1 = [[YTWorkSearchTableViewController alloc]init];
+        self.vc2 = [[YTWorkSearchTableViewController alloc]init];
+        self.vc3 = [[YTWorkSearchTableViewController alloc]init];
+        self.vc4 = [[YTWorkSearchTableViewController alloc]init];
+        controlArray = @[self.vc,self.vc1,self.vc2,self.vc3,self.vc4];
     }
     
     CGFloat contentViewHeight = kScreen_Height - tyView.height - otherView.height - self.stateBarAndNavBarHeight - indicatorWidth;
@@ -198,10 +216,20 @@
 }
 
 - (void)pageTitleView:(SGPageTitleView *)pageTitleView selectedIndex:(NSInteger)selectedIndex{
+    self.vc.positionList = self.positionList;
+    self.vc1.positionList = self.positionList;
+    self.vc2.positionList = self.positionList;
+    self.vc3.positionList = self.positionList;
+    self.vc4.positionList = self.positionList;
     [self.pageContentView setPageContentScrollViewCurrentIndex:selectedIndex];
 }
 
 - (void)pageContentScrollView:(SGPageContentScrollView *)pageContentScrollView progress:(CGFloat)progress originalIndex:(NSInteger)originalIndex targetIndex:(NSInteger)targetIndex{
+    self.vc.positionList = self.positionList;
+    self.vc1.positionList = self.positionList;
+    self.vc2.positionList = self.positionList;
+    self.vc3.positionList = self.positionList;
+    self.vc4.positionList = self.positionList;
     [self.pageTitleView setPageTitleViewWithProgress:progress originalIndex:originalIndex targetIndex:targetIndex];
 }
 
@@ -267,6 +295,13 @@
     return _titleArray;
 }
 
+- (NSMutableArray <PositionModel *>*)positionList{
+    if (!_positionList) {
+        _positionList = [NSMutableArray array];
+    }
+    return _positionList;
+}
+
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:YTEDCATIONNOTIFICATIONNAME object:nil];
 }
@@ -274,8 +309,9 @@
 #pragma mark ------------------Http----------------
 
 - (void)findPositionWithKey:(NSString *)key pageNumber:(NSInteger)page{
+    YTWeakSelf
     NSDictionary *dict = @{
-                           @"key":key,
+                           @"key":YTReplaceNil(key),
                            @"pageNumber":@(page)
                            };
     [YTProgressHUD showWithStatusStr:YTHttpState_RequestIng];
@@ -283,6 +319,20 @@
         @try {
             [YTProgressHUD dismissHUD];
             YTLog(@"responseObject = %@",responseObject);
+            NSArray *list = responseObject[@"positionList"][@"list"];
+            NSMutableArray *dataArray = [NSMutableArray array];
+            if (list.count > 0) {
+                for (NSDictionary *dic in list) {
+                    PositionModel *model = [PositionModel yy_modelWithJSON:dic];
+                    [dataArray addObject:model];
+                }
+                weakSelf.positionList = dataArray;
+                weakSelf.vc.positionList = weakSelf.positionList;
+                weakSelf.vc1.positionList = weakSelf.positionList;
+                weakSelf.vc2.positionList = weakSelf.positionList;
+                weakSelf.vc3.positionList = weakSelf.positionList;
+                weakSelf.vc4.positionList = weakSelf.positionList;
+            }
         } @catch (NSException *exception) {
             [YTProgressHUD dismissHUD];
             YTLog(@"findPosition exception = %@",exception.description);
@@ -293,14 +343,7 @@
     }];
 }
 
-- (void)trade{
-    [YTHttpTool requestWithUrlStr:YTTradeUrl requestType:RequestType_post parameters:nil success:^(id responseObject) {
-        YTLog(@"responseObject = %@",responseObject);
-    } failure:^(NSError *error) {
-        
-        YTLog(@"findPosition error = %@",error);
-    }];
-}
+
 
 
 @end

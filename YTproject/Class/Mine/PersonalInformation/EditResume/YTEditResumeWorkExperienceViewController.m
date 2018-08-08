@@ -11,11 +11,13 @@
 #import "YTAddEducationViewController.h"
 #import "YTEditWorkTableViewCell.h"
 #import "YTEducationExperienceViewController.h"
+#import "ResumeModel.h"
 
 #define cellID @"EditWorkTableViewCell"
 
-@interface YTEditResumeWorkExperienceViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface YTEditResumeWorkExperienceViewController ()<UITableViewDataSource,UITableViewDelegate,YTEditWorkTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic)ResumeModel *resumModel;
 
 @end
 
@@ -29,9 +31,22 @@
     [self setupView];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self editResume];
+}
+
+- (ResumeModel *)resumModel{
+    if (!_resumModel) {
+        _resumModel = [[ResumeModel alloc]init];
+    }
+    return _resumModel;
+}
+
 #pragma mark =======================EventAction=========================
 -(void)addWorkExperience{
     YTAddWorkExperienceViewController *vc = [[YTAddWorkExperienceViewController alloc]init];
+    vc.isAdd = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 - (IBAction)nextStep:(id)sender {
@@ -45,12 +60,14 @@
 
 #pragma mark =======================UITableViewDataSource=========================
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return self.resumModel.workExperienceList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     YTEditWorkTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.model = self.resumModel.workExperienceList[indexPath.row];
+    cell.delegate = self;
     return cell;
 }
 
@@ -75,6 +92,13 @@
     return backgroundView;
 }
 
+- (void)editWorkExperience{
+    YTAddWorkExperienceViewController *vc = [[YTAddWorkExperienceViewController alloc]init];
+    vc.isAdd = NO;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
 #pragma mark =======================Setup=========================
 -(void)setupView{
     
@@ -84,6 +108,30 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([YTEditWorkTableViewCell class]) bundle:nil] forCellReuseIdentifier:cellID];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+}
+
+
+#pragma mark ------------------Http--------------------
+
+/**
+ 编辑简历
+ */
+- (void)editResume{
+    YTWeakSelf
+    [YTHttpTool requestWithUrlStr:YTEditResume requestType:RequestType_get parameters:nil success:^(id responseObject) {
+        YTLog(@"editResume responseObject = %@",responseObject);
+        @try {
+            weakSelf.resumModel.resume = [EditResumeModel yy_modelWithJSON:responseObject[@"resume"]];
+            weakSelf.resumModel.workExperienceList = [NSArray yy_modelArrayWithClass:[WorkExperienceModel class] json:responseObject[@"workExperienceList"]];
+            
+            weakSelf.resumModel.eduExperienceList = [NSArray yy_modelArrayWithClass:[EducationModel class] json:responseObject[@"eduExperienceList"]];
+            [weakSelf.tableView reloadData];
+        } @catch (NSException *exception) {
+            YTLog(@"editResume exception = %@",exception.description);
+        }
+    } failure:^(NSError *error) {
+        YTLog(@"editResume error = %@",error);
+    }];
 }
 
 @end

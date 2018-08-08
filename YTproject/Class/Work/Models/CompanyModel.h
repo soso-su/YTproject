@@ -16,6 +16,9 @@
 //公司简称
 @property (nonatomic, strong) NSString *abbreviation;
 
+//公司详情
+@property (nonatomic, strong) NSString *company_name;
+
 //公司人员数量
 @property (nonatomic, assign) NSInteger number;
 
@@ -24,6 +27,9 @@
 
 //公司头像
 @property (nonatomic, strong) NSString *avatar_url;
+
+//标签
+@property (nonatomic, strong) NSString *label;
 
 //公司基本情况
 @property (nonatomic, strong) NSString *basic;

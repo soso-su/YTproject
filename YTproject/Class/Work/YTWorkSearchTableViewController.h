@@ -7,9 +7,13 @@
 //
 
 #import "YTBaseViewController.h"
+#import "PositionModel.h"
 
 @interface YTWorkSearchTableViewController : YTBaseViewController
 
 @property (nonatomic, assign)NSInteger type;
+
+//数据源
+@property (nonatomic, strong) NSMutableArray <PositionModel *>*positionList;
 
 @end

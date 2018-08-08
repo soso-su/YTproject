@@ -16,6 +16,9 @@
 #define YTLog(format, ...)
 #endif
 
+//替换空值
+#define YTReplaceNil(value) (value)?(value):(@"")
+
 #define YTWeakSelf __weak typeof(self)weakSelf = self;
 
 

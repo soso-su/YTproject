@@ -19,6 +19,7 @@
 //通用
 #define YTCode  @"code"
 #define YTMsg   @"msg"
+static const NSInteger YTCode2000 = 2000;
 
 //获取融云token
 #define YTGetRongYunTokenUrl  @"https://api.cn.ronghub.com/user/getToken.json"

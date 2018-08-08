@@ -11,7 +11,8 @@
 typedef NS_ENUM(NSInteger,CustomButtonType){
     ImageUpLabelDown = 0,
     ImageLeftLabelRight = 1,
-    LabelLeftImageRight,
+    LabelLeftImageRight = 2,
+    AvatarImage = 3
 };
 
 

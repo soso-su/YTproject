@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ResumeModel.h"
 
 @interface YTEducationExperienceTableViewCell : UITableViewCell
+
+//EducationModel
+@property (nonatomic, strong) EducationModel *model;
 
 @end

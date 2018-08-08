@@ -29,13 +29,17 @@ static NSString *const CollectionViewCellId = @"CollectionViewId";
 
 #pragma mark =======================UICollectionViewDataSource=========================
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 10;
+    return 2;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     YTCertificateCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CollectionViewCellId forIndexPath:indexPath];
-    cell.titleLabel.text = @"四级证书";
+    if (indexPath.row == 0) {
+        cell.titleLabel.text = @"教师资格证";
+    }else{
+        cell.titleLabel.text = @"其他证书";
+    }
     
     return cell;
 }

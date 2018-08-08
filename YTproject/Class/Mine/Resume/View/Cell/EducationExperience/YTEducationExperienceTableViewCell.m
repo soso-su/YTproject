@@ -8,7 +8,17 @@
 
 #import "YTEducationExperienceTableViewCell.h"
 
+@interface YTEducationExperienceTableViewCell ()
+@property (weak, nonatomic) IBOutlet UILabel *educationLabel;
+
+@end
+
 @implementation YTEducationExperienceTableViewCell
+
+- (void)setModel:(EducationModel *)model{
+    _model = model;
+    self.educationLabel.text = [NSString stringWithFormat:@"%@   %@\n\n%@  %@",model.graduation_time,model.school,model.major,model.degree];
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];

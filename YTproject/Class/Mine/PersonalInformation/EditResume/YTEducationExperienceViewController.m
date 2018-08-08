@@ -10,11 +10,13 @@
 #import "YTEditWorkTableViewCell.h"
 #import "YTAddEducationViewController.h"
 #import "YTExpectWorkViewController.h"
+#import "ResumeModel.h"
 
 #define cellID @"editWorkTableViewCell"
 
 @interface YTEducationExperienceViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic)ResumeModel *resumModel;
 
 @end
 
@@ -25,6 +27,18 @@
     self.title = @"编辑简历";
     
     [self setupView];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self editResume];
+}
+
+- (ResumeModel *)resumModel{
+    if (!_resumModel) {
+        _resumModel = [[ResumeModel alloc]init];
+    }
+    return _resumModel;
 }
 
 #pragma mark =======================Setup=========================
@@ -41,12 +55,13 @@
 
 #pragma mark =======================UITableViewDataSource=========================
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return self.resumModel.eduExperienceList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     YTEditWorkTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.edModel = self.resumModel.eduExperienceList[indexPath.row];
     return cell;
 }
 
@@ -84,5 +99,29 @@
 - (void)preview{
     
 }
+
+#pragma mark ------------------Http--------------------
+
+/**
+ 编辑简历
+ */
+- (void)editResume{
+    YTWeakSelf
+    [YTHttpTool requestWithUrlStr:YTEditResume requestType:RequestType_get parameters:nil success:^(id responseObject) {
+        YTLog(@"editResume responseObject = %@",responseObject);
+        @try {
+            weakSelf.resumModel.resume = [EditResumeModel yy_modelWithJSON:responseObject[@"resume"]];
+            weakSelf.resumModel.workExperienceList = [NSArray yy_modelArrayWithClass:[WorkExperienceModel class] json:responseObject[@"workExperienceList"]];
+            
+            weakSelf.resumModel.eduExperienceList = [NSArray yy_modelArrayWithClass:[EducationModel class] json:responseObject[@"eduExperienceList"]];
+            [weakSelf.tableView reloadData];
+        } @catch (NSException *exception) {
+            YTLog(@"editResume exception = %@",exception.description);
+        }
+    } failure:^(NSError *error) {
+        YTLog(@"editResume error = %@",error);
+    }];
+}
+
 
 @end

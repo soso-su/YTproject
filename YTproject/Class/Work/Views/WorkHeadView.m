@@ -135,7 +135,7 @@
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     WorkHeadCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
-//    cell.model = self.dataSorce[indexPath.row];
+    cell.model = self.dataSorce[indexPath.row];
     return cell;
 }
 

@@ -7,7 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ResumeModel.h"
+
+@protocol YTEditWorkTableViewCellDelegate <NSObject>
+
+- (void)editWorkExperience;
+
+@end
+
 
 @interface YTEditWorkTableViewCell : UITableViewCell
+
+@property (nonatomic, strong) WorkExperienceModel *model;
+
+@property (nonatomic, strong) EducationModel *edModel;
+
+@property (nonatomic, assign)id <YTEditWorkTableViewCellDelegate>delegate;
 
 @end

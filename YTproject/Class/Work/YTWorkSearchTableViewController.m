@@ -33,9 +33,13 @@
     }
 }
 
+- (void)setPositionList:(NSMutableArray<PositionModel *> *)positionList{
+    _positionList = positionList;
+    [self.tableView reloadData];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return self.positionList.count;
 }
 
 
@@ -47,6 +51,7 @@
         cell.bgView.layer.borderWidth = 1.0;
         cell.bgView.layer.borderColor = RGB(230, 230, 230).CGColor;
     }
+    cell.model = self.positionList[indexPath.row];
     return cell;
 }
 

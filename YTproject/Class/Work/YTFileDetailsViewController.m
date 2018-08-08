@@ -53,6 +53,7 @@
     YTWeakSelf
     [[editBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
         YTEditResumeBaseInformationViewController *editVc = [[YTEditResumeBaseInformationViewController alloc]init];
+        editVc.title = @"编辑简历";
         [weakSelf.navigationController pushViewController:editVc animated:YES];
     }];
     

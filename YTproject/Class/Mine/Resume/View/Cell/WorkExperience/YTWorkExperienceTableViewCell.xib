@@ -24,7 +24,13 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bga-at-TzH">
                                 <rect key="frame" x="12" y="12" width="343" height="179.5"/>
-                                <string key="text">2017.07-至今1、负责移动端互联网项目的需求方案的提出及运营策略的可行性分析；2、负责移动端互联网项目的内容规划、原型设计；3、统计项目各项数据和用户反馈，分析用户需求，行为，搜集项目中产生的功能需求，综合各部门的意见和建议，统筹安排，讨论、修改，制订出可行性方案；4、和开发部、设计部、客服部、销售部等部门紧密结合，确保产品实现进度和质量，协调相关部门进行网站的开发及日常的维护；5、配合市场部、客服部进行相关的商务合作，跟踪竞争对手；6、把握互联网市场趋势，制定产品竞争战略和计划。</string>
+                                <string key="text">2017.07-至今
+1、负责移动端互联网项目的需求方案的提出及运营策略的可行性分析；
+2、负责移动端互联网项目的内容规划、原型设计；
+3、统计项目各项数据和用户反馈，分析用户需求，行为，搜集项目中产生的功能需求，综合各部门的意见和建议，统筹安排，讨论、修改，制订出可行性方案；
+4、和开发部、设计部、客服部、销售部等部门紧密结合，确保产品实现进度和质量，协调相关部门进行网站的开发及日常的维护；
+5、配合市场部、客服部进行相关的商务合作，跟踪竞争对手；
+6、把握互联网市场趋势，制定产品竞争战略和计划。</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -59,6 +65,9 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="workLabel" destination="bga-at-TzH" id="Bx5-9A-ggW"/>
+            </connections>
             <point key="canvasLocation" x="7" y="160.5"/>
         </tableViewCell>
     </objects>

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ResumeModel.h"
 
 @interface YTWorkExperienceTableViewCell : UITableViewCell
+
+//WorkExperienceModel
+@property (nonatomic, strong) WorkExperienceModel *model;
 
 @end

@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d04-Yp-Ary">
-                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="nae-dw-6yH"/>
@@ -37,7 +37,6 @@
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="d04-Yp-Ary" secondAttribute="bottom" id="W00-YJ-V7M"/>
                 <constraint firstItem="d04-Yp-Ary" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="bhV-wa-ZQb"/>
             </constraints>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="38.5" y="89.5"/>
         </view>

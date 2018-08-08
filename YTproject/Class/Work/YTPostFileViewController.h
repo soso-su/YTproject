@@ -7,7 +7,12 @@
 //
 
 #import "YTBaseViewController.h"
+#import "EditResumeModel.h"
+
 
 @interface YTPostFileViewController : YTBaseViewController
+//resume model list
+@property (nonatomic, strong) NSArray <EditResumeModel *>*resumeList;
+
 
 @end

@@ -19,6 +19,15 @@ static YTUserModel* _instance = nil;
     return _instance;
 }
 
++(instancetype)modelWithDictionary:(NSDictionary *)dictionary{
+    YTUserModel *model = [YTUserModel share];
+    model.type = [dictionary[@"type"] integerValue];
+    model.token = dictionary[@"token"];
+    model.account_type = [dictionary[@"account_type"] integerValue];
+    model.person = [Person modelWithDictionary:dictionary[@"person"]];
+    return model;
+}
+
 +(id) allocWithZone:(struct _NSZone *)zone
 {
     return [YTUserModel share] ;
@@ -27,6 +36,30 @@ static YTUserModel* _instance = nil;
 -(id) copyWithZone:(struct _NSZone *)zone
 {
     return [YTUserModel share] ;
+}
+
+
+@end
+
+@implementation Person
+
++ (instancetype)modelWithDictionary:(NSDictionary *)dictionary{
+    Person *person = [[Person alloc]init];
+    person.appId = [dictionary[@"id"] integerValue];
+    person.iD_number = dictionary[@"ID_number"];
+    person.avatar_url = dictionary[@"avatar_url"];
+    person.birthday = dictionary[@"birthday"];
+    person.created_time = dictionary[@"created_time"];
+    person.email = dictionary[@"email"];
+    person.img = dictionary[@"img"];
+    person.integral = [dictionary[@"integral"] integerValue];
+    person.name = dictionary[@"name"];
+    person.nick_name = dictionary[@"nick_name"];
+    person.phone = dictionary[@"phone"];
+    person.sex = dictionary[@"sex"];
+    person.state = [dictionary[@"state"] integerValue];
+    person.u_id = [dictionary[@"u_id"] integerValue];
+    return person;
 }
 
 @end

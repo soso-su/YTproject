@@ -62,9 +62,9 @@
 }
 
 - (IBAction)personalResume:(UIButton *)sender {
-    YTFileDetailsViewController *vc = [[YTFileDetailsViewController alloc]init];
-    vc.isMine = YES;
-//    YTResumeViewController *vc = [[YTResumeViewController alloc]init];
+//    YTFileDetailsViewController *vc = [[YTFileDetailsViewController alloc]init];
+//    vc.isMine = YES;
+    YTResumeViewController *vc = [[YTResumeViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
     
 }

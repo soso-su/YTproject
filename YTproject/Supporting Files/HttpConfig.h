@@ -10,7 +10,7 @@
 #define HttpConfig_h
 #endif
 
-#define YTBaseUrl  @"http://192.168.1.35:8081"
+#define YTBaseUrl   @"http://192.168.1.35:8081"//@"http://120.77.55.33"
 
 
 #define YTHttpState_RequestIng @"加载中..."
@@ -53,4 +53,38 @@
 
 //行业分类接口
 #define YTTradeUrl [NSString stringWithFormat:@"%@/%@", YTBaseUrl, @"user/Trade"]
+
+
+//简历详情
+#define YTResumeDetail [NSString stringWithFormat:@"%@/%@", YTBaseUrl, @"user/resumeDetail1"]
+
+
+//添加简历
+#define YTAddResume [NSString stringWithFormat:@"%@/%@", YTBaseUrl, @"user/alterResume1"]
+
+//编辑简历
+#define YTEditResume [NSString stringWithFormat:@"%@/%@", YTBaseUrl, @"user/alterResume2"]
+
+//编辑工作经历接口
+#define YTModifyWorkExperience [NSString stringWithFormat:@"%@/%@", YTBaseUrl, @"user/modifyWorkExperience"]
+
+//添加工作经历接口
+#define YTAddWorkExperience [NSString stringWithFormat:@"%@/%@", YTBaseUrl, @"user/addWorkExperience"]
+
+//删除工作经历接口
+#define YTDelWorkExperience [NSString stringWithFormat:@"%@/%@", YTBaseUrl, @"user/delWorkExperience"]
+
+
+//编辑教育经历接口
+#define YTModifyEduExperience [NSString stringWithFormat:@"%@/%@", YTBaseUrl, @"user/modifyEduExperience"]
+
+//添加教育经历接口
+#define YTAddEduExperience [NSString stringWithFormat:@"%@/%@", YTBaseUrl, @"user/addEduExperience"]
+
+//编辑简历资格证书接口
+#define YTEditCertificate [NSString stringWithFormat:@"%@/%@", YTBaseUrl, @"user/alterResume3"]
+
+
+
+
 

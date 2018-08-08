@@ -27,6 +27,7 @@
     flayout.minimumInteritemSpacing = 8;
     flayout.minimumLineSpacing = 8;
     
+    
     [self.collectionView setCollectionViewLayout:flayout];
     [self.collectionView registerNib:[UINib nibWithNibName:@"YTEdViewCell" bundle:nil] forCellWithReuseIdentifier:cellId];
     self.collectionView.backgroundColor = RGB(238, 238, 238);
@@ -37,6 +38,11 @@
     
     self.collectionView.autoresizingMask = NO;
     
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self trade];
 }
 
 
@@ -154,6 +160,15 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:YTEDCATIONNOTIFICATIONNAME object:self userInfo:@{@"test":@"11111111"}];
 }
 
+#pragma mark ------------------Http----------------------
 
+- (void)trade{
+    [YTHttpTool requestWithUrlStr:YTTradeUrl requestType:RequestType_post parameters:nil success:^(id responseObject) {
+        YTLog(@"responseObject = %@",responseObject);
+    } failure:^(NSError *error) {
+        
+        YTLog(@"findPosition error = %@",error);
+    }];
+}
 
 @end

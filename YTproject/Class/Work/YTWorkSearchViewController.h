@@ -12,4 +12,7 @@
 
 @property (nonatomic, assign) BOOL isCompany;
 
+//搜索条件
+@property (nonatomic, strong) NSString *searchText;
+
 @end

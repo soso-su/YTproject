@@ -90,7 +90,7 @@
                             <rect key="frame" x="36" y="5" width="234" height="30"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -136,7 +136,7 @@
                             <rect key="frame" x="36" y="5" width="234" height="30"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -327,10 +327,10 @@
         </view>
     </objects>
     <resources>
-        <image name="loginBtn" width="270" height="36"/>
+        <image name="loginBtn" width="270" height="35"/>
         <image name="loginIconPassword" width="20" height="23"/>
         <image name="loginIconPhone" width="16" height="23"/>
         <image name="logonRadio" width="13" height="13"/>
-        <image name="logonRadioPre" width="13" height="13"/>
+        <image name="logonRadioPre" width="12" height="12"/>
     </resources>
 </document>

@@ -102,7 +102,7 @@
     }
     
     [YTProgressHUD showWithStatusStr:YTHttpState_RequestIng];
-    [self registerUserWithAccount:self.phoneTF.text password:self.pswdTF.text comfirmPassword:self.comfirTF.text type:self.type accountType:self.accounType];
+    [self registerUserWithAccount:self.phoneTF.text password:self.pswdTF.text comfirmPassword:self.comfirTF.text type:self.accounType accountType:self.type];
 }
 - (IBAction)readProtocol:(UIButton *)sender {
     [self agreement];
@@ -132,7 +132,7 @@
     [YTHttpTool requestWithUrlStr:YTRegisterUrl requestType:RequestType_post parameters:dict success:^(id responseObject) {
         @try {
             [YTProgressHUD dismissHUD];
-            if ([responseObject[YTCode] integerValue] == 2000) {
+            if ([responseObject[YTCode] integerValue] == YTCode2000) {
                 [YTShowStateView showStateViewWithStr:@"注册成功" textColor:RGB(51, 51, 51)];
                 [weakSelf.navigationController popViewControllerAnimated:YES];
             }else{
@@ -159,7 +159,7 @@
     [YTProgressHUD showWithStatusStr:YTHttpState_RequestIng];
     [YTHttpTool requestWithUrlStr:YTAgreementUrl requestType:RequestType_post parameters:nil success:^(id responseObject) {
         @try {
-            if ([responseObject[YTCode] integerValue] == 2000) {
+            if ([responseObject[YTCode] integerValue] == YTCode2000) {
                 [YTProgressHUD dismissHUD];
                 YTAgreementViewController *vc = [[YTAgreementViewController alloc]init];
                 vc.msg = responseObject[@"agreement"][@"connent"];

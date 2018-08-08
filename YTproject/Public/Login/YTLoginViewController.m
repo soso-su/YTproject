@@ -45,27 +45,27 @@
 
 
 - (IBAction)login:(UIButton *)sender {
-    [self setRongYun];
-    if ([self.userTextField.text isEqualToString:@"1"]) {
-        YTTabBarViewController *vc = [[YTTabBarViewController alloc]init];
-        [YTTool getWindow].rootViewController = vc;
-    }else{
-        CPTabBarViewController *vc = [[CPTabBarViewController alloc]init];
-        [YTTool getWindow].rootViewController = vc;
+    
+//    if ([self.userTextField.text isEqualToString:@"1"]) {
+//        YTTabBarViewController *vc = [[YTTabBarViewController alloc]init];
+//        [YTTool getWindow].rootViewController = vc;
+//    }else{
+//        CPTabBarViewController *vc = [[CPTabBarViewController alloc]init];
+//        [YTTool getWindow].rootViewController = vc;
+//    }
+    if (self.userTextField.text.length <= 0) {
+        [YTShowStateView showStateViewWithStr:@"请输入账号" textColor:DefaultColor];
+        return;
     }
-//    if (self.userTextField.text.length <= 0) {
-//        [YTShowStateView showStateViewWithStr:@"请输入账号" textColor:DefaultColor];
-//        return;
-//    }
-//
-//    if (self.pswdTextField.text.length <= 0) {
-//        [YTShowStateView showStateViewWithStr:@"请输入密码" textColor:DefaultColor];
-//        return;
-//    }
-//
+
+    if (self.pswdTextField.text.length <= 0) {
+        [YTShowStateView showStateViewWithStr:@"请输入密码" textColor:DefaultColor];
+        return;
+    }
+
     
     
-//    [self loginWithAccount:self.userTextField.text password:self.pswdTextField.text];
+    [self loginWithAccount:self.userTextField.text password:self.pswdTextField.text];
     
 }
 
@@ -176,22 +176,26 @@
                            };
     [YTProgressHUD showWithStatusStr:YTHttpState_RequestIng];
     [YTHttpTool requestWithUrlStr:YTLoginUrl requestType:RequestType_post parameters:dict success:^(id responseObject) {
+        YTLog(@"YTLoginUrl responseObject = %@",responseObject);
         @try {
-            if ([responseObject[YTCode] integerValue] == 2000) {
+            if ([responseObject[YTCode] integerValue] == YTCode2000) {
                 [[NSUserDefaults standardUserDefaults] setObject:account forKey:User];
                 [[NSUserDefaults standardUserDefaults] setObject:password forKey:Pswd];
+                
                 [YTProgressHUD dismissHUD];
-                BOOL isYY = [[YTUserModel share] yy_modelSetWithJSON:responseObject];
-                if (isYY) {
-                    YTUserModel *model = [YTUserModel share];
-                    if (model.type == 0) {
-                        YTTabBarViewController *vc = [[YTTabBarViewController alloc]init];
-                        [YTTool getWindow].rootViewController = vc;
-                    }else{
-                        CPTabBarViewController *vc = [[CPTabBarViewController alloc]init];
-                        [YTTool getWindow].rootViewController = vc;
-                    }
+                YTUserModel *model = [YTUserModel modelWithDictionary:responseObject];
+                
+                [self setRongYun];
+                if (model.type == 0) {
+                    YTTabBarViewController *vc = [[YTTabBarViewController alloc]init];
+                    [YTTool getWindow].rootViewController = vc;
+                }else{
+                    CPTabBarViewController *vc = [[CPTabBarViewController alloc]init];
+                    [YTTool getWindow].rootViewController = vc;
                 }
+                
+                
+                
             }else{
                 [YTProgressHUD dismissHUD];
                 [YTShowStateView showStateViewWithStr:responseObject[YTMsg] textColor:DefaultColor];

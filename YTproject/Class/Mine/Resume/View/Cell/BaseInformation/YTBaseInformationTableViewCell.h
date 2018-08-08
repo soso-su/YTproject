@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ResumeModel.h"
 
 @interface YTBaseInformationTableViewCell : UITableViewCell
+
+//ResumeModel
+@property (nonatomic, strong) ResumeModel *model;
 
 @end

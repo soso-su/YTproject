@@ -44,6 +44,7 @@
     UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [leftBtn setImage:[UIImage imageNamed:@"workIconCard"] forState:UIControlStateNormal];
     [leftBtn setTitle:@" 我的职位" forState:UIControlStateNormal];
+    [leftBtn sizeToFit];
     UIBarButtonItem *leftBar = [[UIBarButtonItem alloc]initWithCustomView:leftBtn];
     self.navigationItem.leftBarButtonItem = leftBar;
     
@@ -68,6 +69,8 @@
         vc.isCompany = YES;
         [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
+    [rigBtn sizeToFit];
+    [rigBtn1 sizeToFit];
     UIBarButtonItem *rigBar = [[UIBarButtonItem alloc]initWithCustomView:rigBtn];
     UIBarButtonItem *rigBar1 = [[UIBarButtonItem alloc]initWithCustomView:rigBtn1];
     self.navigationItem.rightBarButtonItems = @[rigBar1,rigBar];

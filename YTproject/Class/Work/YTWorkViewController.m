@@ -41,7 +41,12 @@
     [super viewDidLoad];
     [self setNavView];
     [self setUpUI];
-//    [self getList];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self getList];
 }
 
 - (void)viewWillLayoutSubviews{
@@ -106,20 +111,20 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-//    return self.items.count;
-    return 5;
+    return self.items.count;
+//    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     WorkTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-//    cell.model = self.items[indexPath.row];
+    cell.model = self.items[indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     YTWorkDetailViewController *detailVc = [[YTWorkDetailViewController alloc]init];
-//    detailVc.positionId = self.items[indexPath.row].positionId;
+    detailVc.positionId = self.items[indexPath.row].positionId;
     [self.navigationController pushViewController:detailVc animated:YES];
 }
 
@@ -132,6 +137,7 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     [searchBar resignFirstResponder];
     YTWorkSearchViewController *searchVc = [[YTWorkSearchViewController alloc]init];
+    searchVc.searchText = searchBar.text;
     [self.navigationController pushViewController:searchVc animated:YES];
 }
 
@@ -181,23 +187,29 @@
             [YTProgressHUD dismissHUD];
             YTLog(@"responseObject = %@",responseObject);
             NSArray *hotArr = responseObject[@"bidPositionList"];
-            for (NSDictionary *dic in hotArr) {
-                WorkHotModel *model = [WorkHotModel yy_modelWithJSON:dic];
-                model.postId = [dic[@"id"] integerValue];
-                [weakSelf.hotArray addObject:model];
+            if (hotArr.count > 0) {
+                for (NSDictionary *dic in hotArr) {
+                    WorkHotModel *model = [WorkHotModel yy_modelWithJSON:dic];
+                    model.postId = [dic[@"id"] integerValue];
+                    [weakSelf.hotArray addObject:model];
+                }
             }
             
             NSArray *imgArr = responseObject[@"shufList"];
-            for (NSDictionary *dic in imgArr) {
-                CarouselModel *model = [CarouselModel yy_modelWithJSON:dic];
-                [weakSelf.imgArray addObject:model];
+            if (imgArr.count > 0) {
+                for (NSDictionary *dic in imgArr) {
+                    CarouselModel *model = [CarouselModel yy_modelWithJSON:dic];
+                    [weakSelf.imgArray addObject:model];
+                }
             }
             NSArray *list = responseObject[@"positionList"];
             NSMutableArray *dataArray = [NSMutableArray array];
-            for (NSDictionary *dic in list) {
-                PositionModel *model = [PositionModel yy_modelWithJSON:dic];
-                model.positionId = [dic[@"id"] integerValue];
-                [dataArray addObject:model];
+            if (list.count > 0) {
+                for (NSDictionary *dic in list) {
+                    PositionModel *model = [PositionModel yy_modelWithJSON:dic];
+                    model.positionId = [dic[@"id"] integerValue];
+                    [dataArray addObject:model];
+                }
             }
             weakSelf.items = dataArray;
             weakSelf.headView.imgArray = weakSelf.imgArray;

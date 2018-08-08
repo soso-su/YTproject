@@ -20,5 +20,7 @@
 //设置富文本
 + (void)setLabelAttributeStr:(NSString *)str textColor:(UIColor *)textColor fontSize:(CGFloat)fontSize  otherStr:(NSString *)otherStr otherTextColor:(UIColor*)otherColor otherSize:(CGFloat)otherSize label:(UILabel *)label;
 
+//调整image size
++(UIImage *)imageResize:(UIImage*)img andResizeTo:(CGSize)newSize;
 
 @end

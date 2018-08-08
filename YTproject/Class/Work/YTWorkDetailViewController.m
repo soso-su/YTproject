@@ -13,6 +13,7 @@
 #import "CustomButton.h"
 #import "ShareView.h"
 #import "PositionDetailModel.h"
+#import "EditResumeModel.h"
 
 @interface YTWorkDetailViewController ()<ShareViewDelegate>
 @property (weak, nonatomic) IBOutlet YTTouchView *companyView;
@@ -38,6 +39,11 @@
 //
 @property (weak, nonatomic) IBOutlet UILabel *positionMsgLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *firstTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *secondTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *thirdlyTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *fourthlyTitleLabel;
+
 
 @end
 
@@ -45,7 +51,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self positionDetailWith:self.positionId];
+    [self positionDetailWith:self.positionId];
     [self setNav];
     self.title = @"职业详情";
     self.shareBtn.customButtonType = ImageUpLabelDown;
@@ -70,7 +76,7 @@
     [self.companyLogo sd_setImageWithURL:[NSURL URLWithString:model.avatar_url] placeholderImage:[UIImage imageNamed:@"gsxqPic1"]];
     self.companyNabelLabel.text = model.abbreviation;
     self.companyAreaLabel.text = [NSString stringWithFormat:@"%@  D轮  %@  ",model.address,model.number];
-    
+    self.firstTitleLabel.text = model.label;
     self.companyView.touchHandler = ^{
         YTCompanyViewController *companyVc = [[YTCompanyViewController alloc]init];
         companyVc.companyId = model.c_id;
@@ -105,8 +111,9 @@
 - (IBAction)interest:(CustomButton *)sender {
 }
 - (IBAction)sendFile:(UIButton *)sender {
-    [self sendResume];
+//    [self sendResume];
     YTPostFileViewController *fileVc = [[YTPostFileViewController alloc]init];
+    fileVc.resumeList = @[];
     [self.navigationController pushViewController:fileVc animated:YES];
 }
 - (IBAction)callhr:(UIButton *)sender {
@@ -159,9 +166,21 @@
 }
 
 - (void)sendResume{
+    YTWeakSelf
     [YTHttpTool requestWithUrlStr:YTSendResumeUrl requestType:RequestType_post parameters:nil success:^(id responseObject) {
         @try {
             YTLog(@"responseObject = %@",responseObject);
+            NSArray *list = responseObject[@"resumeList"];
+            NSMutableArray *resumeList = [NSMutableArray array];
+            if (list.count > 0) {
+                for (NSDictionary *dic in list) {
+                    EditResumeModel *model = [EditResumeModel yy_modelWithJSON:dic];
+                    [resumeList addObject:model];
+                }
+            }
+            YTPostFileViewController *fileVc = [[YTPostFileViewController alloc]init];
+            fileVc.resumeList = resumeList;
+            [weakSelf.navigationController pushViewController:fileVc animated:YES];
         } @catch (NSException *exception) {
             YTLog(@"exception = %@",exception.description);
         }

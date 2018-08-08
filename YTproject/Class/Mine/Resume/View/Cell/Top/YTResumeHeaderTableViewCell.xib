@@ -128,7 +128,11 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="avatarView" destination="iyG-K4-Xsq" id="5t6-4y-8nF"/>
                 <outlet property="collectionView" destination="Swy-wn-XjH" id="90V-VH-H6A"/>
+                <outlet property="msgLabel" destination="5VP-w4-AFg" id="orP-AH-Qfa"/>
+                <outlet property="userNameLabel" destination="ahC-4B-18U" id="bNm-IM-fws"/>
+                <outlet property="userStateLabel" destination="Guo-Vw-BqA" id="9yw-JK-Zbh"/>
             </connections>
             <point key="canvasLocation" x="48" y="169.5"/>
         </tableViewCell>

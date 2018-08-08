@@ -7,6 +7,9 @@
 //
 
 #import "YTExpectaionWorkTableViewCell.h"
+@interface YTExpectaionWorkTableViewCell ()
+
+@end
 
 @implementation YTExpectaionWorkTableViewCell
 

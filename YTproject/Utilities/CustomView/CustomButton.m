@@ -81,7 +81,27 @@
         self.imageView.centerY = self.height/2;
         
         
-    } else{
+    }else if (self.customButtonType == AvatarImage){
+        [self.titleLabel sizeToFit];
+        if (self.imageViewSize.width == 0 && self.imageViewSize.height == 0) {
+            [self.imageView sizeToFit];
+        }else{
+            self.imageView.size = self.imageViewSize;
+        }
+        
+        //调整button大小
+        self.height = MAX(self.height, self.titleLabel.height + self.margin + self.imageView.height);
+        self.width = self.imageView.width > self.titleLabel.width ? MAX(self.width, self.imageView.width):MAX(self.width, self.titleLabel.width);
+        
+        //调整label
+        self.titleLabel.centerX = self.width/2;
+        self.titleLabel.y = self.height - self.titleLabel.height;
+        //调整图片
+        self.imageView.centerX = self.width/2;
+        self.imageView.y = self.titleLabel.y - self.margin - self.imageView.height;
+        self.imageView.layer.cornerRadius = self.imageView.height/2;
+        self.imageView.layer.masksToBounds = YES;
+    }else{
         
         self.imageView.frame = CGRectMake(self.margin, self.margin, self.width - self.margin * 2, self.height/2 - self.margin * 2);
         self.titleLabel.frame = CGRectMake(0, CGRectGetMaxY(self.imageView.frame) + self.margin*2, self.width, self.height/2 - self.margin * 2);

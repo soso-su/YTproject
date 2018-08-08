@@ -48,7 +48,7 @@
                                             </state>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="customButtonType_IBInspector">
-                                                    <integer key="value" value="1"/>
+                                                    <integer key="value" value="0"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="margin">
                                                     <real key="value" value="4"/>
