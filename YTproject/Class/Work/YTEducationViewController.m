@@ -37,20 +37,23 @@
     configure.showBottomSeparator = NO;
     configure.indicatorAdditionalWidth = indicatorWidth;
     
-    self.pageTitleView = [SGPageTitleView pageTitleViewWithFrame:CGRectMake(0, 0, kScreen_Width/2, titleViewH) delegate:self titleNames:@[@"语言",@"特色课",@"证书"] configure:configure];
+    NSMutableArray *titleArray = [NSMutableArray array];
+    NSMutableArray *vcArray = [NSMutableArray array];
+    for (int i = 0; i < self.list.count; i++) {
+        Level2 *model = self.list[i];
+        [titleArray addObject:model.assort_name];
+        YTEducaCollectViewController *educationVc = [[YTEducaCollectViewController alloc]init];
+        educationVc.type = i;
+        [vcArray addObject:educationVc];
+    }
+    
+    self.pageTitleView = [SGPageTitleView pageTitleViewWithFrame:CGRectMake(0, 0, kScreen_Width/2, titleViewH) delegate:self titleNames:titleArray configure:configure];
     self.pageTitleView.backgroundColor = [UIColor whiteColor];
     self.pageTitleView.selectedIndex = 0;
     [self.view addSubview:self.pageTitleView];
     
-    YTEducaCollectViewController *educationVc = [[YTEducaCollectViewController alloc]init];
-    educationVc.type = 0;
-    YTEducaCollectViewController *educationVc1 = [[YTEducaCollectViewController alloc]init];
-    educationVc1.type = 1;
-    YTEducaCollectViewController *educationVc2 = [[YTEducaCollectViewController alloc]init];
-    educationVc2.type = 2;
-    NSArray *controlArray = @[educationVc,educationVc1,educationVc2];
     CGFloat contentViewHeight = self.view.height - self.pageTitleView.height;
-    self.pageContentView = [[SGPageContentScrollView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.pageTitleView.frame), kScreen_Width, contentViewHeight) parentVC:self childVCs:controlArray];
+    self.pageContentView = [[SGPageContentScrollView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.pageTitleView.frame), kScreen_Width, contentViewHeight) parentVC:self childVCs:vcArray];
     self.pageContentView.delegatePageContentScrollView = self;
     
     [self.view addSubview:self.pageContentView];

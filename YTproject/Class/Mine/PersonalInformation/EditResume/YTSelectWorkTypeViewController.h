@@ -7,7 +7,9 @@
 //
 
 #import "YTBaseViewController.h"
+#import "YTWorkTypeModel.h"
 
 @interface YTSelectWorkTypeViewController : YTBaseViewController
+@property (strong, nonatomic) YTWorkTypeModel *typeModel;
 
 @end

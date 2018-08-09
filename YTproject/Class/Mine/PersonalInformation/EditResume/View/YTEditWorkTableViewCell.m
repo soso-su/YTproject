@@ -38,7 +38,11 @@
 }
 - (IBAction)clickEditBtn:(UIButton *)sender {
     if (self.delegate) {
-        [self.delegate editWorkExperience];
+        if (self.isWork) {
+            [self.delegate editExperienceWithModel:self.model];
+        }else{
+            [self.delegate editExperienceWithModel:self.edModel];
+        }
     }
 }
 

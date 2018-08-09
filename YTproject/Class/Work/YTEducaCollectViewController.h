@@ -7,8 +7,10 @@
 //
 
 #import "YTBaseViewController.h"
+#import "YTWorkTypeModel.h"
 
 @interface YTEducaCollectViewController : YTBaseViewController
 @property (nonatomic, assign)NSInteger type;
+@property (nonatomic, strong)NSArray <Level3*>*list;
 
 @end

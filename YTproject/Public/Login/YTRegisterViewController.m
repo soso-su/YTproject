@@ -140,10 +140,12 @@
             }
             
         } @catch (NSException *exception) {
+            [YTProgressHUD dismissHUD];
             [YTShowStateView showStateViewWithStr:@"注册失败，请稍后重试！" textColor:DefaultColor];
             YTLog(@"registerUser exception = %@",exception.description);
         }
     } failure:^(NSError *error) {
+        [YTProgressHUD dismissHUD];
         [YTShowStateView showStateViewWithStr:@"注册失败，请稍后重试！" textColor:DefaultColor];
         YTLog(@"registerUser error = %@",error);
     }];
@@ -166,9 +168,11 @@
                 [weakSelf.navigationController pushViewController:vc animated:YES];
             }
         } @catch (NSException *exception) {
+            [YTProgressHUD dismissHUD];
             [YTShowStateView showStateViewWithStr:YTHttpState_RequestCatch textColor:DefaultColor];
         }
     } failure:^(NSError *error) {
+        [YTProgressHUD dismissHUD];
         [YTShowStateView showStateViewWithStr:YTHttpState_RequestFail textColor:DefaultColor];
         YTLog(@"registerUser error = %@",error);
     }];

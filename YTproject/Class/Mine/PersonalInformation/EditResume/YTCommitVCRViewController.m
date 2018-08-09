@@ -7,7 +7,6 @@
 //
 
 #import "YTCommitVCRViewController.h"
-#import "YTFileDetailsViewController.h"
 #import "YTResumeViewController.h"
 
 @interface YTCommitVCRViewController ()
@@ -28,16 +27,15 @@
 
 - (IBAction)commit:(UIButton *)sender {
     for (UIViewController *vc in self.navigationController.viewControllers) {
-        if ([vc isKindOfClass:[YTFileDetailsViewController class]]) {
+        if ([vc isKindOfClass:[YTResumeViewController class]]) {
             [self.navigationController popToViewController:vc animated:YES];
         }
     }
-//    YTResumeViewController *vc = [[YTResumeViewController alloc]init];
-//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)preview{
-    
+    YTResumeViewController *vc = [[YTResumeViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

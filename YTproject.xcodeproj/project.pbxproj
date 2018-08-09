@@ -261,6 +261,9 @@
 		F86795A621197D2500991BD9 /* EditResumeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F86795A521197D2500991BD9 /* EditResumeModel.m */; };
 		F86795A92119AC0C00991BD9 /* WorkExperienceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F86795A82119AC0C00991BD9 /* WorkExperienceModel.m */; };
 		F86795AC211AE08D00991BD9 /* EducationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F86795AB211AE08D00991BD9 /* EducationModel.m */; };
+		F86795AF211C1C5D00991BD9 /* YTWorkTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F86795AE211C1C5D00991BD9 /* YTWorkTypeModel.m */; };
+		F86795B2211C3FD600991BD9 /* ExpectedWorkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F86795B1211C3FD600991BD9 /* ExpectedWorkModel.m */; };
+		F86795B5211C55D800991BD9 /* YTUploadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F86795B4211C55D800991BD9 /* YTUploadImage.m */; };
 		F876CCEF210174990015E0C7 /* YTOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F876CCED210174990015E0C7 /* YTOrderViewController.m */; };
 		F876CCF0210174990015E0C7 /* YTOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F876CCEE210174990015E0C7 /* YTOrderViewController.xib */; };
 		F876CCF4210175CD0015E0C7 /* YTOrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F876CCF2210175CD0015E0C7 /* YTOrderListViewController.m */; };
@@ -830,6 +833,12 @@
 		F86795A82119AC0C00991BD9 /* WorkExperienceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkExperienceModel.m; sourceTree = "<group>"; };
 		F86795AA211AE08D00991BD9 /* EducationModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EducationModel.h; sourceTree = "<group>"; };
 		F86795AB211AE08D00991BD9 /* EducationModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EducationModel.m; sourceTree = "<group>"; };
+		F86795AD211C1C5D00991BD9 /* YTWorkTypeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTWorkTypeModel.h; sourceTree = "<group>"; };
+		F86795AE211C1C5D00991BD9 /* YTWorkTypeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTWorkTypeModel.m; sourceTree = "<group>"; };
+		F86795B0211C3FD600991BD9 /* ExpectedWorkModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExpectedWorkModel.h; sourceTree = "<group>"; };
+		F86795B1211C3FD600991BD9 /* ExpectedWorkModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExpectedWorkModel.m; sourceTree = "<group>"; };
+		F86795B3211C55D800991BD9 /* YTUploadImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTUploadImage.h; sourceTree = "<group>"; };
+		F86795B4211C55D800991BD9 /* YTUploadImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTUploadImage.m; sourceTree = "<group>"; };
 		F876CCEC210174990015E0C7 /* YTOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTOrderViewController.h; sourceTree = "<group>"; };
 		F876CCED210174990015E0C7 /* YTOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTOrderViewController.m; sourceTree = "<group>"; };
 		F876CCEE210174990015E0C7 /* YTOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTOrderViewController.xib; sourceTree = "<group>"; };
@@ -1904,6 +1913,8 @@
 				F86795A82119AC0C00991BD9 /* WorkExperienceModel.m */,
 				F86795AA211AE08D00991BD9 /* EducationModel.h */,
 				F86795AB211AE08D00991BD9 /* EducationModel.m */,
+				F86795B0211C3FD600991BD9 /* ExpectedWorkModel.h */,
+				F86795B1211C3FD600991BD9 /* ExpectedWorkModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1983,6 +1994,8 @@
 			children = (
 				F888D38620F4E2C000128715 /* YTHttpTool.h */,
 				F888D38720F4E2C000128715 /* YTHttpTool.m */,
+				F86795B3211C55D800991BD9 /* YTUploadImage.h */,
+				F86795B4211C55D800991BD9 /* YTUploadImage.m */,
 			);
 			path = Http;
 			sourceTree = "<group>";
@@ -2378,6 +2391,8 @@
 				F8FBF3AF2112B7E6003F2167 /* CompanyModel.m */,
 				F867959D2118595800991BD9 /* ResumeModel.h */,
 				F867959E2118595800991BD9 /* ResumeModel.m */,
+				F86795AD211C1C5D00991BD9 /* YTWorkTypeModel.h */,
+				F86795AE211C1C5D00991BD9 /* YTWorkTypeModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2880,8 +2895,10 @@
 				F8135AB120F3145A000F2372 /* CustomButton.m in Sources */,
 				F85313522109B98600B881EA /* CPWorkCell.m in Sources */,
 				F807692F20FB5157001E2FA6 /* YTCateDetailsViewController.m in Sources */,
+				F86795B2211C3FD600991BD9 /* ExpectedWorkModel.m in Sources */,
 				F888D3D920F6F12B00128715 /* YTEdViewCell.m in Sources */,
 				F8FBF39C210EFC2E003F2167 /* YTUserModel.m in Sources */,
+				F86795AF211C1C5D00991BD9 /* YTWorkTypeModel.m in Sources */,
 				F8D8F508210B243000A52AAB /* CPApplicantListViewController.m in Sources */,
 				F8D8F504210B224100A52AAB /* CPApplicantViewController.m in Sources */,
 				F888F51120EA27B800E19554 /* main.m in Sources */,
@@ -3024,6 +3041,7 @@
 				F817882B21006656007006D8 /* YTCartViewController.m in Sources */,
 				F846DA8521006B9200A1E1CE /* YTResumeVideoTableViewCell.m in Sources */,
 				F894254520EF061B008156CC /* YTAddressViewController.m in Sources */,
+				F86795B5211C55D800991BD9 /* YTUploadImage.m in Sources */,
 				F8DE217320FC497F00AC55D8 /* YTTenementViewController.m in Sources */,
 				F80CB306210AB9F10076963F /* YTEditWorkTableViewCell.m in Sources */,
 				A72BA4EB2100460A008D57E6 /* YTPageViewControllerConfiguration.m in Sources */,

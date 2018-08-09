@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YTEditResumeViewController">
             <connections>
+                <outlet property="avatarView" destination="ahW-bu-Gsa" id="XuE-js-7k1"/>
                 <outlet property="tableView" destination="BP6-Rr-tf5" id="VJZ-w8-29J"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -48,7 +49,7 @@
                                             </state>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="customButtonType_IBInspector">
-                                                    <integer key="value" value="0"/>
+                                                    <integer key="value" value="3"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="margin">
                                                     <real key="value" value="4"/>
@@ -57,6 +58,9 @@
                                                     <size key="value" width="67" height="67"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="avatarBtn:" destination="-1" eventType="touchUpInside" id="7in-x2-IBi"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

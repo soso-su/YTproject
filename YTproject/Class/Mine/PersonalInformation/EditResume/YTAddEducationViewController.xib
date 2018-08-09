@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YTAddEducationViewController">
             <connections>
+                <outlet property="deleteButton" destination="avW-VJ-Uxr" id="5iy-x9-3yc"/>
                 <outlet property="tableView" destination="FXf-xP-mGS" id="PN8-l9-yXT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -38,7 +39,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="42" id="wrO-jt-uBp"/>
                     </constraints>
-                    <state key="normal" title="删除此工作经历">
+                    <state key="normal" title="删除此教育经历">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <userDefinedRuntimeAttributes>

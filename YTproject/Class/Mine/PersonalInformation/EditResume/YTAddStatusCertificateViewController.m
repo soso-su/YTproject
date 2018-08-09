@@ -8,6 +8,7 @@
 
 #import "YTAddStatusCertificateViewController.h"
 #import "YTCommitVCRViewController.h"
+#import "YTResumeViewController.h"
 
 @interface YTAddStatusCertificateViewController ()
 
@@ -29,7 +30,8 @@
 }
 
 - (void)preview{
-    
+    YTResumeViewController *vc = [[YTResumeViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

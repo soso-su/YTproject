@@ -10,14 +10,21 @@
 #define HttpConfig_h
 #endif
 
-#define YTBaseUrl   @"http://192.168.1.35:8081"//@"http://120.77.55.33"
+#define YTBaseUrl   @"http://120.77.55.33"//@"http://192.168.1.35:8081"//@"http://120.77.55.33"
 
 
 #define YTHttpState_RequestIng @"加载中..."
 #define YTHttpState_RequestFail @"请求失败，请检查您的网络"
 #define YTHttpState_RequestCatch @"数据异常"
 
+
+
 /***************************用户端*****************************/
+
+#pragma mark ------------------上传图片-------------------
+
+#define YTUploadImageUrl [NSString stringWithFormat:@"%@/%@", YTBaseUrl, @"user/upload"]
+
 
 #pragma mark ------------------注册登录-------------------
 
@@ -62,7 +69,7 @@
 //添加简历
 #define YTAddResume [NSString stringWithFormat:@"%@/%@", YTBaseUrl, @"user/alterResume1"]
 
-//编辑简历
+//编辑简历期望工作接口
 #define YTEditResume [NSString stringWithFormat:@"%@/%@", YTBaseUrl, @"user/alterResume2"]
 
 //编辑工作经历接口
@@ -81,8 +88,13 @@
 //添加教育经历接口
 #define YTAddEduExperience [NSString stringWithFormat:@"%@/%@", YTBaseUrl, @"user/addEduExperience"]
 
+//删除教育经历接口
+#define YTDelEduExperience [NSString stringWithFormat:@"%@/%@", YTBaseUrl, @"user/delEduExperience"]
+
 //编辑简历资格证书接口
 #define YTEditCertificate [NSString stringWithFormat:@"%@/%@", YTBaseUrl, @"user/alterResume3"]
+
+
 
 
 

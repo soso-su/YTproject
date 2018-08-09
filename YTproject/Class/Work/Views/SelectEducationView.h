@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YTWorkTypeModel.h"
 
 @interface SelectEducationView : UIView
 
 @property(nonatomic,strong)UIViewController *controller;
+@property(nonatomic,strong)YTWorkTypeModel *typeModel;
 
 @end

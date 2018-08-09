@@ -12,15 +12,16 @@
 #import "YTDatePickerView.h"
 #import "YTAlertView.h"
 #import "EditResumeModel.h"
+#import "YTResumeViewController.h"
 #import "YTEditResumeWorkExperienceViewController.h"
+#import "YTUploadImage.h"
 
 @interface YTEditResumeBaseInformationViewController ()<UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet CustomButton *avatarView;
 @property (nonatomic,copy)NSMutableArray *detailTitleArr;
 
-@property (weak, nonatomic) IBOutlet YTTouchView *avatarView;
-@property (weak, nonatomic) IBOutlet UIImageView *avaImageView;
 @property (nonatomic, strong) EditResumeModel *editModel;
 
 @end
@@ -44,7 +45,34 @@ static NSString *const TableViewCellId = @"TableViewCellId";
 
 
 - (void)preview{
-    
+    YTResumeViewController *vc = [[YTResumeViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+- (IBAction)avatarBtn:(CustomButton *)sender {
+    __block NSUInteger sourceType = 0;
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController.delegate = self;
+    YTAlertView *alertView = [YTAlertView alertViewWithTitle:nil message:nil style:UIAlertControllerStyleActionSheet cancelButtonTitle:nil otherButtonTitles:@"拍照",@"从相册选择",@"取消",nil];
+    alertView.buttonClickHandle = ^(NSInteger buttonIndex) {
+        if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            imagePickerController.allowsEditing = YES;
+            imagePickerController.sourceType = sourceType; //
+            if (buttonIndex == 0) {
+                sourceType = UIImagePickerControllerSourceTypeCamera;
+                imagePickerController.sourceType = sourceType;
+                [self presentViewController:imagePickerController animated:YES completion:nil];
+            }else if (buttonIndex == 1){
+                sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                imagePickerController.sourceType = sourceType;
+                [self presentViewController:imagePickerController animated:YES completion:nil];
+            }
+        }else {
+            sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            imagePickerController.sourceType = sourceType;
+            [self presentViewController:imagePickerController animated:YES completion:nil];
+        }
+    };
+    [alertView show];
 }
 
 - (IBAction)nextStep:(UIButton *)sender {
@@ -79,8 +107,12 @@ static NSString *const TableViewCellId = @"TableViewCellId";
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    self.avaImageView.image = [YTTool imageResize:image andResizeTo:CGSizeMake(100, 100)];
+    UIImage *avaImage = [YTTool imageResize:image andResizeTo:CGSizeMake(100, 100)];
+    [self.avatarView setImage:avaImage forState:UIControlStateNormal];
     [picker dismissViewControllerAnimated:YES completion:^{}];
+    NSData *data = UIImageJPEGRepresentation(image, 1.0);
+//    NSDictionary *param = @{@"filekind":@"user_avatar", @"filename":@"avatar"};
+    [YTUploadImage uploadFile:data fileName:@"avatar" parameters:nil uploadType:uploadType_image];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -114,42 +146,45 @@ static NSString *const TableViewCellId = @"TableViewCellId";
     }else{
         
         YTEditResumeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TableViewCellId forIndexPath:indexPath];
-        switch (indexPath.row) {
-            case 0:
-                cell.textField.text = YTReplaceNil(self.editModel.name);
-                break;
-            case 1:
-                cell.textField.text = YTReplaceNil(self.editModel.nation);
-                break;
-            case 2:
-                cell.textField.text = self.editModel.sex == 0 ? @"男":@"女";
-                break;
-            case 3:
-                cell.textField.text = YTReplaceNil(self.editModel.language);
-                break;
-            case 4:
-                cell.textField.text = YTReplaceNil(self.editModel.birthday);
-                break;
-            case 5:
-                cell.textField.text = YTReplaceNil(self.editModel.education);
-                break;
-            case 6:
-                cell.textField.text = [NSString stringWithFormat:@"%zd",self.editModel.working_life];
-                break;
-            case 7:
-                if (self.editModel.visa_type == 0) {
-                    cell.textField.text = @"旅游签";
-                }else if (self.editModel.visa_type == 1){
-                    cell.textField.text = @"工作签";
-                }else if (self.editModel.visa_type == 2){
-                    cell.textField.text = @"学生签";
-                }else{
-                    cell.textField.text = @"中国身份证";
-                }
-                break;
-            default:
-                cell.textField.text = YTReplaceNil(self.editModel.introduce);
-                break;
+        if (self.editModel.name.length > 0) {
+            
+            switch (indexPath.row) {
+                case 0:
+                    cell.textField.text = YTReplaceNil(self.editModel.name);
+                    break;
+                case 1:
+                    cell.textField.text = YTReplaceNil(self.editModel.nation);
+                    break;
+                case 2:
+                    cell.textField.text = self.editModel.sex == 0 ? @"男":@"女";
+                    break;
+                case 3:
+                    cell.textField.text = YTReplaceNil(self.editModel.language);
+                    break;
+                case 4:
+                    cell.textField.text = YTReplaceNil(self.editModel.birthday);
+                    break;
+                case 5:
+                    cell.textField.text = YTReplaceNil(self.editModel.education);
+                    break;
+                case 6:
+                    cell.textField.text = [NSString stringWithFormat:@"%zd",self.editModel.working_life];
+                    break;
+                case 7:
+                    if (self.editModel.visa_type == 0) {
+                        cell.textField.text = @"旅游签";
+                    }else if (self.editModel.visa_type == 1){
+                        cell.textField.text = @"工作签";
+                    }else if (self.editModel.visa_type == 2){
+                        cell.textField.text = @"学生签";
+                    }else{
+                        cell.textField.text = @"中国身份证";
+                    }
+                    break;
+                default:
+                    cell.textField.text = YTReplaceNil(self.editModel.introduce);
+                    break;
+            }
         }
         cell.textField.placeholder = self.detailTitleArr[indexPath.row];
         [cell.textField setEnabled:NO];
@@ -288,35 +323,8 @@ static NSString *const TableViewCellId = @"TableViewCellId";
     rightItem.tintColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = rightItem;
     
-    self.avaImageView.layer.cornerRadius = self.avaImageView.width/2;
-    self.avaImageView.layer.masksToBounds = YES;
     
-    self.avatarView.touchHandler = ^{
-        __block NSUInteger sourceType = 0;
-        UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-        imagePickerController.delegate = self;
-        YTAlertView *alertView = [YTAlertView alertViewWithTitle:nil message:nil style:UIAlertControllerStyleActionSheet cancelButtonTitle:nil otherButtonTitles:@"拍照",@"从相册选择",@"取消",nil];
-        alertView.buttonClickHandle = ^(NSInteger buttonIndex) {
-            if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-                imagePickerController.allowsEditing = YES;
-                imagePickerController.sourceType = sourceType; //
-                if (buttonIndex == 0) {
-                    sourceType = UIImagePickerControllerSourceTypeCamera;
-                    imagePickerController.sourceType = sourceType;
-                    [self presentViewController:imagePickerController animated:YES completion:nil];
-                }else if (buttonIndex == 1){
-                    sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-                    imagePickerController.sourceType = sourceType;
-                    [self presentViewController:imagePickerController animated:YES completion:nil];
-                }
-            }else {
-                sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-                imagePickerController.sourceType = sourceType;
-                [self presentViewController:imagePickerController animated:YES completion:nil];
-            }
-        };
-        [alertView show];
-    };
+   
     
 }
 

@@ -7,7 +7,13 @@
 //
 
 #import "YTBaseViewController.h"
+#import "EducationModel.h"
 
 @interface YTAddEducationViewController : YTBaseViewController
+
+//model
+@property (nonatomic, strong) EducationModel *edModel;
+
+@property (nonatomic, assign) BOOL isAdd;
 
 @end

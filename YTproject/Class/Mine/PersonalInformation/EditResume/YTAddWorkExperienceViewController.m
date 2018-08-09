@@ -31,16 +31,24 @@ static NSString *const TableViewCellId = @"TableViewCellId";
     // Do any additional setup after loading the view from its nib.
     
     self.title = @"工作经历";
-    self.workModel = [[WorkExperienceModel alloc]init];
     
     [self setupView];
     
     self.detailTitlesArr = [[NSMutableArray alloc]initWithObjects:@"工作名称",@"职位",@"入职时间",@"离职时间", nil];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if (!self.isAdd) {
+        self.workModel = self.model;
+        self.textView.text = self.workModel.work_content;
+    }
+}
+
 
 -(void)save{
     [self.textView resignFirstResponder];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     NSDictionary *dic = @{
                           @"company_name":self.workModel.company_name,
                           @"position_name":self.workModel.position_name,
@@ -48,12 +56,25 @@ static NSString *const TableViewCellId = @"TableViewCellId";
                           @"end_time":self.workModel.end_time,
                           @"work_content":self.workModel.work_content
                           };
-    
-    [self addWorkExperienceWithDict:dic];
+    if (self.isAdd) {
+        
+        [self addWorkExperienceWithDict:dic];
+    }else{
+        [dict addEntriesFromDictionary:dic];
+        [dict setObject:@(self.workModel.work_experience_id) forKey:@"id"];
+        [self editWorkExperienceWithDict:dict];
+    }
 }
 
 - (IBAction)delete:(UIButton *)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self deleteWorkExperienceWithId:self.workModel.work_experience_id];
+}
+
+- (WorkExperienceModel *)workModel{
+    if (!_workModel) {
+        _workModel = [[WorkExperienceModel alloc]init];
+    }
+    return _workModel;
 }
 
 
@@ -72,9 +93,24 @@ static NSString *const TableViewCellId = @"TableViewCellId";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     YTEditResumeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TableViewCellId forIndexPath:indexPath];
-    
-    cell.textField.placeholder = self.detailTitlesArr[indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    if (!self.isAdd) {
+        switch (indexPath.row) {
+            case 0:
+                cell.textField.text = self.workModel.company_name;
+                break;
+            case 1:
+                cell.textField.text = self.workModel.position_name;
+                break;
+            case 2:
+                cell.textField.text = self.workModel.start_time;
+                break;
+            default:
+                cell.textField.text = self.workModel.end_time;
+                break;
+        }
+    }
+    cell.textField.placeholder = self.detailTitlesArr[indexPath.row];
     [cell.textField setEnabled:NO];
     
     return cell;
@@ -102,7 +138,7 @@ static NSString *const TableViewCellId = @"TableViewCellId";
             }
         }];
     }else if (index == 2) {
-        
+        [self.view endEditing:YES];
         [YTDatePickerView showWithDefaultSelectDate:nil SelectBlock:^(NSDate *date) {
             NSDateFormatter *fmt = [[NSDateFormatter alloc]init];
             [fmt setDateFormat:@"yyyy.MM"];
@@ -111,6 +147,7 @@ static NSString *const TableViewCellId = @"TableViewCellId";
             weakSelf.workModel.start_time = str;
         }];
     }else{
+        [self.view endEditing:YES];
         [YTDatePickerView showWithDefaultSelectDate:nil SelectBlock:^(NSDate *date) {
             NSDateFormatter *fmt = [[NSDateFormatter alloc]init];
             [fmt setDateFormat:@"yyyy.MM"];
@@ -137,19 +174,87 @@ static NSString *const TableViewCellId = @"TableViewCellId";
 
 #pragma mark ---------------Http-----------------------
 
+
+/**
+ 添加工作经历
+
+ @param dict 提交信息
+ */
 - (void)addWorkExperienceWithDict:(NSDictionary *)dict{
     YTWeakSelf
+    [YTProgressHUD showWithStatusStr:YTHttpState_RequestIng];
     [YTHttpTool requestWithUrlStr:YTAddWorkExperience requestType:RequestType_post parameters:dict success:^(id responseObject) {
         YTLog(@"YTAddWorkExperience responseObject = %@",responseObject);
-        if ([responseObject[YTCode] integerValue] == YTCode2000) {
-            [YTProgressHUD showSuccessWithStr:responseObject[YTMsg]];
-            [weakSelf.navigationController popViewControllerAnimated:YES];
-        }else{
-            [YTProgressHUD showErrorWithStr:responseObject[YTMsg]];
+        @try {
+            if ([responseObject[YTCode] integerValue] == YTCode2000) {
+                [YTProgressHUD showSuccessWithStr:responseObject[YTMsg]];
+                [weakSelf.navigationController popViewControllerAnimated:YES];
+            }else{
+                [YTProgressHUD showErrorWithStr:responseObject[YTMsg]];
+            }
+        } @catch (NSException *exception) {
+            YTLog(@"YTAddWorkExperience exception = %@",exception.description);
+            [YTProgressHUD showErrorWithStr:YTHttpState_RequestCatch];
         }
+        
     } failure:^(NSError *error) {
+        [YTProgressHUD showErrorWithStr:YTHttpState_RequestFail];
         YTLog(@"YTAddWorkExperience error = %@",error);
     }];
 }
+
+
+/**
+ 编辑工作经历
+
+ @param dict 提交信息
+ */
+- (void)editWorkExperienceWithDict:(NSDictionary *)dict{
+    YTWeakSelf
+    [YTProgressHUD showWithStatusStr:YTHttpState_RequestIng];
+    [YTHttpTool requestWithUrlStr:YTModifyWorkExperience requestType:RequestType_post parameters:dict success:^(id responseObject) {
+        YTLog(@"YTModifyWorkExperience responseObject = %@",responseObject);
+        @try {
+            if ([responseObject[YTCode] integerValue] == YTCode2000) {
+                [YTProgressHUD showSuccessWithStr:responseObject[YTMsg]];
+                [weakSelf.navigationController popViewControllerAnimated:YES];
+            }else{
+                [YTProgressHUD showErrorWithStr:responseObject[YTMsg]];
+            }
+        } @catch (NSException *exception) {
+            YTLog(@"YTModifyWorkExperience exception = %@",exception.description);
+            [YTProgressHUD showErrorWithStr:YTHttpState_RequestCatch];
+        }
+        
+    } failure:^(NSError *error) {
+        [YTProgressHUD showErrorWithStr:YTHttpState_RequestFail];
+        YTLog(@"YTModifyWorkExperience error = %@",error);
+    }];
+}
+
+- (void)deleteWorkExperienceWithId:(NSInteger)work_id{
+    NSDictionary *dict = @{
+                           @"id":[NSNumber numberWithInteger:work_id]
+                           };
+    YTWeakSelf
+    [YTProgressHUD showWithStatusStr:YTHttpState_RequestIng];
+    [YTHttpTool requestWithUrlStr:YTDelWorkExperience requestType:RequestType_post parameters:dict success:^(id responseObject) {
+        @try {
+            if ([responseObject[YTCode] integerValue] == YTCode2000) {
+                [YTProgressHUD showSuccessWithStr:responseObject[YTMsg]];
+                [weakSelf.navigationController popViewControllerAnimated:YES];
+            }else{
+                [YTProgressHUD showErrorWithStr:responseObject[YTMsg]];
+            }
+        } @catch (NSException *exception) {
+            YTLog(@"YTDelWorkExperience exception = %@",exception.description);
+            [YTProgressHUD showErrorWithStr:YTHttpState_RequestCatch];
+        }
+    } failure:^(NSError *error) {
+        [YTProgressHUD showErrorWithStr:YTHttpState_RequestFail];
+        YTLog(@"YTDelWorkExperience error = %@",error);
+    }];
+}
+
 
 @end

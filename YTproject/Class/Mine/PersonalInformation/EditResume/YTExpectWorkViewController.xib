@@ -12,12 +12,16 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YTExpectWorkViewController">
             <connections>
+                <outlet property="exPositionTF" destination="seu-F3-u4U" id="a49-go-Qgw"/>
                 <outlet property="oneMonth" destination="ejI-vs-6QC" id="Pzk-n7-DCF"/>
                 <outlet property="selectAddress" destination="kdc-9v-kPg" id="1Ri-YJ-A5a"/>
                 <outlet property="selectWorkType" destination="176-GL-fgl" id="F3O-xa-dtc"/>
+                <outlet property="textView" destination="Od5-rO-S3g" id="L10-sk-D0N"/>
                 <outlet property="thisMonth" destination="u15-Oy-C8U" id="5P6-vg-Znj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="weekBtn" destination="Ykx-La-85f" id="zZi-Ti-UY5"/>
+                <outlet property="workTypeTF" destination="k1e-uu-AxV" id="VJ1-Id-Fm5"/>
+                <outlet property="workTypeView" destination="enb-OO-xH1" id="moS-M7-Xhf"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -47,6 +51,9 @@
                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="-1" id="Dpk-nQ-6hw"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -74,7 +81,7 @@
                                     </constraints>
                                     <state key="normal" image="bjjlIcon2"/>
                                 </button>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enb-OO-xH1">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enb-OO-xH1" customClass="YTTouchView">
                                     <rect key="frame" x="53" y="49" width="306" height="30"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="全职" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k1e-uu-AxV">
@@ -216,6 +223,9 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="-1" id="ZM6-u6-BmE"/>
+                                            </connections>
                                         </textView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

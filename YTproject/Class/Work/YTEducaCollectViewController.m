@@ -42,7 +42,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self trade];
+
 }
 
 
@@ -157,18 +157,10 @@
 
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    [[NSNotificationCenter defaultCenter] postNotificationName:YTEDCATIONNOTIFICATIONNAME object:self userInfo:@{@"test":@"11111111"}];
+    YTEdViewCell *cell = (YTEdViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    [[NSNotificationCenter defaultCenter] postNotificationName:YTEDCATIONNOTIFICATIONNAME object:self userInfo:@{@"test":cell.titleLabel.text}];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
-#pragma mark ------------------Http----------------------
-
-- (void)trade{
-    [YTHttpTool requestWithUrlStr:YTTradeUrl requestType:RequestType_post parameters:nil success:^(id responseObject) {
-        YTLog(@"responseObject = %@",responseObject);
-    } failure:^(NSError *error) {
-        
-        YTLog(@"findPosition error = %@",error);
-    }];
-}
 
 @end

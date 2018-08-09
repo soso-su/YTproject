@@ -11,7 +11,7 @@
 
 @protocol YTEditWorkTableViewCellDelegate <NSObject>
 
-- (void)editWorkExperience;
+- (void)editExperienceWithModel:(id)model;
 
 @end
 
@@ -21,6 +21,8 @@
 @property (nonatomic, strong) WorkExperienceModel *model;
 
 @property (nonatomic, strong) EducationModel *edModel;
+
+@property (nonatomic, assign) BOOL isWork;
 
 @property (nonatomic, assign)id <YTEditWorkTableViewCellDelegate>delegate;
 

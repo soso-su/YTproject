@@ -31,6 +31,7 @@ static NSString *const MedalCollectionViewCellId = @"medalCollectionViewCellId";
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([YTMedalCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:MedalCollectionViewCellId];
 }
 
+
 - (void)setModel:(ResumeModel *)model{
     _model = model;
     self.userNameLabel.text = model.resume.name;

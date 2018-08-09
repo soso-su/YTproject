@@ -18,18 +18,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
-    rightItem.tintColor = [UIColor whiteColor];
-    self.navigationItem.rightBarButtonItem = rightItem;
+//    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
+//    rightItem.tintColor = [UIColor whiteColor];
+//    self.navigationItem.rightBarButtonItem = rightItem;
     
     SelectEducationView *edVc = [[SelectEducationView alloc]initWithFrame:self.view.bounds];
+    edVc.typeModel = self.typeModel;
     edVc.controller = self;
     [self.view addSubview:edVc];
 }
 
-- (void)save{
-    [self.navigationController popViewControllerAnimated:YES];
-}
+//- (void)save{
+//    [self.navigationController popViewControllerAnimated:YES];
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

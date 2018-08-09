@@ -11,10 +11,11 @@
 #import "YTAddEducationViewController.h"
 #import "YTExpectWorkViewController.h"
 #import "ResumeModel.h"
+#import "YTResumeViewController.h"
 
 #define cellID @"editWorkTableViewCell"
 
-@interface YTEducationExperienceViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface YTEducationExperienceViewController ()<UITableViewDelegate,UITableViewDataSource,YTEditWorkTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic)ResumeModel *resumModel;
 
@@ -61,6 +62,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     YTEditWorkTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.isWork = NO;
+    cell.delegate = self;
     cell.edModel = self.resumModel.eduExperienceList[indexPath.row];
     return cell;
 }
@@ -93,11 +96,20 @@
 
 -(void)addEducationExperience{
     YTAddEducationViewController *vc = [[YTAddEducationViewController alloc]init];
+    vc.isAdd = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)editExperienceWithModel:(EducationModel *)model{
+    YTAddEducationViewController *vc = [[YTAddEducationViewController alloc]init];
+    vc.edModel = model;
+    vc.isAdd = NO;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)preview{
-    
+    YTResumeViewController *vc = [[YTResumeViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark ------------------Http--------------------
@@ -107,18 +119,22 @@
  */
 - (void)editResume{
     YTWeakSelf
+    [YTProgressHUD showWithStatusStr:YTHttpState_RequestIng];
     [YTHttpTool requestWithUrlStr:YTEditResume requestType:RequestType_get parameters:nil success:^(id responseObject) {
         YTLog(@"editResume responseObject = %@",responseObject);
         @try {
+            [YTProgressHUD dismissHUD];
             weakSelf.resumModel.resume = [EditResumeModel yy_modelWithJSON:responseObject[@"resume"]];
             weakSelf.resumModel.workExperienceList = [NSArray yy_modelArrayWithClass:[WorkExperienceModel class] json:responseObject[@"workExperienceList"]];
             
             weakSelf.resumModel.eduExperienceList = [NSArray yy_modelArrayWithClass:[EducationModel class] json:responseObject[@"eduExperienceList"]];
             [weakSelf.tableView reloadData];
         } @catch (NSException *exception) {
+            [YTProgressHUD showErrorWithStr:YTHttpState_RequestCatch];
             YTLog(@"editResume exception = %@",exception.description);
         }
     } failure:^(NSError *error) {
+        [YTProgressHUD showErrorWithStr:YTHttpState_RequestFail];
         YTLog(@"editResume error = %@",error);
     }];
 }

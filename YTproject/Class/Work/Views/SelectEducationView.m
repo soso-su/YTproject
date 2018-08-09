@@ -43,17 +43,32 @@
     configure.showBottomSeparator = NO;
     configure.indicatorAdditionalWidth = indicatorWidth;
     
-    self.pageTitleView = [SGPageTitleView pageTitleViewWithFrame:CGRectMake(0, 0, kScreen_Width/2, titleViewH) delegate:self titleNames:@[@"教育",@"非教育"] configure:configure];
+    NSMutableArray *titleArray = [NSMutableArray array];
+    NSMutableArray *vcArray = [NSMutableArray array];
+    if (self.typeModel.assortmentList.count > 0) {
+        for (int i = 0; i < self.typeModel.assortmentList.count; i++) {
+            AssortmentList *model = self.typeModel.assortmentList[i];
+            [titleArray addObject:model.assort_name];
+            
+            if (model.level2.count > 0) {
+                YTEducationViewController *educationVc  = [[YTEducationViewController alloc]init];
+                educationVc.list = model.level2;
+                educationVc.type = i;
+                [vcArray addObject:educationVc];
+            }else{
+                YTEducaCollectViewController *educationVc1 = [[YTEducaCollectViewController alloc]init];
+                educationVc1.type = 100;
+                [vcArray addObject:educationVc1];
+            }
+        }
+    }
+    self.pageTitleView = [SGPageTitleView pageTitleViewWithFrame:CGRectMake(0, 0, kScreen_Width/2, titleViewH) delegate:self titleNames:titleArray configure:configure];
     self.pageTitleView.backgroundColor = RGB(238, 238, 238);
     self.pageTitleView.selectedIndex = 0;
     [self addSubview:self.pageTitleView];
     
-    YTEducationViewController *educationVc = [[YTEducationViewController alloc]init];
-    YTEducaCollectViewController *educationVc1 = [[YTEducaCollectViewController alloc]init];
-    educationVc1.type = 100;
-    NSArray *controlArray = @[educationVc,educationVc1];
     CGFloat contentViewHeight = self.height - self.pageTitleView.height;
-    self.pageContentView = [[SGPageContentScrollView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.pageTitleView.frame), kScreen_Width, contentViewHeight) parentVC:self.controller childVCs:controlArray];
+    self.pageContentView = [[SGPageContentScrollView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.pageTitleView.frame), kScreen_Width, contentViewHeight) parentVC:self.controller childVCs:vcArray];
     self.pageContentView.delegatePageContentScrollView = self;
     
     [self addSubview:self.pageContentView];

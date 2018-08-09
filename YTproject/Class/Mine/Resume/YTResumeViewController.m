@@ -82,43 +82,47 @@
     if (index == 0) {
         YTResumeHeaderTableViewCell *headerCell = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass([YTResumeHeaderTableViewCell class]) owner:self options:nil].lastObject;
         headerCell.model = self.resumModel;
+        headerCell.selectionStyle = UITableViewCellSelectionStyleNone;
         return headerCell;
     }
     
     if (index == 1){
     
         YTResumeVideoTableViewCell *videoVc = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass([YTResumeVideoTableViewCell class]) owner:self options:nil].lastObject;
-        
+        videoVc.selectionStyle = UITableViewCellSelectionStyleNone;
         return  videoVc;
     }
     
     if (index == 2){//基本信息
         YTBaseInformationTableViewCell *baseInfCell = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass([YTBaseInformationTableViewCell class]) owner:self options:nil].lastObject;
         baseInfCell.model = self.resumModel;
+        baseInfCell.selectionStyle = UITableViewCellSelectionStyleNone;
         return baseInfCell;
     }
     
     if (index == 3) {//工作经历
         YTWorkExperienceTableViewCell *workCell = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass([YTWorkExperienceTableViewCell    class]) owner:self options:nil].lastObject;
         workCell.model = self.resumModel.workExperienceList[indexPath.row];
+        workCell.selectionStyle = UITableViewCellSelectionStyleNone;
         return workCell;
     }
     
     if (index == 4) {//教育经历
         YTEducationExperienceTableViewCell *eduCell = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass([YTEducationExperienceTableViewCell    class]) owner:self options:nil].lastObject;
         eduCell.model = self.resumModel.eduExperienceList[indexPath.row];
+        eduCell.selectionStyle = UITableViewCellSelectionStyleNone;
         return eduCell;
     }
     
     if (index == 5) {
         YTCertificateTableViewCell *cell = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass([YTCertificateTableViewCell class]) owner:self options:nil].lastObject;
-        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
     
     if (index == 6) {
         YTExpectaionWorkTableViewCell *cell = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass([YTExpectaionWorkTableViewCell class]) owner:self options:nil].lastObject;
-        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
     return [[UITableViewCell alloc]init];
@@ -156,6 +160,8 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 0;
 }
+
+
 
 #pragma mark =======================Setup=========================
 - (void)setupView{

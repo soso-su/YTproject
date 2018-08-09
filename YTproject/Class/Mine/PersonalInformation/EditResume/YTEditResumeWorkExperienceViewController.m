@@ -12,6 +12,7 @@
 #import "YTEditWorkTableViewCell.h"
 #import "YTEducationExperienceViewController.h"
 #import "ResumeModel.h"
+#import "YTResumeViewController.h"
 
 #define cellID @"EditWorkTableViewCell"
 
@@ -55,7 +56,8 @@
 }
 
 - (void)preview{
-    
+    YTResumeViewController *vc = [[YTResumeViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark =======================UITableViewDataSource=========================
@@ -66,6 +68,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     YTEditWorkTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.isWork = YES;
     cell.model = self.resumModel.workExperienceList[indexPath.row];
     cell.delegate = self;
     return cell;
@@ -92,8 +95,9 @@
     return backgroundView;
 }
 
-- (void)editWorkExperience{
+- (void)editExperienceWithModel:(WorkExperienceModel *)model{
     YTAddWorkExperienceViewController *vc = [[YTAddWorkExperienceViewController alloc]init];
+    vc.model = model;
     vc.isAdd = NO;
     [self.navigationController pushViewController:vc animated:YES];
 }

@@ -10,7 +10,7 @@
 #import "YTEditResumeTableViewCell.h"
 #import "YTDatePickerView.h"
 #import "YTAlertView.h"
-#import "EducationModel.h"
+
 
 #define cellID @"EditResumeTableViewCell"
 
@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,copy)NSMutableArray *detailTitlesArr;
 @property (nonatomic ,strong) EducationModel *eduModel;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 
 @end
 
@@ -32,31 +33,57 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if (!self.isAdd) {
+        self.eduModel = self.edModel;
+    }
+}
+
 -(void)save{
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     NSDictionary *dic = @{
                           @"school":YTReplaceNil(self.eduModel.school),
                           @"major":YTReplaceNil(self.eduModel.major),
                           @"graduation_time":YTReplaceNil(self.eduModel.graduation_time),
                           @"degree":YTReplaceNil(self.eduModel.degree)
                           };
-    [self addEduExperienceWithDict:dic];
-//    [self.navigationController popViewControllerAnimated:YES];
+    if (self.isAdd) {
+        [self addEduExperienceWithDict:dic];
+    }else{
+        [dict addEntriesFromDictionary:dic];
+        [dict setObject:[NSNumber numberWithInteger:self.eduModel.edu_id] forKey:@"id"];
+        [self editEduExperienceWithDict:dict];
+    }
+
 }
 
 - (IBAction)deleteEducation:(UIButton *)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self deleteEduExperienceWithId:self.eduModel.edu_id];
 }
 
 
 -(void)setupView{
-    self.eduModel = [[EducationModel alloc]init];
+    
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
     rightItem.tintColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = rightItem;
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([YTEditResumeTableViewCell class]) bundle:nil] forCellReuseIdentifier:cellID];
+    if (self.isAdd) {
+        self.deleteButton.hidden = YES;
+    }else{
+        self.deleteButton.hidden = NO;
+    }
 }
 
+
+- (EducationModel *)eduModel{
+    if (!_eduModel) {
+        _eduModel = [[EducationModel alloc]init];
+    }
+    return _eduModel;
+}
 
 #pragma mark =======================UITableViewDataSource=========================
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -68,10 +95,22 @@
     [cell.textField setEnabled:NO];
     cell.textField.placeholder = self.detailTitlesArr[indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//    if (indexPath.row == 2 || indexPath.row == 3) {
-//        [cell.textField setEnabled:NO];
-//    }
-    
+    if (!self.isAdd) {
+        switch (indexPath.row) {
+            case 0:
+                cell.textField.text = self.eduModel.school;
+                break;
+            case 1:
+                cell.textField.text = self.eduModel.major;
+                break;
+            case 2:
+                cell.textField.text = self.eduModel.graduation_time;
+                break;
+            default:
+                cell.textField.text = self.eduModel.degree;
+                break;
+        }
+    }
     return cell;
 }
 
@@ -97,14 +136,16 @@
             }
         }];
     }else if (index == 2) {
+        [self.view endEditing:YES];
         [YTDatePickerView showWithDefaultSelectDate:nil SelectBlock:^(NSDate *date) {
             NSDateFormatter *fmt = [[NSDateFormatter alloc]init];
-            [fmt setDateFormat:@"yyyy-MM-dd"];
+            [fmt setDateFormat:@"yyyy.MM"];
             NSString *str = [fmt stringFromDate:date];
             cell.textField.text = str;
             weakSelf.eduModel.graduation_time = str;
         }];
     }else if (index == 3){
+        [self.view endEditing:YES];
         YTAlertView *alertView = [YTAlertView alertViewWithTitle:nil message:nil style:UIAlertControllerStyleActionSheet cancelButtonTitle:nil otherButtonTitles:@"博士",@"硕士",@"本科",@"专科",@"其他",nil];
         alertView.buttonClickHandle = ^(NSInteger buttonIndex) {
             switch (buttonIndex) {
@@ -132,22 +173,99 @@
 
 #pragma mark --------------------Http---------------------------
 
+
+/**
+ 添加教育经历
+
+ @param dic 提交参数
+ */
 - (void)addEduExperienceWithDict:(NSDictionary *)dic{
     YTWeakSelf
+    [YTProgressHUD showWithStatusStr:YTHttpState_RequestIng];
     [YTHttpTool requestWithUrlStr:YTAddEduExperience requestType:RequestType_post parameters:dic success:^(id responseObject) {
-        if ([responseObject[YTCode] integerValue] == YTCode2000) {
-            [YTProgressHUD showSuccessWithStr:responseObject[YTMsg]];
-            [weakSelf.navigationController popViewControllerAnimated:YES];
+        
+        @try {
             YTLog(@"responseObject = %@",responseObject);
-        }else{
-            
-            [YTProgressHUD showErrorWithStr:responseObject[YTMsg]];
-            
+            if ([responseObject[YTCode] integerValue] == YTCode2000) {
+                [YTProgressHUD showSuccessWithStr:responseObject[YTMsg]];
+                [weakSelf.navigationController popViewControllerAnimated:YES];
+                
+            }else{
+                
+                [YTProgressHUD showErrorWithStr:responseObject[YTMsg]];
+                
+            }
+        } @catch (NSException *exception) {
+            [YTProgressHUD showErrorWithStr:YTHttpState_RequestCatch];
+            YTLog(@"YTAddEduExperience exception = %@",exception.description);
         }
+        
+        
     } failure:^(NSError *error) {
+        [YTProgressHUD showErrorWithStr:YTHttpState_RequestFail];
         YTLog(@"YTAddEduExperience error = %@",error);
     }];
 }
 
+
+/**
+ 编辑教育经历
+
+ @param dic 提交参数
+ */
+- (void)editEduExperienceWithDict:(NSDictionary *)dic{
+    YTWeakSelf
+    [YTProgressHUD showWithStatusStr:YTHttpState_RequestIng];
+    [YTHttpTool requestWithUrlStr:YTModifyEduExperience requestType:RequestType_post parameters:dic success:^(id responseObject) {
+        @try {
+            YTLog(@"responseObject = %@",responseObject);
+            if ([responseObject[YTCode] integerValue] == YTCode2000) {
+                [YTProgressHUD showSuccessWithStr:responseObject[YTMsg]];
+                [weakSelf.navigationController popViewControllerAnimated:YES];
+                
+            }else{
+                [YTProgressHUD showErrorWithStr:responseObject[YTMsg]];
+                
+            }
+        } @catch (NSException *exception) {
+            [YTProgressHUD showErrorWithStr:YTHttpState_RequestCatch];
+            YTLog(@"YTModifyEduExperience exception = %@",exception.description);
+        }
+    } failure:^(NSError *error) {
+        [YTProgressHUD showErrorWithStr:YTHttpState_RequestFail];
+        YTLog(@"YTModifyEduExperience error = %@",error);
+    }];
+}
+
+
+/**
+ 删除教育经历
+
+ @param edu_id id
+ */
+- (void)deleteEduExperienceWithId:(NSInteger)edu_id{
+    YTWeakSelf
+    NSDictionary *dict = @{
+                           @"id":[NSNumber numberWithInteger:edu_id]
+                           };
+    [YTProgressHUD showWithStatusStr:YTHttpState_RequestIng];
+    [YTHttpTool requestWithUrlStr:YTDelEduExperience requestType:RequestType_post parameters:dict success:^(id responseObject) {
+        @try {
+            YTLog(@"responseObject = %@",responseObject);
+            if ([responseObject[YTCode] integerValue] == YTCode2000) {
+                [YTProgressHUD showSuccessWithStr:responseObject[YTMsg]];
+                [weakSelf.navigationController popViewControllerAnimated:YES];
+            }else{
+                [YTProgressHUD showErrorWithStr:responseObject[YTMsg]];
+            }
+        } @catch (NSException *exception) {
+            [YTProgressHUD showErrorWithStr:YTHttpState_RequestCatch];
+            YTLog(@"YTDelEduExperience exception = %@",exception.description);
+        }
+    } failure:^(NSError *error) {
+        [YTProgressHUD showErrorWithStr:YTHttpState_RequestFail];
+        YTLog(@"YTDelEduExperience error = %@",error);
+    }];
+}
 
 @end
