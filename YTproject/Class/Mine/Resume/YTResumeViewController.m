@@ -16,7 +16,7 @@
 #import "YTEducationExperienceTableViewCell.h"
 #import "YTCertificateTableViewCell.h"
 #import "YTExpectaionWorkTableViewCell.h"
-#import "ResumeModel.h"
+
 
 @interface YTResumeViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -40,7 +40,12 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self resumeDetail];
+    if (self.basePreview) {
+        self.resumModel.resume = self.reModel;
+        [self.tableView reloadData];
+    }else{
+        [self resumeDetail];
+    }
 
 }
 
@@ -116,6 +121,7 @@
     
     if (index == 5) {
         YTCertificateTableViewCell *cell = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass([YTCertificateTableViewCell class]) owner:self options:nil].lastObject;
+        cell.resumeModel = self.resumModel;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
@@ -123,6 +129,7 @@
     if (index == 6) {
         YTExpectaionWorkTableViewCell *cell = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass([YTExpectaionWorkTableViewCell class]) owner:self options:nil].lastObject;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.resumeModel = self.resumModel;
         return cell;
     }
     return [[UITableViewCell alloc]init];
@@ -165,9 +172,11 @@
 
 #pragma mark =======================Setup=========================
 - (void)setupView{
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(editResume)];
-    rightItem.tintColor = [UIColor whiteColor];
-    self.navigationItem.rightBarButtonItem = rightItem;
+    if (!self.basePreview) {
+        UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(editResume)];
+        rightItem.tintColor = [UIColor whiteColor];
+        self.navigationItem.rightBarButtonItem = rightItem;
+    }
 }
 
 - (void)setupData{

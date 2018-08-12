@@ -21,5 +21,7 @@
 #import "YTUserModel.h"
 #import "UIImageView+WebCache.h"
 #import "CustomButton.h"
+#import "UIColor+Hex.h"
+#import "YTTitleView.h"
 
 

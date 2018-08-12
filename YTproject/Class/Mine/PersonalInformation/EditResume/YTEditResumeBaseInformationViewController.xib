@@ -12,7 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YTEditResumeViewController">
             <connections>
-                <outlet property="avatarView" destination="ahW-bu-Gsa" id="XuE-js-7k1"/>
+                <outlet property="avatarImageView" destination="jAS-3m-Boz" id="jKJ-gj-DmI"/>
+                <outlet property="avatarView" destination="dDK-Vr-YaB" id="61l-tq-Vuv"/>
                 <outlet property="tableView" destination="BP6-Rr-tf5" id="VJZ-w8-29J"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -37,36 +38,44 @@
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bu-yb-3hI">
                                     <rect key="frame" x="16" y="40" width="342.5" height="107"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahW-bu-Gsa" customClass="CustomButton">
-                                            <rect key="frame" x="138" y="8.5" width="67" height="90"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDK-Vr-YaB" customClass="YTTouchView">
+                                            <rect key="frame" x="137.5" y="8.5" width="68" height="90"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="commentPic" translatesAutoresizingMaskIntoConstraints="NO" id="jAS-3m-Boz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="68" height="68"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="68" id="IEL-ea-ys5"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="hr_CornerRadius">
+                                                            <real key="value" value="34"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击更换" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6i-dB-rjS">
+                                                    <rect key="frame" x="11.5" y="69" width="45" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="90" id="V1w-MR-h6c"/>
-                                                <constraint firstAttribute="width" constant="67" id="t4V-wC-AbG"/>
+                                                <constraint firstAttribute="trailing" secondItem="jAS-3m-Boz" secondAttribute="trailing" id="38E-iA-I9Q"/>
+                                                <constraint firstAttribute="width" constant="68" id="J8F-LF-scS"/>
+                                                <constraint firstItem="s6i-dB-rjS" firstAttribute="top" secondItem="jAS-3m-Boz" secondAttribute="bottom" constant="1" id="NlC-FQ-ch1"/>
+                                                <constraint firstItem="jAS-3m-Boz" firstAttribute="leading" secondItem="dDK-Vr-YaB" secondAttribute="leading" id="S5u-NN-3BG"/>
+                                                <constraint firstItem="s6i-dB-rjS" firstAttribute="centerX" secondItem="jAS-3m-Boz" secondAttribute="centerX" id="TTQ-pq-RHm"/>
+                                                <constraint firstAttribute="height" constant="90" id="VdL-0y-Vam"/>
+                                                <constraint firstItem="jAS-3m-Boz" firstAttribute="top" secondItem="dDK-Vr-YaB" secondAttribute="top" id="Vpo-YW-L7I"/>
+                                                <constraint firstAttribute="bottom" secondItem="s6i-dB-rjS" secondAttribute="bottom" id="xLA-SR-hJ0"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <state key="normal" title="点击更换" image="commentPic">
-                                                <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="customButtonType_IBInspector">
-                                                    <integer key="value" value="3"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="margin">
-                                                    <real key="value" value="4"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="size" keyPath="imageViewSize">
-                                                    <size key="value" width="67" height="67"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                            <connections>
-                                                <action selector="avatarBtn:" destination="-1" eventType="touchUpInside" id="7in-x2-IBi"/>
-                                            </connections>
-                                        </button>
+                                        </view>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="ahW-bu-Gsa" firstAttribute="centerX" secondItem="3bu-yb-3hI" secondAttribute="centerX" id="Oy1-Io-cyc"/>
-                                        <constraint firstItem="ahW-bu-Gsa" firstAttribute="centerY" secondItem="3bu-yb-3hI" secondAttribute="centerY" id="rvb-0V-HmA"/>
+                                        <constraint firstItem="dDK-Vr-YaB" firstAttribute="centerY" secondItem="3bu-yb-3hI" secondAttribute="centerY" id="CyY-gq-NO0"/>
+                                        <constraint firstItem="dDK-Vr-YaB" firstAttribute="centerX" secondItem="3bu-yb-3hI" secondAttribute="centerX" id="J6N-EV-rgZ"/>
                                         <constraint firstAttribute="height" constant="107" id="zES-QU-wgc"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>

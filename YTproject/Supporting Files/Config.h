@@ -21,6 +21,11 @@
 #define YTMsg   @"msg"
 static const NSInteger YTCode2000 = 2000;
 
+//FMvideo
+#define RECORD_MAX_TIME 20.0           //最长录制时间
+#define TIMER_INTERVAL 0.05         //计时器刷新频率
+#define VIDEO_FOLDER @"videoFolder" //视频录制存放文件夹
+
 //获取融云token
 #define YTGetRongYunTokenUrl  @"https://api.cn.ronghub.com/user/getToken.json"
 

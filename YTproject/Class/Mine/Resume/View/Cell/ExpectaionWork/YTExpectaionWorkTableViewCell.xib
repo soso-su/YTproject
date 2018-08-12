@@ -47,6 +47,9 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="msgLabel" destination="I2B-G3-S5Q" id="mYJ-8e-vNk"/>
+            </connections>
             <point key="canvasLocation" x="39" y="148.5"/>
         </tableViewCell>
     </objects>

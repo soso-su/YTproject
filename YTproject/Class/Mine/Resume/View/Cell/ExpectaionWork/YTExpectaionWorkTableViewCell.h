@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ResumeModel.h"
 
 @interface YTExpectaionWorkTableViewCell : UITableViewCell
+
+//ResumeModel
+@property (nonatomic, strong) ResumeModel *resumeModel;
 
 @end

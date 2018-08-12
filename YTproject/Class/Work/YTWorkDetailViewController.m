@@ -27,6 +27,17 @@
 @property (weak, nonatomic) IBOutlet UILabel *positionTypeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *issueTimeLabel;
 
+//职位标签
+@property (weak, nonatomic) IBOutlet UIView *pfirstView;
+@property (weak, nonatomic) IBOutlet UILabel *pfirstLabel;
+@property (weak, nonatomic) IBOutlet UIView *psecondView;
+@property (weak, nonatomic) IBOutlet UILabel *psecondLabel;
+@property (weak, nonatomic) IBOutlet UIView *thirdView;
+@property (weak, nonatomic) IBOutlet UILabel *thirdLabel;
+@property (weak, nonatomic) IBOutlet UIView *fourthView;
+@property (weak, nonatomic) IBOutlet UILabel *fourthLabel;
+
+
 @property (weak, nonatomic) IBOutlet UILabel *workTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *recruitCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *languageLabel;
@@ -39,9 +50,14 @@
 //
 @property (weak, nonatomic) IBOutlet UILabel *positionMsgLabel;
 
+//公司标签
+@property (weak, nonatomic) IBOutlet UIView *firstView;
 @property (weak, nonatomic) IBOutlet UILabel *firstTitleLabel;
+@property (weak, nonatomic) IBOutlet UIView *secondView;
 @property (weak, nonatomic) IBOutlet UILabel *secondTitleLabel;
+@property (weak, nonatomic) IBOutlet UIView *thirdlyView;
 @property (weak, nonatomic) IBOutlet UILabel *thirdlyTitleLabel;
+@property (weak, nonatomic) IBOutlet UIView *fourthlyView;
 @property (weak, nonatomic) IBOutlet UILabel *fourthlyTitleLabel;
 
 
@@ -51,6 +67,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self positionDetailWith:self.positionId];
     [self setNav];
     self.title = @"职业详情";
@@ -65,6 +82,17 @@
 }
 
 - (void)setUIwithModel:(PositionDetailModel *)model{
+    if (model.company_label.length > 0) {
+        self.pfirstView.hidden = NO;
+        self.pfirstLabel.text = model.company_label;
+        
+    }
+    
+    if (model.label.length > 0) {
+        self.firstView.hidden = NO;
+        self.firstTitleLabel.text = model.label;
+    }
+    
     self.positionLabel.text = model.position_name;
     self.areaLabel.text = [NSString stringWithFormat:@"%@|%zd年|%@",model.area,model.work_life,model.education];
     self.moneyLabel.text = [NSString stringWithFormat:@"%zdk-%zdk",model.hight_money,model.low_money];
@@ -76,12 +104,16 @@
     [self.companyLogo sd_setImageWithURL:[NSURL URLWithString:model.avatar_url] placeholderImage:[UIImage imageNamed:@"gsxqPic1"]];
     self.companyNabelLabel.text = model.abbreviation;
     self.companyAreaLabel.text = [NSString stringWithFormat:@"%@  D轮  %@  ",model.address,model.number];
-    self.firstTitleLabel.text = model.label;
+    
+   
+    
     self.companyView.touchHandler = ^{
         YTCompanyViewController *companyVc = [[YTCompanyViewController alloc]init];
         companyVc.companyId = model.c_id;
         [self.navigationController pushViewController:companyVc animated:YES];
     };
+    
+    self.positionMsgLabel.text = model.position_introduce;
 }
 
 
@@ -152,7 +184,7 @@
         YTLog(@"responseObject = %@",responseObject);
         @try {
             [YTProgressHUD dismissHUD];
-            PositionDetailModel *model = [PositionDetailModel yy_modelWithJSON:responseObject[@"position"]];
+            PositionDetailModel *model = [PositionDetailModel yy_modelWithJSON:responseObject[@"position"][@"position"]];
             [weakSelf setUIwithModel:model];
         } @catch (NSException *exception) {
             [YTProgressHUD dismissHUD];

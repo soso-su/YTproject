@@ -10,4 +10,9 @@
 
 @implementation CarouselModel
 
++(NSDictionary *)modelCustomPropertyMapper{
+    return @{
+             @"carouselId" : @"id"};
+}
+
 @end

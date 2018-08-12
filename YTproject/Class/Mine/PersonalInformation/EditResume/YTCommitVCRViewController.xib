@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YTCommitVCRViewController">
             <connections>
+                <outlet property="addVCRButton" destination="W9K-GV-nYo" id="GVq-To-5Hh"/>
+                <outlet property="videoBgView" destination="bjV-Sp-l3u" id="rNQ-KY-N6E"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,7 +30,14 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9K-GV-nYo">
                     <rect key="frame" x="15" y="55" width="83" height="83"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="83" id="BkU-R7-Dyt"/>
+                        <constraint firstAttribute="height" constant="83" id="FHG-IB-0vW"/>
+                    </constraints>
                     <state key="normal" image="resumeIconAdd"/>
+                    <connections>
+                        <action selector="clickVCR:" destination="-1" eventType="touchUpInside" id="fnC-pX-PBq"/>
+                    </connections>
                 </button>
                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYs-5U-nRY">
                     <rect key="frame" x="20" y="619" width="335" height="42"/>
@@ -48,18 +57,26 @@
                         <action selector="commit:" destination="-1" eventType="touchUpInside" id="jxw-dl-A3Z"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjV-Sp-l3u">
+                    <rect key="frame" x="15" y="178" width="345" height="401"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="NYs-5U-nRY" secondAttribute="bottom" constant="6" id="8cB-7P-MHW"/>
+                <constraint firstItem="NYs-5U-nRY" firstAttribute="top" secondItem="bjV-Sp-l3u" secondAttribute="bottom" constant="40" id="D0W-lB-ht3"/>
                 <constraint firstItem="W9K-GV-nYo" firstAttribute="leading" secondItem="fqv-ga-o2a" secondAttribute="leading" id="Lf2-aI-CeS"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="bjV-Sp-l3u" secondAttribute="trailing" constant="15" id="McL-xu-iym"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="NYs-5U-nRY" secondAttribute="trailing" constant="20" id="Xh6-zD-hqj"/>
                 <constraint firstItem="fqv-ga-o2a" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="ZFE-xB-7mc"/>
                 <constraint firstItem="fqv-ga-o2a" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="11" id="cFH-YL-hOh"/>
+                <constraint firstItem="bjV-Sp-l3u" firstAttribute="top" secondItem="W9K-GV-nYo" secondAttribute="bottom" constant="40" id="r0I-5A-ByP"/>
+                <constraint firstItem="bjV-Sp-l3u" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="s0y-Ca-rQZ"/>
                 <constraint firstItem="W9K-GV-nYo" firstAttribute="top" secondItem="fqv-ga-o2a" secondAttribute="bottom" constant="7" id="tcX-5Z-vNt"/>
                 <constraint firstItem="NYs-5U-nRY" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="thf-YX-4Tk"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="33.5" y="142.5"/>
         </view>
     </objects>
     <resources>

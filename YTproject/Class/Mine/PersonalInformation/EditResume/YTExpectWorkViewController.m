@@ -11,7 +11,7 @@
 #import "YTSelectWorkTypeViewController.h"
 #import "YTAddStatusCertificateViewController.h"
 #import "YTWorkTypeModel.h"
-#import "ExpectedWorkModel.h"
+#import "ResumeModel.h"
 #import "YTResumeViewController.h"
 
 @interface YTExpectWorkViewController ()<UITextViewDelegate,UITextFieldDelegate>
@@ -25,7 +25,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UITextField *exPositionTF;
 @property (strong, nonatomic) YTWorkTypeModel *typeModel;
-@property (nonatomic ,strong) ExpectedWorkModel *exWorkModel;
+@property (nonatomic ,strong) ResumeModel*resumeModel;
 
 @end
 
@@ -50,7 +50,7 @@
     self.selectAddress.touchHandler = ^{
         YTAddressViewController *vc = [[YTAddressViewController alloc]init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
-        self.exWorkModel.expected_live = @"广州";
+        self.resumeModel.resume.expected_live = @"广州";
     };
     
     self.workTypeView.touchHandler = ^{
@@ -64,7 +64,7 @@
             }else{
                 weakSelf.workTypeTF.text = @"实习";
             }
-            weakSelf.exWorkModel.expected_type = buttonIndex;
+            weakSelf.resumeModel.resume.expected_type = buttonIndex;
         };
         [alertView show];
     };
@@ -77,7 +77,7 @@
 
 - (void)notifi:(NSNotification *)info{
     YTLog(@"%@",info.userInfo[@"test"]);
-    self.exWorkModel.expected_trade = 1;
+    self.resumeModel.resume.expected_trade = 1;
 }
 
 - (IBAction)onWeek:(UIButton *)sender {
@@ -86,7 +86,7 @@
         self.thisMonth.selected = NO;
         self.oneMonth.selected = NO;
     }
-    self.exWorkModel.on_position = 0;
+    self.resumeModel.resume.on_position = 0;
 }
 
 - (IBAction)onMonth:(UIButton *)sender {
@@ -95,7 +95,7 @@
         self.weekBtn.selected = NO;
         self.oneMonth.selected = NO;
     }
-    self.exWorkModel.on_position = 1;
+    self.resumeModel.resume.on_position = 1;
 }
 
 - (IBAction)oneMonth:(UIButton *)sender {
@@ -104,16 +104,16 @@
         self.thisMonth.selected = NO;
         self.weekBtn.selected = NO;
     }
-    self.exWorkModel.on_position = 2;
+    self.resumeModel.resume.on_position = 2;
 }
 - (IBAction)next:(UIButton *)sender {
     NSDictionary *dict = @{
-                           @"expected_position":YTReplaceNil(self.exWorkModel.expected_position),
-                           @"expected_type":@(self.exWorkModel.expected_type),
-                           @"expected_trade":@(self.exWorkModel.expected_trade),
-                           @"expected_live":YTReplaceNil(self.exWorkModel.expected_live),
-                           @"expected_supplement":YTReplaceNil(self.exWorkModel.expected_supplement),
-                           @"on_position":@(self.exWorkModel.on_position)
+                           @"expected_position":YTReplaceNil(self.resumeModel.resume.expected_position),
+                           @"expected_type":@(self.resumeModel.resume.expected_type),
+                           @"expected_trade":@(self.resumeModel.resume.expected_trade),
+                           @"expected_live":YTReplaceNil(self.resumeModel.resume.expected_live),
+                           @"expected_supplement":YTReplaceNil(self.resumeModel.resume.expected_supplement),
+                           @"on_position":@(self.resumeModel.resume.on_position)
                            };
     [self addExpectWorkWithDict:dict];
     
@@ -126,24 +126,24 @@
     return _typeModel;
 }
 
-- (ExpectedWorkModel *)exWorkModel{
-    if (!_exWorkModel) {
-        _exWorkModel = [[ExpectedWorkModel alloc]init];
+- (ResumeModel *)resumeModel{
+    if (!_resumeModel) {
+        _resumeModel = [[ResumeModel alloc]init];
     }
-    return _exWorkModel;
+    return _resumeModel;
 }
 
 #pragma mark -----------------------UITextViewDelegate,UITextFieldDelegate-----------------
 
 -(void)textViewDidEndEditing:(UITextView *)textView{
     if (textView.text.length > 0) {
-        self.exWorkModel.expected_supplement = textView.text;
+        self.resumeModel.resume.expected_supplement = textView.text;
     }
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     if (textField.text.length > 0) {
-        self.exWorkModel.expected_position = textField.text;
+        self.resumeModel.resume.expected_position = textField.text;
     }
 }
 

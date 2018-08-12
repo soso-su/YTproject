@@ -10,4 +10,9 @@
 
 @implementation PositionModel
 
++(NSDictionary *)modelCustomPropertyMapper{
+    return @{
+             @"positionId" : @"id"};
+}
+
 @end

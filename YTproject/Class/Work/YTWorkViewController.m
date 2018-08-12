@@ -51,17 +51,17 @@
 
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
-    for (int i = 0;i < 5;i++) {
-        WorkHotModel *model = [[WorkHotModel alloc]init];
-        [self.hotArray addObject:model];
-    }
+//    for (int i = 0;i < 5;i++) {
+//        WorkHotModel *model = [[WorkHotModel alloc]init];
+//        [self.hotArray addObject:model];
+//    }
     if (self.hotArray.count > 5) {
         self.headView.frame = CGRectMake(0, 0, kScreen_Width, 440);
     }else{
         self.headView.frame = CGRectMake(0, 0, kScreen_Width, 320);
     }
     self.headView.imgArray = self.imgArray;
-    self.headView.dataSorce = self.hotArray;
+//    self.headView.dataSorce = self.hotArray;
     [self.tableView reloadData];
     
 }
@@ -187,27 +187,29 @@
             [YTProgressHUD dismissHUD];
             YTLog(@"responseObject = %@",responseObject);
             NSArray *hotArr = responseObject[@"bidPositionList"];
+            NSMutableArray *hotDataArray = [NSMutableArray array];
             if (hotArr.count > 0) {
                 for (NSDictionary *dic in hotArr) {
                     WorkHotModel *model = [WorkHotModel yy_modelWithJSON:dic];
-                    model.postId = [dic[@"id"] integerValue];
-                    [weakSelf.hotArray addObject:model];
+                    [hotDataArray addObject:model];
                 }
             }
+            weakSelf.hotArray = hotDataArray;
             
+            NSMutableArray *imageArray = [NSMutableArray array];
             NSArray *imgArr = responseObject[@"shufList"];
             if (imgArr.count > 0) {
                 for (NSDictionary *dic in imgArr) {
                     CarouselModel *model = [CarouselModel yy_modelWithJSON:dic];
-                    [weakSelf.imgArray addObject:model];
+                    [imageArray addObject:model];
                 }
             }
+            weakSelf.imgArray = imageArray;
             NSArray *list = responseObject[@"positionList"];
             NSMutableArray *dataArray = [NSMutableArray array];
             if (list.count > 0) {
                 for (NSDictionary *dic in list) {
                     PositionModel *model = [PositionModel yy_modelWithJSON:dic];
-                    model.positionId = [dic[@"id"] integerValue];
                     [dataArray addObject:model];
                 }
             }

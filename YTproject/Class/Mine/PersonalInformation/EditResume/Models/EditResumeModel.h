@@ -19,9 +19,6 @@
 //简历名称
 @property (nonatomic, strong) NSString *resume_name;
 
-//期望职位
-@property (nonatomic, strong) NSString *expected_position;
-
 //姓名
 @property (nonatomic ,strong) NSString *name;
 
@@ -58,11 +55,40 @@
 //教师资格证书
 @property (nonatomic, strong) NSString *qualification;
 
+//教师资格证书图片（预览使用）
+@property (nonatomic, strong) UIImage *qualificationImage;
+
 //其他证书
 @property (nonatomic, strong) NSString *other_certificates;
 
-//证书备注
+//其他证书图片（预览使用）
+@property (nonatomic, strong) UIImage *other_certificatesImage;
+
+//其他证书备注
 @property (nonatomic, strong) NSString *certificates_remark;
+
+//公司人员数量
+@property (nonatomic, assign) NSInteger expected_trade;
+
+//期望职位
+@property (nonatomic, strong) NSString *expected_position;
+
+//期望工作城市
+@property (nonatomic, strong) NSString *expected_live;
+
+//期望薪资
+@property (nonatomic, strong) NSString *expected_money;
+
+//期望工作类型（0全职1兼职2实习）
+@property (nonatomic, assign) NSInteger expected_type;
+
+//补充说明
+@property (nonatomic, strong) NSString *expected_supplement;
+
+//预计到岗时间（0:一周, 1:本月内, 2:一个月内）
+@property (nonatomic, assign) NSInteger on_position;
+
+
 
 
 @end

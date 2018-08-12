@@ -10,4 +10,9 @@
 
 @implementation WorkHotModel
 
++(NSDictionary *)modelCustomPropertyMapper{
+    return @{
+             @"postId" : @"id"};
+}
+
 @end

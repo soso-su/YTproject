@@ -36,6 +36,7 @@ static NSString *const MedalCollectionViewCellId = @"medalCollectionViewCellId";
     _model = model;
     self.userNameLabel.text = model.resume.name;
     [self.avatarView sd_setImageWithURL:[NSURL URLWithString:model.resume.avatar_url] placeholderImage:[UIImage imageNamed:@"commentPic"]];
+    self.avatarView.layer.masksToBounds = YES;
     self.msgLabel.text = model.resume.introduce;
 }
 

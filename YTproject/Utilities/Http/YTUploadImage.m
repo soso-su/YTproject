@@ -12,37 +12,45 @@
 
 @implementation YTUploadImage
 
-+ (void)uploadFile:(NSData *)fileData fileName:(NSString *)fileName parameters:(id)parameters uploadType:(uploadType)type{
++ (void)uploadFile:(NSData *)fileData fileName:(NSString *)fileName parameters:(id)parameters uploadType:(uploadType)type success:(void (^)(id responseObject))success
+           failure:(void (^)(NSError *error))failure;{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer.timeoutInterval = 10;
-    [manager.requestSerializer setValue:[YTUserModel share].token forHTTPHeaderField:@"token"];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",
                                                          @"text/plain",
                                                          @"text/javascript",
                                                          @"text/json",
                                                          @"text/html",
-                                                         @"image/jpeg", nil];
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+                                                         @"image/jpeg",
+                                                         @"image/png", nil];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:[YTUserModel share].token forHTTPHeaderField:@"token"];
     NSURLSessionDataTask *uploadTask = [manager POST:YTUploadImageUrl parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        NSString *typeName, *mimeType, *fileName;
+        NSString *typeName, *mimeType, *filName;
+        
         if (type==uploadType_image) {
             typeName = @"image";
             mimeType = @"image/*";
-            fileName = @"fileName.jpg";
+            filName = [NSString stringWithFormat:@"%@.jpg",fileName];
         }else if (type==uploadType_video) {
             typeName = @"video";
             mimeType = @"video/*";
-            fileName = @"fileName.mp4";
+            filName = [NSString stringWithFormat:@"%@.mp4",fileName];
         }
-        [formData appendPartWithFileData:fileData name:typeName fileName:fileName mimeType:mimeType];
+        [formData appendPartWithFileData:fileData name:typeName fileName:filName mimeType:mimeType];
     } progress:^(NSProgress * _Nonnull uploadProgress) {
-        YTLog(@"%lld--%lld",uploadProgress.totalUnitCount, uploadProgress.totalUnitCount);
+        YTLog(@"%lld--%lld",uploadProgress.totalUnitCount, uploadProgress.completedUnitCount);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-        YTLog(@"成功:%@",responseObject);
+        NSString *result = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+        if (success) {
+            success(result);
+        }
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-        YTLog(@"失败:%@",error);
+        if (failure) {
+            failure(error);
+        }
     }];
     [uploadTask resume];
 }

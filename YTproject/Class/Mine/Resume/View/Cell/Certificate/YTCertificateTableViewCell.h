@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ResumeModel.h"
 
 @interface YTCertificateTableViewCell : UITableViewCell
+@property (nonatomic, strong)ResumeModel *resumeModel;
 
 @end

@@ -12,6 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YTAddStatusCertificateViewController">
             <connections>
+                <outlet property="otherButton" destination="4tw-Tk-BjX" id="Cdh-nz-jZ7"/>
+                <outlet property="remarkTF" destination="yVl-S3-Xgv" id="T25-qk-Ucd"/>
+                <outlet property="teacherButton" destination="20G-lM-MIW" id="iCu-vU-jSc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,7 +23,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="教室资格证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5F-E8-ZOA">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="教师资格证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5F-E8-ZOA">
                     <rect key="frame" x="16" y="40" width="71.5" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -28,7 +31,14 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20G-lM-MIW">
                     <rect key="frame" x="16" y="69" width="83" height="83"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="83" id="MN8-qH-vsO"/>
+                        <constraint firstAttribute="height" constant="83" id="e1i-0J-ybp"/>
+                    </constraints>
                     <state key="normal" image="resumeIconAdd"/>
+                    <connections>
+                        <action selector="clickTeacher:" destination="-1" eventType="touchUpInside" id="4kY-hN-jE6"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="其他证书" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wk3-tf-r2H">
                     <rect key="frame" x="16" y="177" width="57.5" height="17"/>
@@ -38,7 +48,14 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tw-Tk-BjX">
                     <rect key="frame" x="16" y="206" width="83" height="83"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="83" id="gOj-oN-5xb"/>
+                        <constraint firstAttribute="width" constant="83" id="xzw-Te-8vZ"/>
+                    </constraints>
                     <state key="normal" image="resumeIconAdd"/>
+                    <connections>
+                        <action selector="clickOther:" destination="-1" eventType="touchUpInside" id="NDF-nP-0XU"/>
+                    </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="备注证书名称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yVl-S3-Xgv">
                     <rect key="frame" x="16" y="299" width="343" height="30"/>
@@ -48,6 +65,9 @@
                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="2HP-oL-w62"/>
+                    </connections>
                 </textField>
                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Hk-Y8-TcK">
                     <rect key="frame" x="20" y="619" width="335" height="42"/>

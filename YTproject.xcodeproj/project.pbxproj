@@ -146,6 +146,13 @@
 		F828A6E3210A224E006AC52C /* YTAttextationFailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F828A6E1210A224E006AC52C /* YTAttextationFailViewController.xib */; };
 		F828A6E9210A2F07006AC52C /* YTAttestationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F828A6E7210A2F07006AC52C /* YTAttestationViewController.m */; };
 		F828A6EA210A2F07006AC52C /* YTAttestationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F828A6E8210A2F07006AC52C /* YTAttestationViewController.xib */; };
+		F82E144C211EABFD00AC3450 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F82E144B211EABFC00AC3450 /* MobileCoreServices.framework */; };
+		F82E1454211FE0C600AC3450 /* FMFVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = F82E144E211FE0C400AC3450 /* FMFVideoView.m */; };
+		F82E1455211FE0C600AC3450 /* FMFileVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = F82E1450211FE0C500AC3450 /* FMFileVideoController.m */; };
+		F82E1456211FE0C600AC3450 /* FMFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F82E1451211FE0C500AC3450 /* FMFModel.m */; };
+		F82E1459211FE0F400AC3450 /* XCFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F82E1458211FE0F400AC3450 /* XCFileManager.m */; };
+		F82E145C211FE19000AC3450 /* FMRecordProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = F82E145A211FE18F00AC3450 /* FMRecordProgressView.m */; };
+		F82E145F211FE21300AC3450 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = F82E145E211FE21300AC3450 /* UIColor+Hex.m */; };
 		F83BA1B521006D3700EF5518 /* YTResumeHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F83BA1B421006D3700EF5518 /* YTResumeHeaderTableViewCell.m */; };
 		F83BA1B721006D9800EF5518 /* YTMedalCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F83BA1B621006D9800EF5518 /* YTMedalCollectionViewCell.m */; };
 		F83BA1BB2100707A00EF5518 /* BuyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F83BA1B92100707A00EF5518 /* BuyCell.m */; };
@@ -262,7 +269,6 @@
 		F86795A92119AC0C00991BD9 /* WorkExperienceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F86795A82119AC0C00991BD9 /* WorkExperienceModel.m */; };
 		F86795AC211AE08D00991BD9 /* EducationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F86795AB211AE08D00991BD9 /* EducationModel.m */; };
 		F86795AF211C1C5D00991BD9 /* YTWorkTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F86795AE211C1C5D00991BD9 /* YTWorkTypeModel.m */; };
-		F86795B2211C3FD600991BD9 /* ExpectedWorkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F86795B1211C3FD600991BD9 /* ExpectedWorkModel.m */; };
 		F86795B5211C55D800991BD9 /* YTUploadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F86795B4211C55D800991BD9 /* YTUploadImage.m */; };
 		F876CCEF210174990015E0C7 /* YTOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F876CCED210174990015E0C7 /* YTOrderViewController.m */; };
 		F876CCF0210174990015E0C7 /* YTOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F876CCEE210174990015E0C7 /* YTOrderViewController.xib */; };
@@ -399,6 +405,7 @@
 		F8DFE4CD20F373FC00F76DFB /* YTCompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DFE4CB20F373FC00F76DFB /* YTCompanyViewController.m */; };
 		F8DFE4CE20F373FC00F76DFB /* YTCompanyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8DFE4CC20F373FC00F76DFB /* YTCompanyViewController.xib */; };
 		F8DFE4D120F39B7600F76DFB /* ShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DFE4D020F39B7600F76DFB /* ShareView.m */; };
+		F8E7290221201DF80042E48D /* YTTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E7290121201DF80042E48D /* YTTitleView.m */; };
 		F8EB7595210C082F001BB3E8 /* CPResumeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8EB7593210C082F001BB3E8 /* CPResumeViewController.m */; };
 		F8EB7596210C082F001BB3E8 /* CPResumeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8EB7594210C082F001BB3E8 /* CPResumeViewController.xib */; };
 		F8F1460020F2609800E55BE7 /* YTWorkSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F145FE20F2609800E55BE7 /* YTWorkSearchTableViewController.m */; };
@@ -655,6 +662,19 @@
 		F828A6E6210A2F07006AC52C /* YTAttestationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTAttestationViewController.h; sourceTree = "<group>"; };
 		F828A6E7210A2F07006AC52C /* YTAttestationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTAttestationViewController.m; sourceTree = "<group>"; };
 		F828A6E8210A2F07006AC52C /* YTAttestationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTAttestationViewController.xib; sourceTree = "<group>"; };
+		F82E144B211EABFC00AC3450 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		F82E144E211FE0C400AC3450 /* FMFVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMFVideoView.m; sourceTree = "<group>"; };
+		F82E144F211FE0C400AC3450 /* FMFileVideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMFileVideoController.h; sourceTree = "<group>"; };
+		F82E1450211FE0C500AC3450 /* FMFileVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMFileVideoController.m; sourceTree = "<group>"; };
+		F82E1451211FE0C500AC3450 /* FMFModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMFModel.m; sourceTree = "<group>"; };
+		F82E1452211FE0C500AC3450 /* FMFVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMFVideoView.h; sourceTree = "<group>"; };
+		F82E1453211FE0C600AC3450 /* FMFModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMFModel.h; sourceTree = "<group>"; };
+		F82E1457211FE0F400AC3450 /* XCFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCFileManager.h; sourceTree = "<group>"; };
+		F82E1458211FE0F400AC3450 /* XCFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCFileManager.m; sourceTree = "<group>"; };
+		F82E145A211FE18F00AC3450 /* FMRecordProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMRecordProgressView.m; sourceTree = "<group>"; };
+		F82E145B211FE19000AC3450 /* FMRecordProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMRecordProgressView.h; sourceTree = "<group>"; };
+		F82E145D211FE21300AC3450 /* UIColor+Hex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		F82E145E211FE21300AC3450 /* UIColor+Hex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		F83BA1B421006D3700EF5518 /* YTResumeHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTResumeHeaderTableViewCell.m; sourceTree = "<group>"; };
 		F83BA1B621006D9800EF5518 /* YTMedalCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTMedalCollectionViewCell.m; sourceTree = "<group>"; };
 		F83BA1B82100707A00EF5518 /* BuyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyCell.h; sourceTree = "<group>"; };
@@ -835,8 +855,6 @@
 		F86795AB211AE08D00991BD9 /* EducationModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EducationModel.m; sourceTree = "<group>"; };
 		F86795AD211C1C5D00991BD9 /* YTWorkTypeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTWorkTypeModel.h; sourceTree = "<group>"; };
 		F86795AE211C1C5D00991BD9 /* YTWorkTypeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTWorkTypeModel.m; sourceTree = "<group>"; };
-		F86795B0211C3FD600991BD9 /* ExpectedWorkModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExpectedWorkModel.h; sourceTree = "<group>"; };
-		F86795B1211C3FD600991BD9 /* ExpectedWorkModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExpectedWorkModel.m; sourceTree = "<group>"; };
 		F86795B3211C55D800991BD9 /* YTUploadImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTUploadImage.h; sourceTree = "<group>"; };
 		F86795B4211C55D800991BD9 /* YTUploadImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTUploadImage.m; sourceTree = "<group>"; };
 		F876CCEC210174990015E0C7 /* YTOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTOrderViewController.h; sourceTree = "<group>"; };
@@ -1047,6 +1065,8 @@
 		F8DFE4CC20F373FC00F76DFB /* YTCompanyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YTCompanyViewController.xib; sourceTree = "<group>"; };
 		F8DFE4CF20F39B7600F76DFB /* ShareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareView.h; sourceTree = "<group>"; };
 		F8DFE4D020F39B7600F76DFB /* ShareView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareView.m; sourceTree = "<group>"; };
+		F8E7290021201DF80042E48D /* YTTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTTitleView.h; sourceTree = "<group>"; };
+		F8E7290121201DF80042E48D /* YTTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTTitleView.m; sourceTree = "<group>"; };
 		F8EB7592210C082F001BB3E8 /* CPResumeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPResumeViewController.h; sourceTree = "<group>"; };
 		F8EB7593210C082F001BB3E8 /* CPResumeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPResumeViewController.m; sourceTree = "<group>"; };
 		F8EB7594210C082F001BB3E8 /* CPResumeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPResumeViewController.xib; sourceTree = "<group>"; };
@@ -1090,6 +1110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F82E144C211EABFD00AC3450 /* MobileCoreServices.framework in Frameworks */,
 				F888D39F20F5B89400128715 /* MapKit.framework in Frameworks */,
 				F888D3C120F5B97200128715 /* libc++.tbd in Frameworks */,
 				F888D3BF20F5B95A00128715 /* libc++abi.tbd in Frameworks */,
@@ -1137,6 +1158,7 @@
 		1E31BAF63139DA159546521D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F82E144B211EABFC00AC3450 /* MobileCoreServices.framework */,
 				F888D3C020F5B97100128715 /* libc++.tbd */,
 				F888D3BE20F5B95A00128715 /* libc++abi.tbd */,
 				F888D3BC20F5B94600128715 /* libsqlite3.tbd */,
@@ -1490,6 +1512,23 @@
 			path = YTAttestation;
 			sourceTree = "<group>";
 		};
+		F82E144D211FE08C00AC3450 /* FMVideo */ = {
+			isa = PBXGroup;
+			children = (
+				F82E145B211FE19000AC3450 /* FMRecordProgressView.h */,
+				F82E145A211FE18F00AC3450 /* FMRecordProgressView.m */,
+				F82E1457211FE0F400AC3450 /* XCFileManager.h */,
+				F82E1458211FE0F400AC3450 /* XCFileManager.m */,
+				F82E144F211FE0C400AC3450 /* FMFileVideoController.h */,
+				F82E1450211FE0C500AC3450 /* FMFileVideoController.m */,
+				F82E1453211FE0C600AC3450 /* FMFModel.h */,
+				F82E1451211FE0C500AC3450 /* FMFModel.m */,
+				F82E1452211FE0C500AC3450 /* FMFVideoView.h */,
+				F82E144E211FE0C400AC3450 /* FMFVideoView.m */,
+			);
+			path = FMVideo;
+			sourceTree = "<group>";
+		};
 		F846DA4B21006B9200A1E1CE /* Resume */ = {
 			isa = PBXGroup;
 			children = (
@@ -1594,8 +1633,8 @@
 		F846DA7121006B9200A1E1CE /* ExpectaionWork */ = {
 			isa = PBXGroup;
 			children = (
-				F846DA7221006B9200A1E1CE /* YTExpectaionWorkTableViewCell.m */,
 				F846DA7321006B9200A1E1CE /* YTExpectaionWorkTableViewCell.h */,
+				F846DA7221006B9200A1E1CE /* YTExpectaionWorkTableViewCell.m */,
 				F846DA7421006B9200A1E1CE /* YTExpectaionWorkTableViewCell.xib */,
 			);
 			path = ExpectaionWork;
@@ -1913,8 +1952,6 @@
 				F86795A82119AC0C00991BD9 /* WorkExperienceModel.m */,
 				F86795AA211AE08D00991BD9 /* EducationModel.h */,
 				F86795AB211AE08D00991BD9 /* EducationModel.m */,
-				F86795B0211C3FD600991BD9 /* ExpectedWorkModel.h */,
-				F86795B1211C3FD600991BD9 /* ExpectedWorkModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2101,6 +2138,7 @@
 		F888F53D20EA2D1700E19554 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				F82E144D211FE08C00AC3450 /* FMVideo */,
 				A72BA4E0210038D8008D57E6 /* YTPageViewController */,
 			);
 			path = Libs;
@@ -2152,6 +2190,8 @@
 				F8FBF39D210FFE85003F2167 /* YTLaunchView.h */,
 				F8FBF39E210FFE85003F2167 /* YTLaunchView.m */,
 				F8FBF3A0210FFE9C003F2167 /* YTLaunchView.xib */,
+				F8E7290021201DF80042E48D /* YTTitleView.h */,
+				F8E7290121201DF80042E48D /* YTTitleView.m */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -2495,6 +2535,8 @@
 				F894251D20EB8490008156CC /* UIView+Appearance.m */,
 				F894253F20EE27CF008156CC /* UIImage+Color.h */,
 				F894254020EE27CF008156CC /* UIImage+Color.m */,
+				F82E145D211FE21300AC3450 /* UIColor+Hex.h */,
+				F82E145E211FE21300AC3450 /* UIColor+Hex.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -2895,7 +2937,6 @@
 				F8135AB120F3145A000F2372 /* CustomButton.m in Sources */,
 				F85313522109B98600B881EA /* CPWorkCell.m in Sources */,
 				F807692F20FB5157001E2FA6 /* YTCateDetailsViewController.m in Sources */,
-				F86795B2211C3FD600991BD9 /* ExpectedWorkModel.m in Sources */,
 				F888D3D920F6F12B00128715 /* YTEdViewCell.m in Sources */,
 				F8FBF39C210EFC2E003F2167 /* YTUserModel.m in Sources */,
 				F86795AF211C1C5D00991BD9 /* YTWorkTypeModel.m in Sources */,
@@ -2911,6 +2952,7 @@
 				F846DA8221006B9200A1E1CE /* YTWorkExperienceTableViewCell.m in Sources */,
 				F84B449020EF1A29004791E8 /* WorkAddressCollectionViewCell.m in Sources */,
 				F81A61EB210C4B310026876E /* CPEditCompanyMsgViewController.m in Sources */,
+				F82E1454211FE0C600AC3450 /* FMFVideoView.m in Sources */,
 				F853132B2109754B00B881EA /* YTChatListViewController.m in Sources */,
 				F807692B20FB3E0F001E2FA6 /* ReviewModel.m in Sources */,
 				F85313762109E16E00B881EA /* YTAddWorkExperienceViewController.m in Sources */,
@@ -2965,9 +3007,11 @@
 				F85313702109E16E00B881EA /* YTEditResumeWorkExperienceViewController.m in Sources */,
 				F894251B20EB6D1B008156CC /* UIView+Frame.m in Sources */,
 				F846DA7D21006B9200A1E1CE /* YTResumeViewController.m in Sources */,
+				F82E1455211FE0C600AC3450 /* FMFileVideoController.m in Sources */,
 				F8FBF3B92113EF83003F2167 /* YTApproveDetailViewController.m in Sources */,
 				F8C3DDCC210095F100539E6E /* AddressHeadView.m in Sources */,
 				F80F5187210739CF004FF163 /* IntergralHeadView.m in Sources */,
+				F82E145C211FE19000AC3450 /* FMRecordProgressView.m in Sources */,
 				F81A61E6210C41E70026876E /* CPModiflyCompanyTellViewController.m in Sources */,
 				F80CB315210AC2F30076963F /* YTExpectWorkViewController.m in Sources */,
 				F85312FE210879EA00B881EA /* RecordListModel.m in Sources */,
@@ -2975,6 +3019,7 @@
 				F876CCEF210174990015E0C7 /* YTOrderViewController.m in Sources */,
 				F853136F2109E16E00B881EA /* YTEditResumeBaseInformationViewController.m in Sources */,
 				F81A61F9210C51540026876E /* MyComTableViewCell.m in Sources */,
+				F82E145F211FE21300AC3450 /* UIColor+Hex.m in Sources */,
 				F81B3D62210C653B00247B7C /* CPBillMessageViewController.m in Sources */,
 				F85312CE2108145100B881EA /* ActivityView.m in Sources */,
 				F81A61E1210C36AA0026876E /* CPMyCompanyTableViewCell.m in Sources */,
@@ -2993,6 +3038,7 @@
 				F8126ADB2101DF9C007CC031 /* OrderDetailFooterView.m in Sources */,
 				F811A9EB20FF3F0D009EEA6D /* NewProductCell.m in Sources */,
 				F80CB31A210ACE4B0076963F /* YTSelectWorkTypeViewController.m in Sources */,
+				F82E1459211FE0F400AC3450 /* XCFileManager.m in Sources */,
 				A72826AE20FDDD6200244CAA /* YTModifyUsernameViewController.m in Sources */,
 				F8FBF3B421130779003F2167 /* YTMapViewController.m in Sources */,
 				F81A61D7210C27B30026876E /* CPSysMessageDetailViewController.m in Sources */,
@@ -3008,6 +3054,7 @@
 				F888F53620EA2BDF00E19554 /* YTBaseViewController.m in Sources */,
 				F894253520EDC655008156CC /* WorkHeadCollectionViewCell.m in Sources */,
 				F8FBF3B02112B7E6003F2167 /* CompanyModel.m in Sources */,
+				F8E7290221201DF80042E48D /* YTTitleView.m in Sources */,
 				F876CCF4210175CD0015E0C7 /* YTOrderListViewController.m in Sources */,
 				F8DE219A20FDD91600AC55D8 /* MoreCell.m in Sources */,
 				F888D40420F8A1BF00128715 /* YTLocalListViewController.m in Sources */,
@@ -3020,6 +3067,7 @@
 				F888D38E20F5ABB800128715 /* YTRongYunRequest.m in Sources */,
 				F8DE216E20FC402C00AC55D8 /* ServerCollectionViewCell.m in Sources */,
 				F888F55920EA75C300E19554 /* YTStoreViewController.m in Sources */,
+				F82E1456211FE0C600AC3450 /* FMFModel.m in Sources */,
 				F8126ACE2101B81C007CC031 /* OrderListModel.m in Sources */,
 				F85312ED2108615C00B881EA /* YTCameraViewController.m in Sources */,
 				F80CB301210AB27D0076963F /* YTAddEducationViewController.m in Sources */,

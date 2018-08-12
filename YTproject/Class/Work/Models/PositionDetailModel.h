@@ -46,5 +46,8 @@
 @property (nonatomic , assign) NSInteger  online_state;//在线状态（0上线1下线）
 @property (nonatomic , copy) NSString     *tenure_requirements;
 
+//职位简介
+@property (nonatomic, strong) NSString *position_introduce;
+
 
 @end

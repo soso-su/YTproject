@@ -16,6 +16,11 @@ typedef NS_ENUM(NSInteger,uploadType) {
 
 @interface YTUploadImage : NSObject
 
-+ (void)uploadFile:(NSData *)fileData fileName:(NSString *)fileName parameters:(id)parameters uploadType:(uploadType)type;
++ (void)uploadFile:(NSData *)fileData
+          fileName:(NSString *)fileName
+        parameters:(id)parameters
+        uploadType:(uploadType)type
+           success:(void (^)(id responseObject))success
+           failure:(void (^)(NSError *error))failure;;
 
 @end

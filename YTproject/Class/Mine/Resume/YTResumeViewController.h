@@ -7,8 +7,13 @@
 //
 
 #import "YTBaseViewController.h"
+#import "ResumeModel.h"
 
 @interface YTResumeViewController : YTBaseViewController
+
+@property (nonatomic,assign)BOOL basePreview;
+
+@property (nonatomic, strong) EditResumeModel *reModel;
 
 @end
 

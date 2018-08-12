@@ -15,11 +15,14 @@
 #import "YTResumeViewController.h"
 #import "YTEditResumeWorkExperienceViewController.h"
 #import "YTUploadImage.h"
+#import <SDWebImage/UIButton+WebCache.h>
 
 @interface YTEditResumeBaseInformationViewController ()<UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet CustomButton *avatarView;
+@property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
+
+@property (weak, nonatomic) IBOutlet YTTouchView *avatarView;
 @property (nonatomic,copy)NSMutableArray *detailTitleArr;
 
 @property (nonatomic, strong) EditResumeModel *editModel;
@@ -33,46 +36,19 @@ static NSString *const TableViewCellId = @"TableViewCellId";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupView];
-    self.detailTitleArr = [[NSMutableArray alloc]initWithObjects:@"姓名",@"国籍",@"男",@"语言",@"1992.06.01",@"最高学历",@"工作年限",@"签证类型",@"一句话描述自己", nil];
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
     if ([self.title isEqualToString:@"编辑简历"]) {
         [self editResume];
     }
+    self.detailTitleArr = [[NSMutableArray alloc]initWithObjects:@"姓名",@"国籍",@"男",@"语言",@"1992.06.01",@"最高学历",@"工作年限",@"签证类型",@"一句话描述自己", nil];
 }
+
 
 
 - (void)preview{
     YTResumeViewController *vc = [[YTResumeViewController alloc]init];
+    vc.basePreview = YES;
+    vc.reModel = self.editModel;
     [self.navigationController pushViewController:vc animated:YES];
-}
-- (IBAction)avatarBtn:(CustomButton *)sender {
-    __block NSUInteger sourceType = 0;
-    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-    imagePickerController.delegate = self;
-    YTAlertView *alertView = [YTAlertView alertViewWithTitle:nil message:nil style:UIAlertControllerStyleActionSheet cancelButtonTitle:nil otherButtonTitles:@"拍照",@"从相册选择",@"取消",nil];
-    alertView.buttonClickHandle = ^(NSInteger buttonIndex) {
-        if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-            imagePickerController.allowsEditing = YES;
-            imagePickerController.sourceType = sourceType; //
-            if (buttonIndex == 0) {
-                sourceType = UIImagePickerControllerSourceTypeCamera;
-                imagePickerController.sourceType = sourceType;
-                [self presentViewController:imagePickerController animated:YES completion:nil];
-            }else if (buttonIndex == 1){
-                sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-                imagePickerController.sourceType = sourceType;
-                [self presentViewController:imagePickerController animated:YES completion:nil];
-            }
-        }else {
-            sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-            imagePickerController.sourceType = sourceType;
-            [self presentViewController:imagePickerController animated:YES completion:nil];
-        }
-    };
-    [alertView show];
 }
 
 - (IBAction)nextStep:(UIButton *)sender {
@@ -89,7 +65,7 @@ static NSString *const TableViewCellId = @"TableViewCellId";
                            @"introduce":YTReplaceNil(self.editModel.introduce)
                            };
    
-        [self addResumeWithDic:dict];
+    [self addResumeWithDic:dict];
     
     
 }
@@ -106,13 +82,22 @@ static NSString *const TableViewCellId = @"TableViewCellId";
 #pragma mark -------------UIImagePickerControllerDelegate-------
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    YTWeakSelf
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     UIImage *avaImage = [YTTool imageResize:image andResizeTo:CGSizeMake(100, 100)];
-    [self.avatarView setImage:avaImage forState:UIControlStateNormal];
+    self.avatarImageView.image = avaImage;
     [picker dismissViewControllerAnimated:YES completion:^{}];
-    NSData *data = UIImageJPEGRepresentation(image, 1.0);
-//    NSDictionary *param = @{@"filekind":@"user_avatar", @"filename":@"avatar"};
-    [YTUploadImage uploadFile:data fileName:@"avatar" parameters:nil uploadType:uploadType_image];
+    NSData *data = UIImageJPEGRepresentation(image, 0.5);
+    [YTProgressHUD showWithStatusStr:YTHttpState_RequestIng];
+    [YTUploadImage uploadFile:data fileName:@"avatar" parameters:nil uploadType:uploadType_image success:^(id responseObject) {
+        [YTProgressHUD showSuccessWithStr:@"上传成功"];
+        weakSelf.editModel.avatar_url = responseObject;
+        YTLog(@"%@",responseObject);
+    } failure:^(NSError *error) {
+        [YTProgressHUD showErrorWithStr:@"上传失败,请检查网络"];
+        YTLog(@"%@",error);
+    }];
+    
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -322,8 +307,33 @@ static NSString *const TableViewCellId = @"TableViewCellId";
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithTitle:@"预览" style:UIBarButtonItemStylePlain target:self action:@selector(preview)];
     rightItem.tintColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = rightItem;
-    
-    
+    self.avatarImageView.layer.masksToBounds = YES;
+    self.avatarView.touchHandler = ^{
+        __block NSUInteger sourceType = 0;
+        UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+        imagePickerController.delegate = self;
+        YTAlertView *alertView = [YTAlertView alertViewWithTitle:nil message:nil style:UIAlertControllerStyleActionSheet cancelButtonTitle:nil otherButtonTitles:@"拍照",@"从相册选择",@"取消",nil];
+        alertView.buttonClickHandle = ^(NSInteger buttonIndex) {
+            if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+                imagePickerController.allowsEditing = YES;
+                imagePickerController.sourceType = sourceType; //
+                if (buttonIndex == 0) {
+                    sourceType = UIImagePickerControllerSourceTypeCamera;
+                    imagePickerController.sourceType = sourceType;
+                    [self presentViewController:imagePickerController animated:YES completion:nil];
+                }else if (buttonIndex == 1){
+                    sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                    imagePickerController.sourceType = sourceType;
+                    [self presentViewController:imagePickerController animated:YES completion:nil];
+                }
+            }else {
+                sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                imagePickerController.sourceType = sourceType;
+                [self presentViewController:imagePickerController animated:YES completion:nil];
+            }
+        };
+        [alertView show];
+    };
    
     
 }
@@ -363,6 +373,7 @@ static NSString *const TableViewCellId = @"TableViewCellId";
         @try {
             NSDictionary *dict = responseObject[@"resume"];
             weakSelf.editModel = [EditResumeModel yy_modelWithJSON:dict];
+            [weakSelf.avatarImageView sd_setImageWithURL:[NSURL URLWithString:weakSelf.editModel.avatar_url] placeholderImage:[UIImage imageNamed:@"commentPic"]];
             [weakSelf.tableView reloadData];
         } @catch (NSException *exception) {
             YTLog(@"editResume exception = %@",exception.description);
